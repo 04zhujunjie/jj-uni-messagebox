@@ -1,0 +1,195 @@
+.messagebox-shade.data-v-2387f610 {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 999;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+}
+.messagebox-main.data-v-2387f610 {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	position: relative;
+	background: white;
+	width: 80%;
+	border-radius: 5px;
+	overflow: hidden;
+	-webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);
+	        box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.background-content.data-v-2387f610 {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.messagebox-content.data-v-2387f610 {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	width: 100%;
+	padding: 20px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	position: relative;
+	white-space: pre-wrap;
+}
+.rightTopClose.data-v-2387f610 {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	top: 3px;
+	right: 5px;
+}
+.closeImage.data-v-2387f610 {
+	height: 15px;
+	width: 15px;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.image.data-v-2387f610 {
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+/*弹层动画（从上往下）*/
+
+/* .fadeIn {
+    -webkit-animation: fadeInDown .3s;
+    animation: fadeInDown .3s;
+}
+
+@keyframes fadeInDown {
+    0% {
+        transform: translate3d(0, -20%, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        -webkit-transform: translate3d(0, -20%, 0);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: none;
+        opacity: 1;
+    }
+} */
+
+/*弹层动画（从下往上出现）*/
+.fadelogIn.data-v-2387f610 {
+    -webkit-animation: fadelogIn-data-v-2387f610 .25s;
+    animation: fadelogIn-data-v-2387f610 .25s;
+}
+@keyframes fadelogIn-data-v-2387f610 {
+0% {
+        -webkit-transform: translate3d(0, 100%, 0);
+                transform: translate3d(0, 100%, 0);
+}
+100% {
+        -webkit-transform: none;
+                transform: none;
+}
+}
+@-webkit-keyframes fadelogIn-data-v-2387f610 {
+0% {
+        -webkit-transform: translate3d(0, 100%, 0);
+}
+100% {
+        -webkit-transform: none;
+}
+}
+
+/*弹层动画（从上往下消失）*/
+.fadelogOut.data-v-2387f610 {
+    -webkit-animation: fadelogOut-data-v-2387f610 .25s;
+    animation: fadelogOut-data-v-2387f610 .25s;
+}
+@keyframes fadelogOut-data-v-2387f610 {
+0% {
+       -webkit-transform: none;
+               transform: none;
+}
+100% {
+		-webkit-transform: translate3d(0, 100%, 0);
+		        transform: translate3d(0, 100%, 0);
+}
+}
+@-webkit-keyframes fadelogOut-data-v-2387f610 {
+0% {
+		-webkit-transform: none;
+}
+100% {
+        -webkit-transform: translate3d(0, 100%, 0);
+}
+}
+.jj-popup.data-v-2387f610 {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+}
+.flexCenter.data-v-2387f610 {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+}
+

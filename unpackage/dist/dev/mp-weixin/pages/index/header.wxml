@@ -1,0 +1,1 @@
+<view class="header-box _div data-v-050a3a63"><button data-event-opts="{{[['tap',[['showToast',['']]]]]}}" class="btn data-v-050a3a63" bindtap="__e">toast</button><button data-event-opts="{{[['tap',[['showToast',['success']]]]]}}" class="btn data-v-050a3a63" bindtap="__e">toast-success</button></view>

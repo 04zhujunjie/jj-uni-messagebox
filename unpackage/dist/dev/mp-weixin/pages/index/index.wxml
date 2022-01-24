@@ -1,0 +1,1 @@
+<base-view vue-id="8dd740cc-1" bind:__l="__l" vue-slots="{{['default']}}"><view class="content"><view><header-view vue-id="{{('8dd740cc-2')+','+('8dd740cc-1')}}" bind:__l="__l"></header-view><button data-event-opts="{{[['tap',[['goDemo']]]]}}" style="margin-top:20px;" bindtap="__e">Demo</button></view></view></base-view>

@@ -1,0 +1,61 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		},
+		{
+			"path": "pages/mine/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		},
+		{
+			"path": "pages/demo/index",
+			"style": {
+		    "navigationBarBackgroundColor":"#3F536E",
+			"navigationBarTextStyle":"white",
+			// "navigationStyle": "custom", // 取消本页面的导航栏
+			// "background": "transparent", // 背景透明
+			// "backgroundColor": "c", // 背景透明
+			// "opacity":1,
+			"app-plus": {
+			"animationType": "fade-in", // 设置fade-in淡入动画，为最合理的动画类型
+			"background": "transparent", // 背景透明
+			"backgroundColor": "transparent", // 背景透明
+			"webviewBGTransparent":true,
+			"mask":"none",
+			// "opacity":1,
+			"popGesture": "none" // 关闭IOS屏幕左边滑动关闭当前页面的功能
+			
+			}
+			}
+		}
+		
+	],
+	"tabBar": {
+	    "color": "#7A7E83",
+	    "selectedColor": "#3cc51f",
+	    "borderStyle": "black",
+	    "backgroundColor": "#ffffff",
+	    "list": [{
+	        "pagePath": "pages/index/index",
+	        // "iconPath": "static/image/icon_component.png",
+	        // "selectedIconPath": "static/image/icon_component_HL.png",
+	        "text": "Home"
+	    }, {
+	        "pagePath": "pages/mine/index",
+	        // "iconPath": "static/image/icon_API.png",
+	        // "selectedIconPath": "static/image/icon_API_HL.png",
+	        "text": "Mine"
+	    }]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#DD524D"
+	}
+}

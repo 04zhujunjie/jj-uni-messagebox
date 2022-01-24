@@ -1,0 +1,1 @@
+<view class="_div"><alert class="vue-ref" vue-id="3d839815-1" data-ref="{{ref.kAlert}}" bind:__l="__l"></alert><toast class="vue-ref" vue-id="3d839815-2" data-ref="{{ref.kToast}}" bind:__l="__l"></toast><loading class="vue-ref" vue-id="3d839815-3" data-ref="{{ref.kLoading}}" bind:__l="__l"></loading><slot></slot></view>

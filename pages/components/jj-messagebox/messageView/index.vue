@@ -1,0 +1,52 @@
+<template>
+	<div>
+		<alert :ref="ref.kAlert"></alert>
+		<toast :ref="ref.kToast"></toast>
+		<loading :ref="ref.kLoading"></loading>
+		<slot></slot>
+	</div>
+</template>
+
+<script>
+	
+	import {kToast,kAlert,kLoading} from './constant.js'
+	import {addRefObj,removeRefObj} from './ref.js'
+	import toast from '../toast/jj-toast.vue'
+	import alert from '../alert/jj-alert.vue'
+	import loading from '../loading/jj-loading.vue'
+	
+	export default {
+		name:'message-view',
+		components:{
+			toast,
+			alert,
+			loading,
+		},
+		data(){
+			return{
+				ref:{
+					kToast,
+					kAlert,
+					kLoading,
+				}
+			}
+		},
+		mounted() {
+			this.addRef()
+		},
+		methods:{
+			addRef(){
+				for (let key in this.ref) {
+					let refValue = this.ref[key]
+					addRefObj(refValue,this.$refs[refValue])
+				}
+			}
+		},
+		beforeDestroy() {
+			removeRefObj()
+		},
+	}
+</script>
+
+<style>
+</style>

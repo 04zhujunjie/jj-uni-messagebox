@@ -1,0 +1,1 @@
+<view data-event-opts="{{[['tap',[['click']]],['touchstart',[['touchstart']]],['touchend',[['touchend']]]]}}" class="jj-btn-box _div data-v-6fd3b3a4" style="{{$root.s0}}" catchtap="__e" bindtouchstart="__e" bindtouchend="__e">{{''+btnObj.title+''}}</view>

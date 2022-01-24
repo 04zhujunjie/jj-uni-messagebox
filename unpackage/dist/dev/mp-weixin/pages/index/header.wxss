@@ -1,0 +1,23 @@
+
+.header-box.data-v-050a3a63{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	margin-top: 20px;
+	padding: 20px 0px;
+}
+.btn.data-v-050a3a63 {
+	margin-right: 10px;
+	margin-left: 10px;
+	border-radius: 5px;
+	background-color: #2A8AFF;
+	border-color: #FFFFFF;
+	color: #FFFFFF;
+	padding: 0px 20px;
+	height: 44px;
+}
+

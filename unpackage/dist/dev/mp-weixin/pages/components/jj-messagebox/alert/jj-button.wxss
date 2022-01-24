@@ -1,0 +1,19 @@
+
+.jj-btn-box.data-v-6fd3b3a4 {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1 0 auto;
+	        flex: 1 0 auto;
+	height: 2.75rem;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	text-align: center;
+}
+
+
