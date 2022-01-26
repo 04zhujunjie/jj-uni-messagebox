@@ -1,5 +1,5 @@
 <template>
-	<div class="messagebox-shade" v-if = "isShow" :style="{'background-color':maskColor}" @click="touchClose?close():''">
+	<div class="messagebox-shade" v-if = "isShow" :style="{'background-color':maskColor}" @touchmove.stop = ""  @click="touchClose?close():''">
 		<div class="messagebox-main popIn" :class="[isCloseAlert?'popOut':'']" @click.stop="mainClick"
 			:style="[{'animation-duration':duration+'s','width':width,'border-radius':radius+'px'}]">
 			<div class="messagebox-content" :style="[{'padding':padding}]">
@@ -79,6 +79,9 @@
 			},
 		},
 		methods: {
+			moveHandle(){
+			  // return false	
+			},
 			show(data={}){
 				data['isShow'] = true
 				let orData = Object.assign({},this.$data)
@@ -109,7 +112,7 @@
 				}, time)
 
 			},
-			mainClick(e) {
+			mainClick() {
 
 			},
 			btnStyle(btn) {

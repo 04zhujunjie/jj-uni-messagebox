@@ -4,3 +4,11 @@ page {
 	background-color: transparent;
 }
 
+
+.image.data-v-01a1d68d {
+	height:100%;
+	width:100%;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+

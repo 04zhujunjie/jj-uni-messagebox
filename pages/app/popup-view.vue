@@ -22,14 +22,15 @@
 		},
 		mounted() {
 			this.isShowPopup = true
+			
 		},
-		onLoad() {
-	
+		onLoad(options) {
+		 //获取传过来的参数
+	     console.log('------上一个页面传过来的参数-----',options)
 		},
 		methods: {
 			closePopup(){
 				uni.navigateBack({
-					
 				})
 			}
 		}
@@ -40,5 +41,14 @@
 	page {
 		background: transparent;
 		background-color: transparent;
+	}
+</style>
+
+<style scoped>
+	.image {
+		height:100%;
+		width:100%;
+		background-repeat: no-repeat;
+		background-size: contain;
 	}
 </style>

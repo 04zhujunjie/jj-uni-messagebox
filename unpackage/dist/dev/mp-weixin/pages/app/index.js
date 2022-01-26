@@ -151,7 +151,6 @@ var _default =
 
   },
   mounted: function mounted() {
-
   },
   onLoad: function onLoad() {
 

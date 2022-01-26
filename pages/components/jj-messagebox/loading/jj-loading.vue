@@ -1,5 +1,5 @@
 <template>
-	<div  class="messagebox-shade" v-if = "isShow"  :style="[{'background-color':maskColor,'pointer-events': userInteractionEnabled?'none':'auto'}]">
+	<div  class="messagebox-shade" v-if = "isShow" @touchmove.stop = "" :style="[{'background-color':maskColor,'pointer-events': userInteractionEnabled?'none':'auto'}]">
 		<div class="messagebox-main" :style="[{'width':width,'minHeight':'85px','background':background,'border-radius':radius+'px'}]">
 			<div v-if="message.length > 0" class="messagebox-content" :style="[{'padding':padding}]">
 				<div class="flexContentCenter" >

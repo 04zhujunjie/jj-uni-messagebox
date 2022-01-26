@@ -12,7 +12,7 @@ var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ 5));
 
 
 
-var _index = _interopRequireDefault(__webpack_require__(/*! pages/components/jj-messagebox/messageView/index.js */ 11));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var baseView = function baseView() {__webpack_require__.e(/*! require.ensure | pages/components/baseView/index */ "pages/components/baseView/index").then((function () {return resolve(__webpack_require__(/*! pages/components/baseView/index.vue */ 97));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};_vue.default.component('base-view', baseView);
+var _index = _interopRequireDefault(__webpack_require__(/*! pages/components/jj-messagebox/messageView/index.js */ 11));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var baseView = function baseView() {__webpack_require__.e(/*! require.ensure | pages/components/baseView/index */ "pages/components/baseView/index").then((function () {return resolve(__webpack_require__(/*! pages/components/baseView/index.vue */ 99));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};_vue.default.component('base-view', baseView);
 (0, _index.default)(_vue.default, '/pages/components/jj-messagebox/messageView/app-message-view');
 
 
@@ -567,7 +567,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var jjButton = function jjButton() {__webpack_require__.e(/*! require.ensure | pages/components/jj-messagebox/alert/jj-button */ "pages/components/jj-messagebox/alert/jj-button").then((function () {return resolve(__webpack_require__(/*! ./jj-button.vue */ 102));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var jjButton = function jjButton() {__webpack_require__.e(/*! require.ensure | pages/components/jj-messagebox/alert/jj-button */ "pages/components/jj-messagebox/alert/jj-button").then((function () {return resolve(__webpack_require__(/*! ./jj-button.vue */ 104));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -648,6 +648,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     } },
 
   methods: {
+    moveHandle: function moveHandle() {
+      // return false	
+    },
     show: function show() {var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       data['isShow'] = true;
       var orData = Object.assign({}, this.$data);
@@ -678,7 +681,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
       }, time);
 
     },
-    mainClick: function mainClick(e) {
+    mainClick: function mainClick() {
 
     },
     btnStyle: function btnStyle(btn) {

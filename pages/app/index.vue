@@ -19,7 +19,6 @@
 			}
 		},
 		mounted() {
-			
 		},
 		onLoad() {
 	
@@ -33,7 +32,7 @@
 			showPopup(){
 				//#ifdef APP-PLUS
 				uni.navigateTo({
-				    url: '/pages/app/popup-view',
+				    url: '/pages/app/popup-view?id=1',
 					animationType:'none',//设置没有动画
 					animationDuration:0,//设置动画时间
 				})

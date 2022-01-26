@@ -1,6 +1,6 @@
 <template>
 	<div v-if="jj_visible" class="jj-dialog">
-		<div class="messagebox-shade" :style="[{'background-color':maskColor}]"  @click="touchClose?close():''">
+		<div class="messagebox-shade" :style="[{'background-color':maskColor}]" @touchmove.stop = ""  @click="touchClose?close():''">
 			<div class="messagebox-main popIn" @click="mainClick" :style="[{'animation-duration':duration+'s','width':width,'background':background,'border-radius':radius+'px'}]">
 				<div class = "background-content">
 					<slot name="backgroundContent"></slot>

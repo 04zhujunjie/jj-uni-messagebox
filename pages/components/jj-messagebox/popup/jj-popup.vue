@@ -1,6 +1,6 @@
 <template>
 	<div v-if="jj_visible" class="jj-popup">
-		<div class="messagebox-shade" style="justify-content:end;align-items: flex-end;" :style="[{'background-color':maskColor}]"  @click="touchClose?close():''">
+		<div class="messagebox-shade" style="justify-content:end;align-items: flex-end;" :style="[{'background-color':maskColor}]" @touchmove.stop = "" @click="touchClose?close():''">
 			<div class="messagebox-main fadelogIn" @click.stop="mainClick" :class="[isPopup?'':'fadelogOut']"  
 			style = "margin:0px;width: 100%;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;" 
 			:style="[{'animation-duration':duration+'s','height':height,'background':background,'border-top-left-radius':radius+'px','border-top-right-radius':radius+'px'}]">

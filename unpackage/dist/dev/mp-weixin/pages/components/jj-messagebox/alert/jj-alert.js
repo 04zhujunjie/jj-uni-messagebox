@@ -173,7 +173,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var jjButton = function jjButton() {__webpack_require__.e(/*! require.ensure | pages/components/jj-messagebox/alert/jj-button */ "pages/components/jj-messagebox/alert/jj-button").then((function () {return resolve(__webpack_require__(/*! ./jj-button.vue */ 102));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var jjButton = function jjButton() {__webpack_require__.e(/*! require.ensure | pages/components/jj-messagebox/alert/jj-button */ "pages/components/jj-messagebox/alert/jj-button").then((function () {return resolve(__webpack_require__(/*! ./jj-button.vue */ 104));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -254,6 +254,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     } },
 
   methods: {
+    moveHandle: function moveHandle() {
+      // return false	
+    },
     show: function show() {var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       data['isShow'] = true;
       var orData = Object.assign({}, this.$data);
@@ -284,7 +287,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
       }, time);
 
     },
-    mainClick: function mainClick(e) {
+    mainClick: function mainClick() {
 
     },
     btnStyle: function btnStyle(btn) {

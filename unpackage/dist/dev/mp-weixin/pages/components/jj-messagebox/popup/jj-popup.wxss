@@ -15,6 +15,7 @@
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
 	        justify-content: center;
+	overflow:hidden;
 }
 .messagebox-main.data-v-2387f610 {
 	display: -webkit-box;

@@ -136,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _ref = __webpack_require__(/*! ./ref.js */ 14);var messageView = function messageView() {Promise.all(/*! require.ensure | pages/components/jj-messagebox/messageView/index */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/components/jj-messagebox/messageView/index")]).then((function () {return resolve(__webpack_require__(/*! ./index.vue */ 130));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+var _ref = __webpack_require__(/*! ./ref.js */ 14);var messageView = function messageView() {Promise.all(/*! require.ensure | pages/components/jj-messagebox/messageView/index */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/components/jj-messagebox/messageView/index")]).then((function () {return resolve(__webpack_require__(/*! ./index.vue */ 132));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   name: 'app-message-view',
   components: {

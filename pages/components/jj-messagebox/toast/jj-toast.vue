@@ -1,6 +1,6 @@
 <template>
 	<div class="messagebox-shade" v-if = "isShow"
-		:style="[{'background-color':maskColor,'pointer-events': 'none'}]">
+		:style="[{'background-color':maskColor,'pointer-events': 'none'}]" @touchmove.stop = "">
 		<div class="messagebox-main"
 			:style="[{'width':'auto','minWidth':minWidth,'maxWidth':maxWidth,'background':background,'border-radius':radius+'px'}]">
 			<div class="messagebox-content" :style="[{'padding':padding}]">
