@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "uni-app",
+  "navigationBarTitleText": "Home",
   "usingComponents": {
     "header-view": "/pages/index/header"
   }

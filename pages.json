@@ -3,31 +3,57 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "Home"
 			}
 		},
 		{
 			"path": "pages/mine/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "Mine"
+			}
+		},
+		{
+			"path": "pages/app/index",
+			"style": {
+				"navigationBarTitleText": "App"
 			}
 		},
 		{
 			"path": "pages/demo/index",
 			"style": {
-		    "navigationBarBackgroundColor":"#3F536E",
-			"navigationBarTextStyle":"white",
-			// "navigationStyle": "custom", // 取消本页面的导航栏
-			// "background": "transparent", // 背景透明
-			// "backgroundColor": "c", // 背景透明
-			// "opacity":1,
+		    "navigationBarBackgroundColor":"#3F536E"
+			}
+		},
+		{
+			"path": "pages/components/jj-messagebox/messageView/app-message-view",
+			"style": {
+			// "navigationBarTextStyle":"white",//设置状态栏颜色
+			"navigationStyle": "custom", // 取消本页面的导航栏
+			"background": "transparent", // 背景透明
 			"app-plus": {
-			"animationType": "fade-in", // 设置fade-in淡入动画，为最合理的动画类型
+			"animationType": "none", // 设置fade-in淡入动画，为最合理的动画类型
 			"background": "transparent", // 背景透明
 			"backgroundColor": "transparent", // 背景透明
 			"webviewBGTransparent":true,
 			"mask":"none",
 			// "opacity":1,
+			"popGesture": "none" // 关闭IOS屏幕左边滑动关闭当前页面的功能
+			
+			}
+			}
+		},
+		{
+			"path": "pages/app/popup-view",
+			"style": {
+			// "navigationBarTextStyle":"white",//设置状态栏颜色
+			"navigationStyle": "custom", // 取消本页面的导航栏
+			"background": "transparent", // 背景透明
+			"app-plus": {
+			// "animationType": "none", // 设置fade-in淡入动画，为最合理的动画类型
+			"background": "transparent", // 背景透明
+			"backgroundColor": "transparent", // 背景透明
+			"webviewBGTransparent":true,
+			"mask":"none",
 			"popGesture": "none" // 关闭IOS屏幕左边滑动关闭当前页面的功能
 			
 			}
@@ -50,12 +76,17 @@
 	        // "iconPath": "static/image/icon_API.png",
 	        // "selectedIconPath": "static/image/icon_API_HL.png",
 	        "text": "Mine"
+	    }, {
+	        "pagePath": "pages/app/index",
+	        // "iconPath": "static/image/icon_API.png",
+	        // "selectedIconPath": "static/image/icon_API_HL.png",
+	        "text": "App"
 	    }]
 	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#DD524D"
+		"backgroundColor": "#fff"
 	}
 }

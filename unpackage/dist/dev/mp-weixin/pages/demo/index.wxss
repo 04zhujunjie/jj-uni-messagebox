@@ -50,9 +50,3 @@
 	background-size: contain;
 }
 
-
-page {
-	background: transparent;
-	background-color: transparent;
-}
-

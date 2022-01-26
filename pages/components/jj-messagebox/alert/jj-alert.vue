@@ -19,7 +19,7 @@
 				
 			</div>
 			<div v-else class="jj-alert-btns flexContentCenter" v-for="(btn,index) in btns" :key="index">
-			  <jj-button  :btnObj="btn" :style="[btnStyle(btn)]" @btnClick.stop = "clickFn(btn)"></jj-button>
+			  <jj-button  :btnObj="btn" :style="[btnStyle(btn)]" @btnClick = "clickFn(btn)"></jj-button>
 			</div>
 		</div>
 	</div>
@@ -83,6 +83,7 @@
 				data['isShow'] = true
 				let orData = Object.assign({},this.$data)
 				delete orData['originalData']
+				this.$emit('show')
 				if (this.originalData === null){
 					this.originalData = orData
 					Object.assign(this.$data,data)
@@ -95,7 +96,6 @@
 				if (this.isCloseAlert) {
 					return
 				}
-				this.$emit('close')
 				this.isCloseAlert = true
 				let that = this
 				let time = that.duration*1000
@@ -103,8 +103,9 @@
 					time  = time-20
 				}
 				setTimeout(function() {
-					this.isCloseAlert = false
+					that.isCloseAlert = false
 					that.isShow = false
+					that.$emit('close')
 				}, time)
 
 			},

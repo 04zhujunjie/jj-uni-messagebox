@@ -132,7 +132,7 @@
 			},
 			mainClick(e) {
 				//阻止事件冒泡
-				e.stopPropagation()
+				// e.stopPropagation()
 			},
 		}
 	}

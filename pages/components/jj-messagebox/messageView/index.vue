@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<alert :ref="ref.kAlert"></alert>
-		<toast :ref="ref.kToast"></toast>
-		<loading :ref="ref.kLoading"></loading>
+		<alert :ref="ref.kAlert" @show = "show(ref.kAlert)" @close = "close(ref.kAlert)"></alert>
+		<toast :ref="ref.kToast" @show = "show(ref.kToast)" @close = "close(ref.kToast)"></toast>
+		<loading :ref="ref.kLoading" @show = "show(ref.kLoading)" @close = "close(ref.kLoading)"></loading>
 		<slot></slot>
 	</div>
 </template>
@@ -28,7 +28,7 @@
 					kToast,
 					kAlert,
 					kLoading,
-				}
+				},
 			}
 		},
 		mounted() {
@@ -40,7 +40,13 @@
 					let refValue = this.ref[key]
 					addRefObj(refValue,this.$refs[refValue])
 				}
-			}
+			},
+			show(type){
+				this.$emit('show',type)
+			},
+			close(type){
+				this.$emit('close',type)
+			},
 		},
 		beforeDestroy() {
 			removeRefObj()

@@ -1,6 +1,6 @@
 <template>
 	<base-view>
-		<map style="width: 100%;height: 80px;"></map>
+		<map style="width: 100%;height: 150px;"></map>
 		<div class="flexColumnCenter">
 			<div class="flexRow marginTopBottom">
 				<button class="btn" @click="showNormalAlert">
@@ -73,6 +73,12 @@
 		methods:{
 			showNormalAlert() {
 				this.$jj_alert('提示', '时间就像海绵里的水,\n只要愿挤总还是有的。', '知道了')
+				this.$jj_toast('测试。。。。')
+				this.$jj_loading()
+				let that = this
+				setTimeout(function(){
+					that.$jj_loading({isClose:true})
+				},2000)
 			},
 			showCustomAlert(type, isShowBtn = true) {
 				let that = this
@@ -304,12 +310,5 @@
 		width:100%;
 		background-repeat: no-repeat;
 		background-size: contain;
-	}
-</style>
-
-<style>
-	page {
-		background: transparent;
-		background-color: transparent;
 	}
 </style>

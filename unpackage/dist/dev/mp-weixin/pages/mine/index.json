@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "uni-app",
+  "navigationBarTitleText": "Mine",
   "usingComponents": {
     "demo": "/pages/demo/index"
   }

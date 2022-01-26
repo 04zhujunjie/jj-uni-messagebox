@@ -72,6 +72,7 @@
 			data['isShow'] = true
 			let orData = Object.assign({},this.$data)
 			delete orData['originalData']
+			this.$emit('show')
 			if (this.originalData === null){
 				this.originalData = orData
 				Object.assign(this.$data,data)
@@ -82,12 +83,13 @@
 					let that = this
 					this.jj_time = setTimeout(function() {
 						that.jj_time = null
-						that.isShow = false
+						that.close()
 					}, that.duration * 1000)
 				}
 			},
 			close() {
 				this.isShow = false
+				this.$emit('close')
 			},
 		},
 		beforeCreate() {

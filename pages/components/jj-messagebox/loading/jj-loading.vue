@@ -61,11 +61,13 @@
 		methods: {
 			close() {
 				this.isShow = false
+				this.$emit('close')
 			},
 			show(data={}){
 				data['isShow'] = true
 				let orData = Object.assign({},this.$data)
 				delete orData['originalData']
+				this.$emit('show')
 				if (this.originalData === null){
 					this.originalData = orData
 					Object.assign(this.$data,data)

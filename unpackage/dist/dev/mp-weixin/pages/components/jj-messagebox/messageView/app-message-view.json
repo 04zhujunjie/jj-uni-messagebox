@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "background": "transparent",
+  "usingComponents": {
+    "message-view": "/pages/components/jj-messagebox/messageView/index"
+  }
+}

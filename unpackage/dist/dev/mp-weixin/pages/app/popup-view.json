@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "background": "transparent",
+  "usingComponents": {
+    "jj-popup": "/pages/components/jj-messagebox/popup/jj-popup"
+  }
+}

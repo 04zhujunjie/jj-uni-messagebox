@@ -2,14 +2,17 @@
   "pages": [
     "pages/index/index",
     "pages/mine/index",
-    "pages/demo/index"
+    "pages/app/index",
+    "pages/demo/index",
+    "pages/components/jj-messagebox/messageView/app-message-view",
+    "pages/app/popup-view"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#DD524D"
+    "backgroundColor": "#fff"
   },
   "tabBar": {
     "color": "#7A7E83",
@@ -24,11 +27,14 @@
       {
         "pagePath": "pages/mine/index",
         "text": "Mine"
+      },
+      {
+        "pagePath": "pages/app/index",
+        "text": "App"
       }
     ]
   },
   "usingComponents": {
     "base-view": "/pages/components/baseView/index"
-  },
-  "sitemapLocation": "sitemap.json"
+  }
 }
