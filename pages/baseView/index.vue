@@ -6,7 +6,7 @@
 </template>
 
 <script>
-	import messageView from '../jj-messagebox/messageView/index.vue'
+	import messageView from '../components/jj-messagebox/messageView/index.vue'
 	
 	export default {
 		name:'base-view',

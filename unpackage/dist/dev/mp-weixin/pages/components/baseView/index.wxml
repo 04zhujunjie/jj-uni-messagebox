@@ -1,1 +1,0 @@
-<view class="_div"><message-view vue-id="7e656ac6-1" bind:__l="__l"></message-view><slot></slot></view>

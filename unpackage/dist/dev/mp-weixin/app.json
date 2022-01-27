@@ -35,6 +35,6 @@
     ]
   },
   "usingComponents": {
-    "base-view": "/pages/components/baseView/index"
+    "base-view": "/pages/baseView/index"
   }
 }
