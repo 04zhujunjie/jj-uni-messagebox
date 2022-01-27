@@ -1,14 +1,14 @@
 
 #### 优势
 ---
-1、平台兼容    
-2、app可以覆盖原生组件（导航栏，tabar, 地图，播放器等）   
+1、兼容H5,小程序，App    
+2、app可以覆盖原生组件（导航栏，tabBar, 地图，播放器等）   
 3、可以在任意的.js文件调用   
 
 #### 注意
 ---
-1、只适用uni-app项目，如果是其他H5网页的Vue项目可以使用[jj-messagebox](https://github.com/04zhujunjie/jj-messagebox)   
-2、小程序无法覆盖原生的导航栏和tabar,并且需要在显示弹窗的页面，手动引入jj-messagebox/messageView/index.vue 组件，否则无法显示弹窗    
+1、只适用uni-app项目，如果是其他H5网页的Vue项目可以使用 [jj-messagebox](https://github.com/04zhujunjie/jj-messagebox)   
+2、小程序无法覆盖原生的导航栏和tabBar,并且需要在显示弹窗的页面，手动引入jj-messagebox/messageView/index.vue 组件，否则无法显示弹窗    
 
 ### 安装
 ---
@@ -112,4 +112,4 @@ installPlugin(Vue, '/pages/components/jj-messagebox/messageView/app-message-view
 
 ### 参数说明
 ---
-alert，loading，toast，popup,dialog使用,可以参照[jj-messagebox](https://github.com/04zhujunjie/jj-messagebox)
+alert，loading，toast，popup,dialog使用,可以参照 [jj-messagebox](https://github.com/04zhujunjie/jj-messagebox)
