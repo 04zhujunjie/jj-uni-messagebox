@@ -36,7 +36,6 @@
 			"backgroundColor": "transparent", // 背景透明
 			"webviewBGTransparent":true,
 			"mask":"none",
-			// "opacity":1,
 			"popGesture": "none" // 关闭IOS屏幕左边滑动关闭当前页面的功能
 			
 			}

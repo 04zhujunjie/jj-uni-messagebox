@@ -84,6 +84,7 @@ let appShowFn = function(showFn){
 	appShowing = false
 	if(appShowFnList.length >0){
 		let fn = appShowFnList[0]
+		//删除数组中的第一个元素
 		appShowFnList.splice(0,1)
 		appShowFn(fn)
 	}

@@ -150,6 +150,11 @@ var toast = function toast() {Promise.all(/*! require.ensure | pages/components/
   },
   methods: {
     addRef: function addRef() {
+      var route = (0, _ref.currentPageRoute)();
+      var refObj = (0, _ref.refMessageObj)();
+      if (route.length > 0 && refObj[route] !== undefined) {
+        return;
+      }
       for (var key in this.ref) {
         var refValue = this.ref[key];
         (0, _ref.addRefObj)(refValue, this.$refs[refValue]);

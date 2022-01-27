@@ -6,7 +6,7 @@ let requsetUserInfo = function() {
 	loading()
 	setTimeout(function(){
 		loading({isClose:true})
-		//使用单列方法调用
+		//使用单例方法调用
 		Vue.prototype.$jj_toast('成功获取用户信息。。。。。。哈哈😄😄')
 	},3000)
 }

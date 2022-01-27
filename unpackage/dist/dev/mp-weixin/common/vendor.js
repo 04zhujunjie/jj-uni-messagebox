@@ -8414,6 +8414,7 @@ var appShowFn = function appShowFn(showFn) {
   appShowing = false;
   if (appShowFnList.length > 0) {
     var fn = appShowFnList[0];
+    //删除数组中的第一个元素
     appShowFnList.splice(0, 1);
     appShowFn(fn);
   }
@@ -8837,7 +8838,7 @@ var requsetUserInfo = function requsetUserInfo() {
   (0, _loading.default)();
   setTimeout(function () {
     (0, _loading.default)({ isClose: true });
-    //使用单列方法调用
+    //使用单例方法调用
     _vue.default.prototype.$jj_toast('成功获取用户信息。。。。。。哈哈😄😄');
   }, 3000);
 };var _default =
