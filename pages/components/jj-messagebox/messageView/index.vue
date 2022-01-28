@@ -10,7 +10,7 @@
 <script>
 	
 	import {kToast,kAlert,kLoading} from './constant.js'
-	import {refMessageObj,currentPageRoute,addRefObj,removeRefObj} from './ref.js'
+	import {refMessageObj,refRouteKey,addRefObj,removeRefObj} from './ref.js'
 	import toast from '../toast/jj-toast.vue'
 	import alert from '../alert/jj-alert.vue'
 	import loading from '../loading/jj-loading.vue'
@@ -36,9 +36,9 @@
 		},
 		methods:{
 			addRef(){
-				let route = currentPageRoute()
+				let refKey = refRouteKey()
 				let refObj = refMessageObj()
-				if(route.length > 0 && refObj[route] !== undefined){
+				if(refKey.length > 0 && refObj[refKey] !== undefined){
 					return
 				}
 				for (let key in this.ref) {

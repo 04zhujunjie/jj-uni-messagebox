@@ -7,49 +7,55 @@ import {
 	showMessageBox
 } from './ref.js'
 
+import processorObj from './processor.js'
+
 import alertH5 from '../alert/jj-alert.vue';
 let jjAlert = Vue.extend(alertH5); //创建vm实例的构造函数
 let jj_alert_instance = null
 
 let jj_alert = function(alertData, message, btnTitle) {
 
+   const data = getData(alertData, message, btnTitle)
+   let obj = processorObj(kAlert)
+   
 	// #ifdef H5
-	showAlertH5(alertData, message, btnTitle)
+	showAlertH5(data)
+	obj.messageObj = jj_alert_instance
 	// #endif
 
 	// #ifdef MP
 	showMessageBox(function() {
-		showAlertApp_MP(alertData, message, btnTitle)
+		obj.messageObj = showAlertApp_MP(data)
 	})
 	// #endif
 
 	// #ifdef APP-PLUS
 	showMessageBox(function() {
-		showAlertApp_MP(alertData, message, btnTitle)
+		//app 如果是页面的跳转，挂载元素需要时间，那么这里就异步赋值
+		obj.messageObj = showAlertApp_MP(data)
 	})
 	// #endif
-
+	return obj
 }
 
-let showAlertApp_MP = function(alertData, message, btnTitle) {
+let showAlertApp_MP = function(data) {
 	let alert = getRef(kAlert)
 	if (alert !== undefined) {
 		alert.isCloseAlert = false
 		alert.isShow = false
-		const data = getData(alertData, message, btnTitle)
 		let isClose = data['isClose'] || false
 		if (isClose) {
 			alert.close()
-			return
+			return null
 		}
 		alert.show(data)
+		return alert
 	}
+	return null
 }
 
-let showAlertH5 = function(alertData, message, btnTitle) {
-	const data = getData(alertData, message, btnTitle)
+let showAlertH5 = function(data) {
 	let isClose = data['isClose'] || false
-	
 	if (jj_alert_instance !== null) {
 		jj_alert_instance.close()
 		jj_alert_instance.$el.remove()

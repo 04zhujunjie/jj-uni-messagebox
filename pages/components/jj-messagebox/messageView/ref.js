@@ -23,6 +23,17 @@ let currentPageRoute = function () {
 	return curRoute
 }
 
+let refRouteKey = function(){
+	let routes = getCurrentPages(); // 获取当前打开过的页面路由数组
+	//H5 页面刷新后，返回上一页，会返回空数组
+	if(routes.length === 0){
+		return ''
+	}
+	let index = routes.length - 1
+	let rKey = routes[index].route +'/'+index
+	return rKey
+}
+
 let isShowAppMessageView = function (){
 	let curRoute = currentPageRoute()
 	let url = Vue.prototype.jj_app_message_url
@@ -91,9 +102,9 @@ let appShowFn = function(showFn){
 }
 
 let getRef = function(refId){
-	let route = currentPageRoute()
+	let refKey = refRouteKey()
 	let refObj = refMessageObj()
-	let currentObj = refObj[route]
+	let currentObj = refObj[refKey]
 	if(currentObj !== undefined){
 		let ref = currentObj[refId]
 		if(ref !== undefined){
@@ -104,34 +115,34 @@ let getRef = function(refId){
 }
 
 let addRefObj = function(refId,ref){
-	let route = currentPageRoute()
+	let refKey = refRouteKey()
 	let refObj = refMessageObj()
-	let currentObj = refObj[route]
+	let currentObj = refObj[refKey]
 	if(currentObj !== undefined){
 		currentObj[refId] = ref
 	}else{
 		let obj = {}
 		obj[refId] = ref
-	    refObj[route] = obj
+	    refObj[refKey] = obj
 	}
 }
 
 let removeRefObj = function(){
-	let route = currentPageRoute()
+	let refKey = refRouteKey()
 	let refObj = refMessageObj()
-	let currentObj = refObj[route] 
+	let currentObj = refObj[refKey] 
 	if(currentObj !== undefined){
-		delete refObj[route]
+		delete refObj[refKey]
 	}
 }
 
 let getRefList = function (){
 	let refList = []
-	let route = currentPageRoute()
+	let refKey = refRouteKey()
 
-	let currentObj = refMessageObj()[route]
+	let currentObj = refMessageObj()[refKey]
 	if(currentObj !== undefined){
-		let refObj = refMessageObj()[route]
+		let refObj = refMessageObj()[refKey]
 		for (let key in refObj) {
 			refList.push(refObj[key])
 		}
@@ -141,6 +152,7 @@ let getRefList = function (){
 
 export {
 	refMessageObj,
+	refRouteKey,
 	currentPageRoute,
 	isShowAppMessageView,
 	showMessageBox,

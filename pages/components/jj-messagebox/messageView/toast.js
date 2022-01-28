@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import {kToast} from './constant.js'
 import {getRef,showMessageBox} from './ref.js'
+import processorObj from './processor.js'
 
 import toastH5 from '../toast/jj-toast.vue';
 let jjToast = Vue.extend(toastH5); //创建vm实例的构造函数
@@ -39,45 +40,30 @@ let getData = function(toastData,type,duration){
 
 
 let jj_toast = function(toastData,type,duration) {
+	const data = getData(toastData,type,duration)
+	let obj = processorObj(kToast)
 	
 	// #ifdef H5
-	showToastH5(toastData,type,duration)
+	showToastH5(data)
+	obj.messageObj = jj_toast_instance
 	// #endif
 	
 	// #ifdef MP
 	showMessageBox(function() {
-		showToastApp_MP(toastData,type,duration)
+		obj.messageObj = showToastApp_MP(data)
 	})
 	// #endif
 	
 	// #ifdef APP-PLUS
 	showMessageBox(function() {
-		showToastApp_MP(toastData,type,duration)
+		//app 如果是页面的跳转，挂载元素需要时间，那么这里就异步赋值
+		obj.messageObj = showToastApp_MP(data)
 	})
 	// #endif
-	
-	// showMessageBox(function(){
-	// 	let toast = getRef(kToast)
-	// 	if (toast !== undefined){
-	// 		if (toast.jj_time !== null){
-	// 			clearTimeout(toast.jj_time)
-	// 			toast.jj_time  = null
-	// 		}
-	// 	   toast.isShow = false
-	// 	   let data = getData(toastData,type,duration)
-	// 	   let isClose = data['isClose'] || false
-	// 	   if (isClose){
-	// 		   toast.close()
-	// 		   return
-	// 	   }
-	// 	   toast.show(data)
-	// 	}
-	// })
-	
+	return obj
 }
 
-let showToastH5 = function (toastData,type,duration){
-	const data = getData(toastData,type,duration)
+let showToastH5 = function (data){
 	let isClose = data['isClose'] || false
 	if (jj_toast_instance !== null) {
 		if (jj_toast_instance.jj_time !== null){
@@ -101,7 +87,7 @@ let showToastH5 = function (toastData,type,duration){
 	jj_toast_instance = instance
 }
 
-let showToastApp_MP = function (toastData,type,duration){
+let showToastApp_MP = function (data){
 	let toast = getRef(kToast)
 	if (toast !== undefined){
 		if (toast.jj_time !== null){
@@ -109,14 +95,15 @@ let showToastApp_MP = function (toastData,type,duration){
 			toast.jj_time  = null
 		}
 	   toast.isShow = false
-	   let data = getData(toastData,type,duration)
 	   let isClose = data['isClose'] || false
 	   if (isClose){
 		   toast.close()
-		   return
+		   return null
 	   }
 	   toast.show(data)
+	   return toast
 	}
+	return null
 }
 
 export default jj_toast

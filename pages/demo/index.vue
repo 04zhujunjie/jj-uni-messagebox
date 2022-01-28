@@ -72,12 +72,13 @@
 		},
 		methods:{
 			showNormalAlert() {
-				this.$jj_alert('提示', '时间就像海绵里的水,\n只要愿挤总还是有的。', '知道了')
+				
+			    this.$jj_alert('提示', '时间就像海绵里的水,\n只要愿挤总还是有的。', '知道了')
 				this.$jj_toast('测试。。。。')
-				this.$jj_loading()
-				let that = this
+				let loading = this.$jj_loading()
+				
 				setTimeout(function(){
-					that.$jj_loading({isClose:true})
+					loading.close()
 				},2000)
 			},
 			showCustomAlert(type, isShowBtn = true) {
@@ -99,7 +100,7 @@
 							that.simulateNetworkRequest(this)
 						}
 					}
-				this.$jj_alert({
+			let alert =	this.$jj_alert({
 					type: type, //弹窗的类型有alert和sheet
 					width: '70%', //设置弹窗的宽度
 					padding: '20px 30px', //设置内容的上下左右偏移
@@ -152,13 +153,13 @@
 							这时候可以选择手动关闭弹窗
 							注意：click这个方法，不要使用箭头函数=>方法，使用function方法，这时候this表示的当前按钮对象
 							*/
-							that.simulateNetworkRequest(this)
+							that.simulateNetworkRequest(this,alert)
 						}
 					}]
 				})
 			},
 			
-			simulateNetworkRequest(btn) {
+			simulateNetworkRequest(btn,alert) {
 				//进行网络模拟，请求网络时候，禁止按钮再次点击，等结果回来后，在考虑是否启用按钮点击事件和是否关闭弹框
 				this.count = this.count || 0
 				this.$jj_toast('按钮被禁用,网络请求中...')
@@ -175,7 +176,10 @@
 					setTimeout(function() {
 						that.$jj_toast('网络请求成功')
 						//关闭弹窗
-						that.$jj_alert({isClose:true})
+						alert.close()
+						// uni.navigateTo({
+						//     url: '/pages/demo/index'
+						// })
 					}, 2000)
 				}
 				this.count += 1
@@ -194,10 +198,9 @@
 			showLoading(type) {
 			
 				if (type === 'default') {
-					this.$jj_loading('加载中...')
-					let that = this
+					let loading = this.$jj_loading('加载中...')
 					setTimeout(function() {
-						that.$jj_loading({isClose:true})
+						loading.close()
 					}, 2000)
 				} else {
 					const loadingData = {
@@ -223,13 +226,11 @@
 					} else if (type === 'taichi') {
 						loadingData['message'] = 'taichi...'
 					}
-					this.$jj_loading(loadingData)
+				   let loading = this.$jj_loading(loadingData)
 					setTimeout(() => {
-						this.$jj_loading({isClose:true})
-					}, 2000)
+						loading.close()
+					}, 5000)
 				}
-			
-			
 			},
 			showToast(type) {
 				let message = '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈。。。'
@@ -249,11 +250,11 @@
 					toastData['padding'] = '20px'
 					toastData["imageSize"] = {width:'60px',height:'60px'}
 					toastData["imageUrl"] = require('../../static/logo.png')
-					this.$jj_toast(toastData)
-					let that = this
+				   let toast = this.$jj_toast(toastData)
 					setTimeout(function(){
-						that.$jj_toast({isClose:true})
+						toast.close()
 					},5000)
+					
 				} else if(type.length > 0) {
 					
 					//第一个参数为提示信息文本，第二个参数为提示类型，第三个参数为显示的时长
