@@ -29,7 +29,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_message_view_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-message-view.vue?vue&type=script&lang=js& */ 86);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _app_message_view_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _app_message_view_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 /* harmony import */ var _app_message_view_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app-message-view.vue?vue&type=style&index=0&lang=css& */ 88);
-/* harmony import */ var _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 10);
+/* harmony import */ var _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 20);
 
 var renderjs
 
@@ -136,7 +136,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _ref = __webpack_require__(/*! ./ref.js */ 14);var messageView = function messageView() {Promise.all(/*! require.ensure | pages/components/jj-messagebox/messageView/index */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/components/jj-messagebox/messageView/index")]).then((function () {return resolve(__webpack_require__(/*! ./index.vue */ 133));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+var _ref = __webpack_require__(/*! ./ref.js */ 10);var messageView = function messageView() {Promise.all(/*! require.ensure | pages/components/jj-messagebox/messageView/index */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/components/jj-messagebox/messageView/index")]).then((function () {return resolve(__webpack_require__(/*! ./index.vue */ 138));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   name: 'app-message-view',
   components: {

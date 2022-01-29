@@ -1,5 +1,7 @@
 <template>
-	<message-view @show = "show" @close = "close"></message-view>
+	<div @click.stop = "close">
+		<message-view @show = "show" @close = "close"></message-view>
+	</div>
 </template>
 
 <script>

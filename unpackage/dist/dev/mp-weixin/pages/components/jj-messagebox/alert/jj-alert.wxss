@@ -235,6 +235,16 @@
 	        box-sizing: border-box;
 	border-top: 1px solid #E8E6EF;
 }
+.jj-sheet-btn.data-v-432dbc10{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1 0 auto;
+	        flex: 1 0 auto;
+	height: 2.75rem;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	font-size: 1.0625rem;
+}
 .jj-alert-btn.data-v-432dbc10 {
 	-webkit-box-flex: 1;
 	-webkit-flex: 1 0 auto;

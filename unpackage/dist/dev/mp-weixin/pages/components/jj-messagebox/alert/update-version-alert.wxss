@@ -1,0 +1,98 @@
+
+.update-box.data-v-52dc9024{
+	padding: 20px 20px;
+}
+.flex-column.data-v-52dc9024{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	position: relative;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+}
+.flex-left.data-v-52dc9024{
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	        justify-content: flex-start;
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	        align-items: flex-start;
+}
+.flexContentCenter.data-v-52dc9024 {
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.flexContentSpaceAround.data-v-52dc9024 {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-justify-content: space-around;
+	        justify-content: space-around;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.marginTop.data-v-52dc9024 {
+	margin-top: 15px;
+}
+.title.data-v-52dc9024{
+	font-size: 22px;
+	text-align: center;
+	color: #007AFF;
+}
+.content.data-v-52dc9024{
+	font-size: 15px;
+}
+.btn-box.data-v-52dc9024 {
+	height: 2.5rem;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	z-index: 888;
+	font-size: 1.0625rem;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	text-align: center;
+	margin-right: 10px;
+}
+.btn.data-v-52dc9024{
+	width: 80px;
+	height: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	padding: 0px 10px;
+	border: 1px solid #C0C0C0;
+	border-radius: 10px;
+}
+.background-image.data-v-52dc9024{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+.image.data-v-52dc9024 {
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+

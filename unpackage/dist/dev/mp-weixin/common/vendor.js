@@ -1,6 +1,6 @@
-(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],{
-
-/***/ 1:
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],[
+/* 0 */,
+/* 1 */
 /*!************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js ***!
   \************************************************************/
@@ -1929,812 +1929,7 @@ var uni$1 = uni;var _default =
 uni$1;exports.default = _default;
 
 /***/ }),
-
-/***/ 10:
-/*!**********************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js ***!
-  \**********************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-function normalizeComponent (
-  scriptExports,
-  render,
-  staticRenderFns,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier, /* server only */
-  shadowMode, /* vue-cli only */
-  components, // fixed by xxxxxx auto components
-  renderjs // fixed by xxxxxx renderjs
-) {
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // fixed by xxxxxx auto components
-  if (components) {
-    if (!options.components) {
-      options.components = {}
-    }
-    var hasOwn = Object.prototype.hasOwnProperty
-    for (var name in components) {
-      if (hasOwn.call(components, name) && !hasOwn.call(options.components, name)) {
-        options.components[name] = components[name]
-      }
-    }
-  }
-  // fixed by xxxxxx renderjs
-  if (renderjs) {
-    (renderjs.beforeCreate || (renderjs.beforeCreate = [])).unshift(function() {
-      this[renderjs.__module] = this
-    });
-    (options.mixins || (options.mixins = [])).push(renderjs)
-  }
-
-  // render functions
-  if (render) {
-    options.render = render
-    options.staticRenderFns = staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = 'data-v-' + scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = shadowMode
-      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
-      : injectStyles
-  }
-
-  if (hook) {
-    if (options.functional) {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      var originalRender = options.render
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return originalRender(h, context)
-      }
-    } else {
-      // inject component registration as beforeCreate hook
-      var existing = options.beforeCreate
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    }
-  }
-
-  return {
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-
-/***/ 107:
-/*!***********************************************************************************************************************!*\
-  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/static/jj_loading_round_icon.png ***!
-  \***********************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAA/NJREFUeF7tm0uolVUUx3//WYNmQqSRg4xwYAOFbGIDyxqYD5w6ieyhKUWoZBg2sIcvdKCoJZYQRdCggSniMygnJuigiYoGvdCKZg2crViyjyz3+c7r3nO959vfXbD5Lud893z7/zv7sdba64iGmxqunykAUyNgkgmYmQF/hvYP4O2kpB8nunuTPgUSgE46fwe+Bk5JOjsRMEYdQNR8DfgSOCDp32HBqBOAluYbDiGBuD1eEKMA4GFgOuDXVnsO8NbNfk4QPhkPhEkH0KnzZuZQlgJL0rXTrYckrR4rhJEFEAWZ2Vzg5dQerBB7RtLzY4FQCwAtYWb2eIKwKk2XqPkXSbMGhVArAAHEbOAL4KlcsKSBNA1086B0J/p+MzsHLMyec1HS/H6fXWsALtLMPk/TImp2X2FdPxBqDyBB2AG8kwneIendXhCKAJAgHAZeyQS/Iamrn1AMgAThGPBigODO0nxJHT3G0gD4NukRpHuULdsgaU+nqVAUgDQKPgI2B8EeOzzdKYAqEYCPgstA9Bjfl/RB1SgoDkAaBXuBN+MokORg2qxUAB47XMrULpd0tM1z7LVP1vV9MzsJvBD6f1jSa00CsBHYFQTflDSjSQBmAr9mghflucUi14CWaDNzn2BBgPCxpPcilNIBeCywLQg+IslzCXetdAArga+C3hOSFjcJwLNAPE+4LGlekwDMATwgatktSZ5sbcwUeAj46x7BWcqsbQ2oOKqaLulWXR2iXv2uAvAH8Ej4x3mSPLgo0qoAXPAkQlC7WNKJItVDe4GEmX0LrAiCV0k60iQAnwKvB8GbJUVnoigWVVPgQyC6i2clLSpKdbdt0MyeAX7IBM+QdLNECJWusJn9BjwaBK+WdKhJAPKDhu8kLWsSAC9OOJMJLtIf6BgNmtlV4IkAYZ+kt0obBd0AbAG2BsH/AXMlXS8JQjcA0wD3CmPRQVtGpe4wuiZEzGw9sDuI9KBooaQrdRfe6n8vAA8APwFPBsEDFSCMOqieKTEzWwMczIR8L8mzLbW3ngBcoZnl8YG/3JZgrCONvgAkCKeBPCbYKWlTHYX3tQbkwszMj5ofy17/TNKrdYXQ9whoCexQ3X0ceLuOPsLAANJ08J0hr9HzLdIrtnxtqI2zNCYACcJ+YG3F0HeP0TNIDmLkc4ljBpAgbAe6LYKnAF88v5HkIfbI2bgAJAjuJ/hIiM5SldDzgK8VDsKny9/eJPl10mzcABIE9xgdgreBCpYHre0dNqmhAAg7hAdQDuGlfkEUBSB+O2bmGST/wYMXLt5zHhfvKxZABsMzTB47xJ/G3Pm7EQCGPW+H+XlDXQOG2bH79VlTAO4X6VF9zv/xIy5QSa7r/AAAAABJRU5ErkJggg=="
-
-/***/ }),
-
-/***/ 108:
-/*!************************************************************************************************************************!*\
-  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/static/jj_loading_taichi_icon.png ***!
-  \************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAABL1JREFUeF7tm41RFTEQgHcrECtQKlArECpQKxArECtQKlAqECtAKxAqECoQK1ArWOd7s8fkxfzcXe4evIPMMLyZ95LLfrvZbDZ7Kne86R2XX+4BtFqAme2IyBMR4f+lql4NHdPMnorIg7Cfqp4PHWfM75sswMwOROSjC989/5Oqvhs6GQcJiD0ReelQgXkhImcicq6qfJ60jQLgk0VwAKTaG1U9aZmpmT12EIci8sjHAgjjfhljaan5DAbgwn8XEbSVa2gLTU7SzIyxPojI82BAQBy1ghgEoKfwzBFfUAI0CowvOUB0FsE4gHinqn/GDNobgAv/Q0QwzVr7pqqs48mbz+OTiLwOBkf4D6p6PPSBvQAM0Hz3/GdzOKxQOLeGz5HAX0UE/9PbGvoCYM33WdO/RORQVZnI7M23T3aIcAvFUb7qq4AqADNjzb2vSIPgmGCT5x9DLAMBC9jvA6EIwL0v2i811h3C9za7MYKW+rRAyALo4fT+sk+rKiZ44y2jrKollACUTP/ShR8c9s5JyswImgjQwgaE3ZyFJgG49n9GIW43KMLv3aTJV5YDFhkGTPz8QlWfpfrlALDPvk10uNXCM18PoVFe3Igaseq19h+Agvbx9E9vq+ZDqQo7FzvDms9KAUitI8afPbiZyj+4EvFPa0fs1FJIASDcjeN4Ym2Wxda0ghWsnVTXAPh+CoCwTXqy2xTBgi+4UtXdbh4xgJT5/7duNiVE63PMLLUjMOy1FcQA4g4kHnJJj9b5zd4/Exfw3DNV3edDDMCiWW2N40vRLCwDfk5wdHUNILH+Z0lqzK726AFmRiQY7wb86lhVD0MAHHfDg09zXm/TwmasIOcHVtFhCCCO/VcmchuEaJmDmeWiWoZ9mAOwCPNHwko+41UOwGp9tJC/LX0rAI5yAEgpbSStNTeoCoDzHICtDX5ioBUAF0kAqlrNFc6tuanGr+U07wF0pM2Mi4zTVXi4LAuI45vQuC6TkeCSAPhWmAuG9pNngQUCoHaBQI+DHWExqT0ucM6Sp8GlASg51BjAKhy+ywBIhZERWkwcUNtOUzlBDkA3cs9Xm+wc36cAsAx2lnIWqEFLAaAA4jR3k1IbcNu+z90Mcc3NMtj6fEBNITkAqwqtbbsLqAmb+r50O3xwEwUPY4Ro6VOrD8AZLnoZLObYm7MC7glLF7qLBsAJt5bZWiwAL6PjHrBYwrNIAC48tQzVxO7iAATltL2KORYFwMwo6znyGqZepfXNAPxO8YVXX3xr2ZPH9vWKEMpmSesNutIbDSBTP0zMwAQ2Vjvo9YEIT/Q6SPhV/rOBOueFsGI7HGqSWv7S3Pzqm5rArip9sPCjAbj2f/eANzkIX3Ks9bBwY5TwLQAwt1QtXo4J12z8UW80OLR2beNnEDos4KJcl6LNXg5v0GGopt1C4UGtK5PlDxA5X0EWF0EBTV4/9ZIGDpcDW1ORdosPQBvxCws14af4ftJ3EkYD8AsHIi1SaKkSlCmEDcfA3Cl24LW8Jq2HgzYB6Aby6AsYvEA5dUPjCH4ypeDdJCcBEIDo3vVja4ortoeA4eZm5ThbHFyfB04KIH6gByk4M5xa6Z0jnCJmTf3exoKo0dtgH7Lb8pt/aqP/srUKsSAAAAAASUVORK5CYII="
-
-/***/ }),
-
-/***/ 109:
-/*!*****************************************************************************************************************!*\
-  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/static/jj_loading_icon.png ***!
-  \*****************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAw9JREFUeF7tm7uKFUEQhv8/EENBREEQDAQDL5FgYGJk4gUDXfAFTBbFxFh9AkF0wVdwEQNFMFLB1ETZTc1UWBF8gl9KZqAd5xz7Umdm9pzubNkzdfmqunpmqoZY8cUV9x8VQM2AkQhIug/gGoAdAO9J2t+Dr9G2gKS3AM43Hm+RPDm498B4NUCSQodJjhKMUZSa4xVAzYC6BXZvDWiOsIckf+VWbs8aIGk/gNs5R2lyEQwM/wrgDsnNHAheACRdB7AB4IDZkXqaJAFoIn+v4/BaDgQPAI3zzzr2PEjJhFQA+wBsAzhcCqEUwAznfwA4TvJnbFYmAWjOb0u5LnX7V1ImlACY4XyyDX+2TCyp8HceBuTeCnvo/usONAeARybkPAx5O5+dAS20RRg0KyCL0pW1BSK3w2WSr3IzrKPjHIAPPbKS6k6fLcUA5myH1yQvOgF4AeBq6cmzMAAzICSdx/NA9dx/FEe+1eeSAUFNOAvgFoBvJO96RD+Q/QjAXgCPSX72ku0KwMuoIeVUAEPSnqKumgFTjMqQNtUMGJL2FHX9kwHBQ8qJSIPfjdHZ8bKzD0DYsYlkgME7O53H6Ww7K4AuOq/Uig1J7u+87KynQG4EluW6mgHLEslcP2oG5JJblutqBnhHUpL1Dq1H6Tr0JMnmiW5M+pWYJGuZWevM1kuSVzwAS7pk8gJZ03spKukNgAuBkTskDzoBeArgZkeWCwSXGiDpO4BDHQM3SK47ATgF4FOPrGIIRQAkWbvcBh33dIzbJLnm4XwrY3KtMUlHANj7eYMQrijnd3VzVJJNddqe7w5KRDlvtHZte1zSaQDPARzLiXyQ0tlTYp7bIbkGdI661p/oyHsAaDJo1qTKGZIfY+tPDoAvAI4GCpKdbxzIzoD/FMZ1kjY1FrVyAIRncpbzXgCCTGjH5LaaWSUb5IpayQACpdYB7htaiFJcMiTVVdAOSgJ4QtKO5eiVBSBa+pwfegIosacCKKFXcm3NgPq9QP1eYOU/mlrtz+ZKCqjntaMdg55OlMiqAEroLcO1vwEXP5hQQ2kdjgAAAABJRU5ErkJggg=="
-
-/***/ }),
-
-/***/ 12:
-/*!***********************************************************************************************************!*\
-  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/messageView/toast.js ***!
-  \***********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _constant = __webpack_require__(/*! ./constant.js */ 13);
-var _ref = __webpack_require__(/*! ./ref.js */ 14);
-var _processor = _interopRequireDefault(__webpack_require__(/*! ./processor.js */ 152));
-
-var _jjToast = _interopRequireDefault(__webpack_require__(/*! ../toast/jj-toast.vue */ 85));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
-var jjToast = _vue.default.extend(_jjToast.default); //创建vm实例的构造函数
-var jj_toast_instance = null;
-
-var getData = function getData(toastData, type, duration) {
-  var data = {};
-  var isToastDataNull = toastData === undefined || toastData === null;
-  var isTypeNull = type === undefined || type === null;
-  var isDurationNull = duration === undefined || duration === null;
-  if (isToastDataNull && isTypeNull && isDurationNull) {
-    return {};
-  } else {
-    if (!isToastDataNull) {
-      if (toastData.constructor === Object) {
-        data = _objectSpread({},
-        toastData);
-
-        return data;
-      } else {
-        data['message'] = toastData + '';
-      }
-    }
-
-    if (!isTypeNull) {
-      data['type'] = type + '';
-    }
-    if (!isDurationNull) {
-      if (duration.constructor === Number) {
-        data["duration"] = duration;
-      }
-    }
-  }
-  return data;
-};
-
-
-var jj_toast = function jj_toast(toastData, type, duration) {
-  var data = getData(toastData, type, duration);
-  var obj = (0, _processor.default)(_constant.kToast);
-  obj.processDataFun = getData;
-
-
-
-
-
-
-  (0, _ref.showMessageBox)(function () {
-    obj.messageObj = showToastApp_MP(data);
-  });
-
-
-
-
-
-
-
-
-  return obj;
-};
-
-var showToastH5 = function showToastH5(data) {
-  var isClose = data['isClose'] || false;
-  if (jj_toast_instance !== null) {
-    if (jj_toast_instance.jj_time !== null) {
-      clearTimeout(jj_toast_instance.jj_time);
-      jj_toast_instance.jj_time = null;
-    }
-    jj_toast_instance.close();
-    jj_toast_instance.$el.remove();
-    jj_toast_instance = null;
-  }
-
-  if (isClose) {
-    return;
-  }
-  var instance = new jjToast({
-    data: data });
-
-  instance.$mount();
-  document.body.appendChild(instance.$el);
-  instance.show(data);
-  jj_toast_instance = instance;
-};
-
-var showToastApp_MP = function showToastApp_MP(data) {
-  var toast = (0, _ref.getRef)(_constant.kToast);
-  if (toast !== undefined) {
-    if (toast.jj_time !== null) {
-      clearTimeout(toast.jj_time);
-      toast.jj_time = null;
-    }
-    toast.isShow = false;
-    var isClose = data['isClose'] || false;
-    if (isClose) {
-      toast.close();
-      return null;
-    }
-    toast.show(data);
-    return toast;
-  }
-  return null;
-};var _default =
-
-jj_toast;exports.default = _default;
-
-/***/ }),
-
-/***/ 13:
-/*!**************************************************************************************************************!*\
-  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/messageView/constant.js ***!
-  \**************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.kLoading = exports.kAlert = exports.kToast = void 0;
-var kToast = "jj_toast";exports.kToast = kToast;
-var kAlert = 'jj_alert';exports.kAlert = kAlert;
-var kLoading = 'jj_loading';exports.kLoading = kLoading;
-
-/***/ }),
-
-/***/ 131:
-/*!***********************************************************************************************************!*\
-  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/messageView/index.js ***!
-  \***********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
-
-var _toast = _interopRequireDefault(__webpack_require__(/*! ./toast.js */ 12));
-var _alert = _interopRequireDefault(__webpack_require__(/*! ./alert.js */ 15));
-var _loading = _interopRequireDefault(__webpack_require__(/*! ./loading.js */ 16));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // import Vue from 'vue'
-
-var installPlugin = function installPlugin(Vue, appUrl) {
-  Vue.prototype.$jj_loading = _loading.default;
-  Vue.prototype.$jj_alert = _alert.default;
-  Vue.prototype.$jj_toast = _toast.default;
-  Vue.prototype.jj_app_message_url = appUrl || '';
-};var _default =
-
-installPlugin;exports.default = _default;
-
-/***/ }),
-
-/***/ 14:
-/*!*********************************************************************************************************!*\
-  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/messageView/ref.js ***!
-  \*********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getRefList = exports.removeRefObj = exports.addRefObj = exports.getRef = exports.showMessageBox = exports.isShowAppMessageView = exports.currentPageRoute = exports.refRouteKey = exports.refMessageObj = void 0;
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-var appShowing = false;
-var appShowFnList = [];
-
-var refMessageObj = function refMessageObj() {
-  var obj = _vue.default.prototype.$jj_refMessageObj;
-  if (obj !== undefined) {
-    return obj;
-  }
-  _vue.default.prototype.$jj_refMessageObj = {};
-  return _vue.default.prototype.$jj_refMessageObj;
-};exports.refMessageObj = refMessageObj;
-
-var currentPageRoute = function currentPageRoute() {
-  var routes = getCurrentPages(); // 获取当前打开过的页面路由数组
-  //H5 页面刷新后，返回上一页，会返回空数组
-  if (routes.length === 0) {
-    return '';
-  }
-  var curRoute = routes[routes.length - 1].route;
-  return curRoute;
-};exports.currentPageRoute = currentPageRoute;
-
-var refRouteKey = function refRouteKey() {
-  var routes = getCurrentPages(); // 获取当前打开过的页面路由数组
-  //H5 页面刷新后，返回上一页，会返回空数组
-  if (routes.length === 0) {
-    return '';
-  }
-  var index = routes.length - 1;
-  var rKey = routes[index].route + '/' + index;
-  return rKey;
-};exports.refRouteKey = refRouteKey;
-
-var isShowAppMessageView = function isShowAppMessageView() {
-  var curRoute = currentPageRoute();
-  var url = _vue.default.prototype.jj_app_message_url;
-  if (url.indexOf(curRoute) === -1) {
-    return false;
-  } else {
-    return true;
-  }
-};exports.isShowAppMessageView = isShowAppMessageView;
-
-var showMessageBox = function showMessageBox(showFn) {
-
-
-
-
-
-
-
-
-
-  showFn();
-
-};exports.showMessageBox = showMessageBox;
-
-var appShowMessageBox = function appShowMessageBox(showFn) {
-  var url = _vue.default.prototype.jj_app_message_url || '';
-
-  if (url.length > 0) {
-    if (appShowing) {
-      //说明进入页面跳转，但是页面并没有挂载完成，需要放入队列中缓存起来
-      appShowFnList.push(showFn);
-      return;
-    }
-    // console.log(appShowFnList)
-    var isShowAppView = isShowAppMessageView();
-    if (!isShowAppView) {
-      //标记页面跳转
-      appShowing = true;
-      uni.navigateTo({
-        url: _vue.default.prototype.jj_app_message_url,
-        animationType: 'none',
-        animationDuration: 0,
-        success: function success() {
-          //页面已经加载完成，显示弹框
-          appShowFn(showFn);
-        },
-        fail: function fail() {
-          appShowing = false;
-        } });
-
-      return;
-    }
-  }
-  appShowFn(showFn);
-};
-//循环调用，显示队列里面的方法
-var appShowFn = function appShowFn(showFn) {
-  showFn();
-  appShowing = false;
-  if (appShowFnList.length > 0) {
-    var fn = appShowFnList[0];
-    //删除数组中的第一个元素
-    appShowFnList.splice(0, 1);
-    appShowFn(fn);
-  }
-};
-
-var getRef = function getRef(refId) {
-  var refKey = refRouteKey();
-  var refObj = refMessageObj();
-  var currentObj = refObj[refKey];
-  if (currentObj !== undefined) {
-    var ref = currentObj[refId];
-    if (ref !== undefined) {
-      return ref;
-    }
-  }
-  return currentObj;
-};exports.getRef = getRef;
-
-var addRefObj = function addRefObj(refId, ref) {
-  var refKey = refRouteKey();
-  var refObj = refMessageObj();
-  var currentObj = refObj[refKey];
-  if (currentObj !== undefined) {
-    currentObj[refId] = ref;
-  } else {
-    var obj = {};
-    obj[refId] = ref;
-    refObj[refKey] = obj;
-  }
-};exports.addRefObj = addRefObj;
-
-var removeRefObj = function removeRefObj() {
-  var refKey = refRouteKey();
-  var refObj = refMessageObj();
-  var currentObj = refObj[refKey];
-  if (currentObj !== undefined) {
-    delete refObj[refKey];
-  }
-};exports.removeRefObj = removeRefObj;
-
-var getRefList = function getRefList() {
-  var refList = [];
-  var refKey = refRouteKey();
-
-  var currentObj = refMessageObj()[refKey];
-  if (currentObj !== undefined) {
-    var refObj = refMessageObj()[refKey];
-    for (var key in refObj) {
-      refList.push(refObj[key]);
-    }
-  }
-  return refList;
-};exports.getRefList = getRefList;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 15:
-/*!***********************************************************************************************************!*\
-  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/messageView/alert.js ***!
-  \***********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _constant = __webpack_require__(/*! ./constant.js */ 13);
-
-
-var _ref = __webpack_require__(/*! ./ref.js */ 14);
-
-
-
-
-var _processor = _interopRequireDefault(__webpack_require__(/*! ./processor.js */ 152));
-
-var _jjAlert = _interopRequireDefault(__webpack_require__(/*! ../alert/jj-alert.vue */ 95));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
-var jjAlert = _vue.default.extend(_jjAlert.default); //创建vm实例的构造函数
-var jj_alert_instance = null;
-
-var jj_alert = function jj_alert(alertData, message, btnTitle) {
-
-  var data = getData(alertData, message, btnTitle);
-  var obj = (0, _processor.default)(_constant.kAlert);
-  obj.processDataFun = getData;
-
-
-
-
-
-
-  (0, _ref.showMessageBox)(function () {
-    obj.messageObj = showAlertApp_MP(data);
-  });
-
-
-
-
-
-
-
-
-  return obj;
-};
-
-var showAlertApp_MP = function showAlertApp_MP(data) {
-  var alert = (0, _ref.getRef)(_constant.kAlert);
-  if (alert !== undefined) {
-    alert.isCloseAlert = false;
-    alert.isShow = false;
-    var isClose = data['isClose'] || false;
-    if (isClose) {
-      alert.close();
-      return null;
-    }
-    alert.show(data);
-    return alert;
-  }
-  return null;
-};
-
-var showAlertH5 = function showAlertH5(data) {
-  var isClose = data['isClose'] || false;
-  if (jj_alert_instance !== null) {
-    jj_alert_instance.close();
-    jj_alert_instance.$el.remove();
-    jj_alert_instance = null;
-
-  }
-  if (isClose) {
-    return;
-  }
-  var instance = new jjAlert({
-    data: data });
-
-  instance.$mount();
-  document.body.appendChild(instance.$el);
-  instance.show(data);
-  jj_alert_instance = instance;
-};
-
-var getData = function getData(alertData, message, btnTitle) {
-  var data = {};
-  var isAlertDataNull = alertData === undefined || alertData === null;
-  var isMessageNull = message === undefined || message === null;
-  var isBtnTitileNull = btnTitle === undefined || btnTitle === null;
-  if (isAlertDataNull && isMessageNull && isBtnTitileNull) {
-    return {};
-  } else {
-    if (!isAlertDataNull) {
-      if (alertData.constructor === Object) {
-        data = _objectSpread({},
-        alertData);
-
-        return data;
-      } else {
-        data['title'] = alertData + '';
-      }
-    }
-
-    if (!isMessageNull) {
-      data['message'] = message + '';
-    }
-    if (!isBtnTitileNull) {
-      data['btns'] = [{
-        'title': btnTitle }];
-
-    }
-
-  }
-  return data;
-};var _default =
-
-jj_alert;exports.default = _default;
-
-/***/ }),
-
-/***/ 152:
-/*!***************************************************************************************************************!*\
-  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/messageView/processor.js ***!
-  \***************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _constant = __webpack_require__(/*! ./constant.js */ 13);
-
-
-
-
-
-var processorObj = function processorObj(type) {
-  var appDuration = 300;
-  var obj = new Object();
-  obj.type = type;
-  obj.isClose = false;
-  obj.messageObj = null;
-  obj.processDataFun = null;
-  obj.close = function () {
-    if (obj.isClose) {
-      return;
-    }
-    if (obj.messageObj !== null) {
-      removeData();
-    } else {
-
-
-
-
-
-    }
-  };
-  var closeApp = function closeApp() {
-    setTimeout(function () {
-      if (obj.messageObj !== null) {
-        removeData();
-      }
-    }, appDuration);
-  };
-
-  var removeData = function removeData() {
-    obj.isClose = true;
-    obj.messageObj.close();
-    obj.messageObj = null;
-  };
-
-  obj.update = function (param1, param2, param3) {
-    if (obj.isClose) {
-      return;
-    }
-    if (obj.processDataFun !== null) {
-      if (obj.messageObj !== null) {
-        updateData(param1, param2, param3);
-      } else {
-
-
-
-
-
-      }
-
-    }
-  };
-
-  var updateApp = function updateApp(param1, param2, param3) {
-    setTimeout(function () {
-      if (obj.messageObj !== null) {
-        updateData(param1, param2, param3);
-      }
-    }, appDuration);
-  };
-
-  var updateData = function updateData(param1, param2, param3) {
-
-    var data = {};
-    if (obj.type === _constant.kAlert) {
-      data = obj.processDataFun(param1, param2, param3);
-    } else if (obj.type === _constant.kLoading) {
-      data = obj.processDataFun(param1);
-    } else if (obj.type === _constant.kToast) {
-      data = obj.processDataFun(param1, param2, param3);
-    } else {
-      return;
-    }
-    obj.messageObj.update(data);
-  };
-
-  return obj;
-};var _default =
-
-processorObj;exports.default = _default;
-
-/***/ }),
-
-/***/ 16:
-/*!*************************************************************************************************************!*\
-  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/messageView/loading.js ***!
-  \*************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _constant = __webpack_require__(/*! ./constant.js */ 13);
-var _ref = __webpack_require__(/*! ./ref.js */ 14);
-var _processor = _interopRequireDefault(__webpack_require__(/*! ./processor.js */ 152));
-
-var _jjLoading = _interopRequireDefault(__webpack_require__(/*! ../loading/jj-loading.vue */ 102));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
-var jjLoading = _vue.default.extend(_jjLoading.default); //创建vm实例的构造函数
-var jj_loading_instance = null;
-
-var getLoadingData = function getLoadingData(loadingData) {
-  var data = {};
-  if (loadingData === undefined || loadingData === null) {
-
-  } else {
-    if (loadingData.constructor === Object) {
-      data = _objectSpread({},
-      loadingData);
-
-    } else {
-      data = {
-        "message": loadingData + '' };
-
-    }
-  }
-  return data;
-};
-
-var jj_loading = function jj_loading(loadingData) {
-  var data = getLoadingData(loadingData);
-  var obj = (0, _processor.default)(_constant.kLoading);
-  obj.processDataFun = getLoadingData;
-
-
-
-
-
-
-  (0, _ref.showMessageBox)(function () {
-    obj.messageObj = showLoadingApp_MP(data);
-  });
-
-
-
-
-
-
-
-
-  return obj;
-};
-
-var showLoadingH5 = function showLoadingH5(data) {
-  var isClose = data['isClose'] || false;
-  if (jj_loading_instance !== null) {
-    jj_loading_instance.close();
-    jj_loading_instance.$el.remove();
-    jj_loading_instance = null;
-
-  }
-  if (isClose) {
-    return;
-  }
-  var instance = new jjLoading({
-    data: data });
-
-  instance.$mount();
-  document.body.appendChild(instance.$el);
-  instance.show(data);
-  jj_loading_instance = instance;
-};
-
-var showLoadingApp_MP = function showLoadingApp_MP(data) {
-  var loading = (0, _ref.getRef)(_constant.kLoading);
-  if (loading !== undefined) {
-    loading.isShow = false;
-    var isClose = data['isClose'] || false;
-    if (isClose) {
-      loading.close();
-      return null;
-    }
-    loading.show(data);
-    return loading;
-  }
-  return null;
-};var _default =
-
-
-
-
-jj_loading;exports.default = _default;
-
-/***/ }),
-
-/***/ 2:
+/* 2 */
 /*!******************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js ***!
   \******************************************************************************************/
@@ -8782,8 +7977,7 @@ internalMixin(Vue);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../webpack/buildin/global.js */ 3)))
 
 /***/ }),
-
-/***/ 3:
+/* 3 */
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
   \***********************************/
@@ -8813,41 +8007,7 @@ module.exports = g;
 
 
 /***/ }),
-
-/***/ 36:
-/*!************************************************************************************!*\
-  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/static/background_image.jpeg ***!
-  \************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/static/background_image.jpeg";
-
-/***/ }),
-
-/***/ 37:
-/*!*********************************************************************************!*\
-  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/static/loading_custom.png ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,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"
-
-/***/ }),
-
-/***/ 38:
-/*!***********************************************************************!*\
-  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/static/logo.png ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,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UmVhZHlxyWU8AAADKmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxMzIgNzkuMTU5Mjg0LCAyMDE2LzA0LzE5LTEzOjEzOjQwICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGRkE0MjcxNTdEQzYxMUU4QkZBOERDOEVCQ0U0NTBGMSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGRkE0MjcxNDdEQzYxMUU4QkZBOERDOEVCQ0U0NTBGMSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNS41IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QkE4RkFCN0M3REM1MTFFOEJGQThEQzhFQkNFNDUwRjEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QkE4RkFCN0Q3REM1MTFFOEJGQThEQzhFQkNFNDUwRjEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5BZZ+3AAAB1ElEQVR42mJkAALtmZb/GfAAJkIKwIoYiAA4FV1JO0Ylk0hWxILLHTgV6cyywqoIIIAYiQinb8S4iYs036E7esgEJq6ABAGAACImMBmo5m6yDcLlR5gcNnnaumhADWIhJoOTbRC+9ILPa9+o4TWAAAIlyDVAOphCc1SYqGAICNwZxumIidi8NILz2qhBdCyPaOcicgq1wRnYAAFErRKSgZo+GzSOoWpQD1sHsRCjCDnzkpp90DM+If2jUTbqoFEHjZZDpJYroyFESeNmNFHTykEqg8g9bwACCNRiVAYyLgEx1wA7Zu3V9OMhVBt1opajBlsaCh7NZaMOGnXQgFeupHZjKO1CjUbZqINGHTTqoFEHjTpo1EGjDhqMgw342kejUTaahggpoOdg1WiUjTpoODoIvL7tzSBykB5AgPbtGIdBGIYCaBR16swROEQvzT06cxjm1lRFDC0LcpXC+xJzpIdJhOW8e4z359MVWSde1C32xRYasC0mCmascDZzrQz+7NgABAgQINnRY/iUrb5D9v9l9toqCBAgQIAAAQIESAABAgQIEKCD5ZK9QPaMigoCdIJP7NdjOyoIECBAgGQBGjB8zVDjam153T0OqInJbBAWfdg8AExKZVcA71uIAAAAAElFTkSuQmCC"
-
-/***/ }),
-
-/***/ 4:
+/* 4 */
 /*!******************************************************************!*\
   !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages.json ***!
   \******************************************************************/
@@ -8857,8 +8017,917 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAAEi
 
 
 /***/ }),
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */
+/*!***********************************************************************************************************!*\
+  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/messageView/alert.js ***!
+  \***********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ 41:
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _constant = __webpack_require__(/*! ./constant.js */ 9);
+
+
+var _ref = __webpack_require__(/*! ./ref.js */ 10);
+
+
+
+
+var _processor = _interopRequireDefault(__webpack_require__(/*! ./processor.js */ 11));
+
+var _jjAlert = _interopRequireDefault(__webpack_require__(/*! ../alert/jj-alert.vue */ 12));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+var jjAlert = _vue.default.extend(_jjAlert.default); //创建vm实例的构造函数
+var jj_alert_instance = null;
+
+var jj_alert = function jj_alert(alertData, message, btnTitle) {
+
+  var data = getData(alertData, message, btnTitle);
+  var obj = (0, _processor.default)(_constant.kAlert);
+  obj.processDataFun = getData;
+
+
+
+
+
+
+  (0, _ref.showMessageBox)(function () {
+    obj.messageObj = showAlertApp_MP(data);
+  });
+
+
+
+
+
+
+
+
+  return obj;
+};
+
+var showAlertApp_MP = function showAlertApp_MP(data) {
+  var alert = (0, _ref.getRef)(_constant.kAlert);
+  if (alert !== undefined) {
+    alert.isCloseAlert = false;
+    alert.isShow = false;
+    var isClose = data['isClose'] || false;
+    if (isClose) {
+      alert.close();
+      return null;
+    }
+    alert.show(data);
+    return alert;
+  }
+  return null;
+};
+
+var showAlertH5 = function showAlertH5(data) {
+  var isClose = data['isClose'] || false;
+  if (jj_alert_instance !== null) {
+    jj_alert_instance.close();
+    jj_alert_instance.$el.remove();
+    jj_alert_instance = null;
+
+  }
+  if (isClose) {
+    return;
+  }
+  var instance = new jjAlert({
+    data: data });
+
+  instance.$mount();
+  document.body.appendChild(instance.$el);
+  instance.show(data);
+  jj_alert_instance = instance;
+};
+
+var getData = function getData(alertData, message, btnTitle) {
+  var data = {};
+  var isAlertDataNull = alertData === undefined || alertData === null;
+  var isMessageNull = message === undefined || message === null;
+  var isBtnTitileNull = btnTitle === undefined || btnTitle === null;
+  if (isAlertDataNull && isMessageNull && isBtnTitileNull) {
+    return {};
+  } else {
+    if (!isAlertDataNull) {
+      if (alertData.constructor === Object) {
+        data = _objectSpread({},
+        alertData);
+
+        return data;
+      } else {
+        data['title'] = alertData + '';
+      }
+    }
+
+    if (!isMessageNull) {
+      data['message'] = message + '';
+    }
+    if (!isBtnTitileNull) {
+      data['btns'] = [{
+        'title': btnTitle }];
+
+    }
+
+  }
+  return data;
+};var _default =
+
+jj_alert;exports.default = _default;
+
+/***/ }),
+/* 9 */
+/*!**************************************************************************************************************!*\
+  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/messageView/constant.js ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.kLoading = exports.kAlert = exports.kToast = void 0;
+var kToast = "jj_toast";exports.kToast = kToast;
+var kAlert = 'jj_alert';exports.kAlert = kAlert;
+var kLoading = 'jj_loading';exports.kLoading = kLoading;
+
+/***/ }),
+/* 10 */
+/*!*********************************************************************************************************!*\
+  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/messageView/ref.js ***!
+  \*********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getRefList = exports.removeRefObj = exports.addRefObj = exports.getRef = exports.showMessageBox = exports.isShowAppMessageView = exports.currentPageRoute = exports.refRouteKey = exports.refMessageObj = void 0;
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var appShowing = false;
+var appShowFnList = [];
+
+var refMessageObj = function refMessageObj() {
+  var obj = _vue.default.prototype.$jj_refMessageObj;
+  if (obj !== undefined) {
+    return obj;
+  }
+  _vue.default.prototype.$jj_refMessageObj = {};
+  return _vue.default.prototype.$jj_refMessageObj;
+};exports.refMessageObj = refMessageObj;
+
+var currentPageRoute = function currentPageRoute() {
+  var routes = getCurrentPages(); // 获取当前打开过的页面路由数组
+  //H5 页面刷新后，返回上一页，会返回空数组
+  if (routes.length === 0) {
+    return '';
+  }
+  var curRoute = routes[routes.length - 1].route;
+  return curRoute;
+};exports.currentPageRoute = currentPageRoute;
+
+var refRouteKey = function refRouteKey() {
+  var routes = getCurrentPages(); // 获取当前打开过的页面路由数组
+  //H5 页面刷新后，返回上一页，会返回空数组
+  if (routes.length === 0) {
+    return '';
+  }
+  var index = routes.length - 1;
+  var rKey = routes[index].route + '/' + index;
+  return rKey;
+};exports.refRouteKey = refRouteKey;
+
+var isShowAppMessageView = function isShowAppMessageView() {
+  var curRoute = currentPageRoute();
+  var url = _vue.default.prototype.jj_app_message_url;
+  if (url.indexOf(curRoute) === -1) {
+    return false;
+  } else {
+    return true;
+  }
+};exports.isShowAppMessageView = isShowAppMessageView;
+
+var showMessageBox = function showMessageBox(showFn) {
+
+
+
+
+
+
+
+
+
+  showFn();
+
+};exports.showMessageBox = showMessageBox;
+
+var appShowMessageBox = function appShowMessageBox(showFn) {
+  var url = _vue.default.prototype.jj_app_message_url || '';
+
+  if (url.length > 0) {
+    if (appShowing) {
+      //说明进入页面跳转，但是页面并没有挂载完成，需要放入队列中缓存起来
+      appShowFnList.push(showFn);
+      return;
+    }
+    // console.log(appShowFnList)
+    var isShowAppView = isShowAppMessageView();
+    if (!isShowAppView) {
+      //标记页面跳转
+      appShowing = true;
+      uni.navigateTo({
+        url: _vue.default.prototype.jj_app_message_url,
+        animationType: 'none',
+        animationDuration: 0,
+        success: function success() {
+          //页面已经加载完成，显示弹框
+          appShowFn(showFn);
+        },
+        fail: function fail() {
+          appShowing = false;
+        } });
+
+      return;
+    }
+  }
+  appShowFn(showFn);
+};
+//循环调用，显示队列里面的方法
+var appShowFn = function appShowFn(showFn) {
+  showFn();
+  appShowing = false;
+  if (appShowFnList.length > 0) {
+    var fn = appShowFnList[0];
+    //删除数组中的第一个元素
+    appShowFnList.splice(0, 1);
+    appShowFn(fn);
+  }
+};
+
+var getRef = function getRef(refId) {
+  var refKey = refRouteKey();
+  var refObj = refMessageObj();
+  var currentObj = refObj[refKey];
+  if (currentObj !== undefined) {
+    var ref = currentObj[refId];
+    if (ref !== undefined) {
+      return ref;
+    }
+  }
+  return currentObj;
+};exports.getRef = getRef;
+
+var addRefObj = function addRefObj(refId, ref) {
+  var refKey = refRouteKey();
+  var refObj = refMessageObj();
+  var currentObj = refObj[refKey];
+  if (currentObj !== undefined) {
+    currentObj[refId] = ref;
+  } else {
+    var obj = {};
+    obj[refId] = ref;
+    refObj[refKey] = obj;
+  }
+};exports.addRefObj = addRefObj;
+
+var removeRefObj = function removeRefObj() {
+  var refKey = refRouteKey();
+  var refObj = refMessageObj();
+  var currentObj = refObj[refKey];
+  if (currentObj !== undefined) {
+    delete refObj[refKey];
+  }
+};exports.removeRefObj = removeRefObj;
+
+var getRefList = function getRefList() {
+  var refList = [];
+  var refKey = refRouteKey();
+
+  var currentObj = refMessageObj()[refKey];
+  if (currentObj !== undefined) {
+    var refObj = refMessageObj()[refKey];
+    for (var key in refObj) {
+      refList.push(refObj[key]);
+    }
+  }
+  return refList;
+};exports.getRefList = getRefList;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 11 */
+/*!***************************************************************************************************************!*\
+  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/messageView/processor.js ***!
+  \***************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _constant = __webpack_require__(/*! ./constant.js */ 9);
+
+
+
+
+
+var processorObj = function processorObj(type) {
+  var appDuration = 300;
+  var obj = new Object();
+  obj.type = type;
+  obj.isClose = false;
+  obj.messageObj = null;
+  obj.processDataFun = null;
+  obj.close = function () {
+    if (obj.isClose) {
+      return;
+    }
+    if (obj.messageObj !== null) {
+      removeData();
+    } else {
+
+
+
+
+
+    }
+  };
+  var closeApp = function closeApp() {
+    setTimeout(function () {
+      if (obj.messageObj !== null) {
+        removeData();
+      }
+    }, appDuration);
+  };
+
+  var removeData = function removeData() {
+    obj.isClose = true;
+    obj.messageObj.close();
+    obj.messageObj = null;
+  };
+
+  obj.update = function (param1, param2, param3) {
+    if (obj.isClose) {
+      return;
+    }
+    if (obj.processDataFun !== null) {
+      if (obj.messageObj !== null) {
+        updateData(param1, param2, param3);
+      } else {
+
+
+
+
+
+      }
+
+    }
+  };
+
+  var updateApp = function updateApp(param1, param2, param3) {
+    setTimeout(function () {
+      if (obj.messageObj !== null) {
+        updateData(param1, param2, param3);
+      }
+    }, appDuration);
+  };
+
+  var updateData = function updateData(param1, param2, param3) {
+
+    var data = {};
+    if (obj.type === _constant.kAlert) {
+      data = obj.processDataFun(param1, param2, param3);
+    } else if (obj.type === _constant.kLoading) {
+      data = obj.processDataFun(param1);
+    } else if (obj.type === _constant.kToast) {
+      data = obj.processDataFun(param1, param2, param3);
+    } else {
+      return;
+    }
+    obj.messageObj.update(data);
+  };
+
+  return obj;
+};var _default =
+
+processorObj;exports.default = _default;
+
+/***/ }),
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */
+/*!***************************************************************************************************************!*\
+  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/static/jj_close_icon.png ***!
+  \***************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAv5JREFUeF7tm0uS0zAQQFv2RYDZ8FnFTo4BS2DHNVjBFCuuwQ5YwtwiVrLiswHmIrYoTcUuJVEitdStSJlklaro0++pJdmOJeCef8Qu/2KxeLRcLv+eoxcb2ySgaZr3QojnANAKIb70ff9hvV7/PAcRs9nsaV3X75RSrwBAKqVuVqvVtWabBLRt+w8AHhjAP4ZheFm6BA1fVdVXAHhmsN1KKR9OAnRqDMPwxzLaRUs4AH+HWVXVlZ7qUwbM5/PPmxTZ9VCkhGPweop3Xfd6awocqwAARUnAsGztApiKuS6OWIa9bRDbQE4iQmLfE6CBQho6tYjQmK0CSpMQCr+1CNpGMKbhVBkRG+PBDBgBYjvgFEERm1NArtOBAt45BczRo+qQIiMoY/HKgJymAyU8KgNykEANHyTgVGsCB3ywgNQSuOCjBKSSwAkfLYBbAjc8iQAuCSngyQRQS0gFTyqASkJKeHIBsRJSw7MICJVwCng2AVgJp4JnFeArQZezPLcfr7zZH8aiboZC7uRco7tp0/zTIhk8ewZ43kDZvLKP/NgpewYESEgGnywDEBKSwl8EmP8OhyxwmDqOxdBsKmkWJFkDEPBJd4AkU+Beb4MueP0CxtleCPnAj2+fYMpi1h2fsixrQAhQSB0fQFcZcgExIDF1XaCHficVQAFA0QZGBpkAysAp23LJIBHAETBHmzYZ0QI4A+Vsm+RuMEWA3H0EZwB3YGa6cvYVJIAzoEOLFlefaAFcgbhWa/07R98oARwB+IBzTgdvATnAez5ZQj1P8BKQEzy1BKeAHOEpJRwVkDM8lYTLq7K2VbiEkd+NOzTmy+vynHssdo+nKI/NhCkDsBUpguVqA8NiHpr6ppTS5wZ3P6gLCy4obLvHJAghvndd90K3eSegbdvHAPDrXOA9t8gnUsrf5sHJTrswJBQ58p67g5RSzqcM0F+aprkWQrzRp0d1ivR9/7b0U6NmJtR1/XEzxW+VUp/2js6OhfV00KmBnXMllLexOe8FSgCLifE/KM7xbmzAXMcAAAAASUVORK5CYII="
+
+/***/ }),
+/* 18 */,
+/* 19 */,
+/* 20 */
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js ***!
+  \**********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode, /* vue-cli only */
+  components, // fixed by xxxxxx auto components
+  renderjs // fixed by xxxxxx renderjs
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // fixed by xxxxxx auto components
+  if (components) {
+    if (!options.components) {
+      options.components = {}
+    }
+    var hasOwn = Object.prototype.hasOwnProperty
+    for (var name in components) {
+      if (hasOwn.call(components, name) && !hasOwn.call(options.components, name)) {
+        options.components[name] = components[name]
+      }
+    }
+  }
+  // fixed by xxxxxx renderjs
+  if (renderjs) {
+    (renderjs.beforeCreate || (renderjs.beforeCreate = [])).unshift(function() {
+      this[renderjs.__module] = this
+    });
+    (options.mixins || (options.mixins = [])).push(renderjs)
+  }
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+/* 21 */
+/*!************************************************************************************!*\
+  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/static/background_image.jpeg ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/static/background_image.jpeg";
+
+/***/ }),
+/* 22 */,
+/* 23 */,
+/* 24 */
+/*!***********************************************************************************************************!*\
+  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/messageView/index.js ***!
+  \***********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+var _toast = _interopRequireDefault(__webpack_require__(/*! ./toast.js */ 25));
+var _alert = _interopRequireDefault(__webpack_require__(/*! ./alert.js */ 8));
+var _loading = _interopRequireDefault(__webpack_require__(/*! ./loading.js */ 36));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // import Vue from 'vue'
+
+var installPlugin = function installPlugin(Vue, appUrl) {
+  Vue.prototype.$jj_loading = _loading.default;
+  Vue.prototype.$jj_alert = _alert.default;
+  Vue.prototype.$jj_toast = _toast.default;
+  Vue.prototype.jj_app_message_url = appUrl || '';
+};var _default =
+
+installPlugin;exports.default = _default;
+
+/***/ }),
+/* 25 */
+/*!***********************************************************************************************************!*\
+  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/messageView/toast.js ***!
+  \***********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _constant = __webpack_require__(/*! ./constant.js */ 9);
+var _ref = __webpack_require__(/*! ./ref.js */ 10);
+var _processor = _interopRequireDefault(__webpack_require__(/*! ./processor.js */ 11));
+
+var _jjToast = _interopRequireDefault(__webpack_require__(/*! ../toast/jj-toast.vue */ 26));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+var jjToast = _vue.default.extend(_jjToast.default); //创建vm实例的构造函数
+var jj_toast_instance = null;
+
+var getData = function getData(toastData, type, duration) {
+  var data = {};
+  var isToastDataNull = toastData === undefined || toastData === null;
+  var isTypeNull = type === undefined || type === null;
+  var isDurationNull = duration === undefined || duration === null;
+  if (isToastDataNull && isTypeNull && isDurationNull) {
+    return {};
+  } else {
+    if (!isToastDataNull) {
+      if (toastData.constructor === Object) {
+        data = _objectSpread({},
+        toastData);
+
+        return data;
+      } else {
+        data['message'] = toastData + '';
+      }
+    }
+
+    if (!isTypeNull) {
+      data['type'] = type + '';
+    }
+    if (!isDurationNull) {
+      if (duration.constructor === Number) {
+        data["duration"] = duration;
+      }
+    }
+  }
+  return data;
+};
+
+
+var jj_toast = function jj_toast(toastData, type, duration) {
+  var data = getData(toastData, type, duration);
+  var obj = (0, _processor.default)(_constant.kToast);
+  obj.processDataFun = getData;
+
+
+
+
+
+
+  (0, _ref.showMessageBox)(function () {
+    obj.messageObj = showToastApp_MP(data);
+  });
+
+
+
+
+
+
+
+
+  return obj;
+};
+
+var showToastH5 = function showToastH5(data) {
+  var isClose = data['isClose'] || false;
+  if (jj_toast_instance !== null) {
+    if (jj_toast_instance.jj_time !== null) {
+      clearTimeout(jj_toast_instance.jj_time);
+      jj_toast_instance.jj_time = null;
+    }
+    jj_toast_instance.close();
+    jj_toast_instance.$el.remove();
+    jj_toast_instance = null;
+  }
+
+  if (isClose) {
+    return;
+  }
+  var instance = new jjToast({
+    data: data });
+
+  instance.$mount();
+  document.body.appendChild(instance.$el);
+  instance.show(data);
+  jj_toast_instance = instance;
+};
+
+var showToastApp_MP = function showToastApp_MP(data) {
+  var toast = (0, _ref.getRef)(_constant.kToast);
+  if (toast !== undefined) {
+    if (toast.jj_time !== null) {
+      clearTimeout(toast.jj_time);
+      toast.jj_time = null;
+    }
+    toast.isShow = false;
+    var isClose = data['isClose'] || false;
+    if (isClose) {
+      toast.close();
+      return null;
+    }
+    toast.show(data);
+    return toast;
+  }
+  return null;
+};var _default =
+
+jj_toast;exports.default = _default;
+
+/***/ }),
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */
+/*!**************************************************************************************************************!*\
+  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/static/success_icon.png ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,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"
+
+/***/ }),
+/* 32 */
+/*!***********************************************************************************************************!*\
+  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/static/fail_icon.png ***!
+  \***********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,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"
+
+/***/ }),
+/* 33 */
+/*!***********************************************************************************************************!*\
+  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/static/warn_icon.png ***!
+  \***********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,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"
+
+/***/ }),
+/* 34 */,
+/* 35 */,
+/* 36 */
+/*!*************************************************************************************************************!*\
+  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/messageView/loading.js ***!
+  \*************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _constant = __webpack_require__(/*! ./constant.js */ 9);
+var _ref = __webpack_require__(/*! ./ref.js */ 10);
+var _processor = _interopRequireDefault(__webpack_require__(/*! ./processor.js */ 11));
+
+var _jjLoading = _interopRequireDefault(__webpack_require__(/*! ../loading/jj-loading.vue */ 37));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+var jjLoading = _vue.default.extend(_jjLoading.default); //创建vm实例的构造函数
+var jj_loading_instance = null;
+
+var getLoadingData = function getLoadingData(loadingData) {
+  var data = {};
+  if (loadingData === undefined || loadingData === null) {
+
+  } else {
+    if (loadingData.constructor === Object) {
+      data = _objectSpread({},
+      loadingData);
+
+    } else {
+      data = {
+        "message": loadingData + '' };
+
+    }
+  }
+  return data;
+};
+
+var jj_loading = function jj_loading(loadingData) {
+  var data = getLoadingData(loadingData);
+  var obj = (0, _processor.default)(_constant.kLoading);
+  obj.processDataFun = getLoadingData;
+
+
+
+
+
+
+  (0, _ref.showMessageBox)(function () {
+    obj.messageObj = showLoadingApp_MP(data);
+  });
+
+
+
+
+
+
+
+
+  return obj;
+};
+
+var showLoadingH5 = function showLoadingH5(data) {
+  var isClose = data['isClose'] || false;
+  if (jj_loading_instance !== null) {
+    jj_loading_instance.close();
+    jj_loading_instance.$el.remove();
+    jj_loading_instance = null;
+
+  }
+  if (isClose) {
+    return;
+  }
+  var instance = new jjLoading({
+    data: data });
+
+  instance.$mount();
+  document.body.appendChild(instance.$el);
+  instance.show(data);
+  jj_loading_instance = instance;
+};
+
+var showLoadingApp_MP = function showLoadingApp_MP(data) {
+  var loading = (0, _ref.getRef)(_constant.kLoading);
+  if (loading !== undefined) {
+    loading.isShow = false;
+    var isClose = data['isClose'] || false;
+    if (isClose) {
+      loading.close();
+      return null;
+    }
+    loading.show(data);
+    return loading;
+  }
+  return null;
+};var _default =
+
+
+
+
+jj_loading;exports.default = _default;
+
+/***/ }),
+/* 37 */,
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */
+/*!***********************************************************************************************************************!*\
+  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/static/jj_loading_round_icon.png ***!
+  \***********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAA/NJREFUeF7tm0uolVUUx3//WYNmQqSRg4xwYAOFbGIDyxqYD5w6ieyhKUWoZBg2sIcvdKCoJZYQRdCggSniMygnJuigiYoGvdCKZg2crViyjyz3+c7r3nO959vfXbD5Lud893z7/zv7sdba64iGmxqunykAUyNgkgmYmQF/hvYP4O2kpB8nunuTPgUSgE46fwe+Bk5JOjsRMEYdQNR8DfgSOCDp32HBqBOAluYbDiGBuD1eEKMA4GFgOuDXVnsO8NbNfk4QPhkPhEkH0KnzZuZQlgJL0rXTrYckrR4rhJEFEAWZ2Vzg5dQerBB7RtLzY4FQCwAtYWb2eIKwKk2XqPkXSbMGhVArAAHEbOAL4KlcsKSBNA1086B0J/p+MzsHLMyec1HS/H6fXWsALtLMPk/TImp2X2FdPxBqDyBB2AG8kwneIendXhCKAJAgHAZeyQS/Iamrn1AMgAThGPBigODO0nxJHT3G0gD4NukRpHuULdsgaU+nqVAUgDQKPgI2B8EeOzzdKYAqEYCPgstA9Bjfl/RB1SgoDkAaBXuBN+MokORg2qxUAB47XMrULpd0tM1z7LVP1vV9MzsJvBD6f1jSa00CsBHYFQTflDSjSQBmAr9mghflucUi14CWaDNzn2BBgPCxpPcilNIBeCywLQg+IslzCXetdAArga+C3hOSFjcJwLNAPE+4LGlekwDMATwgatktSZ5sbcwUeAj46x7BWcqsbQ2oOKqaLulWXR2iXv2uAvAH8Ej4x3mSPLgo0qoAXPAkQlC7WNKJItVDe4GEmX0LrAiCV0k60iQAnwKvB8GbJUVnoigWVVPgQyC6i2clLSpKdbdt0MyeAX7IBM+QdLNECJWusJn9BjwaBK+WdKhJAPKDhu8kLWsSAC9OOJMJLtIf6BgNmtlV4IkAYZ+kt0obBd0AbAG2BsH/AXMlXS8JQjcA0wD3CmPRQVtGpe4wuiZEzGw9sDuI9KBooaQrdRfe6n8vAA8APwFPBsEDFSCMOqieKTEzWwMczIR8L8mzLbW3ngBcoZnl8YG/3JZgrCONvgAkCKeBPCbYKWlTHYX3tQbkwszMj5ofy17/TNKrdYXQ9whoCexQ3X0ceLuOPsLAANJ08J0hr9HzLdIrtnxtqI2zNCYACcJ+YG3F0HeP0TNIDmLkc4ljBpAgbAe6LYKnAF88v5HkIfbI2bgAJAjuJ/hIiM5SldDzgK8VDsKny9/eJPl10mzcABIE9xgdgreBCpYHre0dNqmhAAg7hAdQDuGlfkEUBSB+O2bmGST/wYMXLt5zHhfvKxZABsMzTB47xJ/G3Pm7EQCGPW+H+XlDXQOG2bH79VlTAO4X6VF9zv/xIy5QSa7r/AAAAABJRU5ErkJggg=="
+
+/***/ }),
+/* 43 */
+/*!************************************************************************************************************************!*\
+  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/static/jj_loading_taichi_icon.png ***!
+  \************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAABL1JREFUeF7tm41RFTEQgHcrECtQKlArECpQKxArECtQKlAqECtAKxAqECoQK1ArWOd7s8fkxfzcXe4evIPMMLyZ95LLfrvZbDZ7Kne86R2XX+4BtFqAme2IyBMR4f+lql4NHdPMnorIg7Cfqp4PHWfM75sswMwOROSjC989/5Oqvhs6GQcJiD0ReelQgXkhImcicq6qfJ60jQLgk0VwAKTaG1U9aZmpmT12EIci8sjHAgjjfhljaan5DAbgwn8XEbSVa2gLTU7SzIyxPojI82BAQBy1ghgEoKfwzBFfUAI0CowvOUB0FsE4gHinqn/GDNobgAv/Q0QwzVr7pqqs48mbz+OTiLwOBkf4D6p6PPSBvQAM0Hz3/GdzOKxQOLeGz5HAX0UE/9PbGvoCYM33WdO/RORQVZnI7M23T3aIcAvFUb7qq4AqADNjzb2vSIPgmGCT5x9DLAMBC9jvA6EIwL0v2i811h3C9za7MYKW+rRAyALo4fT+sk+rKiZ44y2jrKollACUTP/ShR8c9s5JyswImgjQwgaE3ZyFJgG49n9GIW43KMLv3aTJV5YDFhkGTPz8QlWfpfrlALDPvk10uNXCM18PoVFe3Igaseq19h+Agvbx9E9vq+ZDqQo7FzvDms9KAUitI8afPbiZyj+4EvFPa0fs1FJIASDcjeN4Ym2Wxda0ghWsnVTXAPh+CoCwTXqy2xTBgi+4UtXdbh4xgJT5/7duNiVE63PMLLUjMOy1FcQA4g4kHnJJj9b5zd4/Exfw3DNV3edDDMCiWW2N40vRLCwDfk5wdHUNILH+Z0lqzK726AFmRiQY7wb86lhVD0MAHHfDg09zXm/TwmasIOcHVtFhCCCO/VcmchuEaJmDmeWiWoZ9mAOwCPNHwko+41UOwGp9tJC/LX0rAI5yAEgpbSStNTeoCoDzHICtDX5ioBUAF0kAqlrNFc6tuanGr+U07wF0pM2Mi4zTVXi4LAuI45vQuC6TkeCSAPhWmAuG9pNngQUCoHaBQI+DHWExqT0ucM6Sp8GlASg51BjAKhy+ywBIhZERWkwcUNtOUzlBDkA3cs9Xm+wc36cAsAx2lnIWqEFLAaAA4jR3k1IbcNu+z90Mcc3NMtj6fEBNITkAqwqtbbsLqAmb+r50O3xwEwUPY4Ro6VOrD8AZLnoZLObYm7MC7glLF7qLBsAJt5bZWiwAL6PjHrBYwrNIAC48tQzVxO7iAATltL2KORYFwMwo6znyGqZepfXNAPxO8YVXX3xr2ZPH9vWKEMpmSesNutIbDSBTP0zMwAQ2Vjvo9YEIT/Q6SPhV/rOBOueFsGI7HGqSWv7S3Pzqm5rArip9sPCjAbj2f/eANzkIX3Ks9bBwY5TwLQAwt1QtXo4J12z8UW80OLR2beNnEDos4KJcl6LNXg5v0GGopt1C4UGtK5PlDxA5X0EWF0EBTV4/9ZIGDpcDW1ORdosPQBvxCws14af4ftJ3EkYD8AsHIi1SaKkSlCmEDcfA3Cl24LW8Jq2HgzYB6Aby6AsYvEA5dUPjCH4ypeDdJCcBEIDo3vVja4ortoeA4eZm5ThbHFyfB04KIH6gByk4M5xa6Z0jnCJmTf3exoKo0dtgH7Lb8pt/aqP/srUKsSAAAAAASUVORK5CYII="
+
+/***/ }),
+/* 44 */
+/*!*****************************************************************************************************************!*\
+  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/static/jj_loading_icon.png ***!
+  \*****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAw9JREFUeF7tm7uKFUEQhv8/EENBREEQDAQDL5FgYGJk4gUDXfAFTBbFxFh9AkF0wVdwEQNFMFLB1ETZTc1UWBF8gl9KZqAd5xz7Umdm9pzubNkzdfmqunpmqoZY8cUV9x8VQM2AkQhIug/gGoAdAO9J2t+Dr9G2gKS3AM43Hm+RPDm498B4NUCSQodJjhKMUZSa4xVAzYC6BXZvDWiOsIckf+VWbs8aIGk/gNs5R2lyEQwM/wrgDsnNHAheACRdB7AB4IDZkXqaJAFoIn+v4/BaDgQPAI3zzzr2PEjJhFQA+wBsAzhcCqEUwAznfwA4TvJnbFYmAWjOb0u5LnX7V1ImlACY4XyyDX+2TCyp8HceBuTeCnvo/usONAeARybkPAx5O5+dAS20RRg0KyCL0pW1BSK3w2WSr3IzrKPjHIAPPbKS6k6fLcUA5myH1yQvOgF4AeBq6cmzMAAzICSdx/NA9dx/FEe+1eeSAUFNOAvgFoBvJO96RD+Q/QjAXgCPSX72ku0KwMuoIeVUAEPSnqKumgFTjMqQNtUMGJL2FHX9kwHBQ8qJSIPfjdHZ8bKzD0DYsYlkgME7O53H6Ww7K4AuOq/Uig1J7u+87KynQG4EluW6mgHLEslcP2oG5JJblutqBnhHUpL1Dq1H6Tr0JMnmiW5M+pWYJGuZWevM1kuSVzwAS7pk8gJZ03spKukNgAuBkTskDzoBeArgZkeWCwSXGiDpO4BDHQM3SK47ATgF4FOPrGIIRQAkWbvcBh33dIzbJLnm4XwrY3KtMUlHANj7eYMQrijnd3VzVJJNddqe7w5KRDlvtHZte1zSaQDPARzLiXyQ0tlTYp7bIbkGdI661p/oyHsAaDJo1qTKGZIfY+tPDoAvAI4GCpKdbxzIzoD/FMZ1kjY1FrVyAIRncpbzXgCCTGjH5LaaWSUb5IpayQACpdYB7htaiFJcMiTVVdAOSgJ4QtKO5eiVBSBa+pwfegIosacCKKFXcm3NgPq9QP1eYOU/mlrtz+ZKCqjntaMdg55OlMiqAEroLcO1vwEXP5hQQ2kdjgAAAABJRU5ErkJggg=="
+
+/***/ }),
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */
+/*!*********************************************************************************!*\
+  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/static/loading_custom.png ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,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"
+
+/***/ }),
+/* 67 */
+/*!***********************************************************************!*\
+  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/static/logo.png ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,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UmVhZHlxyWU8AAADKmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxMzIgNzkuMTU5Mjg0LCAyMDE2LzA0LzE5LTEzOjEzOjQwICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGRkE0MjcxNTdEQzYxMUU4QkZBOERDOEVCQ0U0NTBGMSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGRkE0MjcxNDdEQzYxMUU4QkZBOERDOEVCQ0U0NTBGMSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNS41IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QkE4RkFCN0M3REM1MTFFOEJGQThEQzhFQkNFNDUwRjEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QkE4RkFCN0Q3REM1MTFFOEJGQThEQzhFQkNFNDUwRjEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5BZZ+3AAAB1ElEQVR42mJkAALtmZb/GfAAJkIKwIoYiAA4FV1JO0Ylk0hWxILLHTgV6cyywqoIIIAYiQinb8S4iYs036E7esgEJq6ABAGAACImMBmo5m6yDcLlR5gcNnnaumhADWIhJoOTbRC+9ILPa9+o4TWAAAIlyDVAOphCc1SYqGAICNwZxumIidi8NILz2qhBdCyPaOcicgq1wRnYAAFErRKSgZo+GzSOoWpQD1sHsRCjCDnzkpp90DM+If2jUTbqoFEHjZZDpJYroyFESeNmNFHTykEqg8g9bwACCNRiVAYyLgEx1wA7Zu3V9OMhVBt1opajBlsaCh7NZaMOGnXQgFeupHZjKO1CjUbZqINGHTTqoFEHjTpo1EGjDhqMgw342kejUTaahggpoOdg1WiUjTpoODoIvL7tzSBykB5AgPbtGIdBGIYCaBR16swROEQvzT06cxjm1lRFDC0LcpXC+xJzpIdJhOW8e4z359MVWSde1C32xRYasC0mCmascDZzrQz+7NgABAgQINnRY/iUrb5D9v9l9toqCBAgQIAAAQIESAABAgQIEKCD5ZK9QPaMigoCdIJP7NdjOyoIECBAgGQBGjB8zVDjam153T0OqInJbBAWfdg8AExKZVcA71uIAAAAAElFTkSuQmCC"
+
+/***/ }),
+/* 68 */,
+/* 69 */,
+/* 70 */
 /*!*****************************************************************************!*\
   !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/mine/request.js ***!
   \*****************************************************************************/
@@ -8868,7 +8937,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAAEi
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _loading = _interopRequireDefault(__webpack_require__(/*! ../components/jj-messagebox/messageView/loading.js */ 16));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _loading = _interopRequireDefault(__webpack_require__(/*! ../components/jj-messagebox/messageView/loading.js */ 36));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 var requsetUserInfo = function requsetUserInfo() {
   //引入文件方式调用
   var load = (0, _loading.default)();
@@ -8881,51 +8950,6 @@ var requsetUserInfo = function requsetUserInfo() {
 
 requsetUserInfo;exports.default = _default;
 
-/***/ }),
-
-/***/ 70:
-/*!***************************************************************************************************************!*\
-  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/static/jj_close_icon.png ***!
-  \***************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAv5JREFUeF7tm0uS0zAQQFv2RYDZ8FnFTo4BS2DHNVjBFCuuwQ5YwtwiVrLiswHmIrYoTcUuJVEitdStSJlklaro0++pJdmOJeCef8Qu/2KxeLRcLv+eoxcb2ySgaZr3QojnANAKIb70ff9hvV7/PAcRs9nsaV3X75RSrwBAKqVuVqvVtWabBLRt+w8AHhjAP4ZheFm6BA1fVdVXAHhmsN1KKR9OAnRqDMPwxzLaRUs4AH+HWVXVlZ7qUwbM5/PPmxTZ9VCkhGPweop3Xfd6awocqwAARUnAsGztApiKuS6OWIa9bRDbQE4iQmLfE6CBQho6tYjQmK0CSpMQCr+1CNpGMKbhVBkRG+PBDBgBYjvgFEERm1NArtOBAt45BczRo+qQIiMoY/HKgJymAyU8KgNykEANHyTgVGsCB3ywgNQSuOCjBKSSwAkfLYBbAjc8iQAuCSngyQRQS0gFTyqASkJKeHIBsRJSw7MICJVwCng2AVgJp4JnFeArQZezPLcfr7zZH8aiboZC7uRco7tp0/zTIhk8ewZ43kDZvLKP/NgpewYESEgGnywDEBKSwl8EmP8OhyxwmDqOxdBsKmkWJFkDEPBJd4AkU+Beb4MueP0CxtleCPnAj2+fYMpi1h2fsixrQAhQSB0fQFcZcgExIDF1XaCHficVQAFA0QZGBpkAysAp23LJIBHAETBHmzYZ0QI4A+Vsm+RuMEWA3H0EZwB3YGa6cvYVJIAzoEOLFlefaAFcgbhWa/07R98oARwB+IBzTgdvATnAez5ZQj1P8BKQEzy1BKeAHOEpJRwVkDM8lYTLq7K2VbiEkd+NOzTmy+vynHssdo+nKI/NhCkDsBUpguVqA8NiHpr6ppTS5wZ3P6gLCy4obLvHJAghvndd90K3eSegbdvHAPDrXOA9t8gnUsrf5sHJTrswJBQ58p67g5RSzqcM0F+aprkWQrzRp0d1ivR9/7b0U6NmJtR1/XEzxW+VUp/2js6OhfV00KmBnXMllLexOe8FSgCLifE/KM7xbmzAXMcAAAAASUVORK5CYII="
-
-/***/ }),
-
-/***/ 90:
-/*!**************************************************************************************************************!*\
-  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/static/success_icon.png ***!
-  \**************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAB9pJREFUeF7lW1eoHVUUXctfxYaKaGxgQ7Fi7yVg12A09ljBLtZgRaNRsGuimA9LlARi/LHG2LB3sXfF3gW7iB+6ZF3OCeeN576ZuXPve6PZMMx9b07Ze82ZfXY7xAiQpHUArAVgxXCtBCBe5uDT5Pos/H6H5BuDZo+DmEDSsgC2ArAjgN0ArNDjPJ8DuA/AIwCeIvlNj+N07dY3ACQtCuAUAFsHwYuT/g7g++T6Lvx2u6UBLBPu/u1r4QzXHSAAXEXyl36A0RcAJB0ZhF+7wNSTAO4GcA/J9+owLGkNAHsA2DOAmnZ/C8DVJG+qM2aubSMAJO0UBPc90v0AOhfJD5sy6P6SVgWwS3LFYR8IQPjeE/UEgKQxAC4A4Dcf6RkAU0ne3hMnFTtJ2g/ASQC2SLp4JZzay2dRGwBJ+wKYAmD1wMD7QfDrK8rQl2aSjg9ARD5eBHAYybfrTFALAElXhSUf55gM4FqSP9aZtF9tJS0RQPBqNFkxTiBZ+ZOoDIAkL/HNE+Ynkby8X8I0GUfSGQAuS8Y4qqqCrASAJBUYrDxBE8Hq9A070Y1Jn8kk48roOlQpAJJmATgwGWFDkq/UYW6k2kraAMDLyXxjSdp26A0ASQcBmBl7kywFbKSEHW6ewopdj+Tr3dp3FUjSpgCeSzquQvKTNghYxoOklQF8HNp9C2Ajkl/k+mUBkLQkgLkADIJpe5KPlU3cpueStgPwaODpQQDjSP5R5LEbAFYm0cg5nOSMNglXlRdJhwG4JbS/ieRRpQAE83ZeaFhJk1ZlaDTaSTo/WK2efueijfCvFSDJwtu2t4W32WgZOf0CKxhL1mW2GB8guXM69hAACnvpCSRH1Lztl9DFcYLZfF34/xAbZj4AwZ+3tWeX9hmSWw6KodEYV9LTwYGyK71FdJxSANJvZf9Be3VNQZB0KoATAbxB0jGDYSl4kbOLui0FwNvctgDmkbTv3VrKWKfTSNpFLgPBcQrrgMdJeptEBwBJywOIhsLpJK8sG2y0nktKt+jIxickVynjSdJpAK4I7caQ/DICkO6Xa9f1qcsm7tdzSdMAnJAZ7zSSdtXLVoAj09YBpo59EwGwvW+7/0WSm5QNNBrPJdndtdtbpLsAjCf5VxW+JL0AYGMAs0geHAH4EsByAFpp+Ei6EMB5GQEfCsL/WkX48LnbRbbC/4rk8pS0HoBXwwCtW/6SzgJwSUZAb9l7k7SzU5kkpZ/B+gbAQUZvD7+TXKTySCPQUNLJjvpmpvILs/DR46vFjaTfQt5hfwMQw0mVNGmtmRo0lnQ0gOmZIWyi+5t/s9fhJRk4u8yTDIBNREdYW6MAJU0EcGtGQOsqv3krsp4pUYTXGwBnbpyBmUvSebxRpRB2n5NhwpFnC984LiHJ+cZdOxkrSa8BWBfADJKH15E+gOfMr/fna0j+Xad/sa2k3QF4W1uo8OzPsOzNeGOS5BiBbZ/XDcBPABYDcDnJSVVHlzQ12OKxy50ADiFpBVObJDmTbOFzSVHH+u+oPWiXDolN8XMTAKIiSadxQsIgOAtcmSQ53+BPcalMJ2d7cvqg8viZlRaNqg4APX0CwRvL+QxPAJhI0kUPpSRp/SB8robgOJI3lA5Ss0HyCbzZSAlmvLLIykthJbw7HG8hBX4PgNUy7c4gGR2XmiIO3zxRgnMbb4NdvDNzYKfDKyFNVMznTJLLZSy8FXCRzidp83cglGyD0/tiCCW2RJHhjwIIjsakwrsCxMLHsHv6+FKSZw5E8jBoYgid0zdTWJITpadnGP86gPCwn0mylr8XQCcgUaBKgY2m4CSm8EQD4H08po7WrFvKUnizFwE4N8Ogt9pDg+B+8zZCinQzybTgoqmc2f5B70TdtH10h12aZi3cWPFIOhvAxZnZbcz4zY/PPJtN8oCBSFwYVJJXqVfrLyQXiwB4qzkGwJMkt2nKyDBbZG5o7/9OWxVT8E3Z6LYCvE27km0myUMiAPsAiJbWav0obpJ0HICyvIJT13uRdAndwCkUW30QJrLBNjMC4MJGKyvTSSRt2zcmSUcA6FbK9mwQvpbV2IQpSQ6j24Q3rUjy8zQsbi1te9zlbTkl1dPcklxc4SKLlGx9+s1XshZ7mjjTSZIz3g75P0pyBzcZkcRICENNCHmHxwHMGenIc5XEiEtdF4TUmIs3NyX5w5AV4D8WkOToEB23oKXHnye5WaoecgC4NuD/WiBxMMkhCrlKiUxrCiLr7gaFAsrs7tYNABdD20iJdbitK4wsA6OgzxxQ3YXk88V+w5XJuSg6jc62tkCyKFSmYPJQkrflQBu28LFYHP0fLZScQjKXV+zgUVr5mSmSbm3BZKFA0vKVhvpLAQj2QdFTa13hZKEw0mw/QnJsma6oBEAAIWaQ4pitKaAsFESav/NI+lBHKVUGIICQelP+V9sOTJinfxVDDodCLQACCONC+eniYeC2HJlxoOPYuk5WbQACCBsBcNg6rSZbMA5NpcspnCfwZ5GGt21GO7Zgy6vWAaZuSzW40wbbSi0tdR2dY3MZw8MguE7P5/tS8kkuByFq+/9JDMHBGRc1pdSOg5OF1eAzBgbCb8nnhovUj6OzDqa4PqBdR2czK8JFi16q9iwdZuu19uircOjBn9RDLmws3ddqNuhJCdacw4EWZ4Gcd3A+0Pf0t4eLx+fj0Xnf3yXp2OFA6R9dVFxsxKJECAAAAABJRU5ErkJggg=="
-
-/***/ }),
-
-/***/ 91:
-/*!***********************************************************************************************************!*\
-  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/static/fail_icon.png ***!
-  \***********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,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"
-
-/***/ }),
-
-/***/ 92:
-/*!***********************************************************************************************************!*\
-  !*** /Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/static/warn_icon.png ***!
-  \***********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,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"
-
 /***/ })
-
-}]);
+]]);
 //# sourceMappingURL=../../.sourcemap/mp-weixin/common/vendor.js.map

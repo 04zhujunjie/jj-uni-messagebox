@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "update-version": "/pages/components/jj-messagebox/alert/update-version-alert"
+  }
+}

@@ -30,7 +30,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _popup_view_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _popup_view_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 /* harmony import */ var _popup_view_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./popup-view.vue?vue&type=style&index=0&lang=css& */ 96);
 /* harmony import */ var _popup_view_vue_vue_type_style_index_1_id_01a1d68d_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./popup-view.vue?vue&type=style&index=1&id=01a1d68d&scoped=true&lang=css& */ 98);
-/* harmony import */ var _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 10);
+/* harmony import */ var _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 20);
 
 var renderjs
 
@@ -132,7 +132,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var jjPopup = function jjPopup() {Promise.all(/*! require.ensure | pages/components/jj-messagebox/popup/jj-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/components/jj-messagebox/popup/jj-popup")]).then((function () {return resolve(__webpack_require__(/*! ../components/jj-messagebox/popup/jj-popup.vue */ 126));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var jjPopup = function jjPopup() {Promise.all(/*! require.ensure | pages/components/jj-messagebox/popup/jj-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/components/jj-messagebox/popup/jj-popup")]).then((function () {return resolve(__webpack_require__(/*! ../components/jj-messagebox/popup/jj-popup.vue */ 131));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -151,7 +151,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       isShowPopup: false,
-      backgroundImg: __webpack_require__(/*! ../../static/background_image.jpeg */ 65) };
+      backgroundImg: __webpack_require__(/*! ../../static/background_image.jpeg */ 21) };
 
   },
   mounted: function mounted() {

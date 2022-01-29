@@ -2,34 +2,43 @@
 	<div class="messagebox-shade" v-if = "isShow" :style="{'background-color':maskColor}" @touchmove.stop = ""  @click="touchClose?close():''">
 		<div class="messagebox-main popIn" :class="[isCloseAlert?'popOut':'']" @click.stop="mainClick"
 			:style="[{'animation-duration':duration+'s','width':width,'border-radius':radius+'px'}]">
-			<div class="messagebox-content" :style="[{'padding':padding}]">
+			<div class="messagebox-content" :style="[{'padding':!isCustomType?padding:'0'}]">
+				<div v-if = "!isCustomType">
+					<div v-if="title.length > 0" class="flexCenter" style="font-size: 1.125rem;" :style="[titleStyle]">
+						<span>{{title}}</span>
+					</div>
+					<div v-if="message.length > 0" class="flexCenter" style="margin-top: 10px;" :style="[messageStyle]">
+						<span>{{message}}</span>
+					</div>
+				</div>
 				<div v-if="showClose" class="rightTopClose"  @click="close">
 					<image class = "closeImage" :style="[closeStyle]" :src="closeImgUrl"></image>
 				</div>
-				<div v-if="title.length > 0" class="flexCenter" style="font-size: 1.125rem;" :style="[titleStyle]">
-					<span>{{title}}</span>
+			</div>
+			<div v-if = "!isCustomType">
+				<div v-if="type === 'alert'" class="jj-alert-btns flexContentSpaceAround">
+					<jj-button class = "jj-alert-btn" v-for="(btn,index) in btns" :key="index" :style="[btnStyle(btn)]" :btnObj="btn" @btnClick = "clickFn(btn)">
+					</jj-button>
+					
 				</div>
-				<div v-if="message.length > 0" class="flexCenter" style="margin-top: 10px;" :style="[messageStyle]">
-					<span>{{message}}</span>
+				<div v-else class="jj-alert-btns flexContentCenter" v-for="(btn,index) in btns" :key="index">
+				  <jj-button  class="jj-sheet-btn" :btnObj="btn" :style="[btnStyle(btn)]" @btnClick = "clickFn(btn)"></jj-button>
 				</div>
 			</div>
-			<div v-if="type === 'alert'" class="jj-alert-btns flexContentSpaceAround">
-				<jj-button class = "jj-alert-btn" v-for="(btn,index) in btns" :key="index" :style="[btnStyle(btn)]" :btnObj="btn" @btnClick = "clickFn(btn)">
-				</jj-button>
-				
+			<div v-else>
+				<custom-alert :customData="$data" @close = "close"></custom-alert>
 			</div>
-			<div v-else class="jj-alert-btns flexContentCenter" v-for="(btn,index) in btns" :key="index">
-			  <jj-button  :btnObj="btn" :style="[btnStyle(btn)]" @btnClick = "clickFn(btn)"></jj-button>
-			</div>
+			
 		</div>
 	</div>
 </template>
 
 <script>
 	import jjButton from './jj-button.vue'
+	import customAlert from './custom-alert.vue'
 	export default {
 		name: 'jj-alert',
-		components:{jjButton},
+		components:{jjButton,customAlert},
 		data() {
 			return {
 				type: 'alert', //有alert和sheet
@@ -68,6 +77,7 @@
 				}],
 				isCloseAlert: false,
 				originalData:null,
+				customDataObj:{},//自定义数据
 			}
 		},
 		computed:{
@@ -77,6 +87,12 @@
 				}
 				return require('../static/jj_close_icon.png') 
 			},
+			isCustomType(){
+				if (this.type === 'alert' || this.type === 'sheet'){
+					return false
+				}
+				return true
+			}
 		},
 		methods: {
 			moveHandle(){
@@ -195,7 +211,12 @@
 		box-sizing: border-box;
 		border-top: 1px solid #E8E6EF;
 	}
-
+	.jj-sheet-btn{
+		flex: 1 0 auto;
+		height: 2.75rem;
+		display: flex;
+		font-size: 1.0625rem;
+	}
 	.jj-alert-btn {
 		flex: 1 0 auto;
 		height: 2.75rem;

@@ -1,1 +1,1 @@
-<message-view bind:show="__e" bind:close="__e" vue-id="d56b75c4-1" data-event-opts="{{[['^show',[['show']]],['^close',[['close']]]]}}" bind:__l="__l"></message-view>
+<view data-event-opts="{{[['tap',[['close',['$event']]]]]}}" catchtap="__e" class="_div"><message-view bind:show="__e" bind:close="__e" vue-id="d56b75c4-1" data-event-opts="{{[['^show',[['show']]],['^close',[['close']]]]}}" bind:__l="__l"></message-view></view>

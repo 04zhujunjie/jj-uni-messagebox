@@ -71,9 +71,8 @@
 
 <style scoped>
 	.jj-btn-box {
-		flex: 1 0 auto;
-		height: 2.75rem;
 		display: flex;
+		height: 100%;
 		align-items: center;
 		justify-content: center;
 		text-align: center;
