@@ -130,7 +130,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var headerView = function headerView() {Promise.all(/*! require.ensure | pages/index/header */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/index/header")]).then((function () {return resolve(__webpack_require__(/*! ./header.vue */ 117));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var headerView = function headerView() {Promise.all(/*! require.ensure | pages/index/header */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/index/header")]).then((function () {return resolve(__webpack_require__(/*! ./header.vue */ 118));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 

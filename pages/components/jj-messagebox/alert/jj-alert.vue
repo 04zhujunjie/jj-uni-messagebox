@@ -1,7 +1,7 @@
 <template>
 	<div class="messagebox-shade" v-if = "isShow" :style="{'background-color':maskColor}" @touchmove.stop = ""  @click="touchClose?close():''">
 		<div class="messagebox-main popIn" :class="[isCloseAlert?'popOut':'']" @click.stop="mainClick"
-			:style="[{'animation-duration':duration+'s','width':width,'border-radius':radius+'px'}]">
+			:style="[{'animation-duration':duration+'s','width':width,'border-radius':radius+'px','background':background}]">
 			<div class="messagebox-content" :style="[{'padding':!isCustomType?padding:'0'}]">
 				<div v-if = "!isCustomType">
 					<div v-if="title.length > 0" class="flexCenter" style="font-size: 1.125rem;" :style="[titleStyle]">

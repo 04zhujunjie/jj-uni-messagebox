@@ -5,7 +5,7 @@
 				<image class="image" :src="backgroundImgUrl"></image>
 			</div>
 		</div>
-		<div class = "flex-column flexContentCenter title">
+		<div class = "flex-column flexContentCenter title" :style="[{'margin-top':backgroundImgUrl.length > 0?'100px':'0'}]">
 			{{customDataObj.title}}
 		</div>
 		<div class = "flex-column flex-left marginTop content" style = "font-weight: bold;">

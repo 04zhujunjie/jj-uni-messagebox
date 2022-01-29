@@ -4,14 +4,20 @@
 		onLaunch: function() {
 			console.log('App Launch')
 			setTimeout(function(){
-				
+				let  btnStyle = {
+					'padding':'0px 15px',
+					'border': '1px solid #C0C0C0',
+					'font-size': '15px',
+					'border-radius': '10px',
+				}
 				alert({
 					type:'updateVersion',
-					showClose: true, //是否显示右上角的关闭按钮
+					width:'280px',//设置弹窗的宽度
+					background: 'transparent', //弹窗的背景
 					customDataObj:{
-						title:'发现新版本',
+						title:'发现新版本1.2.6',
 						contentTitle:'更新内容:',
-						backgroundImgUrl:require('./static/background_image.jpeg'),
+						backgroundImgUrl:require('./static/bg_custom_update.png'),
 						contentList:[
 							'1、修复部分bug',
 							"2、新增新玩法",
@@ -22,9 +28,7 @@
 						{
 							title: "以后再说",
 							style: {
-								'padding':'0px 15px',
-								'border': '1px solid #C0C0C0',
-								'border-radius': '10px',
+								...btnStyle
 							},
 							click: () => {
 								console.log("点击Cancel")
@@ -34,12 +38,9 @@
 							activeBackground: '#2A8AFF',
 							activeColor: "#fff",
 							style: {
-								'background':'transparent',
-								'padding':'0px 15px',
-								'color': '#007AFF',
-								'font-size': '15px',
-								'border': '1px solid #C0C0C0',
-								'border-radius': '10px',
+								 'background':'transparent',
+								 'color':'#2A8AFF',
+								 ...btnStyle
 							},
 							click: () => {
 								console.log("点击Destructive")

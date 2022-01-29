@@ -12,7 +12,7 @@ var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ 5));
 
 
 
-var _index = _interopRequireDefault(__webpack_require__(/*! pages/components/jj-messagebox/messageView/index.js */ 24));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var baseView = function baseView() {__webpack_require__.e(/*! require.ensure | pages/baseView/index */ "pages/baseView/index").then((function () {return resolve(__webpack_require__(/*! pages/baseView/index.vue */ 100));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};_vue.default.component('base-view', baseView);
+var _index = _interopRequireDefault(__webpack_require__(/*! pages/components/jj-messagebox/messageView/index.js */ 24));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var baseView = function baseView() {__webpack_require__.e(/*! require.ensure | pages/baseView/index */ "pages/baseView/index").then((function () {return resolve(__webpack_require__(/*! pages/baseView/index.vue */ 101));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};_vue.default.component('base-view', baseView);
 //第二个参数只对App有效，App的遮罩层页面的跳转链接url，在pages.json文件那里配置，设置改参数可以覆盖原生组件（导航栏，tabbar,地图等）
 (0, _index.default)(_vue.default, '/pages/components/jj-messagebox/messageView/app-message-view');
 
@@ -97,19 +97,25 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
-var _alert = _interopRequireDefault(__webpack_require__(/*! ./pages/components/jj-messagebox/messageView/alert.js */ 8));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+var _alert = _interopRequireDefault(__webpack_require__(/*! ./pages/components/jj-messagebox/messageView/alert.js */ 8));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
 {
   onLaunch: function onLaunch() {
     console.log('App Launch');
     setTimeout(function () {
+      var btnStyle = {
+        'padding': '0px 15px',
+        'border': '1px solid #C0C0C0',
+        'font-size': '15px',
+        'border-radius': '10px' };
 
       (0, _alert.default)({
         type: 'updateVersion',
-        showClose: true, //是否显示右上角的关闭按钮
+        width: '280px', //设置弹窗的宽度
+        background: 'transparent', //弹窗的背景
         customDataObj: {
-          title: '发现新版本',
+          title: '发现新版本1.2.6',
           contentTitle: '更新内容:',
-          backgroundImgUrl: __webpack_require__(/*! ./static/background_image.jpeg */ 21),
+          backgroundImgUrl: __webpack_require__(/*! ./static/bg_custom_update.png */ 21),
           contentList: [
           '1、修复部分bug',
           "2、新增新玩法",
@@ -119,10 +125,8 @@ var _alert = _interopRequireDefault(__webpack_require__(/*! ./pages/components/j
         btns: [
         {
           title: "以后再说",
-          style: {
-            'padding': '0px 15px',
-            'border': '1px solid #C0C0C0',
-            'border-radius': '10px' },
+          style: _objectSpread({},
+          btnStyle),
 
           click: function click() {
             console.log("点击Cancel");
@@ -131,13 +135,10 @@ var _alert = _interopRequireDefault(__webpack_require__(/*! ./pages/components/j
           title: "立即更新",
           activeBackground: '#2A8AFF',
           activeColor: "#fff",
-          style: {
+          style: _objectSpread({
             'background': 'transparent',
-            'padding': '0px 15px',
-            'color': '#007AFF',
-            'font-size': '15px',
-            'border': '1px solid #C0C0C0',
-            'border-radius': '10px' },
+            'color': '#2A8AFF' },
+          btnStyle),
 
           click: function click() {
             console.log("点击Destructive");
@@ -329,7 +330,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var jjButton = function jjButton() {__webpack_require__.e(/*! require.ensure | pages/components/jj-messagebox/alert/jj-button */ "pages/components/jj-messagebox/alert/jj-button").then((function () {return resolve(__webpack_require__(/*! ./jj-button.vue */ 105));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var customAlert = function customAlert() {__webpack_require__.e(/*! require.ensure | pages/components/jj-messagebox/alert/custom-alert */ "pages/components/jj-messagebox/alert/custom-alert").then((function () {return resolve(__webpack_require__(/*! ./custom-alert.vue */ 112));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var jjButton = function jjButton() {__webpack_require__.e(/*! require.ensure | pages/components/jj-messagebox/alert/jj-button */ "pages/components/jj-messagebox/alert/jj-button").then((function () {return resolve(__webpack_require__(/*! ./jj-button.vue */ 106));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var customAlert = function customAlert() {__webpack_require__.e(/*! require.ensure | pages/components/jj-messagebox/alert/custom-alert */ "pages/components/jj-messagebox/alert/custom-alert").then((function () {return resolve(__webpack_require__(/*! ./custom-alert.vue */ 113));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 

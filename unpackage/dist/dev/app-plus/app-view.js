@@ -4438,9 +4438,15 @@ var render = function() {
             1
           )
         : _vm._e(),
-      _c("div", { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } }, [
-        _vm._v(_vm._$g(4, "t0-0"))
-      ]),
+      _c(
+        "div",
+        {
+          staticClass: _vm._$g(4, "sc"),
+          style: _vm._$g(4, "s"),
+          attrs: { _i: 4 }
+        },
+        [_vm._v(_vm._$g(4, "t0-0"))]
+      ),
       _c(
         "div",
         {
@@ -5262,7 +5268,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 15);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*每个页面公共css */\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*每个页面公共css */\n", ""]);
 // Exports
 module.exports = exports;
 
