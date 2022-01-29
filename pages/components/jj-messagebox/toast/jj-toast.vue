@@ -87,6 +87,9 @@
 					}, that.duration * 1000)
 				}
 			},
+			update(data={}){
+				Object.assign(this.$data,data)
+			},
 			close() {
 				this.isShow = false
 				this.$emit('close')

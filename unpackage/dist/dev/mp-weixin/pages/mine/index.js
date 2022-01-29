@@ -224,6 +224,9 @@ var _default =
       } else {
         Object.assign(this.$data, this.originalData, data);
       }
+    },
+    update: function update() {var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      Object.assign(this.$data, data);
     } } };exports.default = _default;
 
 /***/ }),
@@ -613,9 +616,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 {
-  components: { jjPopup: jjPopup, jjDialog: jjDialog },
+  components: {
+    jjPopup: jjPopup,
+    jjDialog: jjDialog },
+
   data: function data() {
     return {
       isShowDialog: false,
@@ -627,12 +632,30 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     showNormalAlert: function showNormalAlert() {
 
-      this.$jj_alert('提示', '时间就像海绵里的水,\n只要愿挤总还是有的。', '知道了');
-      this.$jj_toast('测试。。。。');
+      var alert = this.$jj_alert('提示', '时间就像海绵里的水,\n只要愿挤总还是有的。', '知道了');
       var loading = this.$jj_loading();
-
+      var that = this;
       setTimeout(function () {
         loading.close();
+        that.$jj_toast('已经更新 Alert 数据');
+        //更新数据
+        alert.update({
+          titleStyle: {
+            'color': 'red',
+            'font-size': '18px' },
+
+          btns: [{
+            title: "确定",
+            activeBackground: '#2A8AFF',
+            activeColor: "#fff",
+            style: {
+              'color': '#4CD964' },
+
+            click: function click() {
+              console.log("点击-----确定");
+            } }] });
+
+
       }, 2000);
     },
     showCustomAlert: function showCustomAlert(type) {var isShowBtn = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
@@ -753,9 +776,13 @@ __webpack_require__.r(__webpack_exports__);
 
       if (type === 'default') {
         var loading = this.$jj_loading('加载中...');
+
+        setTimeout(function () {
+          loading.update('Update...');
+        }, 2000);
         setTimeout(function () {
           loading.close();
-        }, 2000);
+        }, 4000);
       } else {
         var loadingData = {
           imageSize: {
@@ -802,7 +829,10 @@ __webpack_require__.r(__webpack_exports__);
           'text-align': 'center' };
 
         toastData['padding'] = '20px';
-        toastData["imageSize"] = { width: '60px', height: '60px' };
+        toastData["imageSize"] = {
+          width: '60px',
+          height: '60px' };
+
         toastData["imageUrl"] = __webpack_require__(/*! ../../static/logo.png */ 67);
         var toast = this.$jj_toast(toastData);
         setTimeout(function () {

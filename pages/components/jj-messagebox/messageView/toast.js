@@ -42,7 +42,7 @@ let getData = function(toastData,type,duration){
 let jj_toast = function(toastData,type,duration) {
 	const data = getData(toastData,type,duration)
 	let obj = processorObj(kToast)
-	
+	obj.processDataFun = getData
 	// #ifdef H5
 	showToastH5(data)
 	obj.messageObj = jj_toast_instance

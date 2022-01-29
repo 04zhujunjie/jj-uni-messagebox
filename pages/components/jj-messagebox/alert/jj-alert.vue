@@ -94,6 +94,9 @@
 					Object.assign(this.$data,this.originalData,data)
 				}
 			},
+			update(data = {}){
+				Object.assign(this.$data,data)
+			},
 			close() {
 				
 				if (this.isCloseAlert) {

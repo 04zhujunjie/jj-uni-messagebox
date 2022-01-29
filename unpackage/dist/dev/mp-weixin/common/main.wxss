@@ -32,7 +32,6 @@
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
 	        justify-content: center;
-	overflow:hidden;
 }
 .messagebox-main.data-v-0666c070 {
 	display: -webkit-box;
@@ -157,7 +156,6 @@
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
 	        justify-content: center;
-	overflow:hidden;
 }
 .messagebox-main.data-v-432dbc10 {
 	display: -webkit-box;
@@ -417,7 +415,6 @@
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
 	        justify-content: center;
-	overflow:hidden;
 }
 .messagebox-main.data-v-0de08b90 {
 	display: -webkit-box;

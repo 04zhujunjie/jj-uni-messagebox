@@ -17,7 +17,7 @@ let jj_alert = function(alertData, message, btnTitle) {
 
    const data = getData(alertData, message, btnTitle)
    let obj = processorObj(kAlert)
-   
+   obj.processDataFun = getData
 	// #ifdef H5
 	showAlertH5(data)
 	obj.messageObj = jj_alert_instance

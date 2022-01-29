@@ -28,7 +28,7 @@
 				<button class="btn marginLeftRight" @click="showLoading('taichi')">Loading-taichi</button>
 				<button class="btn" @click="showLoading('custom')">Loading-自定义</button>
 			</div>
-		
+
 			<div class="flexRow marginTopBottom">
 				<button class="btn" @click="showToast('')">toast</button>
 				<button class="btn marginLeftRight" @click="showToast('success')">toast-success</button>
@@ -36,21 +36,20 @@
 				<button class="btn marginLeftRight" @click="showToast('warn')">toast-warn</button>
 				<button class="btn" style="margin-left: 10px;" @click="showToast('custom')">toast-自定义</button>
 			</div>
-		
+
 			<jj-dialog :visible="isShowDialog" :titleStyle="{'color':'red'}" title="提示" message="外层Dialog"
 				@close="isShowDialog=false">
-				<image slot = "backgroundContent" class = "image" :src = "backgroundImg"></image>
+				<image slot="backgroundContent" class="image" :src="backgroundImg"></image>
 				<div> 自定Dialog内容</div>
 				<jj-dialog width="60%" title="内层Dialog" :visible="innerVisible" @close='innerVisible=false'>
-		
+
 				</jj-dialog>
 				<div slot="footer">
 					<button class="btn" style="margin-bottom: 10px;" @click="innerVisible=true">打开内层Dialog</button>
 				</div>
 			</jj-dialog>
-			<jj-popup :visible="isShowPopup" @close="closePopup" :showClose="true"
-				title="请选择" :touchClose="false">
-				<image slot = "backgroundContent" class = "image" :src = "backgroundImg"></image>
+			<jj-popup :visible="isShowPopup" @close="closePopup" :showClose="true" title="请选择" :touchClose="false">
+				<image slot="backgroundContent" class="image" :src="backgroundImg"></image>
 				<div> 今天天气不错</div>
 			</jj-popup>
 		</div>
@@ -61,46 +60,67 @@
 	import jjDialog from '../components/jj-messagebox/dialog/jj-dialog.vue'
 	import jjPopup from '../components/jj-messagebox/popup/jj-popup.vue'
 	export default {
-		components:{jjPopup,jjDialog},
-		data(){
-			return{
+		components: {
+			jjPopup,
+			jjDialog
+		},
+		data() {
+			return {
 				isShowDialog: false,
 				innerVisible: false,
 				isShowPopup: false,
 				backgroundImg: require('../../static/background_image.jpeg')
 			}
 		},
-		methods:{
+		methods: {
 			showNormalAlert() {
-				
-			    this.$jj_alert('提示', '时间就像海绵里的水,\n只要愿挤总还是有的。', '知道了')
-				this.$jj_toast('测试。。。。')
+
+				let alert = this.$jj_alert('提示', '时间就像海绵里的水,\n只要愿挤总还是有的。', '知道了')
 				let loading = this.$jj_loading()
-				
-				setTimeout(function(){
+				let that = this
+				setTimeout(function() {
 					loading.close()
-				},2000)
+					that.$jj_toast('已经更新 Alert 数据')
+					//更新数据
+					alert.update({
+						titleStyle: {
+							'color': 'red',
+							'font-size': '18px'
+						},
+						btns: [{
+							title: "确定",
+							activeBackground: '#2A8AFF',
+							activeColor: "#fff",
+							style: {
+								'color': '#4CD964',
+							},
+							click: () => {
+								console.log("点击-----确定")
+							}
+						}]
+					})
+				}, 2000)
 			},
 			showCustomAlert(type, isShowBtn = true) {
 				let that = this
 				let confirmBtn = {
-						title: "Confirm",
-						activeBackground: '#2f2',
-						style: {
-							'background': '#2A8AFF',
-							'color': '#fff'
-						},
-						touchClose: false, //点击按钮时，是否自动关闭弹窗
-						click: function() {
-							/*
-							有时候需要进行网络请求处理后，在是否进行关闭弹窗
-							这时候可以选择手动关闭弹窗
-							注意：click这个方法，不要使用箭头函数=>方法，使用function方法，这时候this表示的当前按钮对象
-							*/
-							that.simulateNetworkRequest(this)
-						}
+					title: "Confirm",
+					activeBackground: '#2f2',
+					style: {
+						'background': '#2A8AFF',
+						'color': '#fff'
+					},
+					touchClose: false, //点击按钮时，是否自动关闭弹窗
+					click: function() {
+						/*
+						有时候需要进行网络请求处理后，在是否进行关闭弹窗
+						这时候可以选择手动关闭弹窗
+						注意：click这个方法，不要使用箭头函数=>方法，使用function方法，这时候this表示的当前按钮对象
+						*/
+						that.simulateNetworkRequest(this)
 					}
-			let alert =	this.$jj_alert({
+				}
+				let alert = this.$jj_alert({
 					type: type, //弹窗的类型有alert和sheet
 					width: '70%', //设置弹窗的宽度
 					padding: '20px 30px', //设置内容的上下左右偏移
@@ -134,12 +154,12 @@
 						title: "Destructive",
 						style: {
 							'color': 'red',
-							'font-size':'15px'
+							'font-size': '15px'
 						},
 						click: () => {
 							console.log("点击Destructive")
 						}
-					},{
+					}, {
 						title: "Confirm",
 						activeBackground: '#2f2',
 						style: {
@@ -153,17 +173,17 @@
 							这时候可以选择手动关闭弹窗
 							注意：click这个方法，不要使用箭头函数=>方法，使用function方法，这时候this表示的当前按钮对象
 							*/
-							that.simulateNetworkRequest(this,alert)
+							that.simulateNetworkRequest(this, alert)
 						}
 					}]
 				})
 			},
-			
-			simulateNetworkRequest(btn,alert) {
+
+			simulateNetworkRequest(btn, alert) {
 				//进行网络模拟，请求网络时候，禁止按钮再次点击，等结果回来后，在考虑是否启用按钮点击事件和是否关闭弹框
 				this.count = this.count || 0
 				this.$jj_toast('按钮被禁用,网络请求中...')
-				btn.isDisable=true
+				btn.isDisable = true
 				console.log(btn)
 				let that = this
 				if (this.count % 2 === 0) {
@@ -187,21 +207,25 @@
 			showDialog() {
 				this.isShowDialog = true
 			},
-			showPopup(){
+			showPopup() {
 				uni.hideTabBar()
 				this.isShowPopup = true
 			},
-			closePopup(){
+			closePopup() {
 				uni.showTabBar()
 				this.isShowPopup = false
 			},
 			showLoading(type) {
-			
+
 				if (type === 'default') {
 					let loading = this.$jj_loading('加载中...')
+					
+					setTimeout(function() {
+						loading.update('Update...')
+					}, 2000)
 					setTimeout(function() {
 						loading.close()
-					}, 2000)
+					}, 4000)
 				} else {
 					const loadingData = {
 						imageSize: {
@@ -226,7 +250,7 @@
 					} else if (type === 'taichi') {
 						loadingData['message'] = 'taichi...'
 					}
-				   let loading = this.$jj_loading(loadingData)
+					let loading = this.$jj_loading(loadingData)
 					setTimeout(() => {
 						loading.close()
 					}, 5000)
@@ -248,23 +272,26 @@
 						'text-align': 'center'
 					}
 					toastData['padding'] = '20px'
-					toastData["imageSize"] = {width:'60px',height:'60px'}
+					toastData["imageSize"] = {
+						width: '60px',
+						height: '60px'
+					}
 					toastData["imageUrl"] = require('../../static/logo.png')
-				   let toast = this.$jj_toast(toastData)
-					setTimeout(function(){
+					let toast = this.$jj_toast(toastData)
+					setTimeout(function() {
 						toast.close()
-					},5000)
-					
-				} else if(type.length > 0) {
-					
+					}, 5000)
+
+				} else if (type.length > 0) {
+
 					//第一个参数为提示信息文本，第二个参数为提示类型，第三个参数为显示的时长
-					this.$jj_toast(type,type,1)
-				}else{
+					this.$jj_toast(type, type, 1)
+				} else {
 					this.$jj_toast(message)
 				}
-			
+
 			}
-			
+
 		}
 	}
 </script>
@@ -272,7 +299,6 @@
 
 
 <style scoped>
-
 	.flexColumnCenter {
 		display: flex;
 		flex-direction: column;
@@ -306,9 +332,10 @@
 		padding: 0px 20px;
 		height: 44px;
 	}
+
 	.image {
-		height:100%;
-		width:100%;
+		height: 100%;
+		width: 100%;
 		background-repeat: no-repeat;
 		background-size: contain;
 	}

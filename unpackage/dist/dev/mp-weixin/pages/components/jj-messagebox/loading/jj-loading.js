@@ -224,6 +224,9 @@ var _default =
       } else {
         Object.assign(this.$data, this.originalData, data);
       }
+    },
+    update: function update() {var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      Object.assign(this.$data, data);
     } } };exports.default = _default;
 
 /***/ }),

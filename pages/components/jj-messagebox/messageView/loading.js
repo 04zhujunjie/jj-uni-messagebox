@@ -29,6 +29,7 @@ let getLoadingData = function(loadingData){
 let jj_loading = function(loadingData){
   const data = getLoadingData(loadingData)
   let obj = processorObj(kLoading)
+  obj.processDataFun = getLoadingData
 	// #ifdef H5
 	showLoadingH5(data)
 	obj.messageObj = jj_loading_instance

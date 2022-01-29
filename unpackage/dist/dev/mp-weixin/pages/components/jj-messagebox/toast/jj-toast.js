@@ -230,6 +230,9 @@ var _default =
         }, that.duration * 1000);
       }
     },
+    update: function update() {var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      Object.assign(this.$data, data);
+    },
     close: function close() {
       this.isShow = false;
       this.$emit('close');

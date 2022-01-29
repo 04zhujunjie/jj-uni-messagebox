@@ -2144,7 +2144,7 @@ var getData = function getData(toastData, type, duration) {
 var jj_toast = function jj_toast(toastData, type, duration) {
   var data = getData(toastData, type, duration);
   var obj = (0, _processor.default)(_constant.kToast);
-
+  obj.processDataFun = getData;
 
 
 
@@ -2442,7 +2442,7 @@ var jj_alert = function jj_alert(alertData, message, btnTitle) {
 
   var data = getData(alertData, message, btnTitle);
   var obj = (0, _processor.default)(_constant.kAlert);
-
+  obj.processDataFun = getData;
 
 
 
@@ -2543,14 +2543,25 @@ jj_alert;exports.default = _default;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _constant = __webpack_require__(/*! ./constant.js */ 13);
+
+
+
+
+
 var processorObj = function processorObj(type) {
+  var appDuration = 300;
   var obj = new Object();
   obj.type = type;
+  obj.isClose = false;
   obj.messageObj = null;
+  obj.processDataFun = null;
   obj.close = function () {
+    if (obj.isClose) {
+      return;
+    }
     if (obj.messageObj !== null) {
-      obj.messageObj.close();
+      removeData();
     } else {
 
 
@@ -2562,10 +2573,58 @@ var processorObj = function processorObj(type) {
   var closeApp = function closeApp() {
     setTimeout(function () {
       if (obj.messageObj !== null) {
-        obj.messageObj.close();
+        removeData();
       }
-    }, 300);
+    }, appDuration);
   };
+
+  var removeData = function removeData() {
+    obj.isClose = true;
+    obj.messageObj.close();
+    obj.messageObj = null;
+  };
+
+  obj.update = function (param1, param2, param3) {
+    if (obj.isClose) {
+      return;
+    }
+    if (obj.processDataFun !== null) {
+      if (obj.messageObj !== null) {
+        updateData(param1, param2, param3);
+      } else {
+
+
+
+
+
+      }
+
+    }
+  };
+
+  var updateApp = function updateApp(param1, param2, param3) {
+    setTimeout(function () {
+      if (obj.messageObj !== null) {
+        updateData(param1, param2, param3);
+      }
+    }, appDuration);
+  };
+
+  var updateData = function updateData(param1, param2, param3) {
+
+    var data = {};
+    if (obj.type === _constant.kAlert) {
+      data = obj.processDataFun(param1, param2, param3);
+    } else if (obj.type === _constant.kLoading) {
+      data = obj.processDataFun(param1);
+    } else if (obj.type === _constant.kToast) {
+      data = obj.processDataFun(param1, param2, param3);
+    } else {
+      return;
+    }
+    obj.messageObj.update(data);
+  };
+
   return obj;
 };var _default =
 
@@ -2612,6 +2671,7 @@ var getLoadingData = function getLoadingData(loadingData) {
 var jj_loading = function jj_loading(loadingData) {
   var data = getLoadingData(loadingData);
   var obj = (0, _processor.default)(_constant.kLoading);
+  obj.processDataFun = getLoadingData;
 
 
 

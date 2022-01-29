@@ -269,6 +269,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
         Object.assign(this.$data, this.originalData, data);
       }
     },
+    update: function update() {var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      Object.assign(this.$data, data);
+    },
     close: function close() {
 
       if (this.isCloseAlert) {

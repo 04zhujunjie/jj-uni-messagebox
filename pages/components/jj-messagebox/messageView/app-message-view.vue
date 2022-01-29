@@ -23,7 +23,7 @@
 				
 			},
 			getCurrentIndex(){
-				let routes = getCurrentPages(); // 获取当前打开过的页面路由数组
+				let routes = getCurrentPages()||[]; // 获取当前打开过的页面路由数组
 				let index = routes.length - 1 //上一页
 				if(index > -1){
 					return index
