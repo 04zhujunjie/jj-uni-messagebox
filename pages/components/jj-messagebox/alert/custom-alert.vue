@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<update-version v-if="type === 'updateVersion'" :customData="customData" @close = "close"></update-version>
+		<update-version v-if="customData.type === 'updateVersion'" :customData="customData" @close = "close"></update-version>
 	</div>
 </template>
 
@@ -11,6 +11,10 @@
 			updateVersion
 		},
 		props:{
+			type:{
+				type:String,
+				default:''
+			},
 			customData:{
 				type:Object,
 				default:function(){
@@ -18,10 +22,7 @@
 				}
 			}
 		},
-		computed:{
-			type(){
-				return this.customData.type || ''
-			}
+		mounted() {	
 		},
 		methods:{
 			close(){

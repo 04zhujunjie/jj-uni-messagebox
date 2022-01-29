@@ -125,6 +125,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     updateVersion: updateVersion },
 
   props: {
+    type: {
+      type: String,
+      default: '' },
+
     customData: {
       type: Object,
       default: function _default() {
@@ -132,11 +136,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
       } } },
 
 
-  computed: {
-    type: function type() {
-      return this.customData.type || '';
-    } },
-
+  mounted: function mounted() {
+  },
   methods: {
     close: function close() {
       this.$emit('close');

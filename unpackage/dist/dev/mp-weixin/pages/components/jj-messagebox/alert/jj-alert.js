@@ -274,6 +274,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
         return false;
       }
       return true;
+    },
+    customData: function customData() {
+      return this.$data;
     } },
 
   methods: {
@@ -291,6 +294,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
       } else {
         Object.assign(this.$data, this.originalData, data);
       }
+      console.log(this.$data);
     },
     update: function update() {var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       Object.assign(this.$data, data);

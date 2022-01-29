@@ -40,7 +40,7 @@
 			btnStyle() { 
 				let style = {
 					background:'#fff',
-					color:'#000'
+					color:'#000',
 				}
 				if (this.btnObj.style instanceof Object) {
 					//样式的合并
@@ -73,9 +73,11 @@
 	.jj-btn-box {
 		display: flex;
 		height: 100%;
+		width: 100%;
 		align-items: center;
 		justify-content: center;
 		text-align: center;
+		z-index: 100;
 	}
 
 </style>

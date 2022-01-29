@@ -135,6 +135,7 @@
 	width: 35px;
 	height: 35px;
 	position: absolute;
+	z-index: 100;
 	top: 3px;
 	right: 5px;
 }

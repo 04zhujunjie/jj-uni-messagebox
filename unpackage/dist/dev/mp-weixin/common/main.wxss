@@ -83,6 +83,7 @@
 	width: 35px;
 	height: 35px;
 	position: absolute;
+	z-index: 100;
 	top: 3px;
 	right: 5px;
 }
@@ -318,6 +319,17 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 /*每个页面公共css */
 
 .messagebox-shade.data-v-0666c070 {
@@ -405,6 +417,7 @@
 	width: 35px;
 	height: 35px;
 	position: absolute;
+	z-index: 100;
 	top: 3px;
 	right: 5px;
 }
@@ -529,6 +542,7 @@
 	width: 35px;
 	height: 35px;
 	position: absolute;
+	z-index: 100;
 	top: 3px;
 	right: 5px;
 }

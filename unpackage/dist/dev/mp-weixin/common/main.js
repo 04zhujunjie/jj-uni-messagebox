@@ -105,6 +105,7 @@ var _alert = _interopRequireDefault(__webpack_require__(/*! ./pages/components/j
 
       (0, _alert.default)({
         type: 'updateVersion',
+        showClose: true, //是否显示右上角的关闭按钮
         customDataObj: {
           title: '发现新版本',
           contentTitle: '更新内容:',
@@ -118,16 +119,25 @@ var _alert = _interopRequireDefault(__webpack_require__(/*! ./pages/components/j
         btns: [
         {
           title: "以后再说",
-          activeBackground: '#2A8AFF',
-          activeColor: "#fff",
+          style: {
+            'padding': '0px 15px',
+            'border': '1px solid #C0C0C0',
+            'border-radius': '10px' },
+
           click: function click() {
             console.log("点击Cancel");
           } },
         {
           title: "立即更新",
+          activeBackground: '#2A8AFF',
+          activeColor: "#fff",
           style: {
-            'color': 'red',
-            'font-size': '15px' },
+            'background': 'transparent',
+            'padding': '0px 15px',
+            'color': '#007AFF',
+            'font-size': '15px',
+            'border': '1px solid #C0C0C0',
+            'border-radius': '10px' },
 
           click: function click() {
             console.log("点击Destructive");
@@ -136,6 +146,7 @@ var _alert = _interopRequireDefault(__webpack_require__(/*! ./pages/components/j
 
 
     }, 2000);
+
   },
   onShow: function onShow() {
     console.log('App Show');
@@ -412,6 +423,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
         return false;
       }
       return true;
+    },
+    customData: function customData() {
+      return this.$data;
     } },
 
   methods: {
@@ -429,6 +443,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
       } else {
         Object.assign(this.$data, this.originalData, data);
       }
+      console.log(this.$data);
     },
     update: function update() {var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       Object.assign(this.$data, data);

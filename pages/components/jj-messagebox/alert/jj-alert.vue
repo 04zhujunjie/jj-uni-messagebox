@@ -26,7 +26,7 @@
 				</div>
 			</div>
 			<div v-else>
-				<custom-alert :customData="$data" @close = "close"></custom-alert>
+				<custom-alert :customData="customData" @close = "close"></custom-alert>
 			</div>
 			
 		</div>
@@ -92,6 +92,9 @@
 					return false
 				}
 				return true
+			},
+			customData(){
+				return this.$data
 			}
 		},
 		methods: {
@@ -109,6 +112,7 @@
 				}else{
 					Object.assign(this.$data,this.originalData,data)
 				}
+				console.log(this.$data)
 			},
 			update(data = {}){
 				Object.assign(this.$data,data)

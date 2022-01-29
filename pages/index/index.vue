@@ -9,7 +9,6 @@
 		</view>
 	</base-view>
 </template>
-
 <script>
 	import headerView from './header.vue'
 	export default {

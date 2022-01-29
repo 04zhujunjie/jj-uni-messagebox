@@ -171,7 +171,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     } },
 
   mounted: function mounted() {
-    console.log('-----------');
   },
   data: function data() {
     return {};

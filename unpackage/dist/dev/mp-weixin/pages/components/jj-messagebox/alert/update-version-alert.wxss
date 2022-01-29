@@ -58,7 +58,6 @@
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: flex;
-	z-index: 888;
 	font-size: 1.0625rem;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
@@ -70,14 +69,10 @@
 	margin-right: 10px;
 }
 .btn.data-v-52dc9024{
-	width: 80px;
 	height: 100%;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: flex;
-	padding: 0px 10px;
-	border: 1px solid #C0C0C0;
-	border-radius: 10px;
 }
 .background-image.data-v-52dc9024{
 	display: -webkit-box;

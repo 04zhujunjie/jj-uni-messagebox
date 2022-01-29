@@ -7,6 +7,7 @@
 				
 				alert({
 					type:'updateVersion',
+					showClose: true, //是否显示右上角的关闭按钮
 					customDataObj:{
 						title:'发现新版本',
 						contentTitle:'更新内容:',
@@ -20,16 +21,25 @@
 					btns:[
 						{
 							title: "以后再说",
-							activeBackground: '#2A8AFF',
-							activeColor: "#fff",
+							style: {
+								'padding':'0px 15px',
+								'border': '1px solid #C0C0C0',
+								'border-radius': '10px',
+							},
 							click: () => {
 								console.log("点击Cancel")
 							}
 						}, {
 							title: "立即更新",
+							activeBackground: '#2A8AFF',
+							activeColor: "#fff",
 							style: {
-								'color': 'red',
-								'font-size': '15px'
+								'background':'transparent',
+								'padding':'0px 15px',
+								'color': '#007AFF',
+								'font-size': '15px',
+								'border': '1px solid #C0C0C0',
+								'border-radius': '10px',
 							},
 							click: () => {
 								console.log("点击Destructive")
@@ -38,6 +48,7 @@
 					]
 				})
 			},2000)
+			
 		},
 		onShow: function() {
 			console.log('App Show')

@@ -19,7 +19,7 @@
 		
 		<div class = "flexContentSpaceAround marginTop" style="margin-top: 20px;">
 			<div class = "btn-box" v-for="(btn,index) in btnsList" :key="index">
-				<jj-button class="btn"  :btnObj="btn" @btnClick = "clickFn(btn)"></jj-button>
+				<jj-button class="btn" :btnObj="btn" @btnClick = "clickFn(btn)"></jj-button>
 			</div>
 		</div>
 	</div>
@@ -55,7 +55,6 @@
 			}
 		},
 		mounted() {
-		   console.log('-----------')
 		},
 		data(){
 			return{
@@ -123,7 +122,6 @@
 	.btn-box {
 		height: 2.5rem;
 		display: flex;
-		z-index: 888;
 		font-size: 1.0625rem;
 		align-items: center;
 		justify-content: center;
@@ -131,13 +129,8 @@
 		margin-right: 10px;
 	}
 	.btn{
-		width: 80px;
 		height: 100%;
 		display: flex;
-		padding: 0px 10px;
-		border: 1px solid #C0C0C0;
-		border-radius: 10px;
-		
 	}
 	.background-image{
 		display: flex;
