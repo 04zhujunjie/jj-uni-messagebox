@@ -12,7 +12,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_vue_vue_type_template_id_2b464b11___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.vue?vue&type=template&id=2b464b11& */ 140);
 /* harmony import */ var _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.vue?vue&type=script&lang=js& */ 142);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 20);
+/* harmony import */ var _Applications_HBuilderX_app_Contents_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 10);
 
 var renderjs
 
@@ -123,8 +123,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _constant = __webpack_require__(/*! ./constant.js */ 9);
-var _ref = __webpack_require__(/*! ./ref.js */ 10); //
+var _constant = __webpack_require__(/*! ./constant.js */ 13);
+var _ref = __webpack_require__(/*! ./ref.js */ 14); //
 //
 //
 //
@@ -133,7 +133,7 @@ var _ref = __webpack_require__(/*! ./ref.js */ 10); //
 //
 //
 //
-var toast = function toast() {Promise.all(/*! require.ensure | pages/components/jj-messagebox/toast/jj-toast */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/components/jj-messagebox/toast/jj-toast")]).then((function () {return resolve(__webpack_require__(/*! ../toast/jj-toast.vue */ 26));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var alert = function alert() {Promise.all(/*! require.ensure | pages/components/jj-messagebox/alert/jj-alert */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/components/jj-messagebox/alert/jj-alert")]).then((function () {return resolve(__webpack_require__(/*! ../alert/jj-alert.vue */ 12));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var loading = function loading() {Promise.all(/*! require.ensure | pages/components/jj-messagebox/loading/jj-loading */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/components/jj-messagebox/loading/jj-loading")]).then((function () {return resolve(__webpack_require__(/*! ../loading/jj-loading.vue */ 37));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { name: 'message-view', components: { toast: toast, alert: alert,
+var toast = function toast() {Promise.all(/*! require.ensure | pages/components/jj-messagebox/toast/jj-toast */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/components/jj-messagebox/toast/jj-toast")]).then((function () {return resolve(__webpack_require__(/*! ../toast/jj-toast.vue */ 16));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var alert = function alert() {Promise.all(/*! require.ensure | pages/components/jj-messagebox/alert/jj-alert */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/components/jj-messagebox/alert/jj-alert")]).then((function () {return resolve(__webpack_require__(/*! ../alert/jj-alert.vue */ 27));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var loading = function loading() {Promise.all(/*! require.ensure | pages/components/jj-messagebox/loading/jj-loading */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/components/jj-messagebox/loading/jj-loading")]).then((function () {return resolve(__webpack_require__(/*! ../loading/jj-loading.vue */ 36));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { name: 'message-view', components: { toast: toast, alert: alert,
     loading: loading },
 
   data: function data() {

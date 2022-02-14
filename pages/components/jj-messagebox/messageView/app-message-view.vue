@@ -1,6 +1,6 @@
 <template>
 	<div @click.stop = "close">
-		<message-view @show = "show" @close = "close"></message-view>
+		<message-view @close = "close"></message-view>
 	</div>
 </template>
 
@@ -21,9 +21,6 @@
 			}
 		},
 		methods:{
-			show(type){
-				
-			},
 			getCurrentIndex(){
 				let routes = getCurrentPages()||[]; // 获取当前打开过的页面路由数组
 				let index = routes.length - 1 //上一页

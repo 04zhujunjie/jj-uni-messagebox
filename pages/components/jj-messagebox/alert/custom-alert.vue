@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<update-version v-if="customData.type === 'updateVersion'" :customData="customData" @close = "close"></update-version>
+		<update-version v-if="customData.type === 'updateVersion'" @clickBtn = "clickBtn" :customData="customData" @close = "close"></update-version>
 	</div>
 </template>
 
@@ -27,7 +27,10 @@
 		methods:{
 			close(){
 				this.$emit('close')
-			}
+			},
+			clickBtn(index){
+				this.$emit('clickBtn',index)
+			},
 		}
 	}
 </script>

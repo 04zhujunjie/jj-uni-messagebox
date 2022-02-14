@@ -19,7 +19,7 @@
 		
 		<div class = "flexContentSpaceAround marginTop" style="margin-top: 20px;">
 			<div class = "btn-box" v-for="(btn,index) in btnsList" :key="index">
-				<jj-button class="btn" :btnObj="btn" @btnClick = "clickFn(btn)"></jj-button>
+				<jj-button class="btn" :btnObj="btn" @btnClick = "clickFn(index)"></jj-button>
 			</div>
 		</div>
 	</div>
@@ -61,21 +61,8 @@
 			}
 		},
 		methods:{
-			clickFn(btn) {
-				if (btn.isDisable === true){
-					//按钮禁用
-					return
-				}
-				if (btn.touchClose != false) {
-					this.$emit('close')
-				}
-				if (btn.click !== undefined) {
-					if (btn.click instanceof Function) {
-						btn.click()
-					} else {
-						console.warn("请传入回调函数")
-					}
-				}
+			clickFn(index) {
+				this.$emit('clickBtn',index)
 			},
 		}
 	}

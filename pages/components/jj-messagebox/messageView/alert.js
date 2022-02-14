@@ -41,13 +41,23 @@ let jj_alert = function(alertData, message, btnTitle) {
 let showAlertApp_MP = function(data) {
 	let alert = getRef(kAlert)
 	if (alert !== undefined) {
-		alert.isCloseAlert = false
-		alert.isShow = false
+		
 		let isClose = data['isClose'] || false
 		if (isClose) {
+			alert.isCloseAlert = false
+			alert.isShow = false
 			alert.close()
 			return null
 		}
+		let priority = data['priority'] || 0
+		let alertPriority = alert.priority
+		
+		if (alertPriority > priority&&alert.isShow){
+			//比较已有弹窗的优先级，如果已经展示的弹窗的优先级比较高，就不往下执行
+			return
+		}
+		alert.isCloseAlert = false
+		alert.isShow = false
 		alert.show(data)
 		return alert
 	}
@@ -57,6 +67,12 @@ let showAlertApp_MP = function(data) {
 let showAlertH5 = function(data) {
 	let isClose = data['isClose'] || false
 	if (jj_alert_instance !== null) {
+		let priority = data['priority'] || 0
+		let alertPriority = jj_alert_instance.priority
+		if (alertPriority > priority && jj_alert_instance.isShow){
+			//比较已有弹窗的优先级，如果已经展示的弹窗的优先级比较高，就不往下执行
+			return
+		}
 		jj_alert_instance.close()
 		jj_alert_instance.$el.remove()
 		jj_alert_instance = null
