@@ -109,7 +109,7 @@ import installPlugin from 'pages/components/jj-messagebox/messageView/index.js'
 installPlugin(Vue, '/pages/components/jj-messagebox/messageView/app-message-view')
 
 ```
-### 自定义alert
+### 自定义全局alert
 -------
 如果提供的alert无法满足自己的需求，可以根据自己的需求进行自定义，可参照update-version-alert.vue，主要有以下步骤：		  
 
