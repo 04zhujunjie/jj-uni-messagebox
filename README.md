@@ -4,7 +4,7 @@
 1、兼容H5,小程序，App    
 2、app可以覆盖原生组件（导航栏，tabBar, 地图，播放器等）   
 3、可以在任意的.js文件调用   
-
+4、可以根据业务需求定制alert弹窗
 #### 注意
 ---
 1、只适用uni-app项目，如果是其他H5网页的Vue项目可以使用 [jj-messagebox](https://github.com/04zhujunjie/jj-messagebox)   
@@ -108,6 +108,56 @@ import installPlugin from 'pages/components/jj-messagebox/messageView/index.js'
 //第二个参数只对App有效，App的遮罩层页面的跳转链接url，在pages.json文件那里配置，设置该参数可以覆盖原生组件（导航栏，tabbar,地图等）
 installPlugin(Vue, '/pages/components/jj-messagebox/messageView/app-message-view')
 
+```
+### 自定义alert
+-------
+如果提供的alert无法满足自己的需求，可以根据自己的需求进行自定义，可参照update-version-alert.vue，主要有以下步骤：		  
+#### 1、自定义一个type标识，不能是alert和sheet，如updateVersion，在自定义的组件中定一个customData来接收数据，		  
+按钮的点击事件通过custom-alert.vue回调到jj-alert.vue处理，否则在小程序上，按钮点击事件无法捕捉到  	
+在custom-alert.vue文件中引入自定义的组件		
+
+```
+<update-version v-if="customData.type === 'updateVersion'" @clickBtn = "clickBtn" :customData="customData"></update-version>
+```
+
+#### 2、如何进行数据传递，通过customDataObj对象属性进行传递，按钮通过btns数组属性进行传递，
+如果要获取customData的实时数据，可以通过计算属性方法computed来获取,可参照update-version-alert.vue		
+下面是调用自定的组件
+
+```
+let updateAlert = alert({
+			type:'updateVersion',//自定义type标识
+			width:'280px',//设置弹窗的宽度
+			background: 'transparent', //弹窗的背景
+			priority:1000,//弹窗的优先级，数字越大，优先级就越高，在同一个页面，优先级低的弹窗不能覆盖掉优先级高的弹窗
+			customDataObj:customDataObj,//自定义数据传参数
+			btns:[ //自定义按钮
+			    {
+			     title: "以后再说",
+			     style: {
+				  ...btnStyle
+				   },
+			     click: () => {
+				console.log("以后再说")
+				  }
+				}, 
+			   {
+			   title: "立即更新",
+			   touchClose: false,//点击按钮时，是否自动关闭弹窗
+			    activeBackground: '#2A8AFF',
+			    activeColor: "#fff",
+			    style: {
+			    'background':'transparent',
+			    'color':'#2A8AFF',
+			      ...btnStyle
+				},
+			    click: () => {
+				console.log("立即更新")
+                              updateAlert.close()
+				}
+			    }
+			 ]
+			})
 ```
 
 ### 参数说明
