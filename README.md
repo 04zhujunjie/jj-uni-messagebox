@@ -4,7 +4,7 @@
 1、兼容H5,小程序，App    
 2、app可以覆盖原生组件（导航栏，tabBar, 地图，播放器等）   
 3、可以在任意的.js文件调用   
-4、可以根据业务需求定制alert弹窗
+4、可以根据业务需求定制全局的alert弹窗
 #### 注意
 ---
 1、只适用uni-app项目，如果是其他H5网页的Vue项目可以使用 [jj-messagebox](https://github.com/04zhujunjie/jj-messagebox)   
@@ -114,7 +114,7 @@ installPlugin(Vue, '/pages/components/jj-messagebox/messageView/app-message-view
 如果提供的alert无法满足自己的需求，可以根据自己的需求进行自定义，可参照update-version-alert.vue，主要有以下步骤：		  
 
 1、自定义一个type标识，不能是alert和sheet，如updateVersion，在自定义的组件中定一个customData来接收数据，		  
-按钮的点击事件通过custom-alert.vue回调到jj-alert.vue处理，否则在小程序上，按钮点击事件无法捕捉到  	
+按钮的点击事件通过custom-alert.vue回调到jj-alert.vue处理，否则在小程序上，按钮点击事件无法捕捉到。  	
 在custom-alert.vue文件中引入自定义的组件		
 
 ```
@@ -123,7 +123,7 @@ installPlugin(Vue, '/pages/components/jj-messagebox/messageView/app-message-view
 
 2、如何进行数据传递，通过customDataObj对象属性进行传递，按钮通过btns数组属性进行传递，
 如果要获取customData的实时数据，可以通过计算属性方法computed来获取,可参照update-version-alert.vue		
-下面是调用自定的组件
+下面是如何调用自定义的组件
 
 ```
 let updateAlert = alert({
