@@ -3213,7 +3213,7 @@ var render = function() {
       attrs: { _i: 0 },
       on: {
         click: function($event) {
-          return _vm.$handleViewEvent($event, { stop: true })
+          return _vm.$handleViewEvent($event)
         }
       }
     },
@@ -3775,14 +3775,14 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { attrs: { _i: 0 } },
-    [
-      _vm._$g(1, "i")
-        ? [
-            _vm._$g(2, "i")
-              ? _c(
+  return _vm._$g(0, "i")
+    ? _c(
+        "div",
+        { attrs: { _i: 0 } },
+        [
+          _vm._$g(1, "i")
+            ? [
+                _c(
                   "div",
                   {
                     staticClass: _vm._$g(2, "sc"),
@@ -3989,9 +3989,6 @@ var render = function() {
                                   on: {
                                     clickBtn: function($event) {
                                       return _vm.$handleViewEvent($event)
-                                    },
-                                    close: function($event) {
-                                      return _vm.$handleViewEvent($event)
                                     }
                                   }
                                 })
@@ -4004,36 +4001,21 @@ var render = function() {
                   ],
                   1
                 )
-              : _vm._e()
-          ]
-        : [
-            _vm._$g(20, "i")
-              ? _c(
-                  "div",
-                  {
-                    staticClass: _vm._$g(20, "sc"),
-                    style: _vm._$g(20, "s"),
-                    attrs: { _i: 20 },
-                    on: {
-                      touchmove: function($event) {
-                        return _vm.$handleViewEvent($event, { stop: true })
-                      },
-                      click: function($event) {
-                        return _vm.$handleViewEvent($event)
-                      }
-                    }
-                  },
-                  [
-                    _c(
+              ]
+            : [
+                _vm._$g(20, "i")
+                  ? _c(
                       "div",
                       {
-                        staticClass: _vm._$g(21, "sc"),
-                        class: _vm._$g(21, "c"),
-                        style: _vm._$g(21, "s"),
-                        attrs: { _i: 21 },
+                        staticClass: _vm._$g(20, "sc"),
+                        style: _vm._$g(20, "s"),
+                        attrs: { _i: 20 },
                         on: {
-                          click: function($event) {
+                          touchmove: function($event) {
                             return _vm.$handleViewEvent($event, { stop: true })
+                          },
+                          click: function($event) {
+                            return _vm.$handleViewEvent($event)
                           }
                         }
                       },
@@ -4041,191 +4023,212 @@ var render = function() {
                         _c(
                           "div",
                           {
-                            staticClass: _vm._$g(22, "sc"),
-                            style: _vm._$g(22, "s"),
-                            attrs: { _i: 22 }
+                            staticClass: _vm._$g(21, "sc"),
+                            class: _vm._$g(21, "c"),
+                            style: _vm._$g(21, "s"),
+                            attrs: { _i: 21 },
+                            on: {
+                              click: function($event) {
+                                return _vm.$handleViewEvent($event, {
+                                  stop: true
+                                })
+                              }
+                            }
                           },
                           [
-                            _vm._$g(23, "i")
-                              ? _c(
-                                  "div",
-                                  { attrs: { _i: 23 } },
-                                  [
-                                    _vm._$g(24, "i")
-                                      ? _c(
-                                          "div",
-                                          {
-                                            staticClass: _vm._$g(24, "sc"),
-                                            staticStyle: {
-                                              "font-size": "1.125rem"
-                                            },
-                                            style: _vm._$g(24, "s"),
-                                            attrs: { _i: 24 }
-                                          },
-                                          [
-                                            _c("span", { attrs: { _i: 25 } }, [
-                                              _vm._v(_vm._$g(25, "t0-0"))
-                                            ])
-                                          ],
-                                          1
-                                        )
-                                      : _vm._e(),
-                                    _vm._$g(26, "i")
-                                      ? _c(
-                                          "div",
-                                          {
-                                            staticClass: _vm._$g(26, "sc"),
-                                            staticStyle: {
-                                              "margin-top": "10px"
-                                            },
-                                            style: _vm._$g(26, "s"),
-                                            attrs: { _i: 26 }
-                                          },
-                                          [
-                                            _c("span", { attrs: { _i: 27 } }, [
-                                              _vm._v(_vm._$g(27, "t0-0"))
-                                            ])
-                                          ],
-                                          1
-                                        )
-                                      : _vm._e()
-                                  ],
-                                  1
-                                )
-                              : _vm._e(),
-                            _vm._$g(28, "i")
-                              ? _c(
-                                  "div",
-                                  {
-                                    staticClass: _vm._$g(28, "sc"),
-                                    attrs: { _i: 28 },
-                                    on: {
-                                      click: function($event) {
-                                        return _vm.$handleViewEvent($event)
-                                      }
-                                    }
-                                  },
-                                  [
-                                    _c("v-uni-image", {
-                                      staticClass: _vm._$g(29, "sc"),
-                                      style: _vm._$g(29, "s"),
-                                      attrs: {
-                                        src: _vm._$g(29, "a-src"),
-                                        _i: 29
-                                      }
-                                    })
-                                  ],
-                                  1
-                                )
-                              : _vm._e()
-                          ],
-                          1
-                        ),
-                        _vm._$g(30, "i")
-                          ? _c(
+                            _c(
                               "div",
-                              { attrs: { _i: 30 } },
+                              {
+                                staticClass: _vm._$g(22, "sc"),
+                                style: _vm._$g(22, "s"),
+                                attrs: { _i: 22 }
+                              },
                               [
-                                _vm._$g(31, "i")
+                                _vm._$g(23, "i")
+                                  ? _c(
+                                      "div",
+                                      { attrs: { _i: 23 } },
+                                      [
+                                        _vm._$g(24, "i")
+                                          ? _c(
+                                              "div",
+                                              {
+                                                staticClass: _vm._$g(24, "sc"),
+                                                staticStyle: {
+                                                  "font-size": "1.125rem"
+                                                },
+                                                style: _vm._$g(24, "s"),
+                                                attrs: { _i: 24 }
+                                              },
+                                              [
+                                                _c(
+                                                  "span",
+                                                  { attrs: { _i: 25 } },
+                                                  [_vm._v(_vm._$g(25, "t0-0"))]
+                                                )
+                                              ],
+                                              1
+                                            )
+                                          : _vm._e(),
+                                        _vm._$g(26, "i")
+                                          ? _c(
+                                              "div",
+                                              {
+                                                staticClass: _vm._$g(26, "sc"),
+                                                staticStyle: {
+                                                  "margin-top": "10px"
+                                                },
+                                                style: _vm._$g(26, "s"),
+                                                attrs: { _i: 26 }
+                                              },
+                                              [
+                                                _c(
+                                                  "span",
+                                                  { attrs: { _i: 27 } },
+                                                  [_vm._v(_vm._$g(27, "t0-0"))]
+                                                )
+                                              ],
+                                              1
+                                            )
+                                          : _vm._e()
+                                      ],
+                                      1
+                                    )
+                                  : _vm._e(),
+                                _vm._$g(28, "i")
                                   ? _c(
                                       "div",
                                       {
-                                        staticClass: _vm._$g(31, "sc"),
-                                        attrs: { _i: 31 }
+                                        staticClass: _vm._$g(28, "sc"),
+                                        attrs: { _i: 28 },
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.$handleViewEvent($event)
+                                          }
+                                        }
                                       },
-                                      _vm._l(_vm._$g(32, "f"), function(
-                                        btn,
-                                        index,
-                                        $22,
-                                        $32
-                                      ) {
-                                        return _c("jj-button", {
-                                          key: btn,
-                                          staticClass: _vm._$g(
-                                            "32-" + $32,
-                                            "sc"
-                                          ),
-                                          style: _vm._$g("32-" + $32, "s"),
-                                          attrs: { _i: "32-" + $32 },
-                                          on: {
-                                            btnClick: function($event) {
-                                              return _vm.$handleViewEvent(
-                                                $event
-                                              )
-                                            }
+                                      [
+                                        _c("v-uni-image", {
+                                          staticClass: _vm._$g(29, "sc"),
+                                          style: _vm._$g(29, "s"),
+                                          attrs: {
+                                            src: _vm._$g(29, "a-src"),
+                                            _i: 29
                                           }
                                         })
-                                      }),
+                                      ],
                                       1
                                     )
-                                  : _vm._l(_vm._$g(33, "f"), function(
-                                      btn,
-                                      index,
-                                      $23,
-                                      $33
-                                    ) {
-                                      return _c(
-                                        "div",
-                                        {
-                                          key: btn,
-                                          staticClass: _vm._$g(
-                                            "33-" + $33,
-                                            "sc"
-                                          ),
-                                          attrs: { _i: "33-" + $33 }
-                                        },
-                                        [
-                                          _c("jj-button", {
-                                            staticClass: _vm._$g(
-                                              "34-" + $33,
-                                              "sc"
-                                            ),
-                                            style: _vm._$g("34-" + $33, "s"),
-                                            attrs: { _i: "34-" + $33 },
-                                            on: {
-                                              btnClick: function($event) {
-                                                return _vm.$handleViewEvent(
-                                                  $event
-                                                )
-                                              }
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      )
-                                    })
-                              ],
-                              2
-                            )
-                          : _c(
-                              "div",
-                              { attrs: { _i: 35 } },
-                              [
-                                _c("custom-alert", {
-                                  attrs: { _i: 36 },
-                                  on: {
-                                    clickBtn: function($event) {
-                                      return _vm.$handleViewEvent($event)
-                                    },
-                                    close: function($event) {
-                                      return _vm.$handleViewEvent($event)
-                                    }
-                                  }
-                                })
+                                  : _vm._e()
                               ],
                               1
-                            )
+                            ),
+                            _vm._$g(30, "i")
+                              ? _c(
+                                  "div",
+                                  { attrs: { _i: 30 } },
+                                  [
+                                    _vm._$g(31, "i")
+                                      ? _c(
+                                          "div",
+                                          {
+                                            staticClass: _vm._$g(31, "sc"),
+                                            attrs: { _i: 31 }
+                                          },
+                                          _vm._l(_vm._$g(32, "f"), function(
+                                            btn,
+                                            index,
+                                            $22,
+                                            $32
+                                          ) {
+                                            return _c("jj-button", {
+                                              key: btn,
+                                              staticClass: _vm._$g(
+                                                "32-" + $32,
+                                                "sc"
+                                              ),
+                                              style: _vm._$g("32-" + $32, "s"),
+                                              attrs: { _i: "32-" + $32 },
+                                              on: {
+                                                btnClick: function($event) {
+                                                  return _vm.$handleViewEvent(
+                                                    $event
+                                                  )
+                                                }
+                                              }
+                                            })
+                                          }),
+                                          1
+                                        )
+                                      : _vm._l(_vm._$g(33, "f"), function(
+                                          btn,
+                                          index,
+                                          $23,
+                                          $33
+                                        ) {
+                                          return _c(
+                                            "div",
+                                            {
+                                              key: btn,
+                                              staticClass: _vm._$g(
+                                                "33-" + $33,
+                                                "sc"
+                                              ),
+                                              attrs: { _i: "33-" + $33 }
+                                            },
+                                            [
+                                              _c("jj-button", {
+                                                staticClass: _vm._$g(
+                                                  "34-" + $33,
+                                                  "sc"
+                                                ),
+                                                style: _vm._$g(
+                                                  "34-" + $33,
+                                                  "s"
+                                                ),
+                                                attrs: { _i: "34-" + $33 },
+                                                on: {
+                                                  btnClick: function($event) {
+                                                    return _vm.$handleViewEvent(
+                                                      $event
+                                                    )
+                                                  }
+                                                }
+                                              })
+                                            ],
+                                            1
+                                          )
+                                        })
+                                  ],
+                                  2
+                                )
+                              : _c(
+                                  "div",
+                                  { attrs: { _i: 35 } },
+                                  [
+                                    _c("custom-alert", {
+                                      attrs: { _i: 36 },
+                                      on: {
+                                        clickBtn: function($event) {
+                                          return _vm.$handleViewEvent($event)
+                                        }
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                          ],
+                          1
+                        )
                       ],
                       1
                     )
-                  ],
-                  1
-                )
-              : _vm._e()
-          ]
-    ],
-    2
-  )
+                  : _vm._e()
+              ]
+        ],
+        2
+      )
+    : _vm._e()
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -4552,9 +4555,6 @@ var render = function() {
             attrs: { _i: 1 },
             on: {
               clickBtn: function($event) {
-                return _vm.$handleViewEvent($event)
-              },
-              close: function($event) {
                 return _vm.$handleViewEvent($event)
               }
             }

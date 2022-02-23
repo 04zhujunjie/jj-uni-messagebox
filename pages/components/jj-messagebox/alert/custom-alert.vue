@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<update-version v-if="customData.type === 'updateVersion'" @clickBtn = "clickBtn" :customData="customData" @close = "close"></update-version>
+		<update-version v-if="customData.type === 'updateVersion'" @clickBtn = "clickBtn" :customData="customData"></update-version>
 	</div>
 </template>
 
@@ -25,10 +25,8 @@
 		mounted() {	
 		},
 		methods:{
-			close(){
-				this.$emit('close')
-			},
 			clickBtn(index){
+				//需要将按钮的点击事件，放在jj-alert.vue文件处理，否则在小程序上点击事件回调函数会失效
 				this.$emit('clickBtn',index)
 			},
 		}

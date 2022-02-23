@@ -484,8 +484,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   var s0 =
-    (_vm.position === "bottom" || _vm.type === "sheet") &&
     _vm.isShow &&
+    (_vm.position === "bottom" || _vm.type === "sheet") &&
     !_vm.isCustomType &&
     _vm.title.length > 0
       ? _vm.__get_style([_vm.titleStyle], {
@@ -493,8 +493,8 @@ var render = function() {
         })
       : null
   var s1 =
-    (_vm.position === "bottom" || _vm.type === "sheet") &&
     _vm.isShow &&
+    (_vm.position === "bottom" || _vm.type === "sheet") &&
     !_vm.isCustomType &&
     _vm.message.length > 0
       ? _vm.__get_style([_vm.messageStyle], {
@@ -502,14 +502,14 @@ var render = function() {
         })
       : null
   var s2 =
-    (_vm.position === "bottom" || _vm.type === "sheet") &&
     _vm.isShow &&
+    (_vm.position === "bottom" || _vm.type === "sheet") &&
     _vm.showClose
       ? _vm.__get_style([_vm.closeStyle])
       : null
   var l0 =
-    (_vm.position === "bottom" || _vm.type === "sheet") &&
     _vm.isShow &&
+    (_vm.position === "bottom" || _vm.type === "sheet") &&
     !_vm.isCustomType &&
     _vm.buttonDirection === "row"
       ? _vm.__map(_vm.btns, function(btn, index) {
@@ -524,8 +524,8 @@ var render = function() {
         })
       : null
   var l1 =
-    (_vm.position === "bottom" || _vm.type === "sheet") &&
     _vm.isShow &&
+    (_vm.position === "bottom" || _vm.type === "sheet") &&
     !_vm.isCustomType &&
     !(_vm.buttonDirection === "row")
       ? _vm.__map(_vm.btns, function(btn, index) {
@@ -540,6 +540,7 @@ var render = function() {
         })
       : null
   var s5 =
+    _vm.isShow &&
     !(_vm.position === "bottom" || _vm.type === "sheet") &&
     _vm.isShow &&
     !_vm.isCustomType &&
@@ -549,6 +550,7 @@ var render = function() {
         })
       : null
   var s6 =
+    _vm.isShow &&
     !(_vm.position === "bottom" || _vm.type === "sheet") &&
     _vm.isShow &&
     !_vm.isCustomType &&
@@ -558,12 +560,14 @@ var render = function() {
         })
       : null
   var s7 =
+    _vm.isShow &&
     !(_vm.position === "bottom" || _vm.type === "sheet") &&
     _vm.isShow &&
     _vm.showClose
       ? _vm.__get_style([_vm.closeStyle])
       : null
   var l2 =
+    _vm.isShow &&
     !(_vm.position === "bottom" || _vm.type === "sheet") &&
     _vm.isShow &&
     !_vm.isCustomType &&
@@ -580,6 +584,7 @@ var render = function() {
         })
       : null
   var l3 =
+    _vm.isShow &&
     !(_vm.position === "bottom" || _vm.type === "sheet") &&
     _vm.isShow &&
     !_vm.isCustomType &&
@@ -655,6 +660,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var jjButton = function jjButton() {__webpack_require__.e(/*! require.ensure | pages/components/jj-messagebox/alert/jj-button */ "pages/components/jj-messagebox/alert/jj-button").then((function () {return resolve(__webpack_require__(/*! ./jj-button.vue */ 105));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var customAlert = function customAlert() {__webpack_require__.e(/*! require.ensure | pages/components/jj-messagebox/alert/custom-alert */ "pages/components/jj-messagebox/alert/custom-alert").then((function () {return resolve(__webpack_require__(/*! ./custom-alert.vue */ 112));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
 
 
 
@@ -851,12 +857,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
       this.isCloseAlert = true;
       var that = this;
       var time = that.duration * 1000;
-      if (time > 10) {
-        time = time - 10;
+      if (time > 30) {
+        time = time - 30;
       }
       setTimeout(function () {
-        that.isCloseAlert = false;
         that.isShow = false;
+        that.$nextTick(function () {
+          that.isCloseAlert = false;
+        });
         that.$emit('close');
       }, time);
 

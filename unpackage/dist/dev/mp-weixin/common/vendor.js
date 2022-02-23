@@ -8626,8 +8626,6 @@ var showAlertApp_MP = function showAlertApp_MP(data) {
 
     var isClose = data['isClose'] || false;
     if (isClose) {
-      alert.isCloseAlert = false;
-      alert.isShow = false;
       alert.close();
       return null;
     }

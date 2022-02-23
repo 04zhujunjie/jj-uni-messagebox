@@ -1,5 +1,5 @@
 <template>
-	<div @click.stop = "close">
+	<div @click = "close">
 		<message-view @close = "close"></message-view>
 	</div>
 </template>

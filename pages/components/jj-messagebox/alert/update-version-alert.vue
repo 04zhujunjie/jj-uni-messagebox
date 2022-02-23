@@ -41,6 +41,7 @@
 			jjButton
 		},
 		computed:{
+			//通过计算属性，来获取最新数据
 			btnsList(){
 				return this.customData.btns || []
 			},
@@ -62,6 +63,7 @@
 		},
 		methods:{
 			clickFn(index) {
+				//需要将按钮的点击事件，放在jj-alert.vue文件处理，否则在小程序上点击事件回调函数会失效
 				this.$emit('clickBtn',index)
 			},
 		}

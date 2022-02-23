@@ -44,8 +44,6 @@ let showAlertApp_MP = function(data) {
 		
 		let isClose = data['isClose'] || false
 		if (isClose) {
-			alert.isCloseAlert = false
-			alert.isShow = false
 			alert.close()
 			return null
 		}

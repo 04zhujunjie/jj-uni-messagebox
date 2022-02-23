@@ -1,73 +1,74 @@
 <template>
-	<div>
+	<div v-if = "isShow">
 		<template v-if="position==='bottom' || type === 'sheet'">
-			<div class="messagebox-shade" v-if = "isShow"  style="justify-content:end;align-items: flex-end;" :style="[{'background-color':maskColor}]" @touchmove.stop = "" @click="touchClose?close():''">
-				<div class="messagebox-main" @click.stop="mainClick" :class="[isCloseAlert?'fadelogOut':'fadelogIn']"  
-				style = "margin:0px;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;" 
-				:style="[{'animation-duration':duration+'s','width':alertWidth,'max-height':maxHeight,'background':background,'border-top-left-radius':radius+'px','border-top-right-radius':radius+'px'}]">
-					<div class="messagebox-content" :style="[{'padding':padding}]">
+				<div class="messagebox-shade"  style="justify-content:end;align-items: flex-end;" :style="[{'background-color':maskColor}]" @touchmove.stop = "" @click="touchClose?close():''">
+					<div class="messagebox-main fadelogIn" @click.stop="mainClick" :class="[isCloseAlert?'fadelogOut':'']"  
+					style = "margin:0px;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;" 
+					:style="[{'animation-duration':duration+'s','width':alertWidth,'max-height':maxHeight,'background':background,'border-top-left-radius':radius+'px','border-top-right-radius':radius+'px'}]">
+						<div class="messagebox-content" :style="[{'padding':padding}]">
+							<div v-if = "!isCustomType">
+								<div v-if="title.length > 0" class="flexCenter" style="font-size: 1.125rem;" :style="[titleStyle]">
+									<span>{{title}}</span>
+								</div>
+								<div v-if="message.length > 0" class="flexCenter" style="margin-top: 10px;" :style="[messageStyle]">
+									<span>{{message}}</span>
+								</div>
+							</div>
+							<div v-if="showClose" class="rightTopClose"  @click="close">
+								<image class = "closeImage" :style="[closeStyle]" :src="closeImgUrl"></image>
+							</div>
+						</div>
 						<div v-if = "!isCustomType">
-							<div v-if="title.length > 0" class="flexCenter" style="font-size: 1.125rem;" :style="[titleStyle]">
-								<span>{{title}}</span>
+							<div v-if="buttonDirection === 'row'" class="jj-alert-btns flexContentSpaceAround">
+								<jj-button class = "jj-alert-btn" v-for="(btn,index) in btns" :key="index" :style="[btnStyle(btn)]" :btnObj="btn" @btnClick = "clickFn(btn)">
+								</jj-button>
+								
 							</div>
-							<div v-if="message.length > 0" class="flexCenter" style="margin-top: 10px;" :style="[messageStyle]">
-								<span>{{message}}</span>
+							<div v-else class="jj-alert-btns flexContentCenter" v-for="(btn,index) in btns" :key="index">
+							  <jj-button  class="jj-sheet-btn" :btnObj="btn" :style="[btnStyle(btn)]" @btnClick = "clickFn(btn)"></jj-button>
 							</div>
 						</div>
-						<div v-if="showClose" class="rightTopClose"  @click="close">
-							<image class = "closeImage" :style="[closeStyle]" :src="closeImgUrl"></image>
+						<div v-else>
+							<custom-alert @clickBtn = "clickCustomAlertBtn" :customData="customData"></custom-alert>
 						</div>
-					</div>
-					<div v-if = "!isCustomType">
-						<div v-if="buttonDirection === 'row'" class="jj-alert-btns flexContentSpaceAround">
-							<jj-button class = "jj-alert-btn" v-for="(btn,index) in btns" :key="index" :style="[btnStyle(btn)]" :btnObj="btn" @btnClick = "clickFn(btn)">
-							</jj-button>
-							
-						</div>
-						<div v-else class="jj-alert-btns flexContentCenter" v-for="(btn,index) in btns" :key="index">
-						  <jj-button  class="jj-sheet-btn" :btnObj="btn" :style="[btnStyle(btn)]" @btnClick = "clickFn(btn)"></jj-button>
-						</div>
-					</div>
-					<div v-else>
-						<custom-alert @clickBtn = "clickCustomAlertBtn" :customData="customData" @close = "close"></custom-alert>
 					</div>
 				</div>
-			</div>
+
 		</template>
 		
 		<template v-else>
-			<div class="messagebox-shade" v-if = "isShow" :style="{'background-color':maskColor}" @touchmove.stop = ""  @click="touchClose?close():''">
-				<div class="messagebox-main" :class="[isCloseAlert?'popOut':'popIn']" @click.stop="mainClick"
-					:style="[{'animation-duration':duration+'s','width':alertWidth,'border-radius':radius+'px','background':background}]">
-					<div class="messagebox-content" :style="[{'padding':!isCustomType?padding:'0'}]">
+				<div class="messagebox-shade" v-if = "isShow" :style="{'background-color':maskColor}" @touchmove.stop = ""  @click="touchClose?close():''">
+					<div class="messagebox-main popIn" :class="[isCloseAlert?'popOut':'']" @click.stop="mainClick"
+						:style="[{'animation-duration':duration+'s','width':alertWidth,'border-radius':radius+'px','background':background}]">
+						<div class="messagebox-content" :style="[{'padding':!isCustomType?padding:'0'}]">
+							<div v-if = "!isCustomType">
+								<div v-if="title.length > 0" class="flexCenter" style="font-size: 1.125rem;" :style="[titleStyle]">
+									<span>{{title}}</span>
+								</div>
+								<div v-if="message.length > 0" class="flexCenter" style="margin-top: 10px;" :style="[messageStyle]">
+									<span>{{message}}</span>
+								</div>
+							</div>
+							<div v-if="showClose" class="rightTopClose"  @click="close">
+								<image class = "closeImage" :style="[closeStyle]" :src="closeImgUrl"></image>
+							</div>
+						</div>
 						<div v-if = "!isCustomType">
-							<div v-if="title.length > 0" class="flexCenter" style="font-size: 1.125rem;" :style="[titleStyle]">
-								<span>{{title}}</span>
+							<div v-if="buttonDirection === 'row'" class="jj-alert-btns flexContentSpaceAround">
+								<jj-button class = "jj-alert-btn" v-for="(btn,index) in btns" :key="index" :style="[btnStyle(btn)]" :btnObj="btn" @btnClick = "clickFn(btn)">
+								</jj-button>
+								
 							</div>
-							<div v-if="message.length > 0" class="flexCenter" style="margin-top: 10px;" :style="[messageStyle]">
-								<span>{{message}}</span>
+							<div v-else class="jj-alert-btns flexContentCenter" v-for="(btn,index) in btns" :key="index">
+							  <jj-button  class="jj-sheet-btn" :btnObj="btn" :style="[btnStyle(btn)]" @btnClick = "clickFn(btn)"></jj-button>
 							</div>
 						</div>
-						<div v-if="showClose" class="rightTopClose"  @click="close">
-							<image class = "closeImage" :style="[closeStyle]" :src="closeImgUrl"></image>
+						<div v-else>
+							<custom-alert @clickBtn = "clickCustomAlertBtn" :customData="customData"></custom-alert>
 						</div>
+						
 					</div>
-					<div v-if = "!isCustomType">
-						<div v-if="buttonDirection === 'row'" class="jj-alert-btns flexContentSpaceAround">
-							<jj-button class = "jj-alert-btn" v-for="(btn,index) in btns" :key="index" :style="[btnStyle(btn)]" :btnObj="btn" @btnClick = "clickFn(btn)">
-							</jj-button>
-							
-						</div>
-						<div v-else class="jj-alert-btns flexContentCenter" v-for="(btn,index) in btns" :key="index">
-						  <jj-button  class="jj-sheet-btn" :btnObj="btn" :style="[btnStyle(btn)]" @btnClick = "clickFn(btn)"></jj-button>
-						</div>
-					</div>
-					<div v-else>
-						<custom-alert @clickBtn = "clickCustomAlertBtn" :customData="customData" @close = "close"></custom-alert>
-					</div>
-					
 				</div>
-			</div>
 		</template>
 	</div>
 
@@ -195,12 +196,14 @@
 				this.isCloseAlert = true
 				let that = this
 				let time = that.duration*1000
-				if (time > 10){
-					time  = time-10
+				if (time > 30){
+					time  = time-30
 				}
 				setTimeout(function() {
-					that.isCloseAlert = false
 					that.isShow = false
+					that.$nextTick(function(){
+						that.isCloseAlert = false
+					})
 					that.$emit('close')
 				}, time)
 
