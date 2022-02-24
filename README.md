@@ -1,4 +1,5 @@
-
+## 效果图
+![image](https://github.com/04zhujunjie/jj-uni-messagebox/blob/main/screenshot/jj-messagebox.gif)
 #### 优势
 ---
 1、兼容H5,小程序，App    
