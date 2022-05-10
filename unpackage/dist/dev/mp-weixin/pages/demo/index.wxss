@@ -1,30 +1,15 @@
 
 .flexColumnCenter.data-v-6a3babdf {
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
-	        flex-direction: column;
+	flex-direction: column;
 	width: 100%;
 }
 .flexRow.data-v-6a3babdf {
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: row;
-	        flex-direction: row;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	        justify-content: center;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	        align-items: center;
-	-webkit-flex-wrap: wrap;
-	        flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
 	width: 100%;
 }
 .marginTopBottom.data-v-6a3babdf {

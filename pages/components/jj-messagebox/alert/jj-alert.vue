@@ -1,7 +1,7 @@
 <template>
 	<div v-if = "isShow">
 		<template v-if="position==='bottom' || type === 'sheet'">
-				<div class="messagebox-shade"  style="justify-content:end;align-items: flex-end;" :style="[{'background-color':maskColor}]" @touchmove.stop = "" @click="touchClose?close():''">
+				<div class="messagebox-shade"  style="justify-content:flex-end;align-items: flex-end;" :style="[{'background-color':maskColor}]" @touchmove.stop = "" @click="touchClose?close():''">
 					<div class="messagebox-main fadelogIn" @click.stop="mainClick" :class="[isCloseAlert?'fadelogOut':'']"  
 					style = "margin:0px;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;" 
 					:style="[{'animation-duration':duration+'s','width':alertWidth,'max-height':maxHeight,'background':background,'border-top-left-radius':radius+'px','border-top-right-radius':radius+'px'}]">
@@ -215,7 +215,7 @@
 				let length = this.btns.length
 				let style = {}
 				style['width'] = 100 / length + '%'
-				if (btn.style instanceof Object) {
+				if (typeof btn.style === 'object') {
 					//样式的合并
 					Object.assign(style, btn.style)
 				}
@@ -241,7 +241,7 @@
 					this.close()
 				}
 				if (btn.click !== undefined) {
-					if (btn.click instanceof Function) {
+					if (typeof btn.click === 'function') {
 						btn.click()
 					} else {
 						console.warn("请传入回调函数")
@@ -273,6 +273,7 @@
 	}
 	.flexCenter {
 		display: flex;
+		text-align: center;
 		justify-content: center;
 	}
 

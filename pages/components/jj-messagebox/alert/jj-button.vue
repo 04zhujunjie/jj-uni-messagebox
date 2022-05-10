@@ -42,7 +42,7 @@
 					background:'#fff',
 					color:'#000',
 				}
-				if (this.btnObj.style instanceof Object) {
+				if (typeof this.btnObj.style === 'object') {
 					//样式的合并
 					Object.assign(style, this.btnObj.style)
 				}

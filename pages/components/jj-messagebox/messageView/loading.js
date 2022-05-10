@@ -13,7 +13,7 @@ let getLoadingData = function(loadingData){
 	if(loadingData === undefined || loadingData === null){
 		
 	}else{
-		if (loadingData.constructor === Object) {
+		if (typeof loadingData === 'object') {
 			data = {
 				...loadingData
 			}

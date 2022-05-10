@@ -4,6 +4,7 @@
     "pages/mine/index",
     "pages/app/index",
     "pages/demo/index",
+    "pages/demo/nvue",
     "pages/components/jj-messagebox/messageView/app-message-view",
     "pages/app/popup-view"
   ],
@@ -27,6 +28,10 @@
       {
         "pagePath": "pages/mine/index",
         "text": "Mine"
+      },
+      {
+        "pagePath": "pages/demo/nvue",
+        "text": "nvue"
       },
       {
         "pagePath": "pages/app/index",

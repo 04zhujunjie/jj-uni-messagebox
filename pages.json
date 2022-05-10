@@ -25,6 +25,12 @@
 			}
 		},
 		{
+			"path": "pages/demo/nvue",
+			"style": {
+		    "navigationBarBackgroundColor":"#3F536E"
+			}
+		},
+		{
 			"path": "pages/components/jj-messagebox/messageView/app-message-view",
 			"style": {
 			// "navigationBarTextStyle":"white",//设置状态栏颜色
@@ -75,6 +81,11 @@
 	        // "iconPath": "static/image/icon_API.png",
 	        // "selectedIconPath": "static/image/icon_API_HL.png",
 	        "text": "Mine"
+	    },{
+	        "pagePath": "pages/demo/nvue",
+	        // "iconPath": "static/image/icon_API.png",
+	        // "selectedIconPath": "static/image/icon_API_HL.png",
+	        "text": "nvue"
 	    }, {
 	        "pagePath": "pages/app/index",
 	        // "iconPath": "static/image/icon_API.png",

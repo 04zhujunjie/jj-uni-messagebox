@@ -97,7 +97,7 @@ let getData = function(alertData, message, btnTitle) {
 		return {}
 	} else {
 		if (!isAlertDataNull) {
-			if (alertData.constructor === Object) {
+			if (typeof alertData === 'object') {
 				data = {
 					...alertData
 				}

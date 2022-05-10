@@ -16,7 +16,7 @@ let getData = function(toastData,type,duration){
 		return {}
 	}else{
 		if (!isToastDataNull){
-			if (toastData.constructor === Object) {
+			if (typeof toastData === 'object') {
 				data = {
 					...toastData
 				}

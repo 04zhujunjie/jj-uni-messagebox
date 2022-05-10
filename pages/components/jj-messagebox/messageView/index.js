@@ -9,6 +9,11 @@ let installPlugin = function(Vue,appUrl){
 	Vue.prototype.$jj_alert = alert
 	Vue.prototype.$jj_toast = toast
 	Vue.prototype.jj_app_message_url = appUrl || ''
+	setTimeout(function(){
+		getApp().globalData.$jj_loading = loading
+		getApp().globalData.$jj_alert = alert
+		getApp().globalData.$jj_toast = toast
+	},0)
 }
 
 export default installPlugin
