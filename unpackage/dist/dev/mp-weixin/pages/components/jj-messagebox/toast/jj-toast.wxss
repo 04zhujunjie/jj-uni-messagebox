@@ -66,6 +66,10 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 }
+.fadelogOutOpcity.data-v-0666c070{
+		transition: all 1.5s;
+		opacity: 0;
+}
 .flexContentCenter.data-v-0666c070 {
 	display: flex;
 	flex-direction: column;

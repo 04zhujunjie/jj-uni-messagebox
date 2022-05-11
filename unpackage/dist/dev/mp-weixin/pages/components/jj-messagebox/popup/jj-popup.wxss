@@ -66,6 +66,10 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 }
+.fadelogOutOpcity.data-v-2387f610{
+		transition: all 1.5s;
+		opacity: 0;
+}
 
 /*弹层动画（从上往下）*/
 
@@ -124,6 +128,9 @@
 .fadelogOut.data-v-2387f610 {
     -webkit-animation: fadelogOut-data-v-2387f610 .25s;
     animation: fadelogOut-data-v-2387f610 .25s;
+	/* 保留动画结束后的样子 */
+	-webkit-animation-fill-mode: forwards;
+	        animation-fill-mode: forwards;
 }
 @keyframes fadelogOut-data-v-2387f610 {
 0% {

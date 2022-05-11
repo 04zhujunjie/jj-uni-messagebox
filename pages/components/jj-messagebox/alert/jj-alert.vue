@@ -1,8 +1,8 @@
 <template>
 	<div v-if = "isShow">
 		<template v-if="position==='bottom' || type === 'sheet'">
-				<div class="messagebox-shade"  style="justify-content:flex-end;align-items: flex-end;" :style="[{'background-color':maskColor}]" @touchmove.stop = "" @click="touchClose?close():''">
-					<div class="messagebox-main fadelogIn" @click.stop="mainClick" :class="[isCloseAlert?'fadelogOut':'']"  
+				<div class="messagebox-shade" :class="[isCloseAlert?'fadelogOutOpcity':'']"  style="justify-content:flex-end;align-items: flex-end;" :style="[{'background-color':maskColor}]" @touchmove.stop = "" @click="touchClose?close():''">
+					<div class="messagebox-main fadelogIn" @animationend="animationend" @click.stop="mainClick" :class="[isCloseAlert?'fadelogOut':'']"  
 					style = "margin:0px;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;" 
 					:style="[{'animation-duration':duration+'s','width':alertWidth,'max-height':maxHeight,'background':background,'border-top-left-radius':radius+'px','border-top-right-radius':radius+'px'}]">
 						<div class="messagebox-content" :style="[{'padding':padding}]">
@@ -37,8 +37,8 @@
 		</template>
 		
 		<template v-else>
-				<div class="messagebox-shade" v-if = "isShow" :style="{'background-color':maskColor}" @touchmove.stop = ""  @click="touchClose?close():''">
-					<div class="messagebox-main popIn" :class="[isCloseAlert?'popOut':'']" @click.stop="mainClick"
+				<div class="messagebox-shade" :class="[isCloseAlert?'fadelogOutOpcity':'']" :style="{'background-color':maskColor}" @touchmove.stop = ""  @click="touchClose?close():''">
+					<div class="messagebox-main popIn" @animationend="animationend" :class="[isCloseAlert?'popOut':'']" @click.stop="mainClick"
 						:style="[{'animation-duration':duration+'s','width':alertWidth,'border-radius':radius+'px','background':background}]">
 						<div class="messagebox-content" :style="[{'padding':!isCustomType?padding:'0'}]">
 							<div v-if = "!isCustomType">
@@ -189,24 +189,19 @@
 				Object.assign(this.$data,data)
 			},
 			close() {
-				
 				if (this.isCloseAlert) {
 					return
 				}
 				this.isCloseAlert = true
-				let that = this
-				let time = that.duration*1000
-				if (time > 30){
-					time  = time-30
-				}
-				setTimeout(function() {
-					that.isShow = false
-					that.$nextTick(function(){
-						that.isCloseAlert = false
-					})
-					that.$emit('close')
-				}, time)
 
+			},
+			animationend(){
+				if(this.isCloseAlert){
+					//弹窗消失结束后
+					this.isShow = false
+					this.isCloseAlert = false
+					this.$emit('close')
+				}
 			},
 			mainClick() {
 
@@ -257,20 +252,7 @@
 	@import "../jj-messagebox.css";
 	@import "../jj-pop.css";
 	@import "../jj-fadelog.css";
-	.messagebox-shade-box{
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		top: -100px;
-		left: 0;
-		background-color: rgba(0, 0, 0, 0.5);
-		z-index: 999;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
+	
 	.flexCenter {
 		display: flex;
 		text-align: center;

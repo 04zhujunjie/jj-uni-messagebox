@@ -1821,6 +1821,7 @@ var render = function() {
             "div",
             {
               staticClass: _vm._$g(1, "sc"),
+              class: _vm._$g(1, "c"),
               staticStyle: {
                 "justify-content": "flex-end",
                 "align-items": "flex-end"
@@ -1851,6 +1852,9 @@ var render = function() {
                   style: _vm._$g(2, "s"),
                   attrs: { _i: 2 },
                   on: {
+                    animationend: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    },
                     click: function($event) {
                       return _vm.$handleViewEvent($event, { stop: true })
                     }
@@ -2030,7 +2034,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 15);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".messagebox-shade[data-v-2387f610] {\n\twidth: 100%;\n\theight: 100%;\n\tposition: fixed;\n\tbottom: 0;\n\tright: 0;\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tz-index: 999;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n}\n.messagebox-main[data-v-2387f610] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\tbackground: white;\n\twidth: 80%;\n\tborder-radius: 5px;\n\toverflow: hidden;\n\tbox-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);\n\tbox-sizing: border-box;\n\tbackground-repeat: no-repeat;\n\tbackground-size: cover;\n\tbackground-attachment: fixed;\n}\n.background-content[data-v-2387f610] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: absolute;\n\tright: 0;\n\tbottom: 0;\n\ttop: 0;\n\tleft: 0;\n}\n.messagebox-content[data-v-2387f610] {\n\tbox-sizing: border-box;\n\twidth: 100%;\n\tpadding: 20px;\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\twhite-space: pre-wrap;\n}\n.rightTopClose[data-v-2387f610] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n\twidth: 35px;\n\theight: 35px;\n\tposition: absolute;\n\tz-index: 100;\n\ttop: 3px;\n\tright: 5px;\n}\n.closeImage[data-v-2387f610] {\n\theight: 15px;\n\twidth: 15px;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.image[data-v-2387f610] {\n\theight: 100%;\n\twidth: 100%;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n\n/*弹层动画（从上往下）*/\n\n/* .fadeIn {\n    -webkit-animation: fadeInDown .3s;\n    animation: fadeInDown .3s;\n}\n\n@keyframes fadeInDown {\n    0% {\n        transform: translate3d(0, -20%, 0);\n        opacity: 0;\n    }\n    100% {\n        transform: none;\n        opacity: 1;\n    }\n}\n\n@-webkit-keyframes fadeInDown {\n    0% {\n        -webkit-transform: translate3d(0, -20%, 0);\n        opacity: 0;\n    }\n    100% {\n        -webkit-transform: none;\n        opacity: 1;\n    }\n} */\n\n/*弹层动画（从下往上出现）*/\n.fadelogIn[data-v-2387f610] {\n    -webkit-animation: fadelogIn-data-v-2387f610 .25s;\n    animation: fadelogIn-data-v-2387f610 .25s;\n}\n@keyframes fadelogIn-data-v-2387f610 {\n0% {\n        -webkit-transform: translate3d(0, 100%, 0);\n                transform: translate3d(0, 100%, 0);\n}\n100% {\n        -webkit-transform: none;\n                transform: none;\n}\n}\n@-webkit-keyframes fadelogIn-data-v-2387f610 {\n0% {\n        -webkit-transform: translate3d(0, 100%, 0);\n}\n100% {\n        -webkit-transform: none;\n}\n}\n\n/*弹层动画（从上往下消失）*/\n.fadelogOut[data-v-2387f610] {\n    -webkit-animation: fadelogOut-data-v-2387f610 .25s;\n    animation: fadelogOut-data-v-2387f610 .25s;\n}\n@keyframes fadelogOut-data-v-2387f610 {\n0% {\n       -webkit-transform: none;\n               transform: none;\n}\n100% {\n\t\t-webkit-transform: translate3d(0, 100%, 0);\n\t\t        transform: translate3d(0, 100%, 0);\n}\n}\n@-webkit-keyframes fadelogOut-data-v-2387f610 {\n0% {\n\t\t-webkit-transform: none;\n}\n100% {\n        -webkit-transform: translate3d(0, 100%, 0);\n}\n}\n.jj-popup[data-v-2387f610] {\n\tdisplay: flex;\n\tflex-direction: column;\n}\n.flexCenter[data-v-2387f610] {\n\tdisplay: flex;\n\tjustify-content: center;\n}\n", ""]);
+exports.push([module.i, ".messagebox-shade[data-v-2387f610] {\n\twidth: 100%;\n\theight: 100%;\n\tposition: fixed;\n\tbottom: 0;\n\tright: 0;\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tz-index: 999;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n}\n.messagebox-main[data-v-2387f610] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\tbackground: white;\n\twidth: 80%;\n\tborder-radius: 5px;\n\toverflow: hidden;\n\tbox-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);\n\tbox-sizing: border-box;\n\tbackground-repeat: no-repeat;\n\tbackground-size: cover;\n\tbackground-attachment: fixed;\n}\n.background-content[data-v-2387f610] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: absolute;\n\tright: 0;\n\tbottom: 0;\n\ttop: 0;\n\tleft: 0;\n}\n.messagebox-content[data-v-2387f610] {\n\tbox-sizing: border-box;\n\twidth: 100%;\n\tpadding: 20px;\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\twhite-space: pre-wrap;\n}\n.rightTopClose[data-v-2387f610] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n\twidth: 35px;\n\theight: 35px;\n\tposition: absolute;\n\tz-index: 100;\n\ttop: 3px;\n\tright: 5px;\n}\n.closeImage[data-v-2387f610] {\n\theight: 15px;\n\twidth: 15px;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.image[data-v-2387f610] {\n\theight: 100%;\n\twidth: 100%;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.fadelogOutOpcity[data-v-2387f610]{\n\t\ttransition: all 1.5s;\n\t\topacity: 0;\n}\n\n/*弹层动画（从上往下）*/\n\n/* .fadeIn {\n    -webkit-animation: fadeInDown .3s;\n    animation: fadeInDown .3s;\n}\n\n@keyframes fadeInDown {\n    0% {\n        transform: translate3d(0, -20%, 0);\n        opacity: 0;\n    }\n    100% {\n        transform: none;\n        opacity: 1;\n    }\n}\n\n@-webkit-keyframes fadeInDown {\n    0% {\n        -webkit-transform: translate3d(0, -20%, 0);\n        opacity: 0;\n    }\n    100% {\n        -webkit-transform: none;\n        opacity: 1;\n    }\n} */\n\n/*弹层动画（从下往上出现）*/\n.fadelogIn[data-v-2387f610] {\n    -webkit-animation: fadelogIn-data-v-2387f610 .25s;\n    animation: fadelogIn-data-v-2387f610 .25s;\n}\n@keyframes fadelogIn-data-v-2387f610 {\n0% {\n        -webkit-transform: translate3d(0, 100%, 0);\n                transform: translate3d(0, 100%, 0);\n}\n100% {\n        -webkit-transform: none;\n                transform: none;\n}\n}\n@-webkit-keyframes fadelogIn-data-v-2387f610 {\n0% {\n        -webkit-transform: translate3d(0, 100%, 0);\n}\n100% {\n        -webkit-transform: none;\n}\n}\n\n/*弹层动画（从上往下消失）*/\n.fadelogOut[data-v-2387f610] {\n    -webkit-animation: fadelogOut-data-v-2387f610 .25s;\n    animation: fadelogOut-data-v-2387f610 .25s;\n\t/* 保留动画结束后的样子 */\n\t-webkit-animation-fill-mode: forwards;\n\t        animation-fill-mode: forwards;\n}\n@keyframes fadelogOut-data-v-2387f610 {\n0% {\n       -webkit-transform: none;\n               transform: none;\n}\n100% {\n\t\t-webkit-transform: translate3d(0, 100%, 0);\n\t\t        transform: translate3d(0, 100%, 0);\n}\n}\n@-webkit-keyframes fadelogOut-data-v-2387f610 {\n0% {\n\t\t-webkit-transform: none;\n}\n100% {\n        -webkit-transform: translate3d(0, 100%, 0);\n}\n}\n.jj-popup[data-v-2387f610] {\n\tdisplay: flex;\n\tflex-direction: column;\n}\n.flexCenter[data-v-2387f610] {\n\tdisplay: flex;\n\tjustify-content: center;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -2322,7 +2326,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 15);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".messagebox-shade[data-v-4259adc8] {\n\twidth: 100%;\n\theight: 100%;\n\tposition: fixed;\n\tbottom: 0;\n\tright: 0;\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tz-index: 999;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n}\n.messagebox-main[data-v-4259adc8] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\tbackground: white;\n\twidth: 80%;\n\tborder-radius: 5px;\n\toverflow: hidden;\n\tbox-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);\n\tbox-sizing: border-box;\n\tbackground-repeat: no-repeat;\n\tbackground-size: cover;\n\tbackground-attachment: fixed;\n}\n.background-content[data-v-4259adc8] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: absolute;\n\tright: 0;\n\tbottom: 0;\n\ttop: 0;\n\tleft: 0;\n}\n.messagebox-content[data-v-4259adc8] {\n\tbox-sizing: border-box;\n\twidth: 100%;\n\tpadding: 20px;\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\twhite-space: pre-wrap;\n}\n.rightTopClose[data-v-4259adc8] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n\twidth: 35px;\n\theight: 35px;\n\tposition: absolute;\n\tz-index: 100;\n\ttop: 3px;\n\tright: 5px;\n}\n.closeImage[data-v-4259adc8] {\n\theight: 15px;\n\twidth: 15px;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.image[data-v-4259adc8] {\n\theight: 100%;\n\twidth: 100%;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n\n/*弹层动画（放大）*/\n.popIn[data-v-4259adc8] {\n    -webkit-animation: popIn-data-v-4259adc8 .25s;\n    animation: popIn-data-v-4259adc8 .25s;\n}\n@-webkit-keyframes popIn-data-v-4259adc8 {\n0% {\n        -webkit-transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n}\n100% {\n        -webkit-transform: scale3d(1, 1, 1);\n        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n        opacity: 1;\n}\n}\n@keyframes popIn-data-v-4259adc8 {\n0% {\n        -webkit-transform: scale3d(0.2, 0.2, 0.2);\n                transform: scale3d(0.2, 0.2, 0.2);\n        opacity: 0;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n}\n100% {\n        -webkit-transform: scale3d(1, 1, 1);\n                transform: scale3d(1, 1, 1);\n        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n                animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n        opacity: 1;\n}\n}\n\n/*弹层动画（缩小）*/\n.popOut[data-v-4259adc8] {\n    -webkit-animation: popOut-data-v-4259adc8 .25s;\n    animation: popOut-data-v-4259adc8 .25s;\n}\n@-webkit-keyframes popOut-data-v-4259adc8 {\n0% {\n        -webkit-transform: scale3d(1, 1, 1);\n        opacity: 1;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n}\n100% {\n        -webkit-transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n}\n@keyframes popOut-data-v-4259adc8 {\n0% {\n        -webkit-transform: scale3d(1, 1, 1);\n                transform: scale3d(1, 1, 1);\n        opacity: 1;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n}\n100% {\n        -webkit-transform: scale3d(0, 0, 0);\n                transform: scale3d(0, 0, 0);;\n        opacity: 0;\n}\n}\n.jj-dialog[data-v-4259adc8]{\n\tdisplay: flex;\n\tflex-direction: column;\n}\n", ""]);
+exports.push([module.i, ".messagebox-shade[data-v-4259adc8] {\n\twidth: 100%;\n\theight: 100%;\n\tposition: fixed;\n\tbottom: 0;\n\tright: 0;\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tz-index: 999;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n}\n.messagebox-main[data-v-4259adc8] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\tbackground: white;\n\twidth: 80%;\n\tborder-radius: 5px;\n\toverflow: hidden;\n\tbox-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);\n\tbox-sizing: border-box;\n\tbackground-repeat: no-repeat;\n\tbackground-size: cover;\n\tbackground-attachment: fixed;\n}\n.background-content[data-v-4259adc8] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: absolute;\n\tright: 0;\n\tbottom: 0;\n\ttop: 0;\n\tleft: 0;\n}\n.messagebox-content[data-v-4259adc8] {\n\tbox-sizing: border-box;\n\twidth: 100%;\n\tpadding: 20px;\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\twhite-space: pre-wrap;\n}\n.rightTopClose[data-v-4259adc8] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n\twidth: 35px;\n\theight: 35px;\n\tposition: absolute;\n\tz-index: 100;\n\ttop: 3px;\n\tright: 5px;\n}\n.closeImage[data-v-4259adc8] {\n\theight: 15px;\n\twidth: 15px;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.image[data-v-4259adc8] {\n\theight: 100%;\n\twidth: 100%;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.fadelogOutOpcity[data-v-4259adc8]{\n\t\ttransition: all 1.5s;\n\t\topacity: 0;\n}\n\n/*弹层动画（放大）*/\n.popIn[data-v-4259adc8] {\n    -webkit-animation: popIn-data-v-4259adc8 .25s;\n    animation: popIn-data-v-4259adc8 .25s;\n}\n@-webkit-keyframes popIn-data-v-4259adc8 {\n0% {\n        -webkit-transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(1, 1, 1);\n        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n        opacity: 1;\n}\n}\n@keyframes popIn-data-v-4259adc8 {\n0% {\n        -webkit-transform: scale3d(0.2, 0.2, 0.2);\n                transform: scale3d(0.2, 0.2, 0.2);\n        opacity: 0;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(1, 1, 1);\n                transform: scale3d(1, 1, 1);\n        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n                animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n        opacity: 1;\n}\n}\n\n/*弹层动画（缩小）*/\n.popOut[data-v-4259adc8] {\n    -webkit-animation: popOut-data-v-4259adc8 .25s;\n    animation: popOut-data-v-4259adc8 .25s;\n\t/* 保留动画结束后的样子 */\n\t-webkit-animation-fill-mode: forwards;\n\t        animation-fill-mode: forwards;\n}\n@-webkit-keyframes popOut-data-v-4259adc8 {\n0% {\n        -webkit-transform: scale3d(1, 1, 1);\n        opacity: 1;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n}\n@keyframes popOut-data-v-4259adc8 {\n0% {\n        -webkit-transform: scale3d(1, 1, 1);\n                transform: scale3d(1, 1, 1);\n        opacity: 1;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(0, 0, 0);\n                transform: scale3d(0, 0, 0);;\n        opacity: 0;\n}\n}\n.jj-dialog[data-v-4259adc8]{\n\tdisplay: flex;\n\tflex-direction: column;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -3711,7 +3715,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 15);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".messagebox-shade[data-v-0666c070] {\n\twidth: 100%;\n\theight: 100%;\n\tposition: fixed;\n\tbottom: 0;\n\tright: 0;\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tz-index: 999;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n}\n.messagebox-main[data-v-0666c070] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\tbackground: white;\n\twidth: 80%;\n\tborder-radius: 5px;\n\toverflow: hidden;\n\tbox-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);\n\tbox-sizing: border-box;\n\tbackground-repeat: no-repeat;\n\tbackground-size: cover;\n\tbackground-attachment: fixed;\n}\n.background-content[data-v-0666c070] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: absolute;\n\tright: 0;\n\tbottom: 0;\n\ttop: 0;\n\tleft: 0;\n}\n.messagebox-content[data-v-0666c070] {\n\tbox-sizing: border-box;\n\twidth: 100%;\n\tpadding: 20px;\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\twhite-space: pre-wrap;\n}\n.rightTopClose[data-v-0666c070] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n\twidth: 35px;\n\theight: 35px;\n\tposition: absolute;\n\tz-index: 100;\n\ttop: 3px;\n\tright: 5px;\n}\n.closeImage[data-v-0666c070] {\n\theight: 15px;\n\twidth: 15px;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.image[data-v-0666c070] {\n\theight: 100%;\n\twidth: 100%;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.flexContentCenter[data-v-0666c070] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n\tposition: relative;\n}\n.message[data-v-0666c070] {\n\tcolor: #FFFFFF;\n\tfont-size: 14.5px;\n\tword-break: break-all;\n\ttext-align: center;\n\twhite-space: pre-wrap;\n}\n", ""]);
+exports.push([module.i, ".messagebox-shade[data-v-0666c070] {\n\twidth: 100%;\n\theight: 100%;\n\tposition: fixed;\n\tbottom: 0;\n\tright: 0;\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tz-index: 999;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n}\n.messagebox-main[data-v-0666c070] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\tbackground: white;\n\twidth: 80%;\n\tborder-radius: 5px;\n\toverflow: hidden;\n\tbox-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);\n\tbox-sizing: border-box;\n\tbackground-repeat: no-repeat;\n\tbackground-size: cover;\n\tbackground-attachment: fixed;\n}\n.background-content[data-v-0666c070] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: absolute;\n\tright: 0;\n\tbottom: 0;\n\ttop: 0;\n\tleft: 0;\n}\n.messagebox-content[data-v-0666c070] {\n\tbox-sizing: border-box;\n\twidth: 100%;\n\tpadding: 20px;\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\twhite-space: pre-wrap;\n}\n.rightTopClose[data-v-0666c070] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n\twidth: 35px;\n\theight: 35px;\n\tposition: absolute;\n\tz-index: 100;\n\ttop: 3px;\n\tright: 5px;\n}\n.closeImage[data-v-0666c070] {\n\theight: 15px;\n\twidth: 15px;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.image[data-v-0666c070] {\n\theight: 100%;\n\twidth: 100%;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.fadelogOutOpcity[data-v-0666c070]{\n\t\ttransition: all 1.5s;\n\t\topacity: 0;\n}\n.flexContentCenter[data-v-0666c070] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n\tposition: relative;\n}\n.message[data-v-0666c070] {\n\tcolor: #FFFFFF;\n\tfont-size: 14.5px;\n\tword-break: break-all;\n\ttext-align: center;\n\twhite-space: pre-wrap;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -3807,6 +3811,7 @@ var render = function() {
                   "div",
                   {
                     staticClass: _vm._$g(2, "sc"),
+                    class: _vm._$g(2, "c"),
                     staticStyle: {
                       "justify-content": "flex-end",
                       "align-items": "flex-end"
@@ -3836,6 +3841,9 @@ var render = function() {
                         style: _vm._$g(3, "s"),
                         attrs: { _i: 3 },
                         on: {
+                          animationend: function($event) {
+                            return _vm.$handleViewEvent($event)
+                          },
                           click: function($event) {
                             return _vm.$handleViewEvent($event, { stop: true })
                           }
@@ -4024,19 +4032,36 @@ var render = function() {
                 )
               ]
             : [
-                _vm._$g(20, "i")
-                  ? _c(
+                _c(
+                  "div",
+                  {
+                    staticClass: _vm._$g(20, "sc"),
+                    class: _vm._$g(20, "c"),
+                    style: _vm._$g(20, "s"),
+                    attrs: { _i: 20 },
+                    on: {
+                      touchmove: function($event) {
+                        return _vm.$handleViewEvent($event, { stop: true })
+                      },
+                      click: function($event) {
+                        return _vm.$handleViewEvent($event)
+                      }
+                    }
+                  },
+                  [
+                    _c(
                       "div",
                       {
-                        staticClass: _vm._$g(20, "sc"),
-                        style: _vm._$g(20, "s"),
-                        attrs: { _i: 20 },
+                        staticClass: _vm._$g(21, "sc"),
+                        class: _vm._$g(21, "c"),
+                        style: _vm._$g(21, "s"),
+                        attrs: { _i: 21 },
                         on: {
-                          touchmove: function($event) {
-                            return _vm.$handleViewEvent($event, { stop: true })
+                          animationend: function($event) {
+                            return _vm.$handleViewEvent($event)
                           },
                           click: function($event) {
-                            return _vm.$handleViewEvent($event)
+                            return _vm.$handleViewEvent($event, { stop: true })
                           }
                         }
                       },
@@ -4044,207 +4069,183 @@ var render = function() {
                         _c(
                           "div",
                           {
-                            staticClass: _vm._$g(21, "sc"),
-                            class: _vm._$g(21, "c"),
-                            style: _vm._$g(21, "s"),
-                            attrs: { _i: 21 },
-                            on: {
-                              click: function($event) {
-                                return _vm.$handleViewEvent($event, {
-                                  stop: true
-                                })
-                              }
-                            }
+                            staticClass: _vm._$g(22, "sc"),
+                            style: _vm._$g(22, "s"),
+                            attrs: { _i: 22 }
                           },
                           [
-                            _c(
-                              "div",
-                              {
-                                staticClass: _vm._$g(22, "sc"),
-                                style: _vm._$g(22, "s"),
-                                attrs: { _i: 22 }
-                              },
-                              [
-                                _vm._$g(23, "i")
-                                  ? _c(
-                                      "div",
-                                      { attrs: { _i: 23 } },
-                                      [
-                                        _vm._$g(24, "i")
-                                          ? _c(
-                                              "div",
-                                              {
-                                                staticClass: _vm._$g(24, "sc"),
-                                                staticStyle: {
-                                                  "font-size": "1.125rem"
-                                                },
-                                                style: _vm._$g(24, "s"),
-                                                attrs: { _i: 24 }
-                                              },
-                                              [
-                                                _c(
-                                                  "span",
-                                                  { attrs: { _i: 25 } },
-                                                  [_vm._v(_vm._$g(25, "t0-0"))]
-                                                )
-                                              ],
-                                              1
-                                            )
-                                          : _vm._e(),
-                                        _vm._$g(26, "i")
-                                          ? _c(
-                                              "div",
-                                              {
-                                                staticClass: _vm._$g(26, "sc"),
-                                                staticStyle: {
-                                                  "margin-top": "10px"
-                                                },
-                                                style: _vm._$g(26, "s"),
-                                                attrs: { _i: 26 }
-                                              },
-                                              [
-                                                _c(
-                                                  "span",
-                                                  { attrs: { _i: 27 } },
-                                                  [_vm._v(_vm._$g(27, "t0-0"))]
-                                                )
-                                              ],
-                                              1
-                                            )
-                                          : _vm._e()
-                                      ],
-                                      1
-                                    )
-                                  : _vm._e(),
-                                _vm._$g(28, "i")
-                                  ? _c(
-                                      "div",
-                                      {
-                                        staticClass: _vm._$g(28, "sc"),
-                                        attrs: { _i: 28 },
-                                        on: {
-                                          click: function($event) {
-                                            return _vm.$handleViewEvent($event)
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c("v-uni-image", {
-                                          staticClass: _vm._$g(29, "sc"),
-                                          style: _vm._$g(29, "s"),
-                                          attrs: {
-                                            src: _vm._$g(29, "a-src"),
-                                            _i: 29
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    )
-                                  : _vm._e()
-                              ],
-                              1
-                            ),
-                            _vm._$g(30, "i")
+                            _vm._$g(23, "i")
                               ? _c(
                                   "div",
-                                  { attrs: { _i: 30 } },
+                                  { attrs: { _i: 23 } },
                                   [
-                                    _vm._$g(31, "i")
+                                    _vm._$g(24, "i")
                                       ? _c(
                                           "div",
                                           {
-                                            staticClass: _vm._$g(31, "sc"),
-                                            attrs: { _i: 31 }
+                                            staticClass: _vm._$g(24, "sc"),
+                                            staticStyle: {
+                                              "font-size": "1.125rem"
+                                            },
+                                            style: _vm._$g(24, "s"),
+                                            attrs: { _i: 24 }
                                           },
-                                          _vm._l(_vm._$g(32, "f"), function(
-                                            btn,
-                                            index,
-                                            $22,
-                                            $32
-                                          ) {
-                                            return _c("jj-button", {
-                                              key: btn,
-                                              staticClass: _vm._$g(
-                                                "32-" + $32,
-                                                "sc"
-                                              ),
-                                              style: _vm._$g("32-" + $32, "s"),
-                                              attrs: { _i: "32-" + $32 },
-                                              on: {
-                                                btnClick: function($event) {
-                                                  return _vm.$handleViewEvent(
-                                                    $event
-                                                  )
-                                                }
-                                              }
-                                            })
-                                          }),
+                                          [
+                                            _c("span", { attrs: { _i: 25 } }, [
+                                              _vm._v(_vm._$g(25, "t0-0"))
+                                            ])
+                                          ],
                                           1
                                         )
-                                      : _vm._l(_vm._$g(33, "f"), function(
-                                          btn,
-                                          index,
-                                          $23,
-                                          $33
-                                        ) {
-                                          return _c(
-                                            "div",
-                                            {
-                                              key: btn,
-                                              staticClass: _vm._$g(
-                                                "33-" + $33,
-                                                "sc"
-                                              ),
-                                              attrs: { _i: "33-" + $33 }
+                                      : _vm._e(),
+                                    _vm._$g(26, "i")
+                                      ? _c(
+                                          "div",
+                                          {
+                                            staticClass: _vm._$g(26, "sc"),
+                                            staticStyle: {
+                                              "margin-top": "10px"
                                             },
-                                            [
-                                              _c("jj-button", {
-                                                staticClass: _vm._$g(
-                                                  "34-" + $33,
-                                                  "sc"
-                                                ),
-                                                style: _vm._$g(
-                                                  "34-" + $33,
-                                                  "s"
-                                                ),
-                                                attrs: { _i: "34-" + $33 },
-                                                on: {
-                                                  btnClick: function($event) {
-                                                    return _vm.$handleViewEvent(
-                                                      $event
-                                                    )
-                                                  }
-                                                }
-                                              })
-                                            ],
-                                            1
-                                          )
-                                        })
+                                            style: _vm._$g(26, "s"),
+                                            attrs: { _i: 26 }
+                                          },
+                                          [
+                                            _c("span", { attrs: { _i: 27 } }, [
+                                              _vm._v(_vm._$g(27, "t0-0"))
+                                            ])
+                                          ],
+                                          1
+                                        )
+                                      : _vm._e()
                                   ],
-                                  2
+                                  1
                                 )
-                              : _c(
+                              : _vm._e(),
+                            _vm._$g(28, "i")
+                              ? _c(
                                   "div",
-                                  { attrs: { _i: 35 } },
+                                  {
+                                    staticClass: _vm._$g(28, "sc"),
+                                    attrs: { _i: 28 },
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.$handleViewEvent($event)
+                                      }
+                                    }
+                                  },
                                   [
-                                    _c("custom-alert", {
-                                      attrs: { _i: 36 },
-                                      on: {
-                                        clickBtn: function($event) {
-                                          return _vm.$handleViewEvent($event)
-                                        }
+                                    _c("v-uni-image", {
+                                      staticClass: _vm._$g(29, "sc"),
+                                      style: _vm._$g(29, "s"),
+                                      attrs: {
+                                        src: _vm._$g(29, "a-src"),
+                                        _i: 29
                                       }
                                     })
                                   ],
                                   1
                                 )
+                              : _vm._e()
                           ],
                           1
-                        )
+                        ),
+                        _vm._$g(30, "i")
+                          ? _c(
+                              "div",
+                              { attrs: { _i: 30 } },
+                              [
+                                _vm._$g(31, "i")
+                                  ? _c(
+                                      "div",
+                                      {
+                                        staticClass: _vm._$g(31, "sc"),
+                                        attrs: { _i: 31 }
+                                      },
+                                      _vm._l(_vm._$g(32, "f"), function(
+                                        btn,
+                                        index,
+                                        $22,
+                                        $32
+                                      ) {
+                                        return _c("jj-button", {
+                                          key: btn,
+                                          staticClass: _vm._$g(
+                                            "32-" + $32,
+                                            "sc"
+                                          ),
+                                          style: _vm._$g("32-" + $32, "s"),
+                                          attrs: { _i: "32-" + $32 },
+                                          on: {
+                                            btnClick: function($event) {
+                                              return _vm.$handleViewEvent(
+                                                $event
+                                              )
+                                            }
+                                          }
+                                        })
+                                      }),
+                                      1
+                                    )
+                                  : _vm._l(_vm._$g(33, "f"), function(
+                                      btn,
+                                      index,
+                                      $23,
+                                      $33
+                                    ) {
+                                      return _c(
+                                        "div",
+                                        {
+                                          key: btn,
+                                          staticClass: _vm._$g(
+                                            "33-" + $33,
+                                            "sc"
+                                          ),
+                                          attrs: { _i: "33-" + $33 }
+                                        },
+                                        [
+                                          _c("jj-button", {
+                                            staticClass: _vm._$g(
+                                              "34-" + $33,
+                                              "sc"
+                                            ),
+                                            style: _vm._$g("34-" + $33, "s"),
+                                            attrs: { _i: "34-" + $33 },
+                                            on: {
+                                              btnClick: function($event) {
+                                                return _vm.$handleViewEvent(
+                                                  $event
+                                                )
+                                              }
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      )
+                                    })
+                              ],
+                              2
+                            )
+                          : _c(
+                              "div",
+                              { attrs: { _i: 35 } },
+                              [
+                                _c("custom-alert", {
+                                  attrs: { _i: 36 },
+                                  on: {
+                                    clickBtn: function($event) {
+                                      return _vm.$handleViewEvent($event)
+                                    }
+                                  }
+                                })
+                              ],
+                              1
+                            )
                       ],
                       1
                     )
-                  : _vm._e()
+                  ],
+                  1
+                )
               ]
         ],
         2
@@ -4941,7 +4942,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 15);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".messagebox-shade[data-v-432dbc10] {\n\twidth: 100%;\n\theight: 100%;\n\tposition: fixed;\n\tbottom: 0;\n\tright: 0;\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tz-index: 999;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n}\n.messagebox-main[data-v-432dbc10] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\tbackground: white;\n\twidth: 80%;\n\tborder-radius: 5px;\n\toverflow: hidden;\n\tbox-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);\n\tbox-sizing: border-box;\n\tbackground-repeat: no-repeat;\n\tbackground-size: cover;\n\tbackground-attachment: fixed;\n}\n.background-content[data-v-432dbc10] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: absolute;\n\tright: 0;\n\tbottom: 0;\n\ttop: 0;\n\tleft: 0;\n}\n.messagebox-content[data-v-432dbc10] {\n\tbox-sizing: border-box;\n\twidth: 100%;\n\tpadding: 20px;\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\twhite-space: pre-wrap;\n}\n.rightTopClose[data-v-432dbc10] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n\twidth: 35px;\n\theight: 35px;\n\tposition: absolute;\n\tz-index: 100;\n\ttop: 3px;\n\tright: 5px;\n}\n.closeImage[data-v-432dbc10] {\n\theight: 15px;\n\twidth: 15px;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.image[data-v-432dbc10] {\n\theight: 100%;\n\twidth: 100%;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n\n/*弹层动画（放大）*/\n.popIn[data-v-432dbc10] {\n    -webkit-animation: popIn-data-v-432dbc10 .25s;\n    animation: popIn-data-v-432dbc10 .25s;\n}\n@-webkit-keyframes popIn-data-v-432dbc10 {\n0% {\n        -webkit-transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n}\n100% {\n        -webkit-transform: scale3d(1, 1, 1);\n        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n        opacity: 1;\n}\n}\n@keyframes popIn-data-v-432dbc10 {\n0% {\n        -webkit-transform: scale3d(0.2, 0.2, 0.2);\n                transform: scale3d(0.2, 0.2, 0.2);\n        opacity: 0;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n}\n100% {\n        -webkit-transform: scale3d(1, 1, 1);\n                transform: scale3d(1, 1, 1);\n        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n                animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n        opacity: 1;\n}\n}\n\n/*弹层动画（缩小）*/\n.popOut[data-v-432dbc10] {\n    -webkit-animation: popOut-data-v-432dbc10 .25s;\n    animation: popOut-data-v-432dbc10 .25s;\n}\n@-webkit-keyframes popOut-data-v-432dbc10 {\n0% {\n        -webkit-transform: scale3d(1, 1, 1);\n        opacity: 1;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n}\n100% {\n        -webkit-transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n}\n@keyframes popOut-data-v-432dbc10 {\n0% {\n        -webkit-transform: scale3d(1, 1, 1);\n                transform: scale3d(1, 1, 1);\n        opacity: 1;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n}\n100% {\n        -webkit-transform: scale3d(0, 0, 0);\n                transform: scale3d(0, 0, 0);;\n        opacity: 0;\n}\n}\n\n/*弹层动画（从上往下）*/\n\n/* .fadeIn {\n    -webkit-animation: fadeInDown .3s;\n    animation: fadeInDown .3s;\n}\n\n@keyframes fadeInDown {\n    0% {\n        transform: translate3d(0, -20%, 0);\n        opacity: 0;\n    }\n    100% {\n        transform: none;\n        opacity: 1;\n    }\n}\n\n@-webkit-keyframes fadeInDown {\n    0% {\n        -webkit-transform: translate3d(0, -20%, 0);\n        opacity: 0;\n    }\n    100% {\n        -webkit-transform: none;\n        opacity: 1;\n    }\n} */\n\n/*弹层动画（从下往上出现）*/\n.fadelogIn[data-v-432dbc10] {\n    -webkit-animation: fadelogIn-data-v-432dbc10 .25s;\n    animation: fadelogIn-data-v-432dbc10 .25s;\n}\n@keyframes fadelogIn-data-v-432dbc10 {\n0% {\n        -webkit-transform: translate3d(0, 100%, 0);\n                transform: translate3d(0, 100%, 0);\n}\n100% {\n        -webkit-transform: none;\n                transform: none;\n}\n}\n@-webkit-keyframes fadelogIn-data-v-432dbc10 {\n0% {\n        -webkit-transform: translate3d(0, 100%, 0);\n}\n100% {\n        -webkit-transform: none;\n}\n}\n\n/*弹层动画（从上往下消失）*/\n.fadelogOut[data-v-432dbc10] {\n    -webkit-animation: fadelogOut-data-v-432dbc10 .25s;\n    animation: fadelogOut-data-v-432dbc10 .25s;\n}\n@keyframes fadelogOut-data-v-432dbc10 {\n0% {\n       -webkit-transform: none;\n               transform: none;\n}\n100% {\n\t\t-webkit-transform: translate3d(0, 100%, 0);\n\t\t        transform: translate3d(0, 100%, 0);\n}\n}\n@-webkit-keyframes fadelogOut-data-v-432dbc10 {\n0% {\n\t\t-webkit-transform: none;\n}\n100% {\n        -webkit-transform: translate3d(0, 100%, 0);\n}\n}\n.messagebox-shade-box[data-v-432dbc10]{\n\twidth: 100%;\n\theight: 100%;\n\tposition: absolute;\n\tbottom: 0;\n\tright: 0;\n\ttop: -100px;\n\tleft: 0;\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tz-index: 999;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n}\n.flexCenter[data-v-432dbc10] {\n\tdisplay: flex;\n\ttext-align: center;\n\tjustify-content: center;\n}\n.flexContentCenter[data-v-432dbc10] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n}\n.flexContentSpaceAround[data-v-432dbc10] {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-around;\n\talign-items: center;\n}\n.jj-alert-btns[data-v-432dbc10] {\n\n\tbox-sizing: border-box;\n\tborder-top: 1px solid #E8E6EF;\n}\n.jj-sheet-btn[data-v-432dbc10]{\n\tflex: 1 0 auto;\n\theight: 2.75rem;\n\tdisplay: flex;\n\tfont-size: 1.0625rem;\n}\n.jj-alert-btn[data-v-432dbc10] {\n\tflex: 1 0 auto;\n\theight: 2.75rem;\n\tdisplay: flex;\n\tfont-size: 1.0625rem;\n\talign-items: center;\n\tjustify-content: center;\n\ttext-align: center;\n\tborder-right: 1px solid #E8E6EF;\n}\n.jj-alert-btn[data-v-432dbc10]:last-child {\n\tborder-right: none;\n}\n", ""]);
+exports.push([module.i, ".messagebox-shade[data-v-432dbc10] {\n\twidth: 100%;\n\theight: 100%;\n\tposition: fixed;\n\tbottom: 0;\n\tright: 0;\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tz-index: 999;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n}\n.messagebox-main[data-v-432dbc10] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\tbackground: white;\n\twidth: 80%;\n\tborder-radius: 5px;\n\toverflow: hidden;\n\tbox-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);\n\tbox-sizing: border-box;\n\tbackground-repeat: no-repeat;\n\tbackground-size: cover;\n\tbackground-attachment: fixed;\n}\n.background-content[data-v-432dbc10] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: absolute;\n\tright: 0;\n\tbottom: 0;\n\ttop: 0;\n\tleft: 0;\n}\n.messagebox-content[data-v-432dbc10] {\n\tbox-sizing: border-box;\n\twidth: 100%;\n\tpadding: 20px;\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\twhite-space: pre-wrap;\n}\n.rightTopClose[data-v-432dbc10] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n\twidth: 35px;\n\theight: 35px;\n\tposition: absolute;\n\tz-index: 100;\n\ttop: 3px;\n\tright: 5px;\n}\n.closeImage[data-v-432dbc10] {\n\theight: 15px;\n\twidth: 15px;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.image[data-v-432dbc10] {\n\theight: 100%;\n\twidth: 100%;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.fadelogOutOpcity[data-v-432dbc10]{\n\t\ttransition: all 1.5s;\n\t\topacity: 0;\n}\n\n/*弹层动画（放大）*/\n.popIn[data-v-432dbc10] {\n    -webkit-animation: popIn-data-v-432dbc10 .25s;\n    animation: popIn-data-v-432dbc10 .25s;\n}\n@-webkit-keyframes popIn-data-v-432dbc10 {\n0% {\n        -webkit-transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(1, 1, 1);\n        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n        opacity: 1;\n}\n}\n@keyframes popIn-data-v-432dbc10 {\n0% {\n        -webkit-transform: scale3d(0.2, 0.2, 0.2);\n                transform: scale3d(0.2, 0.2, 0.2);\n        opacity: 0;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(1, 1, 1);\n                transform: scale3d(1, 1, 1);\n        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n                animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n        opacity: 1;\n}\n}\n\n/*弹层动画（缩小）*/\n.popOut[data-v-432dbc10] {\n    -webkit-animation: popOut-data-v-432dbc10 .25s;\n    animation: popOut-data-v-432dbc10 .25s;\n\t/* 保留动画结束后的样子 */\n\t-webkit-animation-fill-mode: forwards;\n\t        animation-fill-mode: forwards;\n}\n@-webkit-keyframes popOut-data-v-432dbc10 {\n0% {\n        -webkit-transform: scale3d(1, 1, 1);\n        opacity: 1;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n}\n@keyframes popOut-data-v-432dbc10 {\n0% {\n        -webkit-transform: scale3d(1, 1, 1);\n                transform: scale3d(1, 1, 1);\n        opacity: 1;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(0, 0, 0);\n                transform: scale3d(0, 0, 0);;\n        opacity: 0;\n}\n}\n\n/*弹层动画（从上往下）*/\n\n/* .fadeIn {\n    -webkit-animation: fadeInDown .3s;\n    animation: fadeInDown .3s;\n}\n\n@keyframes fadeInDown {\n    0% {\n        transform: translate3d(0, -20%, 0);\n        opacity: 0;\n    }\n    100% {\n        transform: none;\n        opacity: 1;\n    }\n}\n\n@-webkit-keyframes fadeInDown {\n    0% {\n        -webkit-transform: translate3d(0, -20%, 0);\n        opacity: 0;\n    }\n    100% {\n        -webkit-transform: none;\n        opacity: 1;\n    }\n} */\n\n/*弹层动画（从下往上出现）*/\n.fadelogIn[data-v-432dbc10] {\n    -webkit-animation: fadelogIn-data-v-432dbc10 .25s;\n    animation: fadelogIn-data-v-432dbc10 .25s;\n}\n@keyframes fadelogIn-data-v-432dbc10 {\n0% {\n        -webkit-transform: translate3d(0, 100%, 0);\n                transform: translate3d(0, 100%, 0);\n}\n100% {\n        -webkit-transform: none;\n                transform: none;\n}\n}\n@-webkit-keyframes fadelogIn-data-v-432dbc10 {\n0% {\n        -webkit-transform: translate3d(0, 100%, 0);\n}\n100% {\n        -webkit-transform: none;\n}\n}\n\n/*弹层动画（从上往下消失）*/\n.fadelogOut[data-v-432dbc10] {\n    -webkit-animation: fadelogOut-data-v-432dbc10 .25s;\n    animation: fadelogOut-data-v-432dbc10 .25s;\n\t/* 保留动画结束后的样子 */\n\t-webkit-animation-fill-mode: forwards;\n\t        animation-fill-mode: forwards;\n}\n@keyframes fadelogOut-data-v-432dbc10 {\n0% {\n       -webkit-transform: none;\n               transform: none;\n}\n100% {\n\t\t-webkit-transform: translate3d(0, 100%, 0);\n\t\t        transform: translate3d(0, 100%, 0);\n}\n}\n@-webkit-keyframes fadelogOut-data-v-432dbc10 {\n0% {\n\t\t-webkit-transform: none;\n}\n100% {\n        -webkit-transform: translate3d(0, 100%, 0);\n}\n}\n.flexCenter[data-v-432dbc10] {\n\tdisplay: flex;\n\ttext-align: center;\n\tjustify-content: center;\n}\n.flexContentCenter[data-v-432dbc10] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n}\n.flexContentSpaceAround[data-v-432dbc10] {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-around;\n\talign-items: center;\n}\n.jj-alert-btns[data-v-432dbc10] {\n\n\tbox-sizing: border-box;\n\tborder-top: 1px solid #E8E6EF;\n}\n.jj-sheet-btn[data-v-432dbc10]{\n\tflex: 1 0 auto;\n\theight: 2.75rem;\n\tdisplay: flex;\n\tfont-size: 1.0625rem;\n}\n.jj-alert-btn[data-v-432dbc10] {\n\tflex: 1 0 auto;\n\theight: 2.75rem;\n\tdisplay: flex;\n\tfont-size: 1.0625rem;\n\talign-items: center;\n\tjustify-content: center;\n\ttext-align: center;\n\tborder-right: 1px solid #E8E6EF;\n}\n.jj-alert-btn[data-v-432dbc10]:last-child {\n\tborder-right: none;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -5190,7 +5191,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 15);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".messagebox-shade[data-v-0de08b90] {\n\twidth: 100%;\n\theight: 100%;\n\tposition: fixed;\n\tbottom: 0;\n\tright: 0;\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tz-index: 999;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n}\n.messagebox-main[data-v-0de08b90] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\tbackground: white;\n\twidth: 80%;\n\tborder-radius: 5px;\n\toverflow: hidden;\n\tbox-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);\n\tbox-sizing: border-box;\n\tbackground-repeat: no-repeat;\n\tbackground-size: cover;\n\tbackground-attachment: fixed;\n}\n.background-content[data-v-0de08b90] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: absolute;\n\tright: 0;\n\tbottom: 0;\n\ttop: 0;\n\tleft: 0;\n}\n.messagebox-content[data-v-0de08b90] {\n\tbox-sizing: border-box;\n\twidth: 100%;\n\tpadding: 20px;\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\twhite-space: pre-wrap;\n}\n.rightTopClose[data-v-0de08b90] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n\twidth: 35px;\n\theight: 35px;\n\tposition: absolute;\n\tz-index: 100;\n\ttop: 3px;\n\tright: 5px;\n}\n.closeImage[data-v-0de08b90] {\n\theight: 15px;\n\twidth: 15px;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.image[data-v-0de08b90] {\n\theight: 100%;\n\twidth: 100%;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n\n/*弹层动画（放大）*/\n.popIn[data-v-0de08b90] {\n    -webkit-animation: popIn-data-v-0de08b90 .25s;\n    animation: popIn-data-v-0de08b90 .25s;\n}\n@-webkit-keyframes popIn-data-v-0de08b90 {\n0% {\n        -webkit-transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n}\n100% {\n        -webkit-transform: scale3d(1, 1, 1);\n        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n        opacity: 1;\n}\n}\n@keyframes popIn-data-v-0de08b90 {\n0% {\n        -webkit-transform: scale3d(0.2, 0.2, 0.2);\n                transform: scale3d(0.2, 0.2, 0.2);\n        opacity: 0;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n}\n100% {\n        -webkit-transform: scale3d(1, 1, 1);\n                transform: scale3d(1, 1, 1);\n        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n                animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n        opacity: 1;\n}\n}\n\n/*弹层动画（缩小）*/\n.popOut[data-v-0de08b90] {\n    -webkit-animation: popOut-data-v-0de08b90 .25s;\n    animation: popOut-data-v-0de08b90 .25s;\n}\n@-webkit-keyframes popOut-data-v-0de08b90 {\n0% {\n        -webkit-transform: scale3d(1, 1, 1);\n        opacity: 1;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n}\n100% {\n        -webkit-transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n}\n@keyframes popOut-data-v-0de08b90 {\n0% {\n        -webkit-transform: scale3d(1, 1, 1);\n                transform: scale3d(1, 1, 1);\n        opacity: 1;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n}\n100% {\n        -webkit-transform: scale3d(0, 0, 0);\n                transform: scale3d(0, 0, 0);;\n        opacity: 0;\n}\n}\n.flexContentCenter[data-v-0de08b90] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n\tposition: relative;\n}\n.imageCenter[data-v-0de08b90] {\n\tposition: absolute;\n\ttop: 50%;\n\tleft: 50%;\n\t-webkit-transform: translate(-50%, -50%);\n\t        transform: translate(-50%, -50%);\n}\n.loading-image[data-v-0de08b90] {\n\twidth: 100%;\n\theight: 100%;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n\t-webkit-animation: turn-data-v-0de08b90 1.5s linear infinite;\n\t        animation: turn-data-v-0de08b90 1.5s linear infinite;\n}\n.message[data-v-0de08b90] {\n\tcolor: #FFFFFF;\n\tfont-size: 14.5px;\n\tword-break: break-all;\n\twhite-space: pre-wrap;\n}\n@-webkit-keyframes turn-data-v-0de08b90 {\n0% {\n\t\t-webkit-transform: rotate(0deg);\n}\n50% {\n\t\t-webkit-transform: rotate(180deg);\n}\n100% {\n\t\t-webkit-transform: rotate(360deg);\n}\n}\n@keyframes turn-data-v-0de08b90 {\n0% {\n\t\t-webkit-transform: rotate(0deg);\n}\n50% {\n\t\t-webkit-transform: rotate(180deg);\n}\n100% {\n\t\t-webkit-transform: rotate(360deg);\n}\n}\n", ""]);
+exports.push([module.i, ".messagebox-shade[data-v-0de08b90] {\n\twidth: 100%;\n\theight: 100%;\n\tposition: fixed;\n\tbottom: 0;\n\tright: 0;\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tz-index: 999;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n}\n.messagebox-main[data-v-0de08b90] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\tbackground: white;\n\twidth: 80%;\n\tborder-radius: 5px;\n\toverflow: hidden;\n\tbox-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);\n\tbox-sizing: border-box;\n\tbackground-repeat: no-repeat;\n\tbackground-size: cover;\n\tbackground-attachment: fixed;\n}\n.background-content[data-v-0de08b90] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: absolute;\n\tright: 0;\n\tbottom: 0;\n\ttop: 0;\n\tleft: 0;\n}\n.messagebox-content[data-v-0de08b90] {\n\tbox-sizing: border-box;\n\twidth: 100%;\n\tpadding: 20px;\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\twhite-space: pre-wrap;\n}\n.rightTopClose[data-v-0de08b90] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n\twidth: 35px;\n\theight: 35px;\n\tposition: absolute;\n\tz-index: 100;\n\ttop: 3px;\n\tright: 5px;\n}\n.closeImage[data-v-0de08b90] {\n\theight: 15px;\n\twidth: 15px;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.image[data-v-0de08b90] {\n\theight: 100%;\n\twidth: 100%;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.fadelogOutOpcity[data-v-0de08b90]{\n\t\ttransition: all 1.5s;\n\t\topacity: 0;\n}\n\n/*弹层动画（放大）*/\n.popIn[data-v-0de08b90] {\n    -webkit-animation: popIn-data-v-0de08b90 .25s;\n    animation: popIn-data-v-0de08b90 .25s;\n}\n@-webkit-keyframes popIn-data-v-0de08b90 {\n0% {\n        -webkit-transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(1, 1, 1);\n        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n        opacity: 1;\n}\n}\n@keyframes popIn-data-v-0de08b90 {\n0% {\n        -webkit-transform: scale3d(0.2, 0.2, 0.2);\n                transform: scale3d(0.2, 0.2, 0.2);\n        opacity: 0;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(1, 1, 1);\n                transform: scale3d(1, 1, 1);\n        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n                animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n        opacity: 1;\n}\n}\n\n/*弹层动画（缩小）*/\n.popOut[data-v-0de08b90] {\n    -webkit-animation: popOut-data-v-0de08b90 .25s;\n    animation: popOut-data-v-0de08b90 .25s;\n\t/* 保留动画结束后的样子 */\n\t-webkit-animation-fill-mode: forwards;\n\t        animation-fill-mode: forwards;\n}\n@-webkit-keyframes popOut-data-v-0de08b90 {\n0% {\n        -webkit-transform: scale3d(1, 1, 1);\n        opacity: 1;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n}\n@keyframes popOut-data-v-0de08b90 {\n0% {\n        -webkit-transform: scale3d(1, 1, 1);\n                transform: scale3d(1, 1, 1);\n        opacity: 1;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(0, 0, 0);\n                transform: scale3d(0, 0, 0);;\n        opacity: 0;\n}\n}\n.flexContentCenter[data-v-0de08b90] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n\tposition: relative;\n}\n.imageCenter[data-v-0de08b90] {\n\tposition: absolute;\n\ttop: 50%;\n\tleft: 50%;\n\t-webkit-transform: translate(-50%, -50%);\n\t        transform: translate(-50%, -50%);\n}\n.loading-image[data-v-0de08b90] {\n\twidth: 100%;\n\theight: 100%;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n\t-webkit-animation: turn-data-v-0de08b90 1.5s linear infinite;\n\t        animation: turn-data-v-0de08b90 1.5s linear infinite;\n}\n.message[data-v-0de08b90] {\n\tcolor: #FFFFFF;\n\tfont-size: 14.5px;\n\tword-break: break-all;\n\twhite-space: pre-wrap;\n}\n@-webkit-keyframes turn-data-v-0de08b90 {\n0% {\n\t\t-webkit-transform: rotate(0deg);\n}\n50% {\n\t\t-webkit-transform: rotate(180deg);\n}\n100% {\n\t\t-webkit-transform: rotate(360deg);\n}\n}\n@keyframes turn-data-v-0de08b90 {\n0% {\n\t\t-webkit-transform: rotate(0deg);\n}\n50% {\n\t\t-webkit-transform: rotate(180deg);\n}\n100% {\n\t\t-webkit-transform: rotate(360deg);\n}\n}\n", ""]);
 // Exports
 module.exports = exports;
 

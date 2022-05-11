@@ -180,6 +180,7 @@ var _ref = __webpack_require__(/*! ./ref.js */ 15);var messageView = function me
       if (back) {
         //计算返回的页数 = 总页数 - 当前页数
         var delta = getCurrentPages().length - this.currentIndex;
+        console.log('delta-----', delta);
         uni.navigateBack({
           delta: delta //返回的页数
         });

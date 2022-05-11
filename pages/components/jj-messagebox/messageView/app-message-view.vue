@@ -35,6 +35,7 @@
 				if(back){
 					//计算返回的页数 = 总页数 - 当前页数
 					let delta = getCurrentPages().length - this.currentIndex
+					console.log('delta-----',delta)
 					uni.navigateBack({
 						delta:delta //返回的页数
 					})

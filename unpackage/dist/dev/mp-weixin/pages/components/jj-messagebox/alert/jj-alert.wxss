@@ -66,6 +66,10 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 }
+.fadelogOutOpcity.data-v-432dbc10{
+		transition: all 1.5s;
+		opacity: 0;
+}
 
 /*弹层动画（放大）*/
 .popIn.data-v-432dbc10 {
@@ -79,6 +83,7 @@
 }
 50% {
         -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+		opacity:0.5;
 }
 100% {
         -webkit-transform: scale3d(1, 1, 1);
@@ -95,6 +100,7 @@
 50% {
         -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
                 animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+		opacity:0.5;
 }
 100% {
         -webkit-transform: scale3d(1, 1, 1);
@@ -109,6 +115,9 @@
 .popOut.data-v-432dbc10 {
     -webkit-animation: popOut-data-v-432dbc10 .25s;
     animation: popOut-data-v-432dbc10 .25s;
+	/* 保留动画结束后的样子 */
+	-webkit-animation-fill-mode: forwards;
+	        animation-fill-mode: forwards;
 }
 @-webkit-keyframes popOut-data-v-432dbc10 {
 0% {
@@ -117,6 +126,7 @@
 }
 50% {
         -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+		opacity:0.5;
 }
 100% {
         -webkit-transform: scale3d(0, 0, 0);
@@ -132,6 +142,7 @@
 50% {
         -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
                 animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+		opacity:0.5;
 }
 100% {
         -webkit-transform: scale3d(0, 0, 0);
@@ -197,6 +208,9 @@
 .fadelogOut.data-v-432dbc10 {
     -webkit-animation: fadelogOut-data-v-432dbc10 .25s;
     animation: fadelogOut-data-v-432dbc10 .25s;
+	/* 保留动画结束后的样子 */
+	-webkit-animation-fill-mode: forwards;
+	        animation-fill-mode: forwards;
 }
 @keyframes fadelogOut-data-v-432dbc10 {
 0% {
@@ -215,20 +229,6 @@
 100% {
         -webkit-transform: translate3d(0, 100%, 0);
 }
-}
-.messagebox-shade-box.data-v-432dbc10{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	top: -100px;
-	left: 0;
-	background-color: rgba(0, 0, 0, 0.5);
-	z-index: 999;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 .flexCenter.data-v-432dbc10 {
 	display: flex;

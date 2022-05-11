@@ -282,16 +282,14 @@ var _default2 =
         return;
       }
       this.isPopup = false;
-      var that = this;
-      var time = this.duration * 1000 - 20;
-      if (time < 0) {
-        time = 0;
+    },
+    animationend: function animationend() {
+      if (!this.isPopup) {
+        //弹窗消失结束后
+        this.$emit('close');
+        this.isPopup = true;
+        this.jj_visible = false;
       }
-      setTimeout(function () {
-        that.$emit('close');
-        that.jj_visible = false;
-      }, time);
-
     },
     mainClick: function mainClick() {
     } } };exports.default = _default2;

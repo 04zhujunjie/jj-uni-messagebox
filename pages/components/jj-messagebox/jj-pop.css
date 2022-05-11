@@ -11,6 +11,7 @@
     }
     50% {
         -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+		opacity:0.5;
     }
     100% {
         -webkit-transform: scale3d(1, 1, 1);
@@ -26,6 +27,7 @@
     }
     50% {
         animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+		opacity:0.5;
     }
     100% {
         transform: scale3d(1, 1, 1);
@@ -38,6 +40,8 @@
 .popOut {
     -webkit-animation: popOut .25s;
     animation: popOut .25s;
+	/* 保留动画结束后的样子 */
+	animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes popOut {
@@ -47,6 +51,7 @@
     }
     50% {
         -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+		opacity:0.5;
     }
     100% {
         -webkit-transform: scale3d(0, 0, 0);
@@ -61,6 +66,7 @@
     }
     50% {
         animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+		opacity:0.5;
     }
     100% {
         transform: scale3d(0, 0, 0);;

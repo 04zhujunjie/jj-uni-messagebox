@@ -657,7 +657,6 @@ var render = function() {
   var s5 =
     _vm.isShow &&
     !(_vm.position === "bottom" || _vm.type === "sheet") &&
-    _vm.isShow &&
     !_vm.isCustomType &&
     _vm.title.length > 0
       ? _vm.__get_style([_vm.titleStyle], {
@@ -667,7 +666,6 @@ var render = function() {
   var s6 =
     _vm.isShow &&
     !(_vm.position === "bottom" || _vm.type === "sheet") &&
-    _vm.isShow &&
     !_vm.isCustomType &&
     _vm.message.length > 0
       ? _vm.__get_style([_vm.messageStyle], {
@@ -677,14 +675,12 @@ var render = function() {
   var s7 =
     _vm.isShow &&
     !(_vm.position === "bottom" || _vm.type === "sheet") &&
-    _vm.isShow &&
     _vm.showClose
       ? _vm.__get_style([_vm.closeStyle])
       : null
   var l2 =
     _vm.isShow &&
     !(_vm.position === "bottom" || _vm.type === "sheet") &&
-    _vm.isShow &&
     !_vm.isCustomType &&
     _vm.buttonDirection === "row"
       ? _vm.__map(_vm.btns, function(btn, index) {
@@ -701,7 +697,6 @@ var render = function() {
   var l3 =
     _vm.isShow &&
     !(_vm.position === "bottom" || _vm.type === "sheet") &&
-    _vm.isShow &&
     !_vm.isCustomType &&
     !(_vm.buttonDirection === "row")
       ? _vm.__map(_vm.btns, function(btn, index) {
@@ -967,24 +962,19 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
       Object.assign(this.$data, data);
     },
     close: function close() {
-
       if (this.isCloseAlert) {
         return;
       }
       this.isCloseAlert = true;
-      var that = this;
-      var time = that.duration * 1000;
-      if (time > 30) {
-        time = time - 30;
-      }
-      setTimeout(function () {
-        that.isShow = false;
-        that.$nextTick(function () {
-          that.isCloseAlert = false;
-        });
-        that.$emit('close');
-      }, time);
 
+    },
+    animationend: function animationend() {
+      if (this.isCloseAlert) {
+        //弹窗消失结束后
+        this.isShow = false;
+        this.isCloseAlert = false;
+        this.$emit('close');
+      }
     },
     mainClick: function mainClick() {
 
