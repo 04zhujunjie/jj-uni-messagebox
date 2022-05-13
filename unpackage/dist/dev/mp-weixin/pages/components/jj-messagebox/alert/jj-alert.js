@@ -334,9 +334,27 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
   name: 'jj-alert',
-  components: { jjButton: jjButton, customAlert: customAlert },
+  components: {
+    jjButton: jjButton,
+    customAlert: customAlert },
+
   data: function data() {
     return {
       type: 'alert', //有alert和sheet

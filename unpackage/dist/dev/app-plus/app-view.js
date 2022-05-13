@@ -1426,15 +1426,21 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("自定义Sheet")]
-              )
-            ],
-            1
-          ),
-          _c(
-            "div",
-            { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
-            [
+                [_vm._v("按钮竖排Alert")]
+              ),
+              _c(
+                "v-uni-button",
+                {
+                  staticClass: _vm._$g(8, "sc"),
+                  attrs: { _i: 8 },
+                  on: {
+                    click: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    }
+                  }
+                },
+                [_vm._v("底部弹出Alert")]
+              ),
               _c(
                 "v-uni-button",
                 {
@@ -1446,7 +1452,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Dialog")]
+                [_vm._v("自定义Sheet")]
               )
             ],
             1
@@ -1466,7 +1472,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Popup")]
+                [_vm._v("Dialog")]
               )
             ],
             1
@@ -1486,22 +1492,15 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Loading")]
-              ),
-              _c(
-                "v-uni-button",
-                {
-                  staticClass: _vm._$g(14, "sc"),
-                  staticStyle: { "margin-left": "10px" },
-                  attrs: { _i: 14 },
-                  on: {
-                    click: function($event) {
-                      return _vm.$handleViewEvent($event)
-                    }
-                  }
-                },
-                [_vm._v("Loading-round")]
-              ),
+                [_vm._v("Popup")]
+              )
+            ],
+            1
+          ),
+          _c(
+            "div",
+            { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
+            [
               _c(
                 "v-uni-button",
                 {
@@ -1513,13 +1512,40 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Loading-taichi")]
+                [_vm._v("Loading")]
               ),
               _c(
                 "v-uni-button",
                 {
                   staticClass: _vm._$g(16, "sc"),
+                  staticStyle: { "margin-left": "10px" },
                   attrs: { _i: 16 },
+                  on: {
+                    click: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    }
+                  }
+                },
+                [_vm._v("Loading-round")]
+              ),
+              _c(
+                "v-uni-button",
+                {
+                  staticClass: _vm._$g(17, "sc"),
+                  attrs: { _i: 17 },
+                  on: {
+                    click: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    }
+                  }
+                },
+                [_vm._v("Loading-taichi")]
+              ),
+              _c(
+                "v-uni-button",
+                {
+                  staticClass: _vm._$g(18, "sc"),
+                  attrs: { _i: 18 },
                   on: {
                     click: function($event) {
                       return _vm.$handleViewEvent($event)
@@ -1533,34 +1559,8 @@ var render = function() {
           ),
           _c(
             "div",
-            { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
+            { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
             [
-              _c(
-                "v-uni-button",
-                {
-                  staticClass: _vm._$g(18, "sc"),
-                  attrs: { _i: 18 },
-                  on: {
-                    click: function($event) {
-                      return _vm.$handleViewEvent($event)
-                    }
-                  }
-                },
-                [_vm._v("toast")]
-              ),
-              _c(
-                "v-uni-button",
-                {
-                  staticClass: _vm._$g(19, "sc"),
-                  attrs: { _i: 19 },
-                  on: {
-                    click: function($event) {
-                      return _vm.$handleViewEvent($event)
-                    }
-                  }
-                },
-                [_vm._v("toast-success")]
-              ),
               _c(
                 "v-uni-button",
                 {
@@ -1572,7 +1572,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("toast-fail")]
+                [_vm._v("toast")]
               ),
               _c(
                 "v-uni-button",
@@ -1585,14 +1585,40 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("toast-warn")]
+                [_vm._v("toast-success")]
               ),
               _c(
                 "v-uni-button",
                 {
                   staticClass: _vm._$g(22, "sc"),
-                  staticStyle: { "margin-left": "10px" },
                   attrs: { _i: 22 },
+                  on: {
+                    click: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    }
+                  }
+                },
+                [_vm._v("toast-fail")]
+              ),
+              _c(
+                "v-uni-button",
+                {
+                  staticClass: _vm._$g(23, "sc"),
+                  attrs: { _i: 23 },
+                  on: {
+                    click: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    }
+                  }
+                },
+                [_vm._v("toast-warn")]
+              ),
+              _c(
+                "v-uni-button",
+                {
+                  staticClass: _vm._$g(24, "sc"),
+                  staticStyle: { "margin-left": "10px" },
+                  attrs: { _i: 24 },
                   on: {
                     click: function($event) {
                       return _vm.$handleViewEvent($event)
@@ -1607,7 +1633,7 @@ var render = function() {
           _c(
             "jj-dialog",
             {
-              attrs: { _i: 23 },
+              attrs: { _i: 25 },
               on: {
                 close: function($event) {
                   return _vm.$handleViewEvent($event)
@@ -1616,17 +1642,17 @@ var render = function() {
             },
             [
               _c("v-uni-image", {
-                staticClass: _vm._$g(24, "sc"),
+                staticClass: _vm._$g(26, "sc"),
                 attrs: {
                   slot: "backgroundContent",
-                  src: _vm._$g(24, "a-src"),
-                  _i: 24
+                  src: _vm._$g(26, "a-src"),
+                  _i: 26
                 },
                 slot: "backgroundContent"
               }),
-              _c("div", { attrs: { _i: 25 } }, [_vm._v("自定Dialog内容")]),
+              _c("div", { attrs: { _i: 27 } }, [_vm._v("自定Dialog内容")]),
               _c("jj-dialog", {
-                attrs: { _i: 26 },
+                attrs: { _i: 28 },
                 on: {
                   close: function($event) {
                     return _vm.$handleViewEvent($event)
@@ -1635,14 +1661,14 @@ var render = function() {
               }),
               _c(
                 "div",
-                { attrs: { slot: "footer", _i: 27 }, slot: "footer" },
+                { attrs: { slot: "footer", _i: 29 }, slot: "footer" },
                 [
                   _c(
                     "v-uni-button",
                     {
-                      staticClass: _vm._$g(28, "sc"),
+                      staticClass: _vm._$g(30, "sc"),
                       staticStyle: { "margin-bottom": "10px" },
-                      attrs: { _i: 28 },
+                      attrs: { _i: 30 },
                       on: {
                         click: function($event) {
                           return _vm.$handleViewEvent($event)
@@ -1660,7 +1686,7 @@ var render = function() {
           _c(
             "jj-popup",
             {
-              attrs: { _i: 29 },
+              attrs: { _i: 31 },
               on: {
                 close: function($event) {
                   return _vm.$handleViewEvent($event)
@@ -1669,15 +1695,15 @@ var render = function() {
             },
             [
               _c("v-uni-image", {
-                staticClass: _vm._$g(30, "sc"),
+                staticClass: _vm._$g(32, "sc"),
                 attrs: {
                   slot: "backgroundContent",
-                  src: _vm._$g(30, "a-src"),
-                  _i: 30
+                  src: _vm._$g(32, "a-src"),
+                  _i: 32
                 },
                 slot: "backgroundContent"
               }),
-              _c("div", { attrs: { _i: 31 } }, [_vm._v("今天天气不错")])
+              _c("div", { attrs: { _i: 33 } }, [_vm._v("今天天气不错")])
             ],
             1
           )
@@ -2794,15 +2820,21 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("自定义Sheet")]
-              )
-            ],
-            1
-          ),
-          _c(
-            "div",
-            { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
-            [
+                [_vm._v("按钮竖排Alert")]
+              ),
+              _c(
+                "v-uni-button",
+                {
+                  staticClass: _vm._$g(8, "sc"),
+                  attrs: { _i: 8 },
+                  on: {
+                    click: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    }
+                  }
+                },
+                [_vm._v("底部弹出Alert")]
+              ),
               _c(
                 "v-uni-button",
                 {
@@ -2814,7 +2846,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Dialog")]
+                [_vm._v("自定义Sheet")]
               )
             ],
             1
@@ -2834,7 +2866,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Popup")]
+                [_vm._v("Dialog")]
               )
             ],
             1
@@ -2854,22 +2886,15 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Loading")]
-              ),
-              _c(
-                "v-uni-button",
-                {
-                  staticClass: _vm._$g(14, "sc"),
-                  staticStyle: { "margin-left": "10px" },
-                  attrs: { _i: 14 },
-                  on: {
-                    click: function($event) {
-                      return _vm.$handleViewEvent($event)
-                    }
-                  }
-                },
-                [_vm._v("Loading-round")]
-              ),
+                [_vm._v("Popup")]
+              )
+            ],
+            1
+          ),
+          _c(
+            "div",
+            { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
+            [
               _c(
                 "v-uni-button",
                 {
@@ -2881,13 +2906,40 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Loading-taichi")]
+                [_vm._v("Loading")]
               ),
               _c(
                 "v-uni-button",
                 {
                   staticClass: _vm._$g(16, "sc"),
+                  staticStyle: { "margin-left": "10px" },
                   attrs: { _i: 16 },
+                  on: {
+                    click: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    }
+                  }
+                },
+                [_vm._v("Loading-round")]
+              ),
+              _c(
+                "v-uni-button",
+                {
+                  staticClass: _vm._$g(17, "sc"),
+                  attrs: { _i: 17 },
+                  on: {
+                    click: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    }
+                  }
+                },
+                [_vm._v("Loading-taichi")]
+              ),
+              _c(
+                "v-uni-button",
+                {
+                  staticClass: _vm._$g(18, "sc"),
+                  attrs: { _i: 18 },
                   on: {
                     click: function($event) {
                       return _vm.$handleViewEvent($event)
@@ -2901,34 +2953,8 @@ var render = function() {
           ),
           _c(
             "div",
-            { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
+            { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
             [
-              _c(
-                "v-uni-button",
-                {
-                  staticClass: _vm._$g(18, "sc"),
-                  attrs: { _i: 18 },
-                  on: {
-                    click: function($event) {
-                      return _vm.$handleViewEvent($event)
-                    }
-                  }
-                },
-                [_vm._v("toast")]
-              ),
-              _c(
-                "v-uni-button",
-                {
-                  staticClass: _vm._$g(19, "sc"),
-                  attrs: { _i: 19 },
-                  on: {
-                    click: function($event) {
-                      return _vm.$handleViewEvent($event)
-                    }
-                  }
-                },
-                [_vm._v("toast-success")]
-              ),
               _c(
                 "v-uni-button",
                 {
@@ -2940,7 +2966,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("toast-fail")]
+                [_vm._v("toast")]
               ),
               _c(
                 "v-uni-button",
@@ -2953,14 +2979,40 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("toast-warn")]
+                [_vm._v("toast-success")]
               ),
               _c(
                 "v-uni-button",
                 {
                   staticClass: _vm._$g(22, "sc"),
-                  staticStyle: { "margin-left": "10px" },
                   attrs: { _i: 22 },
+                  on: {
+                    click: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    }
+                  }
+                },
+                [_vm._v("toast-fail")]
+              ),
+              _c(
+                "v-uni-button",
+                {
+                  staticClass: _vm._$g(23, "sc"),
+                  attrs: { _i: 23 },
+                  on: {
+                    click: function($event) {
+                      return _vm.$handleViewEvent($event)
+                    }
+                  }
+                },
+                [_vm._v("toast-warn")]
+              ),
+              _c(
+                "v-uni-button",
+                {
+                  staticClass: _vm._$g(24, "sc"),
+                  staticStyle: { "margin-left": "10px" },
+                  attrs: { _i: 24 },
                   on: {
                     click: function($event) {
                       return _vm.$handleViewEvent($event)
@@ -2975,7 +3027,7 @@ var render = function() {
           _c(
             "jj-dialog",
             {
-              attrs: { _i: 23 },
+              attrs: { _i: 25 },
               on: {
                 close: function($event) {
                   return _vm.$handleViewEvent($event)
@@ -2984,17 +3036,17 @@ var render = function() {
             },
             [
               _c("v-uni-image", {
-                staticClass: _vm._$g(24, "sc"),
+                staticClass: _vm._$g(26, "sc"),
                 attrs: {
                   slot: "backgroundContent",
-                  src: _vm._$g(24, "a-src"),
-                  _i: 24
+                  src: _vm._$g(26, "a-src"),
+                  _i: 26
                 },
                 slot: "backgroundContent"
               }),
-              _c("div", { attrs: { _i: 25 } }, [_vm._v("自定Dialog内容")]),
+              _c("div", { attrs: { _i: 27 } }, [_vm._v("自定Dialog内容")]),
               _c("jj-dialog", {
-                attrs: { _i: 26 },
+                attrs: { _i: 28 },
                 on: {
                   close: function($event) {
                     return _vm.$handleViewEvent($event)
@@ -3003,14 +3055,14 @@ var render = function() {
               }),
               _c(
                 "div",
-                { attrs: { slot: "footer", _i: 27 }, slot: "footer" },
+                { attrs: { slot: "footer", _i: 29 }, slot: "footer" },
                 [
                   _c(
                     "v-uni-button",
                     {
-                      staticClass: _vm._$g(28, "sc"),
+                      staticClass: _vm._$g(30, "sc"),
                       staticStyle: { "margin-bottom": "10px" },
-                      attrs: { _i: 28 },
+                      attrs: { _i: 30 },
                       on: {
                         click: function($event) {
                           return _vm.$handleViewEvent($event)
@@ -3028,7 +3080,7 @@ var render = function() {
           _c(
             "jj-popup",
             {
-              attrs: { _i: 29 },
+              attrs: { _i: 31 },
               on: {
                 close: function($event) {
                   return _vm.$handleViewEvent($event)
@@ -3037,15 +3089,15 @@ var render = function() {
             },
             [
               _c("v-uni-image", {
-                staticClass: _vm._$g(30, "sc"),
+                staticClass: _vm._$g(32, "sc"),
                 attrs: {
                   slot: "backgroundContent",
-                  src: _vm._$g(30, "a-src"),
-                  _i: 30
+                  src: _vm._$g(32, "a-src"),
+                  _i: 32
                 },
                 slot: "backgroundContent"
               }),
-              _c("div", { attrs: { _i: 31 } }, [_vm._v("今天天气不错")])
+              _c("div", { attrs: { _i: 33 } }, [_vm._v("今天天气不错")])
             ],
             1
           )
@@ -3831,199 +3883,222 @@ var render = function() {
                     _c(
                       "div",
                       {
-                        staticClass: _vm._$g(3, "sc"),
-                        class: _vm._$g(3, "c"),
                         staticStyle: {
-                          margin: "0px",
-                          "border-bottom-left-radius": "0px",
-                          "border-bottom-right-radius": "0px"
+                          display: "flex",
+                          "justify-content": "center",
+                          "align-items": "center"
                         },
-                        style: _vm._$g(3, "s"),
-                        attrs: { _i: 3 },
-                        on: {
-                          animationend: function($event) {
-                            return _vm.$handleViewEvent($event)
-                          },
-                          click: function($event) {
-                            return _vm.$handleViewEvent($event, { stop: true })
-                          }
-                        }
+                        attrs: { _i: 3 }
                       },
                       [
                         _c(
                           "div",
                           {
                             staticClass: _vm._$g(4, "sc"),
+                            class: _vm._$g(4, "c"),
+                            staticStyle: {
+                              margin: "0px",
+                              "border-bottom-left-radius": "0px",
+                              "border-bottom-right-radius": "0px"
+                            },
                             style: _vm._$g(4, "s"),
-                            attrs: { _i: 4 }
+                            attrs: { _i: 4 },
+                            on: {
+                              animationend: function($event) {
+                                return _vm.$handleViewEvent($event)
+                              },
+                              click: function($event) {
+                                return _vm.$handleViewEvent($event, {
+                                  stop: true
+                                })
+                              }
+                            }
                           },
                           [
-                            _vm._$g(5, "i")
-                              ? _c(
-                                  "div",
-                                  { attrs: { _i: 5 } },
-                                  [
-                                    _vm._$g(6, "i")
-                                      ? _c(
-                                          "div",
-                                          {
-                                            staticClass: _vm._$g(6, "sc"),
-                                            staticStyle: {
-                                              "font-size": "1.125rem"
-                                            },
-                                            style: _vm._$g(6, "s"),
-                                            attrs: { _i: 6 }
-                                          },
-                                          [
-                                            _c("span", { attrs: { _i: 7 } }, [
-                                              _vm._v(_vm._$g(7, "t0-0"))
-                                            ])
-                                          ],
-                                          1
-                                        )
-                                      : _vm._e(),
-                                    _vm._$g(8, "i")
-                                      ? _c(
-                                          "div",
-                                          {
-                                            staticClass: _vm._$g(8, "sc"),
-                                            staticStyle: {
-                                              "margin-top": "10px"
-                                            },
-                                            style: _vm._$g(8, "s"),
-                                            attrs: { _i: 8 }
-                                          },
-                                          [
-                                            _c("span", { attrs: { _i: 9 } }, [
-                                              _vm._v(_vm._$g(9, "t0-0"))
-                                            ])
-                                          ],
-                                          1
-                                        )
-                                      : _vm._e()
-                                  ],
-                                  1
-                                )
-                              : _vm._e(),
-                            _vm._$g(10, "i")
-                              ? _c(
-                                  "div",
-                                  {
-                                    staticClass: _vm._$g(10, "sc"),
-                                    attrs: { _i: 10 },
-                                    on: {
-                                      click: function($event) {
-                                        return _vm.$handleViewEvent($event)
-                                      }
-                                    }
-                                  },
-                                  [
-                                    _c("v-uni-image", {
-                                      staticClass: _vm._$g(11, "sc"),
-                                      style: _vm._$g(11, "s"),
-                                      attrs: {
-                                        src: _vm._$g(11, "a-src"),
-                                        _i: 11
-                                      }
-                                    })
-                                  ],
-                                  1
-                                )
-                              : _vm._e()
-                          ],
-                          1
-                        ),
-                        _vm._$g(12, "i")
-                          ? _c(
+                            _c(
                               "div",
-                              { attrs: { _i: 12 } },
+                              {
+                                staticClass: _vm._$g(5, "sc"),
+                                style: _vm._$g(5, "s"),
+                                attrs: { _i: 5 }
+                              },
                               [
-                                _vm._$g(13, "i")
+                                _vm._$g(6, "i")
+                                  ? _c(
+                                      "div",
+                                      { attrs: { _i: 6 } },
+                                      [
+                                        _vm._$g(7, "i")
+                                          ? _c(
+                                              "div",
+                                              {
+                                                staticClass: _vm._$g(7, "sc"),
+                                                staticStyle: {
+                                                  "font-size": "1.125rem"
+                                                },
+                                                style: _vm._$g(7, "s"),
+                                                attrs: { _i: 7 }
+                                              },
+                                              [
+                                                _c(
+                                                  "span",
+                                                  { attrs: { _i: 8 } },
+                                                  [_vm._v(_vm._$g(8, "t0-0"))]
+                                                )
+                                              ],
+                                              1
+                                            )
+                                          : _vm._e(),
+                                        _vm._$g(9, "i")
+                                          ? _c(
+                                              "div",
+                                              {
+                                                staticClass: _vm._$g(9, "sc"),
+                                                staticStyle: {
+                                                  "margin-top": "10px"
+                                                },
+                                                style: _vm._$g(9, "s"),
+                                                attrs: { _i: 9 }
+                                              },
+                                              [
+                                                _c(
+                                                  "span",
+                                                  { attrs: { _i: 10 } },
+                                                  [_vm._v(_vm._$g(10, "t0-0"))]
+                                                )
+                                              ],
+                                              1
+                                            )
+                                          : _vm._e()
+                                      ],
+                                      1
+                                    )
+                                  : _vm._e(),
+                                _vm._$g(11, "i")
                                   ? _c(
                                       "div",
                                       {
-                                        staticClass: _vm._$g(13, "sc"),
-                                        attrs: { _i: 13 }
+                                        staticClass: _vm._$g(11, "sc"),
+                                        attrs: { _i: 11 },
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.$handleViewEvent($event)
+                                          }
+                                        }
                                       },
-                                      _vm._l(_vm._$g(14, "f"), function(
-                                        btn,
-                                        index,
-                                        $20,
-                                        $30
-                                      ) {
-                                        return _c("jj-button", {
-                                          key: btn,
-                                          staticClass: _vm._$g(
-                                            "14-" + $30,
-                                            "sc"
-                                          ),
-                                          style: _vm._$g("14-" + $30, "s"),
-                                          attrs: { _i: "14-" + $30 },
-                                          on: {
-                                            btnClick: function($event) {
-                                              return _vm.$handleViewEvent(
-                                                $event
-                                              )
-                                            }
+                                      [
+                                        _c("v-uni-image", {
+                                          staticClass: _vm._$g(12, "sc"),
+                                          style: _vm._$g(12, "s"),
+                                          attrs: {
+                                            src: _vm._$g(12, "a-src"),
+                                            _i: 12
                                           }
                                         })
-                                      }),
+                                      ],
                                       1
                                     )
-                                  : _vm._l(_vm._$g(15, "f"), function(
-                                      btn,
-                                      index,
-                                      $21,
-                                      $31
-                                    ) {
-                                      return _c(
-                                        "div",
-                                        {
-                                          key: btn,
-                                          staticClass: _vm._$g(
-                                            "15-" + $31,
-                                            "sc"
-                                          ),
-                                          attrs: { _i: "15-" + $31 }
-                                        },
-                                        [
-                                          _c("jj-button", {
-                                            staticClass: _vm._$g(
-                                              "16-" + $31,
-                                              "sc"
-                                            ),
-                                            style: _vm._$g("16-" + $31, "s"),
-                                            attrs: { _i: "16-" + $31 },
-                                            on: {
-                                              btnClick: function($event) {
-                                                return _vm.$handleViewEvent(
-                                                  $event
-                                                )
-                                              }
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      )
-                                    })
-                              ],
-                              2
-                            )
-                          : _c(
-                              "div",
-                              { attrs: { _i: 17 } },
-                              [
-                                _c("custom-alert", {
-                                  attrs: { _i: 18 },
-                                  on: {
-                                    clickBtn: function($event) {
-                                      return _vm.$handleViewEvent($event)
-                                    }
-                                  }
-                                })
+                                  : _vm._e()
                               ],
                               1
-                            )
+                            ),
+                            _vm._$g(13, "i")
+                              ? _c(
+                                  "div",
+                                  { attrs: { _i: 13 } },
+                                  [
+                                    _vm._$g(14, "i")
+                                      ? _c(
+                                          "div",
+                                          {
+                                            staticClass: _vm._$g(14, "sc"),
+                                            attrs: { _i: 14 }
+                                          },
+                                          _vm._l(_vm._$g(15, "f"), function(
+                                            btn,
+                                            index,
+                                            $20,
+                                            $30
+                                          ) {
+                                            return _c("jj-button", {
+                                              key: btn,
+                                              staticClass: _vm._$g(
+                                                "15-" + $30,
+                                                "sc"
+                                              ),
+                                              style: _vm._$g("15-" + $30, "s"),
+                                              attrs: { _i: "15-" + $30 },
+                                              on: {
+                                                btnClick: function($event) {
+                                                  return _vm.$handleViewEvent(
+                                                    $event
+                                                  )
+                                                }
+                                              }
+                                            })
+                                          }),
+                                          1
+                                        )
+                                      : _vm._l(_vm._$g(16, "f"), function(
+                                          btn,
+                                          index,
+                                          $21,
+                                          $31
+                                        ) {
+                                          return _c(
+                                            "div",
+                                            {
+                                              key: btn,
+                                              staticClass: _vm._$g(
+                                                "16-" + $31,
+                                                "sc"
+                                              ),
+                                              attrs: { _i: "16-" + $31 }
+                                            },
+                                            [
+                                              _c("jj-button", {
+                                                staticClass: _vm._$g(
+                                                  "17-" + $31,
+                                                  "sc"
+                                                ),
+                                                style: _vm._$g(
+                                                  "17-" + $31,
+                                                  "s"
+                                                ),
+                                                attrs: { _i: "17-" + $31 },
+                                                on: {
+                                                  btnClick: function($event) {
+                                                    return _vm.$handleViewEvent(
+                                                      $event
+                                                    )
+                                                  }
+                                                }
+                                              })
+                                            ],
+                                            1
+                                          )
+                                        })
+                                  ],
+                                  2
+                                )
+                              : _c(
+                                  "div",
+                                  { attrs: { _i: 18 } },
+                                  [
+                                    _c("custom-alert", {
+                                      attrs: { _i: 19 },
+                                      on: {
+                                        clickBtn: function($event) {
+                                          return _vm.$handleViewEvent($event)
+                                        }
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                          ],
+                          1
+                        )
                       ],
                       1
                     )
@@ -4035,10 +4110,10 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: _vm._$g(20, "sc"),
-                    class: _vm._$g(20, "c"),
-                    style: _vm._$g(20, "s"),
-                    attrs: { _i: 20 },
+                    staticClass: _vm._$g(21, "sc"),
+                    class: _vm._$g(21, "c"),
+                    style: _vm._$g(21, "s"),
+                    attrs: { _i: 21 },
                     on: {
                       touchmove: function($event) {
                         return _vm.$handleViewEvent($event, { stop: true })
@@ -4052,10 +4127,10 @@ var render = function() {
                     _c(
                       "div",
                       {
-                        staticClass: _vm._$g(21, "sc"),
-                        class: _vm._$g(21, "c"),
-                        style: _vm._$g(21, "s"),
-                        attrs: { _i: 21 },
+                        staticClass: _vm._$g(22, "sc"),
+                        class: _vm._$g(22, "c"),
+                        style: _vm._$g(22, "s"),
+                        attrs: { _i: 22 },
                         on: {
                           animationend: function($event) {
                             return _vm.$handleViewEvent($event)
@@ -4069,49 +4144,49 @@ var render = function() {
                         _c(
                           "div",
                           {
-                            staticClass: _vm._$g(22, "sc"),
-                            style: _vm._$g(22, "s"),
-                            attrs: { _i: 22 }
+                            staticClass: _vm._$g(23, "sc"),
+                            style: _vm._$g(23, "s"),
+                            attrs: { _i: 23 }
                           },
                           [
-                            _vm._$g(23, "i")
+                            _vm._$g(24, "i")
                               ? _c(
                                   "div",
-                                  { attrs: { _i: 23 } },
+                                  { attrs: { _i: 24 } },
                                   [
-                                    _vm._$g(24, "i")
+                                    _vm._$g(25, "i")
                                       ? _c(
                                           "div",
                                           {
-                                            staticClass: _vm._$g(24, "sc"),
+                                            staticClass: _vm._$g(25, "sc"),
                                             staticStyle: {
                                               "font-size": "1.125rem"
                                             },
-                                            style: _vm._$g(24, "s"),
-                                            attrs: { _i: 24 }
+                                            style: _vm._$g(25, "s"),
+                                            attrs: { _i: 25 }
                                           },
                                           [
-                                            _c("span", { attrs: { _i: 25 } }, [
-                                              _vm._v(_vm._$g(25, "t0-0"))
+                                            _c("span", { attrs: { _i: 26 } }, [
+                                              _vm._v(_vm._$g(26, "t0-0"))
                                             ])
                                           ],
                                           1
                                         )
                                       : _vm._e(),
-                                    _vm._$g(26, "i")
+                                    _vm._$g(27, "i")
                                       ? _c(
                                           "div",
                                           {
-                                            staticClass: _vm._$g(26, "sc"),
+                                            staticClass: _vm._$g(27, "sc"),
                                             staticStyle: {
                                               "margin-top": "10px"
                                             },
-                                            style: _vm._$g(26, "s"),
-                                            attrs: { _i: 26 }
+                                            style: _vm._$g(27, "s"),
+                                            attrs: { _i: 27 }
                                           },
                                           [
-                                            _c("span", { attrs: { _i: 27 } }, [
-                                              _vm._v(_vm._$g(27, "t0-0"))
+                                            _c("span", { attrs: { _i: 28 } }, [
+                                              _vm._v(_vm._$g(28, "t0-0"))
                                             ])
                                           ],
                                           1
@@ -4121,12 +4196,12 @@ var render = function() {
                                   1
                                 )
                               : _vm._e(),
-                            _vm._$g(28, "i")
+                            _vm._$g(29, "i")
                               ? _c(
                                   "div",
                                   {
-                                    staticClass: _vm._$g(28, "sc"),
-                                    attrs: { _i: 28 },
+                                    staticClass: _vm._$g(29, "sc"),
+                                    attrs: { _i: 29 },
                                     on: {
                                       click: function($event) {
                                         return _vm.$handleViewEvent($event)
@@ -4135,11 +4210,11 @@ var render = function() {
                                   },
                                   [
                                     _c("v-uni-image", {
-                                      staticClass: _vm._$g(29, "sc"),
-                                      style: _vm._$g(29, "s"),
+                                      staticClass: _vm._$g(30, "sc"),
+                                      style: _vm._$g(30, "s"),
                                       attrs: {
-                                        src: _vm._$g(29, "a-src"),
-                                        _i: 29
+                                        src: _vm._$g(30, "a-src"),
+                                        _i: 30
                                       }
                                     })
                                   ],
@@ -4149,19 +4224,19 @@ var render = function() {
                           ],
                           1
                         ),
-                        _vm._$g(30, "i")
+                        _vm._$g(31, "i")
                           ? _c(
                               "div",
-                              { attrs: { _i: 30 } },
+                              { attrs: { _i: 31 } },
                               [
-                                _vm._$g(31, "i")
+                                _vm._$g(32, "i")
                                   ? _c(
                                       "div",
                                       {
-                                        staticClass: _vm._$g(31, "sc"),
-                                        attrs: { _i: 31 }
+                                        staticClass: _vm._$g(32, "sc"),
+                                        attrs: { _i: 32 }
                                       },
-                                      _vm._l(_vm._$g(32, "f"), function(
+                                      _vm._l(_vm._$g(33, "f"), function(
                                         btn,
                                         index,
                                         $22,
@@ -4170,11 +4245,11 @@ var render = function() {
                                         return _c("jj-button", {
                                           key: btn,
                                           staticClass: _vm._$g(
-                                            "32-" + $32,
+                                            "33-" + $32,
                                             "sc"
                                           ),
-                                          style: _vm._$g("32-" + $32, "s"),
-                                          attrs: { _i: "32-" + $32 },
+                                          style: _vm._$g("33-" + $32, "s"),
+                                          attrs: { _i: "33-" + $32 },
                                           on: {
                                             btnClick: function($event) {
                                               return _vm.$handleViewEvent(
@@ -4186,7 +4261,7 @@ var render = function() {
                                       }),
                                       1
                                     )
-                                  : _vm._l(_vm._$g(33, "f"), function(
+                                  : _vm._l(_vm._$g(34, "f"), function(
                                       btn,
                                       index,
                                       $23,
@@ -4197,19 +4272,19 @@ var render = function() {
                                         {
                                           key: btn,
                                           staticClass: _vm._$g(
-                                            "33-" + $33,
+                                            "34-" + $33,
                                             "sc"
                                           ),
-                                          attrs: { _i: "33-" + $33 }
+                                          attrs: { _i: "34-" + $33 }
                                         },
                                         [
                                           _c("jj-button", {
                                             staticClass: _vm._$g(
-                                              "34-" + $33,
+                                              "35-" + $33,
                                               "sc"
                                             ),
-                                            style: _vm._$g("34-" + $33, "s"),
-                                            attrs: { _i: "34-" + $33 },
+                                            style: _vm._$g("35-" + $33, "s"),
+                                            attrs: { _i: "35-" + $33 },
                                             on: {
                                               btnClick: function($event) {
                                                 return _vm.$handleViewEvent(
@@ -4227,10 +4302,10 @@ var render = function() {
                             )
                           : _c(
                               "div",
-                              { attrs: { _i: 35 } },
+                              { attrs: { _i: 36 } },
                               [
                                 _c("custom-alert", {
-                                  attrs: { _i: 36 },
+                                  attrs: { _i: 37 },
                                   on: {
                                     clickBtn: function($event) {
                                       return _vm.$handleViewEvent($event)
@@ -4942,7 +5017,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 15);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".messagebox-shade[data-v-432dbc10] {\n\twidth: 100%;\n\theight: 100%;\n\tposition: fixed;\n\tbottom: 0;\n\tright: 0;\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tz-index: 999;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n}\n.messagebox-main[data-v-432dbc10] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\tbackground: white;\n\twidth: 80%;\n\tborder-radius: 5px;\n\toverflow: hidden;\n\tbox-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);\n\tbox-sizing: border-box;\n\tbackground-repeat: no-repeat;\n\tbackground-size: cover;\n\tbackground-attachment: fixed;\n}\n.background-content[data-v-432dbc10] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: absolute;\n\tright: 0;\n\tbottom: 0;\n\ttop: 0;\n\tleft: 0;\n}\n.messagebox-content[data-v-432dbc10] {\n\tbox-sizing: border-box;\n\twidth: 100%;\n\tpadding: 20px;\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\twhite-space: pre-wrap;\n}\n.rightTopClose[data-v-432dbc10] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n\twidth: 35px;\n\theight: 35px;\n\tposition: absolute;\n\tz-index: 100;\n\ttop: 3px;\n\tright: 5px;\n}\n.closeImage[data-v-432dbc10] {\n\theight: 15px;\n\twidth: 15px;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.image[data-v-432dbc10] {\n\theight: 100%;\n\twidth: 100%;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.fadelogOutOpcity[data-v-432dbc10]{\n\t\ttransition: all 1.5s;\n\t\topacity: 0;\n}\n\n/*弹层动画（放大）*/\n.popIn[data-v-432dbc10] {\n    -webkit-animation: popIn-data-v-432dbc10 .25s;\n    animation: popIn-data-v-432dbc10 .25s;\n}\n@-webkit-keyframes popIn-data-v-432dbc10 {\n0% {\n        -webkit-transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(1, 1, 1);\n        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n        opacity: 1;\n}\n}\n@keyframes popIn-data-v-432dbc10 {\n0% {\n        -webkit-transform: scale3d(0.2, 0.2, 0.2);\n                transform: scale3d(0.2, 0.2, 0.2);\n        opacity: 0;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(1, 1, 1);\n                transform: scale3d(1, 1, 1);\n        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n                animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n        opacity: 1;\n}\n}\n\n/*弹层动画（缩小）*/\n.popOut[data-v-432dbc10] {\n    -webkit-animation: popOut-data-v-432dbc10 .25s;\n    animation: popOut-data-v-432dbc10 .25s;\n\t/* 保留动画结束后的样子 */\n\t-webkit-animation-fill-mode: forwards;\n\t        animation-fill-mode: forwards;\n}\n@-webkit-keyframes popOut-data-v-432dbc10 {\n0% {\n        -webkit-transform: scale3d(1, 1, 1);\n        opacity: 1;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n}\n@keyframes popOut-data-v-432dbc10 {\n0% {\n        -webkit-transform: scale3d(1, 1, 1);\n                transform: scale3d(1, 1, 1);\n        opacity: 1;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(0, 0, 0);\n                transform: scale3d(0, 0, 0);;\n        opacity: 0;\n}\n}\n\n/*弹层动画（从上往下）*/\n\n/* .fadeIn {\n    -webkit-animation: fadeInDown .3s;\n    animation: fadeInDown .3s;\n}\n\n@keyframes fadeInDown {\n    0% {\n        transform: translate3d(0, -20%, 0);\n        opacity: 0;\n    }\n    100% {\n        transform: none;\n        opacity: 1;\n    }\n}\n\n@-webkit-keyframes fadeInDown {\n    0% {\n        -webkit-transform: translate3d(0, -20%, 0);\n        opacity: 0;\n    }\n    100% {\n        -webkit-transform: none;\n        opacity: 1;\n    }\n} */\n\n/*弹层动画（从下往上出现）*/\n.fadelogIn[data-v-432dbc10] {\n    -webkit-animation: fadelogIn-data-v-432dbc10 .25s;\n    animation: fadelogIn-data-v-432dbc10 .25s;\n}\n@keyframes fadelogIn-data-v-432dbc10 {\n0% {\n        -webkit-transform: translate3d(0, 100%, 0);\n                transform: translate3d(0, 100%, 0);\n}\n100% {\n        -webkit-transform: none;\n                transform: none;\n}\n}\n@-webkit-keyframes fadelogIn-data-v-432dbc10 {\n0% {\n        -webkit-transform: translate3d(0, 100%, 0);\n}\n100% {\n        -webkit-transform: none;\n}\n}\n\n/*弹层动画（从上往下消失）*/\n.fadelogOut[data-v-432dbc10] {\n    -webkit-animation: fadelogOut-data-v-432dbc10 .25s;\n    animation: fadelogOut-data-v-432dbc10 .25s;\n\t/* 保留动画结束后的样子 */\n\t-webkit-animation-fill-mode: forwards;\n\t        animation-fill-mode: forwards;\n}\n@keyframes fadelogOut-data-v-432dbc10 {\n0% {\n       -webkit-transform: none;\n               transform: none;\n}\n100% {\n\t\t-webkit-transform: translate3d(0, 100%, 0);\n\t\t        transform: translate3d(0, 100%, 0);\n}\n}\n@-webkit-keyframes fadelogOut-data-v-432dbc10 {\n0% {\n\t\t-webkit-transform: none;\n}\n100% {\n        -webkit-transform: translate3d(0, 100%, 0);\n}\n}\n.flexCenter[data-v-432dbc10] {\n\tdisplay: flex;\n\ttext-align: center;\n\tjustify-content: center;\n}\n.flexContentCenter[data-v-432dbc10] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n}\n.flexContentSpaceAround[data-v-432dbc10] {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-around;\n\talign-items: center;\n}\n.jj-alert-btns[data-v-432dbc10] {\n\n\tbox-sizing: border-box;\n\tborder-top: 1px solid #E8E6EF;\n}\n.jj-sheet-btn[data-v-432dbc10]{\n\tflex: 1 0 auto;\n\theight: 2.75rem;\n\tdisplay: flex;\n\tfont-size: 1.0625rem;\n}\n.jj-alert-btn[data-v-432dbc10] {\n\tflex: 1 0 auto;\n\theight: 2.75rem;\n\tdisplay: flex;\n\tfont-size: 1.0625rem;\n\talign-items: center;\n\tjustify-content: center;\n\ttext-align: center;\n\tborder-right: 1px solid #E8E6EF;\n}\n.jj-alert-btn[data-v-432dbc10]:last-child {\n\tborder-right: none;\n}\n", ""]);
+exports.push([module.i, ".messagebox-shade[data-v-432dbc10] {\n\twidth: 100%;\n\theight: 100%;\n\tposition: fixed;\n\tbottom: 0;\n\tright: 0;\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tz-index: 999;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n}\n.messagebox-main[data-v-432dbc10] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\tbackground: white;\n\twidth: 80%;\n\tborder-radius: 5px;\n\toverflow: hidden;\n\tbox-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);\n\tbox-sizing: border-box;\n\tbackground-repeat: no-repeat;\n\tbackground-size: cover;\n\tbackground-attachment: fixed;\n}\n.background-content[data-v-432dbc10] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: absolute;\n\tright: 0;\n\tbottom: 0;\n\ttop: 0;\n\tleft: 0;\n}\n.messagebox-content[data-v-432dbc10] {\n\tbox-sizing: border-box;\n\twidth: 100%;\n\tpadding: 20px;\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\twhite-space: pre-wrap;\n}\n.rightTopClose[data-v-432dbc10] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n\twidth: 35px;\n\theight: 35px;\n\tposition: absolute;\n\tz-index: 100;\n\ttop: 3px;\n\tright: 5px;\n}\n.closeImage[data-v-432dbc10] {\n\theight: 15px;\n\twidth: 15px;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.image[data-v-432dbc10] {\n\theight: 100%;\n\twidth: 100%;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.fadelogOutOpcity[data-v-432dbc10]{\n\t\ttransition: all 1.5s;\n\t\topacity: 0;\n}\n\n/*弹层动画（放大）*/\n.popIn[data-v-432dbc10] {\n    -webkit-animation: popIn-data-v-432dbc10 .25s;\n    animation: popIn-data-v-432dbc10 .25s;\n}\n@-webkit-keyframes popIn-data-v-432dbc10 {\n0% {\n        -webkit-transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(1, 1, 1);\n        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n        opacity: 1;\n}\n}\n@keyframes popIn-data-v-432dbc10 {\n0% {\n        -webkit-transform: scale3d(0.2, 0.2, 0.2);\n                transform: scale3d(0.2, 0.2, 0.2);\n        opacity: 0;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(1, 1, 1);\n                transform: scale3d(1, 1, 1);\n        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n                animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n        opacity: 1;\n}\n}\n\n/*弹层动画（缩小）*/\n.popOut[data-v-432dbc10] {\n    -webkit-animation: popOut-data-v-432dbc10 .25s;\n    animation: popOut-data-v-432dbc10 .25s;\n\t/* 保留动画结束后的样子 */\n\t-webkit-animation-fill-mode: forwards;\n\t        animation-fill-mode: forwards;\n}\n@-webkit-keyframes popOut-data-v-432dbc10 {\n0% {\n        -webkit-transform: scale3d(1, 1, 1);\n        opacity: 1;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n}\n@keyframes popOut-data-v-432dbc10 {\n0% {\n        -webkit-transform: scale3d(1, 1, 1);\n                transform: scale3d(1, 1, 1);\n        opacity: 1;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(0, 0, 0);\n                transform: scale3d(0, 0, 0);;\n        opacity: 0;\n}\n}\n\n/*弹层动画（从上往下）*/\n\n/* .fadeIn {\n    -webkit-animation: fadeInDown .3s;\n    animation: fadeInDown .3s;\n}\n\n@keyframes fadeInDown {\n    0% {\n        transform: translate3d(0, -20%, 0);\n        opacity: 0;\n    }\n    100% {\n        transform: none;\n        opacity: 1;\n    }\n}\n\n@-webkit-keyframes fadeInDown {\n    0% {\n        -webkit-transform: translate3d(0, -20%, 0);\n        opacity: 0;\n    }\n    100% {\n        -webkit-transform: none;\n        opacity: 1;\n    }\n} */\n\n/*弹层动画（从下往上出现）*/\n.fadelogIn[data-v-432dbc10] {\n    -webkit-animation: fadelogIn-data-v-432dbc10 .25s;\n    animation: fadelogIn-data-v-432dbc10 .25s;\n}\n@keyframes fadelogIn-data-v-432dbc10 {\n0% {\n        -webkit-transform: translate3d(0, 100%, 0);\n                transform: translate3d(0, 100%, 0);\n}\n100% {\n        -webkit-transform: none;\n                transform: none;\n}\n}\n@-webkit-keyframes fadelogIn-data-v-432dbc10 {\n0% {\n        -webkit-transform: translate3d(0, 100%, 0);\n}\n100% {\n        -webkit-transform: none;\n}\n}\n\n/*弹层动画（从上往下消失）*/\n.fadelogOut[data-v-432dbc10] {\n    -webkit-animation: fadelogOut-data-v-432dbc10 .25s;\n    animation: fadelogOut-data-v-432dbc10 .25s;\n\t/* 保留动画结束后的样子 */\n\t-webkit-animation-fill-mode: forwards;\n\t        animation-fill-mode: forwards;\n}\n@keyframes fadelogOut-data-v-432dbc10 {\n0% {\n       -webkit-transform: none;\n               transform: none;\n}\n100% {\n\t\t-webkit-transform: translate3d(0, 100%, 0);\n\t\t        transform: translate3d(0, 100%, 0);\n}\n}\n@-webkit-keyframes fadelogOut-data-v-432dbc10 {\n0% {\n\t\t-webkit-transform: none;\n}\n100% {\n        -webkit-transform: translate3d(0, 100%, 0);\n}\n}\n.flexCenter[data-v-432dbc10] {\n\tdisplay: flex;\n\ttext-align: center;\n\tjustify-content: center;\n}\n.flexContentCenter[data-v-432dbc10] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n}\n.flexContentSpaceAround[data-v-432dbc10] {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: space-around;\n\talign-items: center;\n}\n.jj-alert-btns[data-v-432dbc10] {\n\n\tbox-sizing: border-box;\n\tborder-top: 1px solid #E8E6EF;\n}\n.jj-sheet-btn[data-v-432dbc10] {\n\tflex: 1 0 auto;\n\theight: 2.75rem;\n\tdisplay: flex;\n\tfont-size: 1.0625rem;\n}\n.jj-alert-btn[data-v-432dbc10] {\n\tflex: 1 0 auto;\n\theight: 2.75rem;\n\tdisplay: flex;\n\tfont-size: 1.0625rem;\n\talign-items: center;\n\tjustify-content: center;\n\ttext-align: center;\n\tborder-right: 1px solid #E8E6EF;\n}\n.jj-alert-btn[data-v-432dbc10]:last-child {\n\tborder-right: none;\n}\n", ""]);
 // Exports
 module.exports = exports;
 

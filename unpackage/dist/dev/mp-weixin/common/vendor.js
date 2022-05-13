@@ -9576,15 +9576,12 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAAEi
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 3));
-var _loading = _interopRequireDefault(__webpack_require__(/*! ../components/jj-messagebox/messageView/loading.js */ 36));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 var requsetUserInfo = function requsetUserInfo() {
-  //引入文件方式调用
-  var load = (0, _loading.default)();
+  //全局方式调用
+  var load = getApp().globalData.$jj_loading();
   setTimeout(function () {
     load.close();
-    //使用单例方法调用
-    _vue.default.prototype.$jj_toast('成功获取用户信息。。。。。。哈哈😄😄');
+    getApp().globalData.$jj_toast('成功获取用户信息。。。。。。哈哈😄😄');
   }, 3000);
 };var _default =
 

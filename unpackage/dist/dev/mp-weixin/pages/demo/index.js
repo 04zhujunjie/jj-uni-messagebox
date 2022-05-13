@@ -201,6 +201,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
 {
   components: {
     jjPopup: jjPopup,
@@ -242,33 +248,17 @@ __webpack_require__.r(__webpack_exports__);
 
       }, 2000);
     },
-    showCustomAlert: function showCustomAlert(type) {var isShowBtn = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+    showCustomAlert: function showCustomAlert(type) {var isShowBtn = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;var btnDirection = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'row';var position = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'center';
       var that = this;
-      var confirmBtn = {
-        title: "Confirm",
-        activeBackground: '#2f2',
-        style: {
-          'background': '#2A8AFF',
-          'color': '#fff' },
-
-        touchClose: false, //点击按钮时，是否自动关闭弹窗
-        click: function click() {
-          /*
-                                 有时候需要进行网络请求处理后，在是否进行关闭弹窗
-                                 这时候可以选择手动关闭弹窗
-                                 注意：click这个方法，不要使用箭头函数=>方法，使用function方法，这时候this表示的当前按钮对象
-                                 */
-          that.simulateNetworkRequest(this);
-        } };
-
       var alert = this.$jj_alert({
         type: type, //弹窗的类型有alert和sheet
-        width: '70%', //设置弹窗的宽度
+        position: position, //有center和bottom
+        btnDirection: btnDirection, //按钮的排列方向,row和column
+        width: '90%', //设置弹窗的宽度
         padding: '20px 30px', //设置内容的上下左右偏移
         maskColor: "rgba(0, 0, 0, 0.6)", //遮罩层的背景颜色
         touchClose: true, //点击背景图层，是否关闭弹框
         showClose: true, //是否显示右上角的关闭按钮
-        // position:'bottom',
         // closeStyle: {
         // 	'height': '0.85rem',
         // 	'width': '0.85rem'

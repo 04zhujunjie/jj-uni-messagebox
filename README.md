@@ -9,7 +9,7 @@
 #### 注意
 ---
 1、只适用uni-app项目，如果是其他H5网页的Vue项目可以使用 [jj-messagebox](https://github.com/04zhujunjie/jj-messagebox)   
-2、如果使用nvue，以getApp().globalData.$jj_alert形式调用弹框   
+2、在.js或者.nvue文件中可以用getApp().globalData.$jj_alert形式调用弹框   
 3、小程序无法覆盖原生的导航栏和tabBar,并且需要在显示弹窗的页面，手动引入jj-messagebox/messageView/index.vue 组件，否则无法显示弹窗    
 
 
@@ -129,7 +129,7 @@ installPlugin(Vue, '/pages/components/jj-messagebox/messageView/app-message-view
 下面是如何调用自定义的组件
 
 ```
-let updateAlert = alert({
+let updateAlert = getApp().globalData.$jj_alert({
 			type:'updateVersion',//自定义type标识
 			width:'280px',//设置弹窗的宽度
 			background: 'transparent', //弹窗的背景

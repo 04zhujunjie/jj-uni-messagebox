@@ -8,8 +8,6 @@
 </template>
 
 <script>
-	import jj_toast from '../components/jj-messagebox/messageView/toast.js'
-	import alert from '../components/jj-messagebox/messageView/alert.js'
 	export default {
 		methods:{
 			showToast(type){
@@ -18,7 +16,7 @@
 					//第一个参数为提示信息文本，第二个参数为提示类型，第三个参数为显示的时长
 					this.$jj_toast(message,type,1)
 				}else{
-					jj_toast(message)
+					this.$jj_toast(message)
 				}
 			},
 			updateVersion(){
@@ -38,7 +36,7 @@
 							"3、优化"
 						]
 					}
-			let updateAlert = alert({
+			let updateAlert = this.$jj_alert({
 					type:'updateVersion',
 					width:'280px',//设置弹窗的宽度
 					background: 'transparent', //弹窗的背景
@@ -91,7 +89,7 @@
 											loading.close()
 											//关闭更新提示框
 											updateAlert.close()
-											jj_toast('更新完成')
+											getApp().globalData.$jj_toast('更新完成')
 										},500)
 
 									}
@@ -100,7 +98,7 @@
 						}
 					]
 				})
-				alert({
+				this.$jj_alert({
 					message:'尝试覆盖掉已有的弹窗',
 					// priority:1001,//弹窗的优先级，数字越大，优先级就越高，在同一个页面，优先级低的弹窗不能覆盖掉优先级高的弹窗
 				})
