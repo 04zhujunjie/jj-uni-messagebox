@@ -256,7 +256,7 @@ var _default =
 
       var alert = getApp().globalData.$jj_alert({
         type: type, //弹窗的类型有alert和sheet
-        width: '70%', //设置弹窗的宽度
+        width: '80%', //设置弹窗的宽度
         padding: '20px 30px', //设置内容的上下左右偏移
         maskColor: "rgba(0, 0, 0, 0.6)", //遮罩层的背景颜色
         touchClose: true, //点击背景图层，是否关闭弹框

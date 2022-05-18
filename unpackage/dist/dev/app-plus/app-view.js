@@ -3883,19 +3883,27 @@ var render = function() {
                     _c(
                       "div",
                       {
+                        staticClass: _vm._$g(3, "sc"),
+                        class: _vm._$g(3, "c"),
                         staticStyle: {
                           display: "flex",
+                          "flex-direction": "column",
                           "justify-content": "center",
                           "align-items": "center"
                         },
-                        attrs: { _i: 3 }
+                        style: _vm._$g(3, "s"),
+                        attrs: { _i: 3 },
+                        on: {
+                          animationend: function($event) {
+                            return _vm.$handleViewEvent($event)
+                          }
+                        }
                       },
                       [
                         _c(
                           "div",
                           {
                             staticClass: _vm._$g(4, "sc"),
-                            class: _vm._$g(4, "c"),
                             staticStyle: {
                               margin: "0px",
                               "border-bottom-left-radius": "0px",
@@ -3904,9 +3912,6 @@ var render = function() {
                             style: _vm._$g(4, "s"),
                             attrs: { _i: 4 },
                             on: {
-                              animationend: function($event) {
-                                return _vm.$handleViewEvent($event)
-                              },
                               click: function($event) {
                                 return _vm.$handleViewEvent($event, {
                                   stop: true

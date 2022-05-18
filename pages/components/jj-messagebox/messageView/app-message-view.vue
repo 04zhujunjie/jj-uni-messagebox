@@ -32,6 +32,7 @@
 			close(type){
 				let refList = getRefList()
 				let back = refList.every(item => item.isShow===false)
+				console.log('--===')
 				if(back){
 					//计算返回的页数 = 总页数 - 当前页数
 					let delta = getCurrentPages().length - this.currentIndex

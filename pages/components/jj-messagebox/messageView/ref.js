@@ -5,12 +5,16 @@ let appShowing = false
 let appShowFnList = []
 
 let refMessageObj = function (){
-	let obj = Vue.prototype.$jj_refMessageObj
-	if (obj !== undefined){
-		return obj
-	}
-	Vue.prototype.$jj_refMessageObj = {}
-	return Vue.prototype.$jj_refMessageObj
+   let obj = getApp().globalData.$jj_refMessageObj
+   if (obj !== undefined){
+   	return obj
+   }
+   getApp().globalData.$jj_refMessageObj = {}
+   return getApp().globalData.$jj_refMessageObj
+}
+
+let jj_app_message_url = function(){
+	return getApp().globalData.jj_app_message_url || ''
 }
 
 let currentPageRoute = function () {
@@ -36,7 +40,7 @@ let refRouteKey = function(){
 
 let isShowAppMessageView = function (){
 	let curRoute = currentPageRoute()
-	let url = Vue.prototype.jj_app_message_url
+	let url = jj_app_message_url()
 	if (url.indexOf(curRoute) === -1){
 	  return false
 	}else{
@@ -59,7 +63,7 @@ let showMessageBox = function(showFn){
 }
 
 let appShowMessageBox = function (showFn){
-	let url = Vue.prototype.jj_app_message_url || ''
+	let url = jj_app_message_url()
 	
 	if (url.length > 0){
 		if(appShowing){
@@ -73,7 +77,7 @@ let appShowMessageBox = function (showFn){
 			//标记页面跳转
 			appShowing = true
 			uni.navigateTo({
-			    url: Vue.prototype.jj_app_message_url,
+			    url: jj_app_message_url(),
 				animationType:'none',
 				animationDuration:0,
 				success() {

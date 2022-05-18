@@ -2247,8 +2247,8 @@ var installPlugin = function installPlugin(Vue, appUrl) {
   Vue.prototype.$jj_loading = _loading.default;
   Vue.prototype.$jj_alert = _alert.default;
   Vue.prototype.$jj_toast = _toast.default;
-  Vue.prototype.jj_app_message_url = appUrl || '';
   setTimeout(function () {
+    getApp().globalData.jj_app_message_url = appUrl || '';
     getApp().globalData.$jj_loading = _loading.default;
     getApp().globalData.$jj_alert = _alert.default;
     getApp().globalData.$jj_toast = _toast.default;
@@ -2420,13 +2420,17 @@ var appShowing = false;
 var appShowFnList = [];
 
 var refMessageObj = function refMessageObj() {
-  var obj = _vue.default.prototype.$jj_refMessageObj;
+  var obj = getApp().globalData.$jj_refMessageObj;
   if (obj !== undefined) {
     return obj;
   }
-  _vue.default.prototype.$jj_refMessageObj = {};
-  return _vue.default.prototype.$jj_refMessageObj;
+  getApp().globalData.$jj_refMessageObj = {};
+  return getApp().globalData.$jj_refMessageObj;
 };exports.refMessageObj = refMessageObj;
+
+var jj_app_message_url = function jj_app_message_url() {
+  return getApp().globalData.jj_app_message_url || '';
+};
 
 var currentPageRoute = function currentPageRoute() {
   var routes = getCurrentPages(); // 获取当前打开过的页面路由数组
@@ -2451,7 +2455,7 @@ var refRouteKey = function refRouteKey() {
 
 var isShowAppMessageView = function isShowAppMessageView() {
   var curRoute = currentPageRoute();
-  var url = _vue.default.prototype.jj_app_message_url;
+  var url = jj_app_message_url();
   if (url.indexOf(curRoute) === -1) {
     return false;
   } else {
@@ -2474,7 +2478,7 @@ var showMessageBox = function showMessageBox(showFn) {
 };exports.showMessageBox = showMessageBox;
 
 var appShowMessageBox = function appShowMessageBox(showFn) {
-  var url = _vue.default.prototype.jj_app_message_url || '';
+  var url = jj_app_message_url();
 
   if (url.length > 0) {
     if (appShowing) {
@@ -2488,7 +2492,7 @@ var appShowMessageBox = function appShowMessageBox(showFn) {
       //标记页面跳转
       appShowing = true;
       uni.navigateTo({
-        url: _vue.default.prototype.jj_app_message_url,
+        url: jj_app_message_url(),
         animationType: 'none',
         animationDuration: 0,
         success: function success() {

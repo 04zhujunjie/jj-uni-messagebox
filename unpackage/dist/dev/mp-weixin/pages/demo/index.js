@@ -259,6 +259,7 @@ __webpack_require__.r(__webpack_exports__);
         maskColor: "rgba(0, 0, 0, 0.6)", //遮罩层的背景颜色
         touchClose: true, //点击背景图层，是否关闭弹框
         showClose: true, //是否显示右上角的关闭按钮
+        radius: 10, //设置圆角
         // closeStyle: {
         // 	'height': '0.85rem',
         // 	'width': '0.85rem'

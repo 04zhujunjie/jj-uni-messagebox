@@ -4,11 +4,10 @@
 			<div class="messagebox-shade" :class="[isCloseAlert?'fadelogOutOpcity':'']"
 				style="justify-content:flex-end;align-items: flex-end;" :style="[{'background-color':maskColor}]"
 				@touchmove.stop="" @click="touchClose?close():''">
-				<div style = "display: flex;justify-content:center;align-items: center;">
-					<div class="messagebox-main fadelogIn" @animationend="animationend" @click.stop="mainClick"
-						:class="[isCloseAlert?'fadelogOut':'']"
+				<div class = "fadelogIn" :class="[isCloseAlert?'fadelogOut':'']" :style="[{'animation-duration':duration+'s','width':'100%','max-height':maxHeight}]" style = "display: flex;flex-direction: column;justify-content:center;align-items: center;" @animationend="animationend">
+					<div class="messagebox-main"  @click.stop="mainClick"
 						style="margin:0px;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;"
-						:style="[{'animation-duration':duration+'s','width':alertWidth,'max-height':maxHeight,'background':background,'border-top-left-radius':radius+'px','border-top-right-radius':radius+'px'}]">
+						:style="[{'width':alertWidth,'background':background,'border-top-left-radius':radius+'px','border-top-right-radius':radius+'px'}]">
 						<div class="messagebox-content" :style="[{'padding':padding}]">
 							<div v-if="!isCustomType">
 								<div v-if="title.length > 0" class="flexCenter" style="font-size: 1.125rem;"

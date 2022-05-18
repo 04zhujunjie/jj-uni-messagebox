@@ -177,6 +177,7 @@ var _ref = __webpack_require__(/*! ./ref.js */ 15);var messageView = function me
     close: function close(type) {
       var refList = (0, _ref.getRefList)();
       var back = refList.every(function (item) {return item.isShow === false;});
+      console.log('--===');
       if (back) {
         //计算返回的页数 = 总页数 - 当前页数
         var delta = getCurrentPages().length - this.currentIndex;
