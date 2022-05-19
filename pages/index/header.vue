@@ -8,6 +8,7 @@
 </template>
 
 <script>
+	import {bg_custom_update} from '@/static/image.js'
 	export default {
 		methods:{
 			showToast(type){
@@ -29,7 +30,7 @@
 			let customDataObj = {
 						title:'发现新版本1.2.6',
 						contentTitle:'更新内容:',
-						backgroundImgUrl:require('../../static/bg_custom_update.png'),
+						backgroundImgUrl:bg_custom_update(),
 						contentList:[
 							'1、修复部分bug',
 							"2、新增新玩法",

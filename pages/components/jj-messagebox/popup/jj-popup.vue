@@ -5,7 +5,7 @@
 			style = "margin:0px;width: 100%;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;" 
 			:style="[{'animation-duration':duration+'s','height':height,'background':background,'border-top-left-radius':radius+'px','border-top-right-radius':radius+'px'}]">
 				<div class = "background-content">
-					<slot name="backgroundContent"></slot>
+					<slot  name="backgroundContent"></slot>
 				</div>
 				<div class="messagebox-content" :style="[{'padding':padding}]">
 					<div v-if="showClose" class="rightTopClose"  @click="close">
@@ -23,6 +23,7 @@
 </template>
 
 <script>
+	import {close_icon} from '../static/image.js'
 	export default {
 		name: 'jj-popup',//需要设置名字，在index.js文件注册插件的时候用到这个名字，这个名字作为改组件的名字
 		props: {
@@ -124,11 +125,12 @@
 			}
 		},
 		computed:{
+			//图片采用base64位，为了兼容小程序，app，vue3
 			closeImgUrl(){
 				if((this.closeImageUrl||'').length > 0){
 					return this.closeImageUrl
 				}
-				return require('../static/jj_close_icon.png') 
+				return close_icon() 
 			},
 		},
 		methods: {

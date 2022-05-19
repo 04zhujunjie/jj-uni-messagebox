@@ -19,6 +19,7 @@
 </template>
 
 <script>
+	import {success_icon,fail_icon,warn_icon} from '../static/image.js'
 	export default {
 		name: 'jj-toast',
 		data() {
@@ -53,16 +54,17 @@
 				size.height = this.imageSize.height || '32px'
 				return size
 			},
+			//图片采用base64位，为了兼容小程序，app，vue3
 			imgUrl() {
 				if ((this.imageUrl || '').length > 0) {
 					return this.imageUrl
 				}
 				if (this.type === 'success') {
-					return require('../static/success_icon.png')
+					return success_icon()
 				} else if (this.type === 'fail') {
-					return require('../static/fail_icon.png')
+					return fail_icon()
 				} else if (this.type === 'warn') {
-					return require('../static/warn_icon.png')
+					return warn_icon()
 				}
 				return ''
 			}

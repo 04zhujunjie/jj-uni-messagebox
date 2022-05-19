@@ -10,6 +10,7 @@
 
 <script>
 	import jjPopup from '../components/jj-messagebox/popup/jj-popup.vue'
+	import {background_image} from '@/static/image.js'
 	export default {
 		components:{
 			jjPopup
@@ -17,7 +18,9 @@
 		data() {
 			return {
 				isShowPopup:false,
-				backgroundImg: require('../../static/background_image.jpeg')
+				// backgroundImg: require('../../static/background_image.jpeg')
+				//图片采用base64位，为了兼容vue3
+				backgroundImg:background_image()
 			}
 		},
 		mounted() {

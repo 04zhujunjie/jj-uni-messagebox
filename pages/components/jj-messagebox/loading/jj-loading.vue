@@ -15,6 +15,7 @@
 </template>
 
 <script>
+	import {loading_icon,loading_round_icon,loading_taichi_icon} from '../static/image.js'
 	export default {
 		name: 'jj-loading',
 		data() {
@@ -46,16 +47,17 @@
 				size.height = this.imageSize.height || '32px'
 				return size
 			},
+			//图片采用base64位，为了兼容小程序，app，vue3
 			imgUrl(){
 				if ((this.imageUrl || '').length > 0){
 					return this.imageUrl
 				}
 				if (this.type === 'round'){
-					return require('../static/jj_loading_round_icon.png')
+					return loading_round_icon()
 				}else if (this.type === 'taichi'){
-					return require('../static/jj_loading_taichi_icon.png')
+					return loading_taichi_icon()
 				}
-				return require('../static/jj_loading_icon.png')
+				return  loading_icon()
 			}
 		},
 		methods: {

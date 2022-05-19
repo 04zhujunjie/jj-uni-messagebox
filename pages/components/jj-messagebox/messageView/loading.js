@@ -1,46 +1,67 @@
-
-import Vue from 'vue';
-import {kLoading} from './constant.js'
-import {getRef,showMessageBox} from './ref.js'
+import {
+	kLoading
+} from './constant.js'
+import {
+	getRef,
+	showMessageBox
+} from './ref.js'
 import processorObj from './processor.js'
-
 import loadingH5 from '../loading/jj-loading.vue';
-let jjLoading = Vue.extend(loadingH5); //创建vm实例的构造函数
-let jj_loading_instance = null
 
-let getLoadingData = function(loadingData){
+// #ifndef VUE3
+import Vue from 'vue';
+let jjLoading = Vue.extend(loadingH5); //创建vm实例的构造函数
+// #endif
+
+// #ifdef VUE3
+import {
+	createApp
+} from 'vue';
+// #ifdef H5
+	// 创建一个节点，并将组件挂载上去
+	const mountNode = document.createElement('div')
+// #endif
+// #endif
+
+let jj_loading_instance = null
+let getLoadingData = function(loadingData) {
 	let data = {}
-	if(loadingData === undefined || loadingData === null){
-		
-	}else{
+	if (loadingData === undefined || loadingData === null) {
+
+	} else {
 		if (typeof loadingData === 'object') {
 			data = {
 				...loadingData
 			}
-		}else{
+		} else {
 			data = {
-				"message": loadingData+'',
+				"message": loadingData + '',
 			}
 		}
 	}
 	return data
 }
 
-let jj_loading = function(loadingData){
-  const data = getLoadingData(loadingData)
-  let obj = processorObj(kLoading)
-  obj.processDataFun = getLoadingData
+let jj_loading = function(loadingData) {
+	const data = getLoadingData(loadingData)
+	let obj = processorObj(kLoading)
+	obj.processDataFun = getLoadingData
 	// #ifdef H5
+	// #ifndef VUE3
 	showLoadingH5(data)
+	// #endif
+	// #ifdef VUE3
+	showLoadingH5_Vue3(data)
+	// #endif
 	obj.messageObj = jj_loading_instance
 	// #endif
-	
+
 	// #ifdef MP
 	showMessageBox(function() {
-	  obj.messageObj = showLoadingApp_MP(data)
+		obj.messageObj = showLoadingApp_MP(data)
 	})
 	// #endif
-	
+
 	// #ifdef APP-PLUS
 	showMessageBox(function() {
 		//app 如果是页面的跳转，挂载元素需要时间，那么这里就异步赋值
@@ -50,15 +71,10 @@ let jj_loading = function(loadingData){
 	return obj
 }
 
-let showLoadingH5 = function(data){
+let showLoadingH5 = function(data) {
 	let isClose = data['isClose'] || false
-	if (jj_loading_instance !== null) {
-		jj_loading_instance.close()
-		jj_loading_instance.$el.remove()
-		jj_loading_instance = null
-		
-	}
-	if(isClose){
+	removeLoadingH5()
+	if (isClose) {
 		return
 	}
 	let instance = new jjLoading({
@@ -70,22 +86,43 @@ let showLoadingH5 = function(data){
 	jj_loading_instance = instance
 }
 
-let showLoadingApp_MP = function(data){
+let showLoadingH5_Vue3 = function(data) {
+	let isClose = data['isClose'] || false
+	removeLoadingH5()
+	if (isClose) {
+		return
+	}
+	
+	document.body.appendChild(mountNode)
+	const app = createApp(loadingH5, {
+		...data
+	})
+	let instance = app.mount(mountNode)
+	instance.show(data)
+	jj_loading_instance = instance
+}
+
+let removeLoadingH5 = function() {
+	if (jj_loading_instance !== null) {
+		jj_loading_instance.close()
+		jj_loading_instance.$el.remove()
+		jj_loading_instance = null
+	}
+}
+
+let showLoadingApp_MP = function(data) {
 	let loading = getRef(kLoading)
-	if (loading !== undefined){
-	   loading.isShow = false
-	   let isClose = data['isClose'] || false
-	   if (isClose){
-		   loading.close()
-		 return null
-	   }
-	   loading.show(data)
-	   return loading
+	if (loading !== undefined) {
+		loading.isShow = false
+		let isClose = data['isClose'] || false
+		if (isClose) {
+			loading.close()
+			return null
+		}
+		loading.show(data)
+		return loading
 	}
 	return null
 }
-
-
-
 
 export default jj_loading

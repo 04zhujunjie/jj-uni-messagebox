@@ -1,6 +1,4 @@
 
-import Vue from 'vue'
-
 let appShowing = false
 let appShowFnList = []
 
@@ -14,7 +12,7 @@ let refMessageObj = function (){
 }
 
 let jj_app_message_url = function(){
-	return getApp().globalData.jj_app_message_url || ''
+	return getApp().globalData.$jj_app_message_url || ''
 }
 
 let currentPageRoute = function () {

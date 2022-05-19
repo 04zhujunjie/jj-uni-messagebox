@@ -65,6 +65,7 @@
 <script>
 	import jjDialog from '../components/jj-messagebox/dialog/jj-dialog.vue'
 	import jjPopup from '../components/jj-messagebox/popup/jj-popup.vue'
+	import {logo,background_image,loading_custom} from '@/static/image.js'
 	export default {
 		components: {
 			jjPopup,
@@ -75,7 +76,13 @@
 				isShowDialog: false,
 				innerVisible: false,
 				isShowPopup: false,
-				backgroundImg: require('../../static/background_image.jpeg')
+				//图片采用base64位，为了兼容小程序，app，vue3
+				// backgroundImg: background_image()
+			}
+		},
+		computed:{
+			backgroundImg(){
+				return background_image()
 			}
 		},
 		methods: {
@@ -227,7 +234,9 @@
 						type: type //设置加载框的类型，有default、round、taichi三种
 					}
 					if (type === 'custom') {
-						loadingData['imageUrl'] = require('../../static/loading_custom.png') //图片链接
+						// loadingData['imageUrl'] = require('../../static/loading_custom.png') //图片链接
+						//图片采用base64位，为了兼容小程序，app，vue3
+						loadingData['imageUrl'] = loading_custom()
 						loadingData['background'] = '#fff' //设置弹框内容的背景色
 						loadingData['width'] = '120px'
 						loadingData['message'] = '自定义Loading' //自定义文本
@@ -267,7 +276,8 @@
 						width: '60px',
 						height: '60px'
 					}
-					toastData["imageUrl"] = require('../../static/logo.png')
+					// toastData["imageUrl"] = require('../../static/logo.png')
+					toastData["imageUrl"] = logo()
 					let toast = this.$jj_toast(toastData)
 					setTimeout(function() {
 						toast.close()
