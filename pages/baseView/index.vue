@@ -24,9 +24,6 @@
 		methods:{
 
 		},
-		beforeDestroy() {
-			
-		},
 	}
 </script>
 

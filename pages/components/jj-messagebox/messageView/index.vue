@@ -56,6 +56,9 @@
 		beforeDestroy() {
 			removeRefObj()
 		},
+		beforeUnmount() {
+			removeRefObj()
+		}
 	}
 </script>
 
