@@ -15,6 +15,13 @@
 		mounted(){
 			this.currentIndex = this.getCurrentIndex()
 		},
+		onBackPress(options) {
+			if (options.from === 'navigateBack') {
+				return false;
+			}
+			// 返回值为 true, 表示阻止该返回事件，不执行默认的返回
+			return true;
+		},
 		data(){
 			return{
 				currentIndex:-99,
