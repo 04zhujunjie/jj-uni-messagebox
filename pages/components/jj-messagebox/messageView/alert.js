@@ -24,6 +24,7 @@ import {
 // #endif
 
 let jj_alert_instance = null
+let jj_alert_h5_app = null
 let jj_alert = function(alertData, message, btnTitle) {
    const data = getData(alertData, message, btnTitle)
    let obj = processorObj(kAlert)
@@ -98,6 +99,7 @@ let showAlertH5_Vue3 = function(data){
 	const app = createApp(alertH5, {
 		...data
 	})
+	jj_alert_h5_app=app
 	let instance = app.mount(mountNode)
 	instance.show(data)
 	jj_alert_instance = instance
@@ -111,6 +113,13 @@ let removeAlertH5 = function(data){
 			//比较已有弹窗的优先级，如果已经展示的弹窗的优先级比较高，就不往下执行
 			return true
 		}
+		// #ifdef VUE3
+		if(jj_alert_h5_app !== null){
+			//卸载，消除There is already an app instance mounted on the host container警告⚠️
+			jj_alert_h5_app.unmount()
+			jj_alert_h5_app = null
+		}
+		// #endif
 		jj_alert_instance.close()
 		jj_alert_instance.$el.remove()
 		jj_alert_instance = null

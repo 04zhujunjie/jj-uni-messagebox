@@ -24,6 +24,7 @@ import {
 // #endif
 
 let jj_loading_instance = null
+let jj_loading_h5_app = null
 let getLoadingData = function(loadingData) {
 	let data = {}
 	if (loadingData === undefined || loadingData === null) {
@@ -97,6 +98,7 @@ let showLoadingH5_Vue3 = function(data) {
 	const app = createApp(loadingH5, {
 		...data
 	})
+	jj_loading_h5_app = app
 	let instance = app.mount(mountNode)
 	instance.show(data)
 	jj_loading_instance = instance
@@ -104,6 +106,13 @@ let showLoadingH5_Vue3 = function(data) {
 
 let removeLoadingH5 = function() {
 	if (jj_loading_instance !== null) {
+		// #ifdef VUE3
+		if(jj_loading_h5_app !== null){
+			//卸载，消除There is already an app instance mounted on the host container警告⚠️
+			jj_loading_h5_app.unmount()
+			jj_loading_h5_app = null
+		}
+		// #endif
 		jj_loading_instance.close()
 		jj_loading_instance.$el.remove()
 		jj_loading_instance = null

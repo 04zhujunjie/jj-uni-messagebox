@@ -24,6 +24,7 @@ import {
 // #endif
 
 let jj_toast_instance = null
+let jj_toast_h5_app = null
 
 let getData = function(toastData, type, duration) {
 	let data = {}
@@ -111,6 +112,7 @@ let showToastH5_Vue3 = function(data) {
 	const app = createApp(toastH5, {
 		...data
 	})
+	jj_toast_h5_app = app
 	let instance = app.mount(mountNode)
 	instance.show(data)
 	jj_toast_instance = instance
@@ -122,6 +124,13 @@ let removeToastH5 = function() {
 			clearTimeout(jj_toast_instance.jj_time)
 			jj_toast_instance.jj_time = null
 		}
+        // #ifdef VUE3
+		if(jj_toast_h5_app !== null){
+			//卸载，消除There is already an app instance mounted on the host container警告⚠️
+			jj_toast_h5_app.unmount()
+			jj_toast_h5_app = null
+		}
+        // #endif
 		jj_toast_instance.close()
 		jj_toast_instance.$el.remove()
 		jj_toast_instance = null
