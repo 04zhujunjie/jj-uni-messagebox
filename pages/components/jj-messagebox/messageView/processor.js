@@ -19,7 +19,6 @@ let processorObj = function (type){
 			removeData()
 		}else{
 			// #ifdef APP-PLUS
-			//app 如果是页面的跳转，挂载元素需要时间，如果是立马调用关闭，可能messageObj为null,稍做延时关闭
 			closeApp()
 			// #endif
 			

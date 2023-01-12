@@ -33,7 +33,7 @@
 				//#ifdef APP-PLUS
 				uni.navigateTo({
 				    url: '/pages/app/popup-view?id=1',
-					animationType:'none',//设置没有动画
+					animationType:'fade-in',//设置fade-in动画
 					animationDuration:0,//设置动画时间
 				})
 				//#endif

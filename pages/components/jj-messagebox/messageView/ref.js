@@ -76,7 +76,7 @@ let appShowMessageBox = function (showFn){
 			appShowing = true
 			uni.navigateTo({
 			    url: jj_app_message_url(),
-				animationType:'none',
+				animationType:'fade-in',
 				animationDuration:0,
 				success() {
 					//页面已经加载完成，显示弹框

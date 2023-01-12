@@ -57,7 +57,7 @@ installPlugin(Vue, '/pages/components/jj-messagebox/messageView/app-message-view
 		"navigationStyle": "custom", // 取消本页面的导航栏
 		"background": "transparent", // 背景透明
 		"app-plus": {
-			"animationType": "none", // 设置fade-in淡入动画，为最合理的动画类型
+			"animationType": "fade-in", // 设置fade-in淡入动画，为最合理的动画类型
 			"background": "transparent", // 背景透明
 			"backgroundColor": "transparent", // 背景透明
 			"webviewBGTransparent": true,
@@ -90,7 +90,7 @@ installPlugin(Vue, '/pages/components/jj-messagebox/messageView/app-message-view
 		"navigationStyle": "custom", // 取消本页面的导航栏
 		"background": "transparent", // 背景透明
 		"app-plus": {
-			"animationType": "none",
+			"animationType": "fade-in",
 			"background": "transparent", // 背景透明
 			"backgroundColor": "transparent", // 背景透明
 			"webviewBGTransparent": true,
