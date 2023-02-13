@@ -1,1 +1,1 @@
-<view class="_div"><block wx:if="{{customData.type==='updateVersion'}}"><update-version vue-id="98a506b6-1" customData="{{customData}}" data-event-opts="{{[['^clickBtn',[['clickBtn']]]]}}" bind:clickBtn="__e" bind:__l="__l"></update-version></block></view>
+<view><update-version wx:if="{{a}}" bindclickBtn="{{b}}" u-i="188175c6-0" bind:__l="__l" u-p="{{c}}"></update-version></view>

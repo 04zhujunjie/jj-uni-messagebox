@@ -1,53 +1,15 @@
 
-.flexColumnCenter.data-v-6a3babdf {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-}
-.flexRow.data-v-6a3babdf {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	width: 100%;
-}
-.marginTopBottom.data-v-6a3babdf {
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-.marginLeftRight.data-v-6a3babdf {
-	margin-right: 10px;
-	margin-left: 10px;
-}
-.btn.data-v-6a3babdf {
-	border-radius: 5px;
-	background-color: #2A8AFF;
-	border-color: #FFFFFF;
-	color: #FFFFFF;
-	padding: 0px 20px;
-	height: 44px;
-}
-.image.data-v-6a3babdf {
-	height: 100%;
-	width: 100%;
-	background-repeat: no-repeat;
-	background-size: contain;
-}
-
-
 .mine-box.data-v-4bd6864f{
-	display: flex;
-	flex-direction: column;
+		display: flex;
+		flex-direction: column;
 }
 .bottom-box.data-v-4bd6864f{
-	display: flex;
-	position: relative;
-	justify-content: center;
-	align-items: center;
-	background: #2C405A;
-	color: #fff;
-	margin-top: 20px;
-	height: 50px;
+		display: flex;
+		position: relative;
+		justify-content: center;
+		align-items: center;
+		background: #2C405A;
+		color: #fff;
+		margin-top: 20px;
+		height: 50px;
 }
-

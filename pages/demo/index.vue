@@ -65,7 +65,11 @@
 <script>
 	import jjDialog from '../components/jj-messagebox/dialog/jj-dialog.vue'
 	import jjPopup from '../components/jj-messagebox/popup/jj-popup.vue'
-	import {logo,background_image,loading_custom} from '@/static/image.js'
+	import {
+		logo,
+		background_image,
+		loading_custom
+	} from '@/static/image.js'
 	export default {
 		components: {
 			jjPopup,
@@ -80,8 +84,8 @@
 				// backgroundImg: background_image()
 			}
 		},
-		computed:{
-			backgroundImg(){
+		computed: {
+			backgroundImg() {
 				return background_image()
 			}
 		},
@@ -95,6 +99,7 @@
 					that.$jj_toast('已经更新 Alert 数据')
 					//更新数据
 					alert.update({
+						isQuickClose: true, //是否开启快速关闭，设置true时，关闭时没有动画效果
 						titleStyle: {
 							'color': 'red',
 							'font-size': '18px'
@@ -113,18 +118,28 @@
 					})
 				}, 2000)
 			},
-			showCustomAlert(type, isShowBtn = true,btnDirection = 'row', position = 'center') {
+			showCustomAlert(type, isShowBtn = true, btnDirection = 'row', position = 'center') {
+				let isUseHTMLString = false //是否将 message 属性作为 HTML 片段处理
+				let message = "事实上确实是当我们失去的时候，才知道自己曾经拥有；但有没有注意到当有些东西来临的时候，我们已错过。"
+				if (type === 'sheet') {
+					isUseHTMLString = true
+					message = "<strong>这是 <i id='test11'>HTML</i> 片段</strong>"
+				} else {
+					if (btnDirection !== 'row') {
+						message += message
+					}
+				}
 				let that = this
 				let alert = this.$jj_alert({
 					type: type, //弹窗的类型有alert和sheet
 					position: position, //有center和bottom
 					btnDirection: btnDirection, //按钮的排列方向,row和column
 					width: '90%', //设置弹窗的宽度
-					padding: '20px 30px', //设置内容的上下左右偏移
+					padding: '12px 15px', //设置内容的上下左右偏移
 					maskColor: "rgba(0, 0, 0, 0.6)", //遮罩层的背景颜色
 					touchClose: true, //点击背景图层，是否关闭弹框
 					showClose: true, //是否显示右上角的关闭按钮
-					radius:10,//设置圆角
+					radius: 10, //设置圆角
 					// closeStyle: {
 					// 	'height': '0.85rem',
 					// 	'width': '0.85rem'
@@ -134,12 +149,15 @@
 						'color': '#fb2408',
 						'font-size': '20px'
 					}, //标题的样式
-					message: '事实上确实是当我们失去的时候，才知道自己曾经拥有；但有没有注意到当有些东西来临的时候，我们已错过。', //内容
+					isUseHTMLString: isUseHTMLString, //是否将 message 属性作为 HTML 片段处理
+					message: message, //内容
 					messageStyle: {
 						"justify-content": 'left',
 						"display": "flex",
 						"color": '#8a8a8a',
-						'text-align': 'left'
+						'text-align': 'left',
+						'maxHeight': '100px', //内容的最大高度
+						'overflow': 'auto', //如果文本高度大于maxHeight就以滚动形式显示
 					}, //内容的样式
 					btns: isShowBtn === false ? [] : [{
 						title: "Cancel",
@@ -154,8 +172,15 @@
 							'color': 'red',
 							'font-size': '15px'
 						},
+						touchClose: false, //点击按钮时，是否自动关闭弹窗
 						click: () => {
 							console.log("点击Destructive")
+							//无动画关闭弹窗
+							alert.close(false)
+							uni.switchTab({
+								url: '/pages/index/index',
+								animationDuration: 0,
+							})
 						}
 					}, {
 						title: "Confirm",
@@ -172,6 +197,7 @@
 							注意：click这个方法，不要使用箭头函数=>方法，使用function方法，这时候this表示的当前按钮对象
 							*/
 							that.simulateNetworkRequest(this, alert)
+
 						}
 					}]
 				})
@@ -182,7 +208,7 @@
 				this.count = this.count || 0
 				this.$jj_toast('按钮被禁用,网络请求中...')
 				btn.isDisable = true
-				console.log(btn)
+				// console.log(btn)
 				let that = this
 				if (this.count % 2 === 0) {
 					setTimeout(function() {
@@ -193,11 +219,18 @@
 				} else {
 					setTimeout(function() {
 						that.$jj_toast('网络请求成功')
-						//关闭弹窗
-						alert.close()
-						// uni.navigateTo({
-						//     url: '/pages/demo/index'
-						// })
+
+						/*closeAll方法是将所有的提示（alert,toast,loading）关闭后，执行的回调函数
+						注意⚠️，在app平台下，如果配置了URL，那么回调函数是异步的，有一定的延时，
+						它是等配置的URL页面（app-message-view）隐藏后，再执行的函数
+						如果要‘关闭弹窗’并且使用navigateTo进行页面跳转，一定要放在closeAll回调函数内进行跳转，否则可能会导致路由丢失
+						*/
+						alert.closeAll(function() {
+							uni.navigateTo({
+								url: '/pages/demo/index',
+								animationDuration: 0,
+							})
+						})
 					}, 2000)
 				}
 				this.count += 1
@@ -217,7 +250,6 @@
 
 				if (type === 'default') {
 					let loading = this.$jj_loading('加载中...')
-					
 					setTimeout(function() {
 						loading.update('Update...')
 					}, 2000)

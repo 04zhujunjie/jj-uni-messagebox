@@ -2352,7 +2352,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 15);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".messagebox-shade[data-v-4259adc8] {\n\twidth: 100%;\n\theight: 100%;\n\tposition: fixed;\n\tbottom: 0;\n\tright: 0;\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tz-index: 999;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n}\n.messagebox-main[data-v-4259adc8] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\tbackground: white;\n\twidth: 80%;\n\tborder-radius: 5px;\n\toverflow: hidden;\n\tbox-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);\n\tbox-sizing: border-box;\n\tbackground-repeat: no-repeat;\n\tbackground-size: cover;\n\tbackground-attachment: fixed;\n}\n.background-content[data-v-4259adc8] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: absolute;\n\tright: 0;\n\tbottom: 0;\n\ttop: 0;\n\tleft: 0;\n}\n.messagebox-content[data-v-4259adc8] {\n\tbox-sizing: border-box;\n\twidth: 100%;\n\tpadding: 20px;\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\twhite-space: pre-wrap;\n}\n.rightTopClose[data-v-4259adc8] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n\twidth: 35px;\n\theight: 35px;\n\tposition: absolute;\n\tz-index: 100;\n\ttop: 3px;\n\tright: 5px;\n}\n.closeImage[data-v-4259adc8] {\n\theight: 15px;\n\twidth: 15px;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.image[data-v-4259adc8] {\n\theight: 100%;\n\twidth: 100%;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.fadelogOutOpcity[data-v-4259adc8]{\n\t\ttransition: all 1.5s;\n\t\topacity: 0;\n}\n\n/*弹层动画（放大）*/\n.popIn[data-v-4259adc8] {\n    -webkit-animation: popIn-data-v-4259adc8 .25s;\n    animation: popIn-data-v-4259adc8 .25s;\n}\n@-webkit-keyframes popIn-data-v-4259adc8 {\n0% {\n        -webkit-transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(1, 1, 1);\n        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n        opacity: 1;\n}\n}\n@keyframes popIn-data-v-4259adc8 {\n0% {\n        -webkit-transform: scale3d(0.2, 0.2, 0.2);\n                transform: scale3d(0.2, 0.2, 0.2);\n        opacity: 0;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(1, 1, 1);\n                transform: scale3d(1, 1, 1);\n        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n                animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n        opacity: 1;\n}\n}\n\n/*弹层动画（缩小）*/\n.popOut[data-v-4259adc8] {\n    -webkit-animation: popOut-data-v-4259adc8 .25s;\n    animation: popOut-data-v-4259adc8 .25s;\n\t/* 保留动画结束后的样子 */\n\t-webkit-animation-fill-mode: forwards;\n\t        animation-fill-mode: forwards;\n}\n@-webkit-keyframes popOut-data-v-4259adc8 {\n0% {\n        -webkit-transform: scale3d(1, 1, 1);\n        opacity: 1;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n}\n@keyframes popOut-data-v-4259adc8 {\n0% {\n        -webkit-transform: scale3d(1, 1, 1);\n                transform: scale3d(1, 1, 1);\n        opacity: 1;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(0, 0, 0);\n                transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n}\n.jj-dialog[data-v-4259adc8]{\n\tdisplay: flex;\n\tflex-direction: column;\n}\n", ""]);
+exports.push([module.i, ".messagebox-shade[data-v-4259adc8] {\n\twidth: 100%;\n\theight: 100%;\n\tposition: fixed;\n\tbottom: 0;\n\tright: 0;\n\tbackground-color: rgba(0, 0, 0, 0.5);\n\tz-index: 999;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n}\n.messagebox-main[data-v-4259adc8] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\tbackground: white;\n\twidth: 80%;\n\tborder-radius: 5px;\n\toverflow: hidden;\n\tbox-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);\n\tbox-sizing: border-box;\n\tbackground-repeat: no-repeat;\n\tbackground-size: cover;\n\tbackground-attachment: fixed;\n}\n.background-content[data-v-4259adc8] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: absolute;\n\tright: 0;\n\tbottom: 0;\n\ttop: 0;\n\tleft: 0;\n}\n.messagebox-content[data-v-4259adc8] {\n\tbox-sizing: border-box;\n\twidth: 100%;\n\tpadding: 20px;\n\tdisplay: flex;\n\tflex-direction: column;\n\tposition: relative;\n\twhite-space: pre-wrap;\n}\n.rightTopClose[data-v-4259adc8] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: center;\n\talign-items: center;\n\twidth: 35px;\n\theight: 35px;\n\tposition: absolute;\n\tz-index: 100;\n\ttop: 3px;\n\tright: 5px;\n}\n.closeImage[data-v-4259adc8] {\n\theight: 15px;\n\twidth: 15px;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.image[data-v-4259adc8] {\n\theight: 100%;\n\twidth: 100%;\n\tbackground-repeat: no-repeat;\n\tbackground-size: contain;\n}\n.fadelogOutOpcity[data-v-4259adc8]{\n\t\ttransition: all 1.5s;\n\t\topacity: 0;\n}\n\n/*弹层动画（放大）*/\n.popIn[data-v-4259adc8] {\n    -webkit-animation: popIn-data-v-4259adc8 .25s;\n    animation: popIn-data-v-4259adc8 .25s;\n}\n@-webkit-keyframes popIn-data-v-4259adc8 {\n0% {\n        -webkit-transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(1, 1, 1);\n        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n        opacity: 1;\n}\n}\n@keyframes popIn-data-v-4259adc8 {\n0% {\n        -webkit-transform: scale3d(0.2, 0.2, 0.2);\n                transform: scale3d(0.2, 0.2, 0.2);\n        opacity: 0;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(1, 1, 1);\n                transform: scale3d(1, 1, 1);\n        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n                animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);\n        opacity: 1;\n}\n}\n\n/*弹层动画（缩小）*/\n.popOut[data-v-4259adc8] {\n    -webkit-animation: popOut-data-v-4259adc8 .25s;\n    animation: popOut-data-v-4259adc8 .25s;\n\t/* 保留动画结束后的样子 */\n\t-webkit-animation-fill-mode: forwards;\n\t        animation-fill-mode: forwards;\n}\n@-webkit-keyframes popOut-data-v-4259adc8 {\n0% {\n        -webkit-transform: scale3d(1, 1, 1);\n        opacity: 1;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n}\n@keyframes popOut-data-v-4259adc8 {\n0% {\n        -webkit-transform: scale3d(1, 1, 1);\n                transform: scale3d(1, 1, 1);\n        opacity: 1;\n}\n50% {\n        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);\n\t\topacity:0.5;\n}\n100% {\n        -webkit-transform: scale3d(0, 0, 0);\n                transform: scale3d(0, 0, 0);\n        opacity: 0;\n}\n}\n.jj-dialog[data-v-4259adc8] {\n\tdisplay: flex;\n\tflex-direction: column;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -2542,7 +2542,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
+    "base-view",
     { staticClass: _vm._$g(0, "sc"), attrs: { _i: 0 } },
     [
       _c(
@@ -2556,7 +2556,7 @@ var render = function() {
             }
           }
         },
-        [_vm._v("showAlert")]
+        [_vm._v("页面跳转")]
       ),
       _c(
         "v-uni-button",
@@ -2571,11 +2571,17 @@ var render = function() {
         },
         [_vm._v("showPopup")]
       ),
-      _c("v-uni-map", {
-        staticClass: _vm._$g(3, "sc"),
-        staticStyle: { width: "100%", height: "200px" },
-        attrs: { _i: 3 }
-      })
+      _vm._$g(3, "i")
+        ? _c("v-uni-map", {
+            staticClass: _vm._$g(3, "sc"),
+            staticStyle: {
+              width: "100%",
+              height: "150px",
+              "margin-top": "250px"
+            },
+            attrs: { _i: 3 }
+          })
+        : _vm._e()
     ],
     1
   )
@@ -3286,14 +3292,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {
-      attrs: { _i: 0 },
-      on: {
-        click: function($event) {
-          return _vm.$handleViewEvent($event)
-        }
-      }
-    },
+    { attrs: { _i: 0 } },
     [
       _c("message-view", {
         attrs: { _i: 1 },
@@ -3966,11 +3965,24 @@ var render = function() {
                                                 attrs: { _i: 9 }
                                               },
                                               [
-                                                _c(
-                                                  "span",
-                                                  { attrs: { _i: 10 } },
-                                                  [_vm._v(_vm._$g(10, "t0-0"))]
-                                                )
+                                                _vm._$g(10, "i")
+                                                  ? _c(
+                                                      "span",
+                                                      { attrs: { _i: 10 } },
+                                                      [
+                                                        _vm._v(
+                                                          _vm._$g(10, "t0-0")
+                                                        )
+                                                      ]
+                                                    )
+                                                  : _c("div", {
+                                                      attrs: { _i: 11 },
+                                                      domProps: {
+                                                        innerHTML: _vm._s(
+                                                          _vm._$g(11, "v-html")
+                                                        )
+                                                      }
+                                                    })
                                               ],
                                               1
                                             )
@@ -3979,12 +3991,12 @@ var render = function() {
                                       1
                                     )
                                   : _vm._e(),
-                                _vm._$g(11, "i")
+                                _vm._$g(12, "i")
                                   ? _c(
                                       "div",
                                       {
-                                        staticClass: _vm._$g(11, "sc"),
-                                        attrs: { _i: 11 },
+                                        staticClass: _vm._$g(12, "sc"),
+                                        attrs: { _i: 12 },
                                         on: {
                                           click: function($event) {
                                             return _vm.$handleViewEvent($event)
@@ -3993,11 +4005,11 @@ var render = function() {
                                       },
                                       [
                                         _c("v-uni-image", {
-                                          staticClass: _vm._$g(12, "sc"),
-                                          style: _vm._$g(12, "s"),
+                                          staticClass: _vm._$g(13, "sc"),
+                                          style: _vm._$g(13, "s"),
                                           attrs: {
-                                            src: _vm._$g(12, "a-src"),
-                                            _i: 12
+                                            src: _vm._$g(13, "a-src"),
+                                            _i: 13
                                           }
                                         })
                                       ],
@@ -4007,19 +4019,19 @@ var render = function() {
                               ],
                               1
                             ),
-                            _vm._$g(13, "i")
+                            _vm._$g(14, "i")
                               ? _c(
                                   "div",
-                                  { attrs: { _i: 13 } },
+                                  { attrs: { _i: 14 } },
                                   [
-                                    _vm._$g(14, "i")
+                                    _vm._$g(15, "i")
                                       ? _c(
                                           "div",
                                           {
-                                            staticClass: _vm._$g(14, "sc"),
-                                            attrs: { _i: 14 }
+                                            staticClass: _vm._$g(15, "sc"),
+                                            attrs: { _i: 15 }
                                           },
-                                          _vm._l(_vm._$g(15, "f"), function(
+                                          _vm._l(_vm._$g(16, "f"), function(
                                             btn,
                                             index,
                                             $20,
@@ -4028,11 +4040,11 @@ var render = function() {
                                             return _c("jj-button", {
                                               key: btn,
                                               staticClass: _vm._$g(
-                                                "15-" + $30,
+                                                "16-" + $30,
                                                 "sc"
                                               ),
-                                              style: _vm._$g("15-" + $30, "s"),
-                                              attrs: { _i: "15-" + $30 },
+                                              style: _vm._$g("16-" + $30, "s"),
+                                              attrs: { _i: "16-" + $30 },
                                               on: {
                                                 btnClick: function($event) {
                                                   return _vm.$handleViewEvent(
@@ -4044,7 +4056,7 @@ var render = function() {
                                           }),
                                           1
                                         )
-                                      : _vm._l(_vm._$g(16, "f"), function(
+                                      : _vm._l(_vm._$g(17, "f"), function(
                                           btn,
                                           index,
                                           $21,
@@ -4055,22 +4067,22 @@ var render = function() {
                                             {
                                               key: btn,
                                               staticClass: _vm._$g(
-                                                "16-" + $31,
+                                                "17-" + $31,
                                                 "sc"
                                               ),
-                                              attrs: { _i: "16-" + $31 }
+                                              attrs: { _i: "17-" + $31 }
                                             },
                                             [
                                               _c("jj-button", {
                                                 staticClass: _vm._$g(
-                                                  "17-" + $31,
+                                                  "18-" + $31,
                                                   "sc"
                                                 ),
                                                 style: _vm._$g(
-                                                  "17-" + $31,
+                                                  "18-" + $31,
                                                   "s"
                                                 ),
-                                                attrs: { _i: "17-" + $31 },
+                                                attrs: { _i: "18-" + $31 },
                                                 on: {
                                                   btnClick: function($event) {
                                                     return _vm.$handleViewEvent(
@@ -4088,10 +4100,10 @@ var render = function() {
                                 )
                               : _c(
                                   "div",
-                                  { attrs: { _i: 18 } },
+                                  { attrs: { _i: 19 } },
                                   [
                                     _c("custom-alert", {
-                                      attrs: { _i: 19 },
+                                      attrs: { _i: 20 },
                                       on: {
                                         clickBtn: function($event) {
                                           return _vm.$handleViewEvent($event)
@@ -4115,10 +4127,10 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: _vm._$g(21, "sc"),
-                    class: _vm._$g(21, "c"),
-                    style: _vm._$g(21, "s"),
-                    attrs: { _i: 21 },
+                    staticClass: _vm._$g(22, "sc"),
+                    class: _vm._$g(22, "c"),
+                    style: _vm._$g(22, "s"),
+                    attrs: { _i: 22 },
                     on: {
                       touchmove: function($event) {
                         return _vm.$handleViewEvent($event, { stop: true })
@@ -4132,10 +4144,10 @@ var render = function() {
                     _c(
                       "div",
                       {
-                        staticClass: _vm._$g(22, "sc"),
-                        class: _vm._$g(22, "c"),
-                        style: _vm._$g(22, "s"),
-                        attrs: { _i: 22 },
+                        staticClass: _vm._$g(23, "sc"),
+                        class: _vm._$g(23, "c"),
+                        style: _vm._$g(23, "s"),
+                        attrs: { _i: 23 },
                         on: {
                           animationend: function($event) {
                             return _vm.$handleViewEvent($event)
@@ -4149,50 +4161,61 @@ var render = function() {
                         _c(
                           "div",
                           {
-                            staticClass: _vm._$g(23, "sc"),
-                            style: _vm._$g(23, "s"),
-                            attrs: { _i: 23 }
+                            staticClass: _vm._$g(24, "sc"),
+                            style: _vm._$g(24, "s"),
+                            attrs: { _i: 24 }
                           },
                           [
-                            _vm._$g(24, "i")
+                            _vm._$g(25, "i")
                               ? _c(
                                   "div",
-                                  { attrs: { _i: 24 } },
+                                  { attrs: { _i: 25 } },
                                   [
-                                    _vm._$g(25, "i")
+                                    _vm._$g(26, "i")
                                       ? _c(
                                           "div",
                                           {
-                                            staticClass: _vm._$g(25, "sc"),
+                                            staticClass: _vm._$g(26, "sc"),
                                             staticStyle: {
                                               "font-size": "1.125rem"
                                             },
-                                            style: _vm._$g(25, "s"),
-                                            attrs: { _i: 25 }
+                                            style: _vm._$g(26, "s"),
+                                            attrs: { _i: 26 }
                                           },
                                           [
-                                            _c("span", { attrs: { _i: 26 } }, [
-                                              _vm._v(_vm._$g(26, "t0-0"))
+                                            _c("span", { attrs: { _i: 27 } }, [
+                                              _vm._v(_vm._$g(27, "t0-0"))
                                             ])
                                           ],
                                           1
                                         )
                                       : _vm._e(),
-                                    _vm._$g(27, "i")
+                                    _vm._$g(28, "i")
                                       ? _c(
                                           "div",
                                           {
-                                            staticClass: _vm._$g(27, "sc"),
+                                            staticClass: _vm._$g(28, "sc"),
                                             staticStyle: {
                                               "margin-top": "10px"
                                             },
-                                            style: _vm._$g(27, "s"),
-                                            attrs: { _i: 27 }
+                                            style: _vm._$g(28, "s"),
+                                            attrs: { _i: 28 }
                                           },
                                           [
-                                            _c("span", { attrs: { _i: 28 } }, [
-                                              _vm._v(_vm._$g(28, "t0-0"))
-                                            ])
+                                            _vm._$g(29, "i")
+                                              ? _c(
+                                                  "span",
+                                                  { attrs: { _i: 29 } },
+                                                  [_vm._v(_vm._$g(29, "t0-0"))]
+                                                )
+                                              : _c("div", {
+                                                  attrs: { _i: 30 },
+                                                  domProps: {
+                                                    innerHTML: _vm._s(
+                                                      _vm._$g(30, "v-html")
+                                                    )
+                                                  }
+                                                })
                                           ],
                                           1
                                         )
@@ -4201,12 +4224,12 @@ var render = function() {
                                   1
                                 )
                               : _vm._e(),
-                            _vm._$g(29, "i")
+                            _vm._$g(31, "i")
                               ? _c(
                                   "div",
                                   {
-                                    staticClass: _vm._$g(29, "sc"),
-                                    attrs: { _i: 29 },
+                                    staticClass: _vm._$g(31, "sc"),
+                                    attrs: { _i: 31 },
                                     on: {
                                       click: function($event) {
                                         return _vm.$handleViewEvent($event)
@@ -4215,11 +4238,11 @@ var render = function() {
                                   },
                                   [
                                     _c("v-uni-image", {
-                                      staticClass: _vm._$g(30, "sc"),
-                                      style: _vm._$g(30, "s"),
+                                      staticClass: _vm._$g(32, "sc"),
+                                      style: _vm._$g(32, "s"),
                                       attrs: {
-                                        src: _vm._$g(30, "a-src"),
-                                        _i: 30
+                                        src: _vm._$g(32, "a-src"),
+                                        _i: 32
                                       }
                                     })
                                   ],
@@ -4229,19 +4252,19 @@ var render = function() {
                           ],
                           1
                         ),
-                        _vm._$g(31, "i")
+                        _vm._$g(33, "i")
                           ? _c(
                               "div",
-                              { attrs: { _i: 31 } },
+                              { attrs: { _i: 33 } },
                               [
-                                _vm._$g(32, "i")
+                                _vm._$g(34, "i")
                                   ? _c(
                                       "div",
                                       {
-                                        staticClass: _vm._$g(32, "sc"),
-                                        attrs: { _i: 32 }
+                                        staticClass: _vm._$g(34, "sc"),
+                                        attrs: { _i: 34 }
                                       },
-                                      _vm._l(_vm._$g(33, "f"), function(
+                                      _vm._l(_vm._$g(35, "f"), function(
                                         btn,
                                         index,
                                         $22,
@@ -4250,11 +4273,11 @@ var render = function() {
                                         return _c("jj-button", {
                                           key: btn,
                                           staticClass: _vm._$g(
-                                            "33-" + $32,
+                                            "35-" + $32,
                                             "sc"
                                           ),
-                                          style: _vm._$g("33-" + $32, "s"),
-                                          attrs: { _i: "33-" + $32 },
+                                          style: _vm._$g("35-" + $32, "s"),
+                                          attrs: { _i: "35-" + $32 },
                                           on: {
                                             btnClick: function($event) {
                                               return _vm.$handleViewEvent(
@@ -4266,7 +4289,7 @@ var render = function() {
                                       }),
                                       1
                                     )
-                                  : _vm._l(_vm._$g(34, "f"), function(
+                                  : _vm._l(_vm._$g(36, "f"), function(
                                       btn,
                                       index,
                                       $23,
@@ -4277,19 +4300,19 @@ var render = function() {
                                         {
                                           key: btn,
                                           staticClass: _vm._$g(
-                                            "34-" + $33,
+                                            "36-" + $33,
                                             "sc"
                                           ),
-                                          attrs: { _i: "34-" + $33 }
+                                          attrs: { _i: "36-" + $33 }
                                         },
                                         [
                                           _c("jj-button", {
                                             staticClass: _vm._$g(
-                                              "35-" + $33,
+                                              "37-" + $33,
                                               "sc"
                                             ),
-                                            style: _vm._$g("35-" + $33, "s"),
-                                            attrs: { _i: "35-" + $33 },
+                                            style: _vm._$g("37-" + $33, "s"),
+                                            attrs: { _i: "37-" + $33 },
                                             on: {
                                               btnClick: function($event) {
                                                 return _vm.$handleViewEvent(
@@ -4307,10 +4330,10 @@ var render = function() {
                             )
                           : _c(
                               "div",
-                              { attrs: { _i: 36 } },
+                              { attrs: { _i: 38 } },
                               [
                                 _c("custom-alert", {
-                                  attrs: { _i: 37 },
+                                  attrs: { _i: 39 },
                                   on: {
                                     clickBtn: function($event) {
                                       return _vm.$handleViewEvent($event)

@@ -73,15 +73,14 @@ let jj_toast = function(toastData, type, duration) {
 	// #endif
 
 	// #ifdef MP
-	showMessageBox(function() {
-		obj.messageObj = showToastApp_MP(data)
-	})
+	obj.messageObj = showToastApp_MP(data)
 	// #endif
 
 	// #ifdef APP-PLUS
 	showMessageBox(function() {
 		//app 如果是页面的跳转，挂载元素需要时间，那么这里就异步赋值
-		obj.messageObj = showToastApp_MP(data)
+		let messageData = Object.assign(data,obj.updateData,{isClose:obj.isClose||false})
+		obj.messageObj = showToastApp_MP(messageData)
 	})
 	// #endif
 	return obj
@@ -148,7 +147,7 @@ let showToastApp_MP = function(data) {
 		toast.isShow = false
 		let isClose = data['isClose'] || false
 		if (isClose) {
-			toast.close()
+			toast.quickClose()
 			return null
 		}
 		toast.show(data)
@@ -158,3 +157,7 @@ let showToastApp_MP = function(data) {
 }
 
 export default jj_toast
+
+export  {
+	removeToastH5
+}

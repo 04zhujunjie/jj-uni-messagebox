@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "Mine",
   "usingComponents": {
-    "demo": "/pages/demo/index"
+    "demo": "../demo/index"
   }
 }

@@ -73,131 +73,78 @@
 
 /*弹层动画（放大）*/
 .popIn.data-v-0de08b90 {
-    -webkit-animation: popIn-data-v-0de08b90 .25s;
-    animation: popIn-data-v-0de08b90 .25s;
+    animation: popIn-0de08b90 .25s;
 }
-@-webkit-keyframes popIn-data-v-0de08b90 {
+@keyframes popIn-0de08b90 {
 0% {
-        -webkit-transform: scale3d(0, 0, 0);
+        transform: scale3d(0.2, 0.2, 0.2);
         opacity: 0;
 }
 50% {
-        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+        animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
 		opacity:0.5;
 }
 100% {
-        -webkit-transform: scale3d(1, 1, 1);
-        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        opacity: 1;
-}
-}
-@keyframes popIn-data-v-0de08b90 {
-0% {
-        -webkit-transform: scale3d(0.2, 0.2, 0.2);
-                transform: scale3d(0.2, 0.2, 0.2);
-        opacity: 0;
-}
-50% {
-        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-		opacity:0.5;
-}
-100% {
-        -webkit-transform: scale3d(1, 1, 1);
-                transform: scale3d(1, 1, 1);
-        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-                animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transform: scale3d(1, 1, 1);
+        animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         opacity: 1;
 }
 }
 
 /*弹层动画（缩小）*/
 .popOut.data-v-0de08b90 {
-    -webkit-animation: popOut-data-v-0de08b90 .25s;
-    animation: popOut-data-v-0de08b90 .25s;
+    animation: popOut-0de08b90 .25s;
 	/* 保留动画结束后的样子 */
-	-webkit-animation-fill-mode: forwards;
-	        animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 }
-@-webkit-keyframes popOut-data-v-0de08b90 {
+@keyframes popOut-0de08b90 {
 0% {
-        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
         opacity: 1;
 }
 50% {
-        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+        animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
 		opacity:0.5;
 }
 100% {
-        -webkit-transform: scale3d(0, 0, 0);
-        opacity: 0;
-}
-}
-@keyframes popOut-data-v-0de08b90 {
-0% {
-        -webkit-transform: scale3d(1, 1, 1);
-                transform: scale3d(1, 1, 1);
-        opacity: 1;
-}
-50% {
-        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-		opacity:0.5;
-}
-100% {
-        -webkit-transform: scale3d(0, 0, 0);
-                transform: scale3d(0, 0, 0);
+        transform: scale3d(0, 0, 0);
         opacity: 0;
 }
 }
 .flexContentCenter.data-v-0de08b90 {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: relative;
 }
 .imageCenter.data-v-0de08b90 {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	        transform: translate(-50%, -50%);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 }
 .loading-image.data-v-0de08b90 {
-	width: 100%;
-	height: 100%;
-	background-repeat: no-repeat;
-	background-size: contain;
-	-webkit-animation: turn-data-v-0de08b90 1.5s linear infinite;
-	        animation: turn-data-v-0de08b90 1.5s linear infinite;
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-size: contain;
+		animation: turn-0de08b90 1.5s linear infinite;
 }
 .message.data-v-0de08b90 {
-	color: #FFFFFF;
-	font-size: 14.5px;
-	word-break: break-all;
-	white-space: pre-wrap;
+		color: #FFFFFF;
+		font-size: 14.5px;
+		word-break: break-all;
+		white-space: pre-wrap;
 }
-@-webkit-keyframes turn-data-v-0de08b90 {
+@keyframes turn-0de08b90 {
 0% {
-		-webkit-transform: rotate(0deg);
+			-webkit-transform: rotate(0deg);
 }
 50% {
-		-webkit-transform: rotate(180deg);
+			-webkit-transform: rotate(180deg);
 }
 100% {
-		-webkit-transform: rotate(360deg);
+			-webkit-transform: rotate(360deg);
 }
 }
-@keyframes turn-data-v-0de08b90 {
-0% {
-		-webkit-transform: rotate(0deg);
-}
-50% {
-		-webkit-transform: rotate(180deg);
-}
-100% {
-		-webkit-transform: rotate(360deg);
-}
-}
-

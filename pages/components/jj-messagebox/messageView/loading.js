@@ -58,15 +58,14 @@ let jj_loading = function(loadingData) {
 	// #endif
 
 	// #ifdef MP
-	showMessageBox(function() {
-		obj.messageObj = showLoadingApp_MP(data)
-	})
+	obj.messageObj = showLoadingApp_MP(data)
 	// #endif
 
 	// #ifdef APP-PLUS
 	showMessageBox(function() {
 		//app 如果是页面的跳转，挂载元素需要时间，那么这里就异步赋值
-		obj.messageObj = showLoadingApp_MP(data)
+		let messageData = Object.assign(data,obj.updateData,{isClose:obj.isClose||false})
+		obj.messageObj = showLoadingApp_MP(messageData)
 	})
 	// #endif
 	return obj
@@ -125,7 +124,7 @@ let showLoadingApp_MP = function(data) {
 		loading.isShow = false
 		let isClose = data['isClose'] || false
 		if (isClose) {
-			loading.close()
+			loading.quickClose()
 			return null
 		}
 		loading.show(data)
@@ -135,3 +134,7 @@ let showLoadingApp_MP = function(data) {
 }
 
 export default jj_loading
+
+export  {
+	removeLoadingH5
+}

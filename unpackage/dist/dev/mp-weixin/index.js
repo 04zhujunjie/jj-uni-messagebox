@@ -29,6 +29,7 @@ const _sfc_main = {
         loading.close();
         that.$jj_toast("\u5DF2\u7ECF\u66F4\u65B0 Alert \u6570\u636E");
         alert.update({
+          isQuickClose: true,
           titleStyle: {
             "color": "red",
             "font-size": "18px"
@@ -48,13 +49,23 @@ const _sfc_main = {
       }, 2e3);
     },
     showCustomAlert(type, isShowBtn = true, btnDirection = "row", position = "center") {
+      let isUseHTMLString = false;
+      let message = "\u4E8B\u5B9E\u4E0A\u786E\u5B9E\u662F\u5F53\u6211\u4EEC\u5931\u53BB\u7684\u65F6\u5019\uFF0C\u624D\u77E5\u9053\u81EA\u5DF1\u66FE\u7ECF\u62E5\u6709\uFF1B\u4F46\u6709\u6CA1\u6709\u6CE8\u610F\u5230\u5F53\u6709\u4E9B\u4E1C\u897F\u6765\u4E34\u7684\u65F6\u5019\uFF0C\u6211\u4EEC\u5DF2\u9519\u8FC7\u3002";
+      if (type === "sheet") {
+        isUseHTMLString = true;
+        message = "<strong>\u8FD9\u662F <i id='test11'>HTML</i> \u7247\u6BB5</strong>";
+      } else {
+        if (btnDirection !== "row") {
+          message += message;
+        }
+      }
       let that = this;
       let alert = this.$jj_alert({
         type,
         position,
         btnDirection,
         width: "90%",
-        padding: "20px 30px",
+        padding: "12px 15px",
         maskColor: "rgba(0, 0, 0, 0.6)",
         touchClose: true,
         showClose: true,
@@ -64,12 +75,15 @@ const _sfc_main = {
           "color": "#fb2408",
           "font-size": "20px"
         },
-        message: "\u4E8B\u5B9E\u4E0A\u786E\u5B9E\u662F\u5F53\u6211\u4EEC\u5931\u53BB\u7684\u65F6\u5019\uFF0C\u624D\u77E5\u9053\u81EA\u5DF1\u66FE\u7ECF\u62E5\u6709\uFF1B\u4F46\u6709\u6CA1\u6709\u6CE8\u610F\u5230\u5F53\u6709\u4E9B\u4E1C\u897F\u6765\u4E34\u7684\u65F6\u5019\uFF0C\u6211\u4EEC\u5DF2\u9519\u8FC7\u3002",
+        isUseHTMLString,
+        message,
         messageStyle: {
           "justify-content": "left",
           "display": "flex",
           "color": "#8a8a8a",
-          "text-align": "left"
+          "text-align": "left",
+          "maxHeight": "100px",
+          "overflow": "auto"
         },
         btns: isShowBtn === false ? [] : [{
           title: "Cancel",
@@ -84,8 +98,14 @@ const _sfc_main = {
             "color": "red",
             "font-size": "15px"
           },
+          touchClose: false,
           click: () => {
             console.log("\u70B9\u51FBDestructive");
+            alert.close(false);
+            common_vendor.index.switchTab({
+              url: "/pages/index/index",
+              animationDuration: 0
+            });
           }
         }, {
           title: "Confirm",
@@ -105,7 +125,6 @@ const _sfc_main = {
       this.count = this.count || 0;
       this.$jj_toast("\u6309\u94AE\u88AB\u7981\u7528,\u7F51\u7EDC\u8BF7\u6C42\u4E2D...");
       btn.isDisable = true;
-      console.log(btn);
       let that = this;
       if (this.count % 2 === 0) {
         setTimeout(function() {
@@ -115,7 +134,12 @@ const _sfc_main = {
       } else {
         setTimeout(function() {
           that.$jj_toast("\u7F51\u7EDC\u8BF7\u6C42\u6210\u529F");
-          alert.close();
+          alert.closeAll(function() {
+            common_vendor.index.navigateTo({
+              url: "/pages/demo/index",
+              animationDuration: 0
+            });
+          });
         }, 2e3);
       }
       this.count += 1;

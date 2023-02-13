@@ -1,6 +1,6 @@
 <template>
-	<div class="messagebox-shade" v-if = "isShow"
-		:style="[{'background-color':maskColor,'pointer-events': 'none'}]" @touchmove.stop = "">
+	<div class="messagebox-shade" v-if="isShow" :style="[{'background-color':maskColor,'pointer-events': 'none'}]"
+		@touchmove.stop="">
 		<div class="messagebox-main"
 			:style="[{'width':'auto','minWidth':minWidth,'maxWidth':maxWidth,'background':background,'border-radius':radius+'px'}]">
 			<div class="messagebox-content" :style="[{'padding':padding}]">
@@ -12,14 +12,17 @@
 				<div class="flexContentCenter">
 					<span class="message" :style="[messageStyle]">{{message}}</span>
 				</div>
-
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-	import {success_icon,fail_icon,warn_icon} from '../static/image.js'
+	import {
+		success_icon,
+		fail_icon,
+		warn_icon
+	} from '../static/image.js'
 	export default {
 		name: 'jj-toast',
 		data() {
@@ -27,8 +30,8 @@
 				type: '', //有success，fail，warn
 				duration: 2.5, //动画时间
 				radius: 5, //圆角
-				isShow:false, //是否显示弹框
-				isClose:false, //关闭弹框
+				isShow: false, //是否显示弹框
+				isClose: false, //关闭弹框
 				maskColor: "transparent", //遮罩层的背景颜色
 				background: 'rgba(0, 0, 0, 0.8)', //弹窗的背景
 				padding: '12px',
@@ -41,7 +44,7 @@
 				minWidth: '85px',
 				message: "", //弹窗的内容
 				messageStyle: {}, //内容的样式
-				originalData:null,
+				originalData: null,
 			}
 		},
 		mounted() {
@@ -70,18 +73,18 @@
 			}
 		},
 		methods: {
-			show(data={}){
-			data['isShow'] = true
-			let orData = Object.assign({},this.$data)
-			delete orData['originalData']
-			this.$emit('show')
-			if (this.originalData === null){
-				this.originalData = orData
-				Object.assign(this.$data,data)
-			}else{
-				Object.assign(this.$data,this.originalData,data)
-			}
-				if (this.duration > 0){
+			show(data = {}) {
+				data['isShow'] = true
+				let orData = Object.assign({}, this.$data)
+				delete orData['originalData']
+				this.$emit('show')
+				if (this.originalData === null) {
+					this.originalData = orData
+					Object.assign(this.$data, data)
+				} else {
+					Object.assign(this.$data, this.originalData, data)
+				}
+				if (this.duration > 0) {
 					let that = this
 					this.jj_time = setTimeout(function() {
 						that.jj_time = null
@@ -89,16 +92,19 @@
 					}, that.duration * 1000)
 				}
 			},
-			update(data={}){
-				Object.assign(this.$data,data)
+			update(data = {}) {
+				Object.assign(this.$data, data)
 			},
 			close() {
+				this.quickClose()
+			},
+			quickClose() {
 				this.isShow = false
 				this.$emit('close')
 			},
 		},
 		beforeCreate() {
-			if (this.jj_time !== null){
+			if (this.jj_time !== null) {
 				clearTimeout(this.jj_time)
 			}
 		}
@@ -115,6 +121,7 @@
 		align-items: center;
 		position: relative;
 	}
+
 	.message {
 		color: #FFFFFF;
 		font-size: 14.5px;

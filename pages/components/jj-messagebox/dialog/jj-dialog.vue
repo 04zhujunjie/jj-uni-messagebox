@@ -1,16 +1,19 @@
 <template>
 	<div v-if="jj_visible" class="jj-dialog">
-		<div class="messagebox-shade" :style="[{'background-color':maskColor}]" @touchmove.stop = ""  @click="touchClose?close():''">
-			<div class="messagebox-main popIn" @click="mainClick" :style="[{'animation-duration':duration+'s','width':width,'background':background,'border-radius':radius+'px'}]">
-				<div class = "background-content">
+		<div class="messagebox-shade" :style="[{'background-color':maskColor}]" @touchmove.stop=""
+			@click="touchClose?close():''">
+			<div class="messagebox-main popIn" @click="mainClick"
+				:style="[{'animation-duration':duration+'s','width':width,'background':background,'border-radius':radius+'px'}]">
+				<div class="background-content">
 					<slot name="backgroundContent"></slot>
 				</div>
 				<div class="messagebox-content" :style="[{'padding':padding}]">
-					<div v-if="showClose" class="rightTopClose"  @click="close">
-						<image class = "closeImage" :style="[closeStyle]" :src="closeImgUrl"></image>
+					<div v-if="showClose" class="rightTopClose" @click="close">
+						<image class="closeImage" :style="[closeStyle]" :src="closeImgUrl"></image>
 					</div>
 					<div v-if="title.length > 0" class="flexCenter" :style="[titleStyle]"><span>{{title}}</span></div>
-					<div v-if="message.length > 0" class="flexCenter" style="margin-top: 10px;" :style="[messageStyle]"><span>{{message}}</span></div>
+					<div v-if="message.length > 0" class="flexCenter" style="margin-top: 10px;" :style="[messageStyle]">
+						<span>{{message}}</span></div>
 					<slot></slot>
 				</div>
 				<slot name="footer"></slot>
@@ -21,26 +24,28 @@
 </template>
 
 <script>
-	import {close_icon} from '../static/image.js'
+	import {
+		close_icon
+	} from '../static/image.js'
 	export default {
-		name: 'jj-dialog',//需要设置名字，在index.js文件注册插件的时候用到这个名字，这个名字作为改组件的名字
+		name: 'jj-dialog', //需要设置名字，在index.js文件注册插件的时候用到这个名字，这个名字作为改组件的名字
 		props: {
 			visible: {
 				//是否显示
 				type: Boolean,
 				default: false,
 			},
-			duration:{
+			duration: {
 				//动画时间
 				type: Number,
 				default: 0.25,
 			},
-			radius:{
+			radius: {
 				//圆角
 				type: Number,
 				default: 5,
 			},
-			background:{
+			background: {
 				//弹窗的背景
 				type: String,
 				default: "#fff",
@@ -63,11 +68,11 @@
 			closeStyle: {
 				//关闭按钮的样式
 				type: Object,
-				default: function(){
+				default: function() {
 					return {}
 				}
 			},
-			closeImageUrl:{
+			closeImageUrl: {
 				type: String,
 				default: ''
 			},
@@ -79,7 +84,7 @@
 			titleStyle: {
 				//标题样式
 				type: Object,
-				default: function(){
+				default: function() {
 					return {}
 				}
 			},
@@ -91,7 +96,7 @@
 			messageStyle: {
 				//信息内容的样式
 				type: Object,
-				default: function(){
+				default: function() {
 					return {}
 				}
 			},
@@ -118,10 +123,10 @@
 				jj_visible: this.visible
 			}
 		},
-		computed:{
+		computed: {
 			//图片采用base64位，为了兼容小程序，app，vue3
-			closeImgUrl(){
-				if((this.closeImageUrl||'').length > 0){
+			closeImgUrl() {
+				if ((this.closeImageUrl || '').length > 0) {
 					return this.closeImageUrl
 				}
 				return close_icon()
@@ -143,7 +148,8 @@
 <style scoped>
 	@import "../jj-messagebox.css";
 	@import "../jj-pop.css";
-	.jj-dialog{
+
+	.jj-dialog {
 		display: flex;
 		flex-direction: column;
 	}

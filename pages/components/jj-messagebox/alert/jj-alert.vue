@@ -4,8 +4,11 @@
 			<div class="messagebox-shade" :class="[isCloseAlert?'fadelogOutOpcity':'']"
 				style="justify-content:flex-end;align-items: flex-end;" :style="[{'background-color':maskColor}]"
 				@touchmove.stop="" @click="touchClose?close():''">
-				<div class = "fadelogIn" :class="[isCloseAlert?'fadelogOut':'']" :style="[{'animation-duration':duration+'s','width':'100%','max-height':maxHeight}]" style = "display: flex;flex-direction: column;justify-content:center;align-items: center;" @animationend="animationend">
-					<div class="messagebox-main"  @click.stop="mainClick"
+				<div class="fadelogIn" :class="[isCloseAlert?'fadelogOut':'']"
+					:style="[{'animation-duration':duration+'s','width':'100%','max-height':maxHeight}]"
+					style="display: flex;flex-direction: column;justify-content:center;align-items: center;"
+					@animationend="animationend">
+					<div class="messagebox-main" @click.stop="mainClick"
 						style="margin:0px;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;"
 						:style="[{'width':alertWidth,'background':background,'border-top-left-radius':radius+'px','border-top-right-radius':radius+'px'}]">
 						<div class="messagebox-content" :style="[{'padding':padding}]">
@@ -16,7 +19,8 @@
 								</div>
 								<div v-if="message.length > 0" class="flexCenter" style="margin-top: 10px;"
 									:style="[messageStyle]">
-									<span>{{message}}</span>
+									<span v-if="!isUseHTMLString">{{message}}</span>
+									<div v-else v-html="message"></div>
 								</div>
 							</div>
 							<div v-if="showClose" class="rightTopClose" @click="close">
@@ -28,9 +32,10 @@
 								<jj-button class="jj-alert-btn" v-for="(btn,index) in btns" :key="index"
 									:style="[btnStyle(btn)]" :btnObj="btn" @btnClick="clickFn(btn)">
 								</jj-button>
-					
+
 							</div>
-							<div v-else class="jj-alert-btns flexContentCenter" v-for="(btn,index) in btns" :key="index">
+							<div v-else class="jj-alert-btns flexContentCenter" v-for="(btn,index) in btns"
+								:key="index">
 								<jj-button class="jj-sheet-btn" :btnObj="btn" :style="[btnStyle(btn)]"
 									@btnClick="clickFn(btn)"></jj-button>
 							</div>
@@ -58,7 +63,8 @@
 							</div>
 							<div v-if="message.length > 0" class="flexCenter" style="margin-top: 10px;"
 								:style="[messageStyle]">
-								<span>{{message}}</span>
+								<span v-if="!isUseHTMLString">{{message}}</span>
+								<div v-else v-html="message"></div>
 							</div>
 						</div>
 						<div v-if="showClose" class="rightTopClose" @click="close">
@@ -92,13 +98,16 @@
 <script>
 	import jjButton from './jj-button.vue'
 	import customAlert from './custom-alert.vue'
-	import {close_icon} from '../static/image.js'
+	import {
+		close_icon
+	} from '../static/image.js'
 	export default {
 		name: 'jj-alert',
 		components: {
 			jjButton,
 			customAlert
 		},
+
 		data() {
 			return {
 				type: 'alert', //有alert和sheet
@@ -113,6 +122,8 @@
 				touchClose: false, //点击背景图层，是否关闭弹框
 				isShow: false, //是否显示弹框
 				isClose: false, //关闭弹框
+				isQuickClose: false, //是否开启快速关闭，设置true时，关闭时没有动画效果
+				isUseHTMLString: false, //是否将 message 属性作为 HTML 片段处理
 				closeStyle: {
 
 				}, //右上方关闭按钮的样式
@@ -208,19 +219,25 @@
 				Object.assign(this.$data, data)
 			},
 			close() {
+				if (this.isQuickClose) {
+					this.quickClose()
+					return
+				}
 				if (this.isCloseAlert) {
 					return
 				}
 				this.isCloseAlert = true
-
 			},
 			animationend() {
 				if (this.isCloseAlert) {
 					//弹窗消失结束后
-					this.isShow = false
-					this.isCloseAlert = false
-					this.$emit('close')
+					this.quickClose()
 				}
+			},
+			quickClose() {
+				this.isShow = false
+				this.isCloseAlert = false
+				this.$emit('close')
 			},
 			mainClick() {
 

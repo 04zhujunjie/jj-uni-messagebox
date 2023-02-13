@@ -1,7 +1,7 @@
 {
-  "navigationBarBackgroundColor": "#3F536E",
+  "component": true,
   "usingComponents": {
-    "jj-popup": "/pages/components/jj-messagebox/popup/jj-popup",
-    "jj-dialog": "/pages/components/jj-messagebox/dialog/jj-dialog"
+    "jj-dialog": "../components/jj-messagebox/dialog/jj-dialog",
+    "jj-popup": "../components/jj-messagebox/popup/jj-popup"
   }
 }

@@ -40,15 +40,14 @@ let jj_alert = function(alertData, message, btnTitle) {
 	// #endif
 
 	// #ifdef MP
-	showMessageBox(function() {
-		obj.messageObj = showAlertApp_MP(data)
-	})
+	obj.messageObj = showAlertApp_MP(data)
 	// #endif
 
 	// #ifdef APP-PLUS
 	showMessageBox(function() {
 		//app 如果是页面的跳转，挂载元素需要时间，那么这里就异步赋值
-		obj.messageObj = showAlertApp_MP(data)
+		let messageData = Object.assign(data,obj.updateData,{isClose:obj.isClose||false})
+		obj.messageObj = showAlertApp_MP(messageData)
 	})
 	// #endif
 	return obj
@@ -59,15 +58,14 @@ let showAlertApp_MP = function(data) {
 		
 		let isClose = data['isClose'] || false
 		if (isClose) {
-			alert.close()
+			alert.quickClose()
 			return null
 		}
 		let priority = data['priority'] || 0
 		let alertPriority = alert.priority
-		
 		if (alertPriority > priority&&alert.isShow){
 			//比较已有弹窗的优先级，如果已经展示的弹窗的优先级比较高，就不往下执行
-			return
+			return null
 		}
 		alert.isCloseAlert = false
 		alert.isShow = false
@@ -105,7 +103,7 @@ let showAlertH5_Vue3 = function(data){
 	jj_alert_instance = instance
 }
 
-let removeAlertH5 = function(data){
+let removeAlertH5 = function(data={priority:0}){
 	if (jj_alert_instance !== null) {
 		let priority = data['priority'] || 0
 		let alertPriority = jj_alert_instance.priority
@@ -160,3 +158,7 @@ let getData = function(alertData, message, btnTitle) {
 	return data
 }
 export default jj_alert
+
+export {
+	removeAlertH5
+}

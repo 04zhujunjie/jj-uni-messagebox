@@ -8,7 +8,6 @@
     "pages/components/jj-messagebox/messageView/app-message-view",
     "pages/app/popup-view"
   ],
-  "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",

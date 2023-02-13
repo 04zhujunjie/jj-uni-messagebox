@@ -1,1 +1,1 @@
-<view class="mine-box _div data-v-4bd6864f"><demo vue-id="2efac497-1" class="data-v-4bd6864f" bind:__l="__l"></demo><view data-event-opts="{{[['tap',[['loadingUserInfo',['$event']]]]]}}" class="bottom-box _div data-v-4bd6864f" bindtap="__e">获取用户信息</view></view>
+<view class="mine-box data-v-4bd6864f"><demo class="data-v-4bd6864f" u-i="4bd6864f-0" bind:__l="__l"></demo><view class="bottom-box data-v-4bd6864f" bindtap="{{a}}">获取用户信息</view></view>

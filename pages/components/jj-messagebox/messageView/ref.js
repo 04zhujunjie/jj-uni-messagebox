@@ -11,6 +11,7 @@ let refMessageObj = function (){
    return getApp().globalData.$jj_refMessageObj
 }
 
+
 let jj_app_message_url = function(){
 	return getApp().globalData.$jj_app_message_url || ''
 }
@@ -24,18 +25,30 @@ let currentPageRoute = function () {
 	let curRoute = routes[routes.length - 1].route
 	return curRoute
 }
-
 let refRouteKey = function(){
 	let routes = getCurrentPages(); // 获取当前打开过的页面路由数组
 	//H5 页面刷新后，返回上一页，会返回空数组
 	if(routes.length === 0){
 		return ''
 	}
-	let index = routes.length - 1
-	let rKey = routes[index].route +'/'+index
+	let rKey = route_uidKey(routes[routes.length - 1])
+	// console.log('--------',rKey)
 	return rKey
 }
 
+let route_uidKey = function (page) {
+	let uid = 0
+	// #ifdef VUE3
+	 //vue3 页面的id
+	 uid = page.$page.id
+	// #endif
+	
+	// #ifndef VUE3
+	//vue2 页面的id
+	uid = page.$vm._uid
+	// #endif
+	return  page.route + '/' + uid
+}
 let isShowAppMessageView = function (){
 	let curRoute = currentPageRoute()
 	let url = jj_app_message_url()
@@ -138,10 +151,12 @@ let removeRefObj = function(){
 	}
 }
 
-let getRefList = function (){
+let getRefList = function (route_uid){
 	let refList = []
-	let refKey = refRouteKey()
-
+	let refKey = route_uid
+	if(refKey===undefined){
+		refKey = refRouteKey()
+	}
 	let currentObj = refMessageObj()[refKey]
 	if(currentObj !== undefined){
 		let refObj = refMessageObj()[refKey]
@@ -157,7 +172,9 @@ export {
 	refRouteKey,
 	currentPageRoute,
 	isShowAppMessageView,
+	jj_app_message_url,
 	showMessageBox,
+	route_uidKey,
 	getRef,
 	addRefObj,
 	removeRefObj,

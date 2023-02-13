@@ -73,80 +73,41 @@
 
 /*弹层动画（放大）*/
 .popIn.data-v-432dbc10 {
-    -webkit-animation: popIn-data-v-432dbc10 .25s;
-    animation: popIn-data-v-432dbc10 .25s;
+    animation: popIn-432dbc10 .25s;
 }
-@-webkit-keyframes popIn-data-v-432dbc10 {
+@keyframes popIn-432dbc10 {
 0% {
-        -webkit-transform: scale3d(0, 0, 0);
+        transform: scale3d(0.2, 0.2, 0.2);
         opacity: 0;
 }
 50% {
-        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+        animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
 		opacity:0.5;
 }
 100% {
-        -webkit-transform: scale3d(1, 1, 1);
-        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        opacity: 1;
-}
-}
-@keyframes popIn-data-v-432dbc10 {
-0% {
-        -webkit-transform: scale3d(0.2, 0.2, 0.2);
-                transform: scale3d(0.2, 0.2, 0.2);
-        opacity: 0;
-}
-50% {
-        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-		opacity:0.5;
-}
-100% {
-        -webkit-transform: scale3d(1, 1, 1);
-                transform: scale3d(1, 1, 1);
-        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-                animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transform: scale3d(1, 1, 1);
+        animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         opacity: 1;
 }
 }
 
 /*弹层动画（缩小）*/
 .popOut.data-v-432dbc10 {
-    -webkit-animation: popOut-data-v-432dbc10 .25s;
-    animation: popOut-data-v-432dbc10 .25s;
+    animation: popOut-432dbc10 .25s;
 	/* 保留动画结束后的样子 */
-	-webkit-animation-fill-mode: forwards;
-	        animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 }
-@-webkit-keyframes popOut-data-v-432dbc10 {
+@keyframes popOut-432dbc10 {
 0% {
-        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
         opacity: 1;
 }
 50% {
-        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+        animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
 		opacity:0.5;
 }
 100% {
-        -webkit-transform: scale3d(0, 0, 0);
-        opacity: 0;
-}
-}
-@keyframes popOut-data-v-432dbc10 {
-0% {
-        -webkit-transform: scale3d(1, 1, 1);
-                transform: scale3d(1, 1, 1);
-        opacity: 1;
-}
-50% {
-        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-		opacity:0.5;
-}
-100% {
-        -webkit-transform: scale3d(0, 0, 0);
-                transform: scale3d(0, 0, 0);
+        transform: scale3d(0, 0, 0);
         opacity: 0;
 }
 }
@@ -182,93 +143,69 @@
 
 /*弹层动画（从下往上出现）*/
 .fadelogIn.data-v-432dbc10 {
-    -webkit-animation: fadelogIn-data-v-432dbc10 .25s;
-    animation: fadelogIn-data-v-432dbc10 .25s;
+    animation: fadelogIn-432dbc10 .25s;
 }
-@keyframes fadelogIn-data-v-432dbc10 {
+@keyframes fadelogIn-432dbc10 {
 0% {
-        -webkit-transform: translate3d(0, 100%, 0);
-                transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
 }
 100% {
-        -webkit-transform: none;
-                transform: none;
-}
-}
-@-webkit-keyframes fadelogIn-data-v-432dbc10 {
-0% {
-        -webkit-transform: translate3d(0, 100%, 0);
-}
-100% {
-        -webkit-transform: none;
+        transform: none;
 }
 }
 
 /*弹层动画（从上往下消失）*/
 .fadelogOut.data-v-432dbc10 {
-    -webkit-animation: fadelogOut-data-v-432dbc10 .25s;
-    animation: fadelogOut-data-v-432dbc10 .25s;
+    animation: fadelogOut-432dbc10 .25s;
 	/* 保留动画结束后的样子 */
-	-webkit-animation-fill-mode: forwards;
-	        animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 }
-@keyframes fadelogOut-data-v-432dbc10 {
+@keyframes fadelogOut-432dbc10 {
 0% {
-       -webkit-transform: none;
-               transform: none;
+       transform: none;
 }
 100% {
-		-webkit-transform: translate3d(0, 100%, 0);
-		        transform: translate3d(0, 100%, 0);
-}
-}
-@-webkit-keyframes fadelogOut-data-v-432dbc10 {
-0% {
-		-webkit-transform: none;
-}
-100% {
-        -webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0);
 }
 }
 .flexCenter.data-v-432dbc10 {
-	display: flex;
-	text-align: center;
-	justify-content: center;
+		display: flex;
+		text-align: center;
+		justify-content: center;
 }
 .flexContentCenter.data-v-432dbc10 {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 }
 .flexContentSpaceAround.data-v-432dbc10 {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
 }
 .jj-alert-btns.data-v-432dbc10 {
 
-	box-sizing: border-box;
-	border-top: 1px solid #E8E6EF;
+		box-sizing: border-box;
+		border-top: 1px solid #E8E6EF;
 }
 .jj-sheet-btn.data-v-432dbc10 {
-	flex: 1 0 auto;
-	height: 2.75rem;
-	display: flex;
-	font-size: 1.0625rem;
+		flex: 1 0 auto;
+		height: 2.75rem;
+		display: flex;
+		font-size: 1.0625rem;
 }
 .jj-alert-btn.data-v-432dbc10 {
-	flex: 1 0 auto;
-	height: 2.75rem;
-	display: flex;
-	font-size: 1.0625rem;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	border-right: 1px solid #E8E6EF;
+		flex: 1 0 auto;
+		height: 2.75rem;
+		display: flex;
+		font-size: 1.0625rem;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		border-right: 1px solid #E8E6EF;
 }
 .jj-alert-btn.data-v-432dbc10:last-child {
-	border-right: none;
+		border-right: none;
 }
-

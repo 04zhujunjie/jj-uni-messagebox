@@ -102,60 +102,36 @@
 
 /*弹层动画（从下往上出现）*/
 .fadelogIn.data-v-2387f610 {
-    -webkit-animation: fadelogIn-data-v-2387f610 .25s;
-    animation: fadelogIn-data-v-2387f610 .25s;
+    animation: fadelogIn-2387f610 .25s;
 }
-@keyframes fadelogIn-data-v-2387f610 {
+@keyframes fadelogIn-2387f610 {
 0% {
-        -webkit-transform: translate3d(0, 100%, 0);
-                transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
 }
 100% {
-        -webkit-transform: none;
-                transform: none;
-}
-}
-@-webkit-keyframes fadelogIn-data-v-2387f610 {
-0% {
-        -webkit-transform: translate3d(0, 100%, 0);
-}
-100% {
-        -webkit-transform: none;
+        transform: none;
 }
 }
 
 /*弹层动画（从上往下消失）*/
 .fadelogOut.data-v-2387f610 {
-    -webkit-animation: fadelogOut-data-v-2387f610 .25s;
-    animation: fadelogOut-data-v-2387f610 .25s;
+    animation: fadelogOut-2387f610 .25s;
 	/* 保留动画结束后的样子 */
-	-webkit-animation-fill-mode: forwards;
-	        animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 }
-@keyframes fadelogOut-data-v-2387f610 {
+@keyframes fadelogOut-2387f610 {
 0% {
-       -webkit-transform: none;
-               transform: none;
+       transform: none;
 }
 100% {
-		-webkit-transform: translate3d(0, 100%, 0);
-		        transform: translate3d(0, 100%, 0);
-}
-}
-@-webkit-keyframes fadelogOut-data-v-2387f610 {
-0% {
-		-webkit-transform: none;
-}
-100% {
-        -webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0);
 }
 }
 .jj-popup.data-v-2387f610 {
-	display: flex;
-	flex-direction: column;
+		display: flex;
+		flex-direction: column;
 }
 .flexCenter.data-v-2387f610 {
-	display: flex;
-	justify-content: center;
+		display: flex;
+		justify-content: center;
 }
-

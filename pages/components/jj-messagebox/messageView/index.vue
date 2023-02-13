@@ -29,6 +29,7 @@
 					kAlert,
 					kLoading,
 				},
+				route_uid:'',
 			}
 		},
 		mounted() {
@@ -41,9 +42,12 @@
 				if(refKey.length > 0 && refObj[refKey] !== undefined){
 					return
 				}
+				this.route_uid = refKey
 				for (let key in this.ref) {
 					let refValue = this.ref[key]
-					addRefObj(refValue,this.$refs[refValue])
+					let refV = this.$refs[refValue]
+					refV.route_uid = refKey
+					addRefObj(refValue,refV)
 				}
 			},
 			show(type){

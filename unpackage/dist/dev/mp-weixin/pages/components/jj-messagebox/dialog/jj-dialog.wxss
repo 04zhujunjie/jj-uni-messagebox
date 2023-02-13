@@ -73,85 +73,45 @@
 
 /*弹层动画（放大）*/
 .popIn.data-v-4259adc8 {
-    -webkit-animation: popIn-data-v-4259adc8 .25s;
-    animation: popIn-data-v-4259adc8 .25s;
+    animation: popIn-4259adc8 .25s;
 }
-@-webkit-keyframes popIn-data-v-4259adc8 {
+@keyframes popIn-4259adc8 {
 0% {
-        -webkit-transform: scale3d(0, 0, 0);
+        transform: scale3d(0.2, 0.2, 0.2);
         opacity: 0;
 }
 50% {
-        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+        animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
 		opacity:0.5;
 }
 100% {
-        -webkit-transform: scale3d(1, 1, 1);
-        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        opacity: 1;
-}
-}
-@keyframes popIn-data-v-4259adc8 {
-0% {
-        -webkit-transform: scale3d(0.2, 0.2, 0.2);
-                transform: scale3d(0.2, 0.2, 0.2);
-        opacity: 0;
-}
-50% {
-        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-		opacity:0.5;
-}
-100% {
-        -webkit-transform: scale3d(1, 1, 1);
-                transform: scale3d(1, 1, 1);
-        -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-                animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transform: scale3d(1, 1, 1);
+        animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         opacity: 1;
 }
 }
 
 /*弹层动画（缩小）*/
 .popOut.data-v-4259adc8 {
-    -webkit-animation: popOut-data-v-4259adc8 .25s;
-    animation: popOut-data-v-4259adc8 .25s;
+    animation: popOut-4259adc8 .25s;
 	/* 保留动画结束后的样子 */
-	-webkit-animation-fill-mode: forwards;
-	        animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
 }
-@-webkit-keyframes popOut-data-v-4259adc8 {
+@keyframes popOut-4259adc8 {
 0% {
-        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
         opacity: 1;
 }
 50% {
-        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+        animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
 		opacity:0.5;
 }
 100% {
-        -webkit-transform: scale3d(0, 0, 0);
+        transform: scale3d(0, 0, 0);
         opacity: 0;
 }
 }
-@keyframes popOut-data-v-4259adc8 {
-0% {
-        -webkit-transform: scale3d(1, 1, 1);
-                transform: scale3d(1, 1, 1);
-        opacity: 1;
+.jj-dialog.data-v-4259adc8 {
+		display: flex;
+		flex-direction: column;
 }
-50% {
-        -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-		opacity:0.5;
-}
-100% {
-        -webkit-transform: scale3d(0, 0, 0);
-                transform: scale3d(0, 0, 0);
-        opacity: 0;
-}
-}
-.jj-dialog.data-v-4259adc8{
-	display: flex;
-	flex-direction: column;
-}
-

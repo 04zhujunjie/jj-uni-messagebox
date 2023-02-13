@@ -1,3 +1,453 @@
-@import './common/main.wxss';
 
-[data-custom-hidden="true"],[bind-data-custom-hidden="true"]{display: none !important;}
+	/*每个页面公共css */
+
+.messagebox-shade.data-v-432dbc10 {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.messagebox-main.data-v-432dbc10 {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	background: white;
+	width: 80%;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.background-content.data-v-432dbc10 {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	left: 0;
+}
+.messagebox-content.data-v-432dbc10 {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	white-space: pre-wrap;
+}
+.rightTopClose.data-v-432dbc10 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	z-index: 100;
+	top: 3px;
+	right: 5px;
+}
+.closeImage.data-v-432dbc10 {
+	height: 15px;
+	width: 15px;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.image.data-v-432dbc10 {
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.fadelogOutOpcity.data-v-432dbc10{
+		transition: all 1.5s;
+		opacity: 0;
+}
+
+/*弹层动画（放大）*/
+.popIn.data-v-432dbc10 {
+    animation: popIn-432dbc10 .25s;
+}
+@keyframes popIn-432dbc10 {
+0% {
+        transform: scale3d(0.2, 0.2, 0.2);
+        opacity: 0;
+}
+50% {
+        animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+		opacity:0.5;
+}
+100% {
+        transform: scale3d(1, 1, 1);
+        animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        opacity: 1;
+}
+}
+
+/*弹层动画（缩小）*/
+.popOut.data-v-432dbc10 {
+    animation: popOut-432dbc10 .25s;
+	/* 保留动画结束后的样子 */
+	animation-fill-mode: forwards;
+}
+@keyframes popOut-432dbc10 {
+0% {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+}
+50% {
+        animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+		opacity:0.5;
+}
+100% {
+        transform: scale3d(0, 0, 0);
+        opacity: 0;
+}
+}
+
+/*弹层动画（从上往下）*/
+
+/* .fadeIn {
+    -webkit-animation: fadeInDown .3s;
+    animation: fadeInDown .3s;
+}
+
+@keyframes fadeInDown {
+    0% {
+        transform: translate3d(0, -20%, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        -webkit-transform: translate3d(0, -20%, 0);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: none;
+        opacity: 1;
+    }
+} */
+
+/*弹层动画（从下往上出现）*/
+.fadelogIn.data-v-432dbc10 {
+    animation: fadelogIn-432dbc10 .25s;
+}
+@keyframes fadelogIn-432dbc10 {
+0% {
+        transform: translate3d(0, 100%, 0);
+}
+100% {
+        transform: none;
+}
+}
+
+/*弹层动画（从上往下消失）*/
+.fadelogOut.data-v-432dbc10 {
+    animation: fadelogOut-432dbc10 .25s;
+	/* 保留动画结束后的样子 */
+	animation-fill-mode: forwards;
+}
+@keyframes fadelogOut-432dbc10 {
+0% {
+       transform: none;
+}
+100% {
+		transform: translate3d(0, 100%, 0);
+}
+}
+.flexCenter.data-v-432dbc10 {
+		display: flex;
+		text-align: center;
+		justify-content: center;
+}
+.flexContentCenter.data-v-432dbc10 {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+}
+.flexContentSpaceAround.data-v-432dbc10 {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+}
+.jj-alert-btns.data-v-432dbc10 {
+
+		box-sizing: border-box;
+		border-top: 1px solid #E8E6EF;
+}
+.jj-sheet-btn.data-v-432dbc10 {
+		flex: 1 0 auto;
+		height: 2.75rem;
+		display: flex;
+		font-size: 1.0625rem;
+}
+.jj-alert-btn.data-v-432dbc10 {
+		flex: 1 0 auto;
+		height: 2.75rem;
+		display: flex;
+		font-size: 1.0625rem;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		border-right: 1px solid #E8E6EF;
+}
+.jj-alert-btn.data-v-432dbc10:last-child {
+		border-right: none;
+}
+
+.messagebox-shade.data-v-0de08b90 {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.messagebox-main.data-v-0de08b90 {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	background: white;
+	width: 80%;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.background-content.data-v-0de08b90 {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	left: 0;
+}
+.messagebox-content.data-v-0de08b90 {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	white-space: pre-wrap;
+}
+.rightTopClose.data-v-0de08b90 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	z-index: 100;
+	top: 3px;
+	right: 5px;
+}
+.closeImage.data-v-0de08b90 {
+	height: 15px;
+	width: 15px;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.image.data-v-0de08b90 {
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.fadelogOutOpcity.data-v-0de08b90{
+		transition: all 1.5s;
+		opacity: 0;
+}
+
+/*弹层动画（放大）*/
+.popIn.data-v-0de08b90 {
+    animation: popIn-0de08b90 .25s;
+}
+@keyframes popIn-0de08b90 {
+0% {
+        transform: scale3d(0.2, 0.2, 0.2);
+        opacity: 0;
+}
+50% {
+        animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+		opacity:0.5;
+}
+100% {
+        transform: scale3d(1, 1, 1);
+        animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        opacity: 1;
+}
+}
+
+/*弹层动画（缩小）*/
+.popOut.data-v-0de08b90 {
+    animation: popOut-0de08b90 .25s;
+	/* 保留动画结束后的样子 */
+	animation-fill-mode: forwards;
+}
+@keyframes popOut-0de08b90 {
+0% {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+}
+50% {
+        animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+		opacity:0.5;
+}
+100% {
+        transform: scale3d(0, 0, 0);
+        opacity: 0;
+}
+}
+.flexContentCenter.data-v-0de08b90 {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+}
+.imageCenter.data-v-0de08b90 {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+}
+.loading-image.data-v-0de08b90 {
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-size: contain;
+		animation: turn-0de08b90 1.5s linear infinite;
+}
+.message.data-v-0de08b90 {
+		color: #FFFFFF;
+		font-size: 14.5px;
+		word-break: break-all;
+		white-space: pre-wrap;
+}
+@keyframes turn-0de08b90 {
+0% {
+			-webkit-transform: rotate(0deg);
+}
+50% {
+			-webkit-transform: rotate(180deg);
+}
+100% {
+			-webkit-transform: rotate(360deg);
+}
+}
+
+.messagebox-shade.data-v-0666c070 {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.messagebox-main.data-v-0666c070 {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	background: white;
+	width: 80%;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.background-content.data-v-0666c070 {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	left: 0;
+}
+.messagebox-content.data-v-0666c070 {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	white-space: pre-wrap;
+}
+.rightTopClose.data-v-0666c070 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	z-index: 100;
+	top: 3px;
+	right: 5px;
+}
+.closeImage.data-v-0666c070 {
+	height: 15px;
+	width: 15px;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.image.data-v-0666c070 {
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.fadelogOutOpcity.data-v-0666c070{
+		transition: all 1.5s;
+		opacity: 0;
+}
+.flexContentCenter.data-v-0666c070 {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+}
+.message.data-v-0666c070 {
+		color: #FFFFFF;
+		font-size: 14.5px;
+		word-break: break-all;
+		text-align: center;
+		white-space: pre-wrap;
+}
+page{--status-bar-height:25px;--top-window-height:0px;--window-top:0px;--window-bottom:0px;--window-left:0px;--window-right:0px;--window-magin:0px}[data-c-h="true"]{display: none !important;}

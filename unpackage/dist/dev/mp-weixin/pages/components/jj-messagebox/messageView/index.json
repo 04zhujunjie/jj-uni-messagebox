@@ -1,8 +1,8 @@
 {
   "component": true,
   "usingComponents": {
-    "toast": "/pages/components/jj-messagebox/toast/jj-toast",
-    "alert": "/pages/components/jj-messagebox/alert/jj-alert",
-    "loading": "/pages/components/jj-messagebox/loading/jj-loading"
+    "toast": "../toast/jj-toast",
+    "alert": "../alert/jj-alert",
+    "loading": "../loading/jj-loading"
   }
 }

@@ -37,7 +37,6 @@
 <script>
 	import {logo,loading_custom} from '@/static/image.js'
 	export default {
-
 		data() {
 			return {
 			}
