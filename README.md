@@ -45,7 +45,7 @@ installPlugin(Vue
 ```
 import messageView from 'pages/components/jj-messagebox/messageView/index.vue'
 //注册全局组件，在vue.config.js文件进行配置，根据需求动态插入到小程序的页面中
-Vue.component('messageView', messageView
+Vue.component('messageView', messageView)
 ```
 vue.config.js文件配置
 ```
