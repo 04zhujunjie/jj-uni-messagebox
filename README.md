@@ -28,11 +28,10 @@ installPlugin(Vue)
 
 ```
 #### 2、小程序
-小程序需要显示弹框，需引用jj-messagebox/messageView/index.vu组件
-，一个页面只需要引用一次即可，引用方式有以下两种：    
+小程序显示弹框，需引用jj-messagebox/messageView/index.vu组件，一个页面只需要引用一次即可，引用方式有以下两种：    
 
-1）、引用方式一（建议）：在需要显示弹窗页面手动注册弹窗组件，并引用弹窗组件，或者创建一个页面根组件（如项目中base-view组件），在根组件里注册并引用弹窗组件
-在main.js文件将根组件注册成全局组件，需要显示的弹窗页面用根组件base-view进行包裹起来。建议使用根组件包裹的形式，方便维护，该方式兼容vue2和vue3
+1）、引用方式一（建议）：在需要显示弹窗页面中手动注册弹窗组件，并引用弹窗组件或者创建一个页面根组件（如项目中base-view组件），在根组件里注册并引用弹窗组件
+在main.js文件将根组件注册成全局组件，需要显示的弹窗页面用根组件base-view进行包裹起来。建议使用根组件包裹的形式，方便维护，该方式兼容vue2和vue3，也支持app平台。
 
 ```
 import baseView from 'pages/baseView/index.vue'
@@ -40,7 +39,7 @@ Vue.component('base-view', baseView)
 import installPlugin from 'pages/components/jj-messagebox/messageView/index.js'
 installPlugin(Vue
 ```
-2）、引用方式二：它是通过配置vue.config.js文件，在编译模版时，获取页面路径，通过页面路径筛选，动态将全局注册弹窗组件messageView注入到要显示的页面中。如果是旧项目并且很多页面使用弹窗，可以使用该方式。该方式支持vue2，不支持vue3
+2）、引用方式二：它是通过配置vue.config.js文件，在编译模版时，获取页面路径，通过页面路径筛选，动态将全局注册弹窗组件messageView注入到要显示的页面中。如果是旧项目并且很多页面使用弹窗，可以使用该方式。该方式支持vue2，不支持vue3，不支持app平台
 
 在main.js注册全局组件
 ```
@@ -77,7 +76,7 @@ module.exports = {
 ```
 
 #### 3、App
-app有两种使用方式，1、和小程序的用法1一样，但是无法覆盖原生组件，2、配置跳转url页面，可以覆盖原生组件。   
+app有两种使用方式，1、和小程序的引用方式一一样，但是无法覆盖原生组件，2、配置跳转url页面，可以覆盖原生组件。   
 如果两种方式都配置了，优先使用第二种，以下是第二种配置，使用app-message-view（路径：pages/components/jj-messagebox/messageView/app-message-view）页面作为弹框显示页面
 
 1）、在main.js文件引入，并且配置跳转路径
