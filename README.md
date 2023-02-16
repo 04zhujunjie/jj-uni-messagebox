@@ -37,7 +37,7 @@ installPlugin(Vue)
 import baseView from 'pages/baseView/index.vue'
 Vue.component('base-view', baseView)
 import installPlugin from 'pages/components/jj-messagebox/messageView/index.js'
-installPlugin(Vue
+installPlugin(Vue)
 ```
 2）、引用方式二：它是通过配置vue.config.js文件，在编译模版时，获取页面路径，通过页面路径筛选，动态将全局注册弹窗组件messageView注入到要显示的页面中。如果是旧项目并且很多页面使用弹窗，可以使用该方式。该方式支持vue2，不支持vue3，不支持app平台
 
