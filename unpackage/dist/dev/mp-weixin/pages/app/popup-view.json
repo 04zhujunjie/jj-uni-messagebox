@@ -2,6 +2,6 @@
   "navigationStyle": "custom",
   "background": "transparent",
   "usingComponents": {
-    "jj-popup": "../components/jj-messagebox/popup/jj-popup"
+    "jj-popup": "/pages/components/jj-messagebox/popup/jj-popup"
   }
 }

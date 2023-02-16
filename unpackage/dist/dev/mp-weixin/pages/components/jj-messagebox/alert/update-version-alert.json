@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "jj-button": "./jj-button"
+    "jj-button": "/pages/components/jj-messagebox/alert/jj-button"
   }
 }

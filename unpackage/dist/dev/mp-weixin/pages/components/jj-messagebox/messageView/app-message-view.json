@@ -2,6 +2,6 @@
   "navigationStyle": "custom",
   "background": "transparent",
   "usingComponents": {
-    "message-view": "./index"
+    "message-view": "/pages/components/jj-messagebox/messageView/index"
   }
 }

@@ -4,6 +4,12 @@
 			<view>
 				<header-view></header-view>
 				<button style="margin-top: 20px;" @click="goDemo()">Demo</button>
+				<!-- #ifdef MP -->
+				<!-- #ifdef VUE2 -->
+				<button style="margin: 20px;" @click="goMP('test1')">Vue2 动态插入test1</button>
+				<button style="margin: 20px;" @click="goMP('test2')">Vue2 动态插入test2</button>
+				<!-- #endif -->
+				<!-- #endif -->
 			</view>
 			
 		</view>
@@ -19,9 +25,6 @@
 			return {
 			}
 		},
-		mounted() {
-			
-		},
 		onLoad() {
 
 		},
@@ -29,6 +32,11 @@
 			goDemo(){
 				uni.navigateTo({
 				    url: '/pages/demo/index'
+				})
+			},
+			goMP(name){
+				uni.navigateTo({
+				    url: `/pages/mp/${name}`
 				})
 			},
 		}

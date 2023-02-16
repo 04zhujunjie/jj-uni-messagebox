@@ -1,1 +1,1 @@
-<view><message-view u-i="0ce600b6-0" bind:__l="__l"></message-view><slot></slot></view>
+<view class="_div"><message-view vue-id="32112474-1" bind:__l="__l"></message-view><slot></slot></view>

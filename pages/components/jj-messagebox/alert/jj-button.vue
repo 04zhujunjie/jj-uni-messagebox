@@ -16,7 +16,7 @@
 					activeColor: '',
 					style: {
 						"color": '#000',
-						'background': '#fff'
+						'background': '#fff',
 					},
 					touchClose: true, 
 					isDisable:false,
@@ -40,6 +40,8 @@
 			btnStyle() { 
 				let style = {
 					background:'#fff',
+					'font-size': '15px',
+					height:'44px',
 					color:'#000',
 				}
 				if (typeof this.btnObj.style === 'object') {

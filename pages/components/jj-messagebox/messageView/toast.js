@@ -8,12 +8,11 @@ import {
 import processorObj from './processor.js'
 import toastH5 from '../toast/jj-toast.vue';
 
-// #ifndef VUE3
+// #ifdef VUE2
 import Vue from 'vue';
 let jjToast = Vue.extend(toastH5); //创建vm实例的构造函数
 // #endif
-
-// #ifdef VUE3
+// #ifndef VUE2
 import {
 	createApp
 } from 'vue';
@@ -63,10 +62,10 @@ let jj_toast = function(toastData, type, duration) {
 	let obj = processorObj(kToast)
 	obj.processDataFun = getData
 	// #ifdef H5
-	// #ifndef VUE3
+	// #ifdef VUE2
 	showToastH5(data)
 	// #endif
-	// #ifdef VUE3
+	// #ifndef VUE2
 	showToastH5_Vue3(data)
 	// #endif
 	obj.messageObj = jj_toast_instance
@@ -123,7 +122,7 @@ let removeToastH5 = function() {
 			clearTimeout(jj_toast_instance.jj_time)
 			jj_toast_instance.jj_time = null
 		}
-        // #ifdef VUE3
+        // #ifndef VUE2
 		if(jj_toast_h5_app !== null){
 			//卸载，消除There is already an app instance mounted on the host container警告⚠️
 			jj_toast_h5_app.unmount()

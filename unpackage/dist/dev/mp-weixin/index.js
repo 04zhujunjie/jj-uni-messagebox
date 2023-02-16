@@ -66,7 +66,7 @@ const _sfc_main = {
         btnDirection,
         width: "90%",
         padding: "12px 15px",
-        maskColor: "rgba(0, 0, 0, 0.6)",
+        maskColor: "rgba(0, 0, 0, 0.55)",
         touchClose: true,
         showClose: true,
         radius: 10,

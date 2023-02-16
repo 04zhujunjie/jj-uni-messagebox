@@ -90,7 +90,7 @@ const _sfc_main = {
               "color": "#4CD964"
             },
             click: () => {
-              formatAppLog("log", "at pages/demo/nvue.nvue:67", "\u70B9\u51FB-----\u786E\u5B9A");
+              formatAppLog("log", "at pages/demo/nvue.nvue:65", "\u70B9\u51FB-----\u786E\u5B9A");
             }
           }]
         });
@@ -122,7 +122,7 @@ const _sfc_main = {
           activeBackground: "#2A8AFF",
           activeColor: "#fff",
           click: () => {
-            formatAppLog("log", "at pages/demo/nvue.nvue:121", "\u70B9\u51FBCancel");
+            formatAppLog("log", "at pages/demo/nvue.nvue:119", "\u70B9\u51FBCancel");
           }
         }, {
           title: "Destructive",
@@ -131,7 +131,7 @@ const _sfc_main = {
             "font-size": "15px"
           },
           click: () => {
-            formatAppLog("log", "at pages/demo/nvue.nvue:130", "\u70B9\u51FBDestructive");
+            formatAppLog("log", "at pages/demo/nvue.nvue:128", "\u70B9\u51FBDestructive");
           }
         }, {
           title: "Confirm",
@@ -151,7 +151,7 @@ const _sfc_main = {
       this.count = this.count || 0;
       getApp().globalData.$jj_toast("\u6309\u94AE\u88AB\u7981\u7528,\u7F51\u7EDC\u8BF7\u6C42\u4E2D...");
       btn.isDisable = true;
-      formatAppLog("log", "at pages/demo/nvue.nvue:157", btn);
+      formatAppLog("log", "at pages/demo/nvue.nvue:155", btn);
       if (this.count % 2 === 0) {
         setTimeout(function() {
           btn.isDisable = false;

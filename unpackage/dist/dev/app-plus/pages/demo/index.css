@@ -1,0 +1,310 @@
+.messagebox-shade[data-v-4259adc8] {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.45);
+	z-index: 999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.messagebox-main[data-v-4259adc8] {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	background: white;
+	width: 80%;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.background-content[data-v-4259adc8] {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	left: 0;
+}
+.messagebox-content[data-v-4259adc8] {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	white-space: pre-wrap;
+}
+.rightTopClose[data-v-4259adc8] {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	z-index: 100;
+	top: 3px;
+	right: 5px;
+}
+.closeImage[data-v-4259adc8] {
+	height: 15px;
+	width: 15px;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.image[data-v-4259adc8] {
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.fadelogOutOpcity[data-v-4259adc8]{
+		transition: all 0.25s;
+		animation-timing-function: ease-out;
+		-webkit-animation-timing-function: ease-out;
+		opacity: 0;
+}
+
+/*弹层动画（放大）*/
+.popIn[data-v-4259adc8] {
+    -webkit-animation: popIn-4259adc8 .25s;
+	-webkit-animation-delay: 0s;
+	animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    animation: popIn-4259adc8 .25s;
+}
+@keyframes popIn-4259adc8 {
+0% {
+        transform: scale3d(0, 0, 0);
+        opacity: 0;
+}
+100% {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+}
+}
+.fadeInOpcity[data-v-4259adc8]{
+		-webkit-animation: fadeIn-4259adc8 .25s;
+		-webkit-animation-delay: 0s;
+		animation-timing-function: ease-in;
+		-webkit-animation-timing-function: ease-in;
+		animation: fadeIn-4259adc8 .25s;
+}
+@keyframes fadeIn-4259adc8 {
+0% {
+        opacity: 0;
+}
+100% {
+        opacity: 1;
+}
+}
+
+/*弹层动画（缩小）*/
+.popOut[data-v-4259adc8] {
+    -webkit-animation: popOut-4259adc8 .25s;
+	animation-timing-function: ease-out;
+    animation: popOut-4259adc8 .25s;
+	/* 保留动画结束后的样子 */
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+@keyframes popOut-4259adc8 {
+0% {
+        transform: scale3d(1,1, 1);
+        opacity: 1;
+}
+100% {
+        opacity: 0;
+		transform: scale3d(0,0,0);
+}
+}
+.jj-dialog[data-v-4259adc8] {
+		display: flex;
+		flex-direction: column;
+}
+
+.messagebox-shade[data-v-2387f610] {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.45);
+	z-index: 999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.messagebox-main[data-v-2387f610] {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	background: white;
+	width: 80%;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.background-content[data-v-2387f610] {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	left: 0;
+}
+.messagebox-content[data-v-2387f610] {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	white-space: pre-wrap;
+}
+.rightTopClose[data-v-2387f610] {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	z-index: 100;
+	top: 3px;
+	right: 5px;
+}
+.closeImage[data-v-2387f610] {
+	height: 15px;
+	width: 15px;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.image[data-v-2387f610] {
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.fadelogOutOpcity[data-v-2387f610]{
+		transition: all 0.25s;
+		animation-timing-function: ease-out;
+		-webkit-animation-timing-function: ease-out;
+		opacity: 0;
+}
+
+/*弹层动画（从上往下）*/
+
+/* .fadeIn {
+    -webkit-animation: fadeInDown .3s;
+    animation: fadeInDown .3s;
+}
+
+@keyframes fadeInDown {
+    0% {
+        transform: translate3d(0, -20%, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        -webkit-transform: translate3d(0, -20%, 0);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: none;
+        opacity: 1;
+    }
+} */
+
+/*弹层动画（从下往上出现）*/
+.fadelogIn[data-v-2387f610] {
+    animation: fadelogIn-2387f610 .25s;
+}
+@keyframes fadelogIn-2387f610 {
+0% {
+        transform: translate3d(0, 100%, 0);
+}
+100% {
+        transform: none;
+}
+}
+
+/*弹层动画（从上往下消失）*/
+.fadelogOut[data-v-2387f610] {
+    animation: fadelogOut-2387f610 .25s;
+	/* 保留动画结束后的样子 */
+	animation-fill-mode: forwards;
+	 -webkit-animation-fill-mode: forwards;
+}
+@keyframes fadelogOut-2387f610 {
+0% {
+       transform: none;
+}
+100% {
+		transform: translate3d(0, 100%, 0);
+}
+}
+.jj-popup[data-v-2387f610] {
+		display: flex;
+		flex-direction: column;
+}
+.flexCenter[data-v-2387f610] {
+		display: flex;
+		justify-content: center;
+}
+
+
+.flexColumnCenter[data-v-6a3babdf] {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+}
+.flexRow[data-v-6a3babdf] {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		width: 100%;
+}
+.marginTopBottom[data-v-6a3babdf] {
+		margin-top: 10px;
+		margin-bottom: 10px;
+}
+.marginLeftRight[data-v-6a3babdf] {
+		margin-right: 10px;
+		margin-left: 10px;
+}
+.btn[data-v-6a3babdf] {
+		border-radius: 5px;
+		background-color: #2A8AFF;
+		border-color: #FFFFFF;
+		color: #FFFFFF;
+		padding: 0px 20px;
+		height: 44px;
+}
+.image[data-v-6a3babdf] {
+		height: 100%;
+		width: 100%;
+		background-repeat: no-repeat;
+		background-size: contain;
+}

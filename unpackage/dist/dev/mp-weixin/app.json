@@ -5,9 +5,12 @@
     "pages/app/index",
     "pages/demo/index",
     "pages/demo/nvue",
+    "pages/mp/test1",
+    "pages/mp/test2",
     "pages/components/jj-messagebox/messageView/app-message-view",
     "pages/app/popup-view"
   ],
+  "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
@@ -39,6 +42,7 @@
     ]
   },
   "usingComponents": {
-    "base-view": "/pages/baseView/index"
+    "base-view": "/pages/baseView/index",
+    "message-view": "/pages/components/jj-messagebox/messageView/index"
   }
 }

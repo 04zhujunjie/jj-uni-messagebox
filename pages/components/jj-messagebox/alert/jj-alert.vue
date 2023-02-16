@@ -1,7 +1,7 @@
 <template>
 	<div v-if="isShow">
 		<template v-if="position==='bottom' || type === 'sheet'">
-			<div class="messagebox-shade" :class="[isCloseAlert?'fadelogOutOpcity':'']"
+			<div class="messagebox-shade fadeInOpcity" :class="[isCloseAlert?'fadelogOutOpcity':'']"
 				style="justify-content:flex-end;align-items: flex-end;" :style="[{'background-color':maskColor}]"
 				@touchmove.stop="" @click="touchClose?close():''">
 				<div class="fadelogIn" :class="[isCloseAlert?'fadelogOut':'']"
@@ -41,7 +41,7 @@
 							</div>
 						</div>
 						<div v-else>
-							<custom-alert @clickBtn="clickCustomAlertBtn" :customData="customData"></custom-alert>
+							<custom-alert @clickBtn="clickCustomAlertBtn" :customData="customAlertData"></custom-alert>
 						</div>
 					</div>
 				</div>
@@ -50,7 +50,7 @@
 		</template>
 
 		<template v-else>
-			<div class="messagebox-shade" :class="[isCloseAlert?'fadelogOutOpcity':'']"
+			<div class="messagebox-shade fadeInOpcity" :class="[isCloseAlert?'fadelogOutOpcity':'']"
 				:style="{'background-color':maskColor}" @touchmove.stop="" @click="touchClose?close():''">
 				<div class="messagebox-main popIn" @animationend="animationend" :class="[isCloseAlert?'popOut':'']"
 					@click.stop="mainClick"
@@ -84,7 +84,7 @@
 						</div>
 					</div>
 					<div v-else>
-						<custom-alert @clickBtn="clickCustomAlertBtn" :customData="customData"></custom-alert>
+						<custom-alert @clickBtn="clickCustomAlertBtn" :customData="customAlertData"></custom-alert>
 					</div>
 
 				</div>
@@ -153,6 +153,7 @@
 				isCloseAlert: false,
 				originalData: null,
 				customDataObj: {}, //自定义数据
+				customAlertData:{},//自定义弹窗的数据
 			}
 		},
 		computed: {
@@ -168,10 +169,6 @@
 					return false
 				}
 				return true
-			},
-			customData() {
-				let data = this.$data
-				return data
 			},
 			buttonDirection() {
 				if (this.type === 'sheet') {
@@ -213,10 +210,17 @@
 				} else {
 					Object.assign(this.$data, this.originalData, data)
 				}
+				this.setupCustomAlertData()
 				// console.log(this.$data)
 			},
 			update(data = {}) {
 				Object.assign(this.$data, data)
+				this.setupCustomAlertData()
+			},
+			setupCustomAlertData(){
+				if(this.isCustomType){
+					this.customAlertData = Object.assign({},this.$data)
+				}
 			},
 			close() {
 				if (this.isQuickClose) {

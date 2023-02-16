@@ -8,12 +8,12 @@ import {
 import processorObj from './processor.js'
 import alertH5 from '../alert/jj-alert.vue';
 
-// #ifndef VUE3
+// #ifdef VUE2
 import Vue from 'vue';
 let jjAlert = Vue.extend(alertH5); //创建vm实例的构造函数
 // #endif
 
-// #ifdef VUE3
+// #ifndef VUE2
 import {
 	createApp
 } from 'vue';
@@ -30,10 +30,10 @@ let jj_alert = function(alertData, message, btnTitle) {
    let obj = processorObj(kAlert)
    obj.processDataFun = getData
 	// #ifdef H5
-	// #ifndef VUE3
+	// #ifdef VUE2
 	showAlertH5(data)
 	// #endif
-	// #ifdef VUE3
+	// #ifndef VUE2
 	showAlertH5_Vue3(data)
 	// #endif
 	obj.messageObj = jj_alert_instance
@@ -111,7 +111,7 @@ let removeAlertH5 = function(data={priority:0}){
 			//比较已有弹窗的优先级，如果已经展示的弹窗的优先级比较高，就不往下执行
 			return true
 		}
-		// #ifdef VUE3
+		// #ifndef VUE2
 		if(jj_alert_h5_app !== null){
 			//卸载，消除There is already an app instance mounted on the host container警告⚠️
 			jj_alert_h5_app.unmount()

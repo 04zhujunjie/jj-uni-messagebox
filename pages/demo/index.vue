@@ -136,7 +136,7 @@
 					btnDirection: btnDirection, //按钮的排列方向,row和column
 					width: '90%', //设置弹窗的宽度
 					padding: '12px 15px', //设置内容的上下左右偏移
-					maskColor: "rgba(0, 0, 0, 0.6)", //遮罩层的背景颜色
+					maskColor: "rgba(0, 0, 0, 0.55)", //遮罩层的背景颜色
 					touchClose: true, //点击背景图层，是否关闭弹框
 					showClose: true, //是否显示右上角的关闭按钮
 					radius: 10, //设置圆角
@@ -170,7 +170,8 @@
 						title: "Destructive",
 						style: {
 							'color': 'red',
-							'font-size': '15px'
+							'font-size': '15px',
+							height:'44px',
 						},
 						touchClose: false, //点击按钮时，是否自动关闭弹窗
 						click: () => {

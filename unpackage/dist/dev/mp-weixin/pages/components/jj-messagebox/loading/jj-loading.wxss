@@ -4,7 +4,7 @@
 	position: fixed;
 	bottom: 0;
 	right: 0;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.45);
 	z-index: 999;
 	display: flex;
 	align-items: center;
@@ -67,84 +67,146 @@
 	background-size: contain;
 }
 .fadelogOutOpcity.data-v-0de08b90{
-		transition: all 1.5s;
+		transition: all 0.25s;
+		animation-timing-function: ease-out;
+		-webkit-animation-timing-function: ease-out;
 		opacity: 0;
 }
 
 /*弹层动画（放大）*/
 .popIn.data-v-0de08b90 {
-    animation: popIn-0de08b90 .25s;
+    -webkit-animation: popIn-data-v-0de08b90 .25s;
+	-webkit-animation-delay: 0s;
+	animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    animation: popIn-data-v-0de08b90 .25s;
 }
-@keyframes popIn-0de08b90 {
+@-webkit-keyframes popIn-data-v-0de08b90 {
 0% {
-        transform: scale3d(0.2, 0.2, 0.2);
+        -webkit-transform: scale3d(0, 0, 0);
         opacity: 0;
 }
-50% {
-        animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-		opacity:0.5;
+100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        opacity: 1;
+}
+}
+@keyframes popIn-data-v-0de08b90 {
+0% {
+        -webkit-transform: scale3d(0, 0, 0);
+                transform: scale3d(0, 0, 0);
+        opacity: 0;
 }
 100% {
-        transform: scale3d(1, 1, 1);
-        animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+        opacity: 1;
+}
+}
+.fadeInOpcity.data-v-0de08b90{
+		-webkit-animation: fadeIn-data-v-0de08b90 .25s;
+		-webkit-animation-delay: 0s;
+		animation-timing-function: ease-in;
+		-webkit-animation-timing-function: ease-in;
+		animation: fadeIn-data-v-0de08b90 .25s;
+}
+@-webkit-keyframes fadeIn-data-v-0de08b90 {
+0% {
+        opacity: 0;
+}
+100% {
+        opacity: 1;
+}
+}
+@keyframes fadeIn-data-v-0de08b90 {
+0% {
+        opacity: 0;
+}
+100% {
         opacity: 1;
 }
 }
 
 /*弹层动画（缩小）*/
 .popOut.data-v-0de08b90 {
-    animation: popOut-0de08b90 .25s;
+    -webkit-animation: popOut-data-v-0de08b90 .25s;
+	-webkit-animation-timing-function: ease-out;
+	animation-timing-function: ease-out;
+    animation: popOut-data-v-0de08b90 .25s;
 	/* 保留动画结束后的样子 */
 	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
 }
-@keyframes popOut-0de08b90 {
+@-webkit-keyframes popOut-data-v-0de08b90 {
 0% {
-        transform: scale3d(1, 1, 1);
+        -webkit-transform: scale3d(1, 1, 1);
         opacity: 1;
 }
-50% {
-        animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-		opacity:0.5;
+100% {
+        opacity: 0;
+		 -webkit-transform: scale3d(0, 0, 0);
+}
+}
+@keyframes popOut-data-v-0de08b90 {
+0% {
+        -webkit-transform: scale3d(1,1, 1);
+                transform: scale3d(1,1, 1);
+        opacity: 1;
 }
 100% {
-        transform: scale3d(0, 0, 0);
         opacity: 0;
+		-webkit-transform: scale3d(0,0,0);
+		        transform: scale3d(0,0,0);
 }
 }
 .flexContentCenter.data-v-0de08b90 {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
 }
 .imageCenter.data-v-0de08b90 {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
 }
 .loading-image.data-v-0de08b90 {
-		width: 100%;
-		height: 100%;
-		background-repeat: no-repeat;
-		background-size: contain;
-		animation: turn-0de08b90 1.5s linear infinite;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	-webkit-animation: turn-data-v-0de08b90 1.5s linear infinite;
+	        animation: turn-data-v-0de08b90 1.5s linear infinite;
 }
 .message.data-v-0de08b90 {
-		color: #FFFFFF;
-		font-size: 14.5px;
-		word-break: break-all;
-		white-space: pre-wrap;
+	color: #FFFFFF;
+	font-size: 14.5px;
+	word-break: break-all;
+	white-space: pre-wrap;
 }
-@keyframes turn-0de08b90 {
+@-webkit-keyframes turn-data-v-0de08b90 {
 0% {
-			-webkit-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
 }
 50% {
-			-webkit-transform: rotate(180deg);
+		-webkit-transform: rotate(180deg);
 }
 100% {
-			-webkit-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
 }
 }
+@keyframes turn-data-v-0de08b90 {
+0% {
+		-webkit-transform: rotate(0deg);
+}
+50% {
+		-webkit-transform: rotate(180deg);
+}
+100% {
+		-webkit-transform: rotate(360deg);
+}
+}
+

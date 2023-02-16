@@ -38,14 +38,13 @@ let refRouteKey = function(){
 
 let route_uidKey = function (page) {
 	let uid = 0
-	// #ifdef VUE3
-	 //vue3 页面的id
-	 uid = page.$page.id
-	// #endif
-	
-	// #ifndef VUE3
+	// #ifdef VUE2
 	//vue2 页面的id
 	uid = page.$vm._uid
+	// #endif
+	// #ifndef VUE2
+	 //vue3 页面的id
+	 uid = page.$page.id
 	// #endif
 	return  page.route + '/' + uid
 }

@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "Home",
   "usingComponents": {
-    "header-view": "./header"
+    "header-view": "/pages/index/header"
   }
 }

@@ -31,6 +31,18 @@
 			}
 		},
 		{
+			"path": "pages/mp/test1",
+			"style": {
+		    "navigationBarBackgroundColor":"#3F536E"
+			}
+		},
+		{
+			"path": "pages/mp/test2",
+			"style": {
+		    "navigationBarBackgroundColor":"#3F536E"
+			}
+		},
+		{
 			"path": "pages/components/jj-messagebox/messageView/app-message-view",
 			"style": {
 			// "navigationBarTextStyle":"white",//设置状态栏颜色

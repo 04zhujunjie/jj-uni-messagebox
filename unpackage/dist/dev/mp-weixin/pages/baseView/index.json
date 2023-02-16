@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "message-view": "../components/jj-messagebox/messageView/index"
+    "message-view": "/pages/components/jj-messagebox/messageView/index"
   }
 }

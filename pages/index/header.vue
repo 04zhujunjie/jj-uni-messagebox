@@ -25,6 +25,7 @@
 					'padding':'0px 15px',
 					'border': '1px solid #C0C0C0',
 					'font-size': '15px',
+					 'height':'40px',
 					'border-radius': '10px',
 				}
 			let customDataObj = {

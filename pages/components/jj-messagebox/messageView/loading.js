@@ -8,12 +8,12 @@ import {
 import processorObj from './processor.js'
 import loadingH5 from '../loading/jj-loading.vue';
 
-// #ifndef VUE3
+// #ifdef VUE2
 import Vue from 'vue';
 let jjLoading = Vue.extend(loadingH5); //创建vm实例的构造函数
 // #endif
 
-// #ifdef VUE3
+// #ifndef VUE2
 import {
 	createApp
 } from 'vue';
@@ -48,10 +48,10 @@ let jj_loading = function(loadingData) {
 	let obj = processorObj(kLoading)
 	obj.processDataFun = getLoadingData
 	// #ifdef H5
-	// #ifndef VUE3
+	// #ifdef VUE2
 	showLoadingH5(data)
 	// #endif
-	// #ifdef VUE3
+	// #ifndef VUE2
 	showLoadingH5_Vue3(data)
 	// #endif
 	obj.messageObj = jj_loading_instance
@@ -105,7 +105,7 @@ let showLoadingH5_Vue3 = function(data) {
 
 let removeLoadingH5 = function() {
 	if (jj_loading_instance !== null) {
-		// #ifdef VUE3
+		// #ifndef VUE2
 		if(jj_loading_h5_app !== null){
 			//卸载，消除There is already an app instance mounted on the host container警告⚠️
 			jj_loading_h5_app.unmount()
