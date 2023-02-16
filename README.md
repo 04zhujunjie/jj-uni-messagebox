@@ -10,7 +10,7 @@
 ---
 1、只适用uni-app项目，如果是其他H5网页的Vue项目可以使用 [jj-messagebox](https://github.com/04zhujunjie/jj-messagebox)   
 2、在.js或者.nvue文件中可以用getApp().globalData.$jj_alert形式调用弹框   
-3、小程序无法覆盖原生的导航栏和tabBar,并且需要在显示弹窗的页,引入jj-messagebox/messageView/index.vue 组件，否则无法显示弹窗    
+3、小程序无法覆盖原生的导航栏和tabBar,并且需要在显示弹窗的页,引入jj-messagebox/messageView/index.vue组件，否则无法显示弹窗    
 
 
 ### 安装
@@ -31,8 +31,8 @@ installPlugin(Vue)
 小程序需要显示弹框，需引用jj-messagebox/messageView/index.vu组件
 ，一个页面只需要引用一次即可，引用方式有以下两种：    
 
-1）、引用方式一：在需要显示弹窗页面手动注册弹窗组件，并引用弹窗组件，或者创建一个页面根组件（如项目中base-view组件），在根组件进行注册弹窗组件
-将根组件注册成全局组件，需要显示的弹窗页面用根组件base-view进行包裹起来，如果页面中很多页面需要用到弹窗，建议使用根组件包裹的形式，方便维护。
+1）、引用方式一（建议）：在需要显示弹窗页面手动注册弹窗组件，并引用弹窗组件，或者创建一个页面根组件（如项目中base-view组件），在根组件里注册并引用弹窗组件
+在main.js文件将根组件注册成全局组件，需要显示的弹窗页面用根组件base-view进行包裹起来。建议使用根组件包裹的形式，方便维护，该方式兼容vue2和vue3
 
 ```
 import baseView from 'pages/baseView/index.vue'
@@ -40,7 +40,7 @@ Vue.component('base-view', baseView)
 import installPlugin from 'pages/components/jj-messagebox/messageView/index.js'
 installPlugin(Vue
 ```
-2）、引用方式二：该方式支持vue2，不支持vue3，它是通过配置vue.config.js文件，在编译模版时，获取页面路径，通过页面路径筛选，动态将全局注册弹窗组件messageView注入到要显示的页面中。如果是旧项目并且很多页面使用弹窗，可以使用该方式。
+2）、引用方式二：它是通过配置vue.config.js文件，在编译模版时，获取页面路径，通过页面路径筛选，动态将全局注册弹窗组件messageView注入到要显示的页面中。如果是旧项目并且很多页面使用弹窗，可以使用该方式。该方式支持vue2，不支持vue3
 
 在main.js注册全局组件
 ```
