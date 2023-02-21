@@ -1,17 +1,17 @@
 <template>
 	<div class = "mine-box">
-		<demo></demo>
+		<demoPage></demoPage>
 		<div class = "bottom-box" @click = "loadingUserInfo">获取用户信息</div>
 	</div>
 
 </template>
 
 <script>
-	import demo from '../demo/index.vue'
+	import demoPage from '../demo/demo.vue'
 	import requsetUserInfo from './request.js'
 
 	export default {
-		components:{demo},
+		components:{demoPage},
 		data(){
 			return{
 			}

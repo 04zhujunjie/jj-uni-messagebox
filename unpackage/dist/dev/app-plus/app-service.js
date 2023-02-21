@@ -109,7 +109,7 @@ if (uni.restoreGlobal) {
     }
     return target;
   };
-  const _sfc_main$j = {
+  const _sfc_main$k = {
     methods: {
       showToast(type) {
         let message = "\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u54C8\u3002\u3002\u3002";
@@ -195,7 +195,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("div", { class: "header-box" }, [
       vue.createElementVNode("button", {
         class: "btn",
@@ -211,8 +211,8 @@ if (uni.restoreGlobal) {
       }, "\u66F4\u65B0\u7248\u672C")
     ]);
   }
-  var headerView = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i], ["__scopeId", "data-v-050a3a63"], ["__file", "/Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/index/header.vue"]]);
-  const _sfc_main$i = {
+  var headerView = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j], ["__scopeId", "data-v-050a3a63"], ["__file", "/Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/index/header.vue"]]);
+  const _sfc_main$j = {
     components: {
       headerView
     },
@@ -234,7 +234,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_header_view = vue.resolveComponent("header-view");
     const _component_base_view = vue.resolveComponent("base-view");
     return vue.openBlock(), vue.createBlock(_component_base_view, null, {
@@ -252,7 +252,7 @@ if (uni.restoreGlobal) {
       _: 1
     });
   }
-  var PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["__file", "/Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/index/index.vue"]]);
+  var PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i], ["__file", "/Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/index/index.vue"]]);
   const close_icon = function() {
     return "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAv5JREFUeF7tm0uS0zAQQFv2RYDZ8FnFTo4BS2DHNVjBFCuuwQ5YwtwiVrLiswHmIrYoTcUuJVEitdStSJlklaro0++pJdmOJeCef8Qu/2KxeLRcLv+eoxcb2ySgaZr3QojnANAKIb70ff9hvV7/PAcRs9nsaV3X75RSrwBAKqVuVqvVtWabBLRt+w8AHhjAP4ZheFm6BA1fVdVXAHhmsN1KKR9OAnRqDMPwxzLaRUs4AH+HWVXVlZ7qUwbM5/PPmxTZ9VCkhGPweop3Xfd6awocqwAARUnAsGztApiKuS6OWIa9bRDbQE4iQmLfE6CBQho6tYjQmK0CSpMQCr+1CNpGMKbhVBkRG+PBDBgBYjvgFEERm1NArtOBAt45BczRo+qQIiMoY/HKgJymAyU8KgNykEANHyTgVGsCB3ywgNQSuOCjBKSSwAkfLYBbAjc8iQAuCSngyQRQS0gFTyqASkJKeHIBsRJSw7MICJVwCng2AVgJp4JnFeArQZezPLcfr7zZH8aiboZC7uRco7tp0/zTIhk8ewZ43kDZvLKP/NgpewYESEgGnywDEBKSwl8EmP8OhyxwmDqOxdBsKmkWJFkDEPBJd4AkU+Beb4MueP0CxtleCPnAj2+fYMpi1h2fsixrQAhQSB0fQFcZcgExIDF1XaCHficVQAFA0QZGBpkAysAp23LJIBHAETBHmzYZ0QI4A+Vsm+RuMEWA3H0EZwB3YGa6cvYVJIAzoEOLFlefaAFcgbhWa/07R98oARwB+IBzTgdvATnAez5ZQj1P8BKQEzy1BKeAHOEpJRwVkDM8lYTLq7K2VbiEkd+NOzTmy+vynHssdo+nKI/NhCkDsBUpguVqA8NiHpr6ppTS5wZ3P6gLCy4obLvHJAghvndd90K3eSegbdvHAPDrXOA9t8gnUsrf5sHJTrswJBQ58p67g5RSzqcM0F+aprkWQrzRp0d1ivR9/7b0U6NmJtR1/XEzxW+VUp/2js6OhfV00KmBnXMllLexOe8FSgCLifE/KM7xbmzAXMcAAAAASUVORK5CYII=";
   };
@@ -274,7 +274,7 @@ if (uni.restoreGlobal) {
   const warn_icon = function() {
     return "data:image/png;base64,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";
   };
-  const _sfc_main$h = {
+  const _sfc_main$i = {
     name: "jj-dialog",
     props: {
       visible: {
@@ -374,7 +374,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
     return $data.jj_visible ? (vue.openBlock(), vue.createElementBlock("div", {
       key: 0,
       class: "jj-dialog"
@@ -430,8 +430,8 @@ if (uni.restoreGlobal) {
       ], 36)
     ])) : vue.createCommentVNode("v-if", true);
   }
-  var jjDialog = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g], ["__scopeId", "data-v-4259adc8"], ["__file", "/Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/dialog/jj-dialog.vue"]]);
-  const _sfc_main$g = {
+  var jjDialog = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["__scopeId", "data-v-4259adc8"], ["__file", "/Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/dialog/jj-dialog.vue"]]);
+  const _sfc_main$h = {
     name: "jj-popup",
     props: {
       visible: {
@@ -544,7 +544,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
     return $data.jj_visible ? (vue.openBlock(), vue.createElementBlock("div", {
       key: 0,
       class: "jj-popup"
@@ -601,11 +601,13 @@ if (uni.restoreGlobal) {
       ], 38)
     ])) : vue.createCommentVNode("v-if", true);
   }
-  var jjPopup = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["__scopeId", "data-v-2387f610"], ["__file", "/Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/popup/jj-popup.vue"]]);
-  const _sfc_main$f = {
+  var jjPopup = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g], ["__scopeId", "data-v-2387f610"], ["__file", "/Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/components/jj-messagebox/popup/jj-popup.vue"]]);
+  const _sfc_main$g = {
     components: {
       jjPopup,
       jjDialog
+    },
+    setup() {
     },
     data() {
       return {
@@ -641,7 +643,7 @@ if (uni.restoreGlobal) {
                 "color": "#4CD964"
               },
               click: () => {
-                formatAppLog("log", "at pages/demo/index.vue:115", "\u70B9\u51FB-----\u786E\u5B9A");
+                formatAppLog("log", "at pages/demo/demo.vue:115", "\u70B9\u51FB-----\u786E\u5B9A");
               }
             }]
           });
@@ -689,7 +691,7 @@ if (uni.restoreGlobal) {
             activeBackground: "#2A8AFF",
             activeColor: "#fff",
             click: () => {
-              formatAppLog("log", "at pages/demo/index.vue:167", "\u70B9\u51FBCancel");
+              formatAppLog("log", "at pages/demo/demo.vue:167", "\u70B9\u51FBCancel");
             }
           }, {
             title: "Destructive",
@@ -700,7 +702,7 @@ if (uni.restoreGlobal) {
             },
             touchClose: false,
             click: () => {
-              formatAppLog("log", "at pages/demo/index.vue:178", "\u70B9\u51FBDestructive");
+              formatAppLog("log", "at pages/demo/demo.vue:178", "\u70B9\u51FBDestructive");
               alert.close(false);
               uni.switchTab({
                 url: "/pages/index/index",
@@ -826,7 +828,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_jj_dialog = vue.resolveComponent("jj-dialog");
     const _component_jj_popup = vue.resolveComponent("jj-popup");
     const _component_base_view = vue.resolveComponent("base-view");
@@ -967,7 +969,7 @@ if (uni.restoreGlobal) {
       _: 1
     });
   }
-  var PagesDemoIndex = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e], ["__scopeId", "data-v-6a3babdf"], ["__file", "/Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/demo/index.vue"]]);
+  var demoPage = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["__scopeId", "data-v-eae40a34"], ["__file", "/Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/demo/demo.vue"]]);
   let requsetUserInfo = function() {
     let load = getApp().globalData.$jj_loading();
     setTimeout(function() {
@@ -975,8 +977,8 @@ if (uni.restoreGlobal) {
       getApp().globalData.$jj_toast("\u6210\u529F\u83B7\u53D6\u7528\u6237\u4FE1\u606F\u3002\u3002\u3002\u3002\u3002\u3002\u54C8\u54C8\u{1F604}\u{1F604}");
     }, 3e3);
   };
-  const _sfc_main$e = {
-    components: { demo: PagesDemoIndex },
+  const _sfc_main$f = {
+    components: { demoPage },
     data() {
       return {};
     },
@@ -986,17 +988,17 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_demo = vue.resolveComponent("demo");
+  function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_demoPage = vue.resolveComponent("demoPage");
     return vue.openBlock(), vue.createElementBlock("div", { class: "mine-box" }, [
-      vue.createVNode(_component_demo),
+      vue.createVNode(_component_demoPage),
       vue.createElementVNode("div", {
         class: "bottom-box",
         onClick: _cache[0] || (_cache[0] = (...args) => $options.loadingUserInfo && $options.loadingUserInfo(...args))
       }, "\u83B7\u53D6\u7528\u6237\u4FE1\u606F")
     ]);
   }
-  var PagesMineIndex = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__scopeId", "data-v-4bd6864f"], ["__file", "/Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/mine/index.vue"]]);
+  var PagesMineIndex = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e], ["__scopeId", "data-v-4bd6864f"], ["__file", "/Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/mine/index.vue"]]);
   let appShowing = false;
   let appShowFnList = [];
   let refMessageObj = function() {
@@ -1055,7 +1057,7 @@ if (uni.restoreGlobal) {
         appShowing = true;
         uni.navigateTo({
           url: jj_app_message_url(),
-          animationType: "fade-in",
+          animationType: "zoom-fade-out",
           animationDuration: 0,
           success() {
             appShowFn(showFn);
@@ -1125,7 +1127,7 @@ if (uni.restoreGlobal) {
     }
     return refList;
   };
-  const _sfc_main$d = {
+  const _sfc_main$e = {
     data() {
       return {};
     },
@@ -1212,7 +1214,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_base_view = vue.resolveComponent("base-view");
     return vue.openBlock(), vue.createBlock(_component_base_view, { class: "flexColumnCenter" }, {
       default: vue.withCtx(() => [
@@ -1233,7 +1235,17 @@ if (uni.restoreGlobal) {
       _: 1
     });
   }
-  var PagesAppIndex = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["__scopeId", "data-v-24378d3b"], ["__file", "/Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/app/index.vue"]]);
+  var PagesAppIndex = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__scopeId", "data-v-24378d3b"], ["__file", "/Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/app/index.vue"]]);
+  const _sfc_main$d = {
+    components: {
+      demoPage
+    }
+  };
+  function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_demo_page = vue.resolveComponent("demo-page");
+    return vue.openBlock(), vue.createBlock(_component_demo_page);
+  }
+  var PagesDemoIndex = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["__file", "/Users/weiqu/Documents/GitApp/jj-uni-messagebox/pages/demo/index.vue"]]);
   const _sfc_main$c = {
     mounted() {
       this.$jj_alert({

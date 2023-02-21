@@ -1,1 +1,137 @@
-{"@platforms":["android","iPhone","iPad"],"name":"jj-uni-messagebox","version":{"name":"1.0.0","code":"100"},"description":"","developer":{"name":"","email":"","url":""},"permissions":{"UniNView":{"description":"UniNView原生渲染"}},"plus":{"useragent":{"value":"uni-app","concatenate":true},"splashscreen":{"target":"id:1","autoclose":true,"waiting":true,"delay":0},"popGesture":"close","launchwebview":{"id":"1","kernel":"WKWebview"},"statusbar":{"immersed":"supportedDevice","style":"light","background":"#F8F8F8"},"runmode":"liberate","usingComponents":true,"nvueStyleCompiler":"uni-app","compilerVersion":3,"distribute":{"google":{"permissions":["\u003cuses-permission android:name\u003d\"android.permission.CHANGE_NETWORK_STATE\"/\u003e","\u003cuses-permission android:name\u003d\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/\u003e","\u003cuses-permission android:name\u003d\"android.permission.VIBRATE\"/\u003e","\u003cuses-permission android:name\u003d\"android.permission.READ_LOGS\"/\u003e","\u003cuses-permission android:name\u003d\"android.permission.ACCESS_WIFI_STATE\"/\u003e","\u003cuses-feature android:name\u003d\"android.hardware.camera.autofocus\"/\u003e","\u003cuses-permission android:name\u003d\"android.permission.ACCESS_NETWORK_STATE\"/\u003e","\u003cuses-permission android:name\u003d\"android.permission.CAMERA\"/\u003e","\u003cuses-permission android:name\u003d\"android.permission.GET_ACCOUNTS\"/\u003e","\u003cuses-permission android:name\u003d\"android.permission.READ_PHONE_STATE\"/\u003e","\u003cuses-permission android:name\u003d\"android.permission.CHANGE_WIFI_STATE\"/\u003e","\u003cuses-permission android:name\u003d\"android.permission.WAKE_LOCK\"/\u003e","\u003cuses-permission android:name\u003d\"android.permission.FLASHLIGHT\"/\u003e","\u003cuses-feature android:name\u003d\"android.hardware.camera\"/\u003e","\u003cuses-permission android:name\u003d\"android.permission.WRITE_SETTINGS\"/\u003e"]},"apple":{},"plugins":{"audio":{"mp3":{"description":"Android平台录音支持MP3格式文件"}}}},"uniStatistics":{"enable":false},"allowsInlineMediaPlayback":true,"safearea":{"background":"#ffffff","bottom":{"offset":"auto"}},"uni-app":{"control":"uni-v3","vueVersion":"3","compilerVersion":"3.4.7","nvueCompiler":"uni-app","renderer":"auto","nvue":{"flex-direction":"column"},"nvueLaunchMode":"normal"},"tabBar":{"position":"bottom","color":"#7A7E83","selectedColor":"#3cc51f","borderStyle":"rgba(0,0,0,0.4)","blurEffect":"none","fontSize":"10px","iconWidth":"24px","spacing":"3px","height":"50px","backgroundColor":"#ffffff","list":[{"pagePath":"pages/index/index","text":"Home"},{"pagePath":"pages/mine/index","text":"Mine"},{"pagePath":"pages/demo/nvue","text":"nvue"},{"pagePath":"pages/app/index","text":"App"}],"selectedIndex":0,"shown":true,"child":["lauchwebview"],"selected":0}},"launch_path":"__uniappview.html","id":"__UNI__temp__"}
+{
+  "@platforms": [
+    "android",
+    "iPhone",
+    "iPad"
+  ],
+  "id": "",
+  "name": "jj-uni-messagebox",
+  "version": {
+    "name": "1.0.0",
+    "code": "100"
+  },
+  "description": "",
+  "developer": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "permissions": {
+    "UniNView": {
+      "description": "UniNView原生渲染"
+    }
+  },
+  "plus": {
+    "useragent": {
+      "value": "uni-app",
+      "concatenate": true
+    },
+    "splashscreen": {
+      "target": "id:1",
+      "autoclose": true,
+      "waiting": true,
+      "delay": 0
+    },
+    "popGesture": "close",
+    "launchwebview": {
+      "id": "1",
+      "kernel": "WKWebview"
+    },
+    "statusbar": {
+      "immersed": "supportedDevice",
+      "style": "light",
+      "background": "#F8F8F8"
+    },
+    "runmode": "liberate",
+    "usingComponents": true,
+    "nvueStyleCompiler": "uni-app",
+    "compilerVersion": 3,
+    "distribute": {
+      "google": {
+        "permissions": [
+          "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+          "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+          "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+          "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+          "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+          "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
+          "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+          "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+          "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+          "<uses-feature android:name=\"android.hardware.camera\"/>",
+          "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+        ]
+      },
+      "apple": {},
+      "plugins": {
+        "audio": {
+          "mp3": {
+            "description": "Android平台录音支持MP3格式文件"
+          }
+        }
+      }
+    },
+    "uniStatistics": {
+      "enable": false
+    },
+    "allowsInlineMediaPlayback": true,
+    "safearea": {
+      "background": "#ffffff",
+      "bottom": {
+        "offset": "auto"
+      }
+    },
+    "uni-app": {
+      "control": "uni-v3",
+      "vueVersion": "3",
+      "compilerVersion": "3.4.7",
+      "nvueCompiler": "uni-app",
+      "renderer": "auto",
+      "nvue": {
+        "flex-direction": "column"
+      },
+      "nvueLaunchMode": "normal"
+    },
+    "tabBar": {
+      "position": "bottom",
+      "color": "#7A7E83",
+      "selectedColor": "#3cc51f",
+      "borderStyle": "rgba(0,0,0,0.4)",
+      "blurEffect": "none",
+      "fontSize": "10px",
+      "iconWidth": "24px",
+      "spacing": "3px",
+      "height": "50px",
+      "backgroundColor": "#ffffff",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "text": "Home"
+        },
+        {
+          "pagePath": "pages/mine/index",
+          "text": "Mine"
+        },
+        {
+          "pagePath": "pages/demo/nvue",
+          "text": "nvue"
+        },
+        {
+          "pagePath": "pages/app/index",
+          "text": "App"
+        }
+      ],
+      "selectedIndex": 0,
+      "shown": true,
+      "child": [
+        "lauchwebview"
+      ],
+      "selected": 0
+    }
+  },
+  "launch_path": "__uniappview.html"
+}

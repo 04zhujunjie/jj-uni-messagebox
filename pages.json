@@ -49,7 +49,7 @@
 			"navigationStyle": "custom", // 取消本页面的导航栏
 			"background": "transparent", // 背景透明
 			"app-plus": {
-			"animationType": "fade-in", // 设置fade-in淡入动画，为最合理的动画类型
+			"animationType": "zoom-fade-out", //zoom-fade-out：新窗体从小到大逐渐放大并且从透明到不透明逐渐显示，解决安卓平台下微闪问题
 			"background": "transparent", // 背景透明
 			"backgroundColor": "transparent", // 背景透明
 			"webviewBGTransparent":true,

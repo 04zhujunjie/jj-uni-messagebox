@@ -88,7 +88,7 @@ let appShowMessageBox = function (showFn){
 			appShowing = true
 			uni.navigateTo({
 			    url: jj_app_message_url(),
-				animationType:'fade-in',
+				animationType:'zoom-fade-out',//zoom-fade-out：新窗体从小到大逐渐放大并且从透明到不透明逐渐显示，解决安卓平台下微闪问题
 				animationDuration:0,
 				success() {
 					//页面已经加载完成，显示弹框
