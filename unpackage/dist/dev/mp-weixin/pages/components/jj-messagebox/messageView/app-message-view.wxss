@@ -1,6 +1,5 @@
 
 page {
-	background: transparent;
-	background-color: transparent;
+		background: transparent;
+		background-color: transparent;
 }
-

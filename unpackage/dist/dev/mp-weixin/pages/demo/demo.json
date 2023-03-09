@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "jj-dialog": "../components/jj-messagebox/dialog/jj-dialog",
+    "jj-popup": "../components/jj-messagebox/popup/jj-popup"
+  }
+}

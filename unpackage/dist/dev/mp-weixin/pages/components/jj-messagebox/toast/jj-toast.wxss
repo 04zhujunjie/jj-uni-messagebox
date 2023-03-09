@@ -73,17 +73,16 @@
 		opacity: 0;
 }
 .flexContentCenter.data-v-0666c070 {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: relative;
 }
 .message.data-v-0666c070 {
-	color: #FFFFFF;
-	font-size: 14.5px;
-	word-break: break-all;
-	text-align: center;
-	white-space: pre-wrap;
+		color: #FFFFFF;
+		font-size: 14.5px;
+		word-break: break-all;
+		text-align: center;
+		white-space: pre-wrap;
 }
-

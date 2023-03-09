@@ -75,50 +75,30 @@
 
 /*弹层动画（放大）*/
 .popIn.data-v-4259adc8 {
-    -webkit-animation: popIn-data-v-4259adc8 .25s;
+    -webkit-animation: popIn-4259adc8 .25s;
 	-webkit-animation-delay: 0s;
 	animation-timing-function: ease-in-out;
     -webkit-animation-timing-function: ease-in-out;
-    animation: popIn-data-v-4259adc8 .25s;
+    animation: popIn-4259adc8 .25s;
 }
-@-webkit-keyframes popIn-data-v-4259adc8 {
+@keyframes popIn-4259adc8 {
 0% {
-        -webkit-transform: scale3d(0, 0, 0);
+        transform: scale3d(0, 0, 0);
         opacity: 0;
 }
 100% {
-        -webkit-transform: scale3d(1, 1, 1);
-        opacity: 1;
-}
-}
-@keyframes popIn-data-v-4259adc8 {
-0% {
-        -webkit-transform: scale3d(0, 0, 0);
-                transform: scale3d(0, 0, 0);
-        opacity: 0;
-}
-100% {
-        -webkit-transform: scale3d(1, 1, 1);
-                transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
         opacity: 1;
 }
 }
 .fadeInOpcity.data-v-4259adc8{
-		-webkit-animation: fadeIn-data-v-4259adc8 .25s;
+		-webkit-animation: fadeIn-4259adc8 .25s;
 		-webkit-animation-delay: 0s;
 		animation-timing-function: ease-in;
 		-webkit-animation-timing-function: ease-in;
-		animation: fadeIn-data-v-4259adc8 .25s;
+		animation: fadeIn-4259adc8 .25s;
 }
-@-webkit-keyframes fadeIn-data-v-4259adc8 {
-0% {
-        opacity: 0;
-}
-100% {
-        opacity: 1;
-}
-}
-@keyframes fadeIn-data-v-4259adc8 {
+@keyframes fadeIn-4259adc8 {
 0% {
         opacity: 0;
 }
@@ -129,38 +109,24 @@
 
 /*弹层动画（缩小）*/
 .popOut.data-v-4259adc8 {
-    -webkit-animation: popOut-data-v-4259adc8 .25s;
-	-webkit-animation-timing-function: ease-out;
+    -webkit-animation: popOut-4259adc8 .25s;
 	animation-timing-function: ease-out;
-    animation: popOut-data-v-4259adc8 .25s;
+    animation: popOut-4259adc8 .25s;
 	/* 保留动画结束后的样子 */
 	animation-fill-mode: forwards;
 	-webkit-animation-fill-mode: forwards;
 }
-@-webkit-keyframes popOut-data-v-4259adc8 {
+@keyframes popOut-4259adc8 {
 0% {
-        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1,1, 1);
         opacity: 1;
 }
 100% {
         opacity: 0;
-		 -webkit-transform: scale3d(0, 0, 0);
-}
-}
-@keyframes popOut-data-v-4259adc8 {
-0% {
-        -webkit-transform: scale3d(1,1, 1);
-                transform: scale3d(1,1, 1);
-        opacity: 1;
-}
-100% {
-        opacity: 0;
-		-webkit-transform: scale3d(0,0,0);
-		        transform: scale3d(0,0,0);
+		transform: scale3d(0,0,0);
 }
 }
 .jj-dialog.data-v-4259adc8 {
-	display: flex;
-	flex-direction: column;
+		display: flex;
+		flex-direction: column;
 }
-

@@ -1058,14 +1058,11 @@ if (uni.restoreGlobal) {
         uni.navigateTo({
           url: jj_app_message_url(),
           animationType: "zoom-fade-out",
-          animationDuration: 0,
-          success() {
-            appShowFn(showFn);
-          },
-          fail() {
-            appShowing = false;
-          }
+          animationDuration: 100
         });
+        setTimeout(() => {
+          appShowFn(showFn);
+        }, 120);
         return;
       }
     }
