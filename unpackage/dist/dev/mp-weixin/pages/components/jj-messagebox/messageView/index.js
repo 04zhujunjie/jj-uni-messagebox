@@ -2,15 +2,15 @@
 var pages_components_jjMessagebox_messageView_constant = require("./constant.js");
 var pages_components_jjMessagebox_messageView_ref = require("./ref.js");
 var common_vendor = require("../../../../common/vendor.js");
-const toast = () => "../toast/jj-toast.js";
-const alert = () => "../alert/jj-alert.js";
-const loading = () => "../loading/jj-loading.js";
+const jjToast = () => "../toast/jj-toast.js";
+const jjAlert = () => "../alert/jj-alert.js";
+const jjLoading = () => "../loading/jj-loading.js";
 const _sfc_main = {
   name: "message-view",
   components: {
-    toast,
-    alert,
-    loading
+    jjToast,
+    jjAlert,
+    jjLoading
   },
   data() {
     return {
@@ -55,10 +55,10 @@ const _sfc_main = {
   }
 };
 if (!Array) {
-  const _component_alert = common_vendor.resolveComponent("alert");
-  const _component_toast = common_vendor.resolveComponent("toast");
-  const _component_loading = common_vendor.resolveComponent("loading");
-  (_component_alert + _component_toast + _component_loading)();
+  const _component_jj_alert = common_vendor.resolveComponent("jj-alert");
+  const _component_jj_toast = common_vendor.resolveComponent("jj-toast");
+  const _component_jj_loading = common_vendor.resolveComponent("jj-loading");
+  (_component_jj_alert + _component_jj_toast + _component_jj_loading)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return {

@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<alert :ref="ref.kAlert" @show = "show(ref.kAlert)" @close = "close(ref.kAlert)"></alert>
-		<toast :ref="ref.kToast" @show = "show(ref.kToast)" @close = "close(ref.kToast)"></toast>
-		<loading :ref="ref.kLoading" @show = "show(ref.kLoading)" @close = "close(ref.kLoading)"></loading>
+		<jj-alert :ref="ref.kAlert" @show = "show(ref.kAlert)" @close = "close(ref.kAlert)"></jj-alert>
+		<jj-toast :ref="ref.kToast" @show = "show(ref.kToast)" @close = "close(ref.kToast)"></jj-toast>
+		<jj-loading :ref="ref.kLoading" @show = "show(ref.kLoading)" @close = "close(ref.kLoading)"></jj-loading>
 		<slot></slot>
 	</div>
 </template>
@@ -11,16 +11,16 @@
 	
 	import {kToast,kAlert,kLoading} from './constant.js'
 	import {refMessageObj,refRouteKey,addRefObj,removeRefObj} from './ref.js'
-	import toast from '../toast/jj-toast.vue'
-	import alert from '../alert/jj-alert.vue'
-	import loading from '../loading/jj-loading.vue'
+	import jjToast from '../toast/jj-toast.vue'
+	import jjAlert from '../alert/jj-alert.vue'
+	import jjLoading from '../loading/jj-loading.vue'
 	
 	export default {
 		name:'message-view',
 		components:{
-			toast,
-			alert,
-			loading,
+			jjToast,
+			jjAlert,
+			jjLoading,
 		},
 		data(){
 			return{

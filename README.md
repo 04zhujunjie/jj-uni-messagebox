@@ -11,7 +11,7 @@
 1、只适用uni-app项目，如果是其他H5网页的Vue项目可以使用 [jj-messagebox](https://github.com/04zhujunjie/jj-messagebox)   
 2、在.js或者.nvue文件中可以用getApp().globalData.$jj_alert形式调用弹框   
 3、小程序无法覆盖原生的导航栏和tabBar,并且需要在显示弹窗的页,引入jj-messagebox/messageView/index.vue组件，否则无法显示弹窗    
-
+4、如果在demo工程中切换vue2和vue3环境进行测试，请先关闭demo小程序或删除app模拟器中demo，否则可以会出现切换运行失败。    
 
 ### 安装
 ---

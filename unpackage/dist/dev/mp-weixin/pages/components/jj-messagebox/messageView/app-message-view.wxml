@@ -1,1 +1,1 @@
-<view class="_div"><message-view bind:close="__e" vue-id="d56b75c4-1" data-event-opts="{{[['^close',[['close']]]]}}" bind:__l="__l"></message-view></view>
+<view><message-view bindclose="{{a}}" u-i="1ec812f8-0" bind:__l="__l"></message-view></view>
